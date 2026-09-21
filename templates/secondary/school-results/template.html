@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ report.report_key }}</title>
+    <link rel="stylesheet" href="{{ assets.shared_css_uri }}">
+    <link rel="stylesheet" href="{{ assets.report_css_uri }}">
+  </head>
+  <body>
+    {% for page in pages %}
+    <section class="report-page" data-page="{{ page.number }}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{ page.width }} {{ page.height }}" width="{{ page.width }}pt" height="{{ page.height }}pt" role="img" aria-label="Report page {{ page.number }}">
+        <g class="measured-rules">
+          {% for rectangle in page.rectangles if rectangle.fill %}
+          <rect x="{{ rectangle.x }}" y="{{ rectangle.y }}" width="{{ rectangle.width }}" height="{{ rectangle.height }}" fill="{{ rectangle.fill_css }}" fill-opacity="{{ rectangle.fill_opacity }}"{% if rectangle.stroke_css %} stroke="{{ rectangle.stroke_css }}" stroke-opacity="{{ rectangle.stroke_opacity }}" stroke-width="{{ rectangle.stroke_width }}"{% endif %}/>
+          {% endfor %}
+        </g>
+        <g class="measured-text">
+          {% for span in page.spans %}
+          <text x="{{ span.x }}" y="{{ span.y }}" fill="{{ span.fill }}" fill-opacity="{{ span.opacity }}" font-family="{{ span.font_family }}" font-size="{{ span.font_size }}" textLength="{{ span.text_length }}" lengthAdjust="spacingAndGlyphs" font-weight="{{ span.font_weight }}" xml:space="preserve">{{ span.text }}</text>
+          {% endfor %}
+        </g>
+      </svg>
+    </section>
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "fonts": [
+    {
+      "base_font": "Arial-BoldMT",
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1,
+        14,
+        15
+      ],
+      "referencer": 0,
+      "resource_name": "F1",
+      "type": "TrueType",
+      "xref": 7
+    },
+    {
+      "base_font": "TimesNewRomanPS-BoldMT",
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1,
+        14,
+        15
+      ],
+      "referencer": 0,
+      "resource_name": "F2",
+      "type": "TrueType",
+      "xref": 10
+    },
+    {
+      "base_font": "ArialMT",
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "referencer": 0,
+      "resource_name": "F3",
+      "type": "TrueType",
+      "xref": 12
+    },
+    {
+      "base_font": "BCDEEE+Tahoma-Bold",
+      "encoding": "WinAnsiEncoding",
+      "extension": "ttf",
+      "extracted_byte_size": 41920,
+      "extracted_file": "embedded-fonts/BCDEEE-Tahoma-Bold-14.ttf",
+      "pages": [
+        1
+      ],
+      "referencer": 0,
+      "resource_name": "F4",
+      "type": "TrueType",
+      "xref": 14
+    },
+    {
+      "base_font": "BCDFEE+ArialNarrow-Bold",
+      "encoding": "WinAnsiEncoding",
+      "extension": "ttf",
+      "extracted_byte_size": 65964,
+      "extracted_file": "embedded-fonts/BCDFEE-ArialNarrow-Bold-42.ttf",
+      "pages": [
+        14
+      ],
+      "referencer": 0,
+      "resource_name": "F5",
+      "type": "TrueType",
+      "xref": 42
+    }
+  ],
+  "schema_version": 1
+}

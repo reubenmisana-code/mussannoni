@@ -1,0 +1,27 @@
+version: 1
+sources:
+  secondary: https://sars.ac.tz/results/exam/form-two-mock-result/2026/mwanza/mwanza-cc-1787231849
+  primary: https://sars.ac.tz/results/exam/matokeo-darasa-la-iv-mock-mkoa/2026/mwanza/mwanza-cc-1787231849
+reports:
+- ordinal: 1
+  level: secondary
+  report_key: school_results
+  identity: school-results
+  scope: school
+  title: SCHOOL RESULTS
+  sample_unit: S0333 - MWANZA SECONDARY SCHOOL
+  object_key: results/pdfs/5fey7F9UhmsiPFV0mBlusPnf46lORLdMvzzPj2yA.pdf
+  source_url: https://sars.ac.tz/view-results?file=results%2Fpdfs%2F5fey7F9UhmsiPFV0mBlusPnf46lORLdMvzzPj2yA.pdf&name=S0333-MWANZA%20SECONDARY%20SCHOOL
+  status: wip
+  aliases: []
+- ordinal: 19
+  level: primary
+  report_key: school_results
+  identity: school-results
+  scope: school
+  title: SCHOOL RESULTS
+  sample_unit: PS1304014 - BUTIMBA PRIMARY SCHOOL
+  object_key: results/pdfs/0S2sSedl0dnKTAx6uebosAIohX1CexSkMoxAHIn0.pdf
+  source_url: https://sars.ac.tz/view-results?file=results%2Fpdfs%2F0S2sSedl0dnKTAx6uebosAIohX1CexSkMoxAHIn0.pdf&name=PS1304014-BUTIMBA%20%20PRIMARY%20SCHOOL
+  status: todo
+  aliases: []

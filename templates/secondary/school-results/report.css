@@ -1,0 +1,8 @@
+.measured-rules {
+  shape-rendering: geometricPrecision;
+}
+
+.measured-text {
+  text-rendering: geometricPrecision;
+  font-synthesis: none;
+}

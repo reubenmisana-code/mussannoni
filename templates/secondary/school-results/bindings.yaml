@@ -1,0 +1,24 @@
+schema_version: 1
+model: measured-positioned-display-list
+status: provisional
+reason: Canonical backend-sis bindings are not present in this repository.
+fields:
+  report.report_key:
+    type: string
+    required: true
+  pages:
+    type: array
+    required: true
+  pages[].rectangles[]:
+    type: measured_rectangle
+    source: PyMuPDF vector extraction
+  pages[].spans[].text:
+    type: string
+    source: report data resolver
+  pages[].spans[].x:
+    type: points
+    source: measured layout
+  pages[].spans[].y:
+    type: points
+    source: measured layout
+promotion_gate: Replace this display-list adapter with backend canonical semantic fields before production integration.

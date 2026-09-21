@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/liberation-sans-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Liberation Sans";
+  src: url("fonts/liberation-sans-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Liberation Serif";
+  src: url("fonts/liberation-serif-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Evidence Tahoma";
+  src: url("fonts/BCDEEE-Tahoma-Bold-14.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Evidence Arial Narrow";
+  src: url("fonts/BCDFEE-ArialNarrow-Bold-42.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@page {
+  size: 11in 8.5in;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.report-page {
+  box-sizing: border-box;
+  width: 792pt;
+  height: 612pt;
+  margin: 0;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.report-page:not(:last-child) {
+  break-after: page;
+}
+
+.report-page svg {
+  display: block;
+  width: 792pt;
+  height: 612pt;
+  overflow: hidden;
+}

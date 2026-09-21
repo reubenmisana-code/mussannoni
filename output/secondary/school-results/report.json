@@ -1,0 +1,303 @@
+{
+  "dpi": 300,
+  "engine": "chromium via agent-browser",
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 7.17331,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.943265,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 219,
+        "rendered_span_count": 219,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 8.837386,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.924781,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 259,
+        "rendered_span_count": 259,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.173749,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.924469,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.345752,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.920332,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.195722,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.924735,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.302496,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.92423,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.399667,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 7,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.919954,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.275995,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 8,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.921484,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.203577,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 9,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.922236,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.545609,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 10,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.921923,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.533214,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 11,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.919552,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.388877,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 12,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.921738,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 273,
+        "rendered_span_count": 273,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 9.180309,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 13,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.923861,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 266,
+        "rendered_span_count": 266,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.510541,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 14,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.973465,
+      "text": {
+        "maximum_drift_pt": 0.015,
+        "reference_span_count": 321,
+        "rendered_span_count": 321,
+        "text_mismatches": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 2.011075,
+      "maximum_column_edge_drift_pt": 0.0,
+      "page": 15,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "raster_dimensions_equal": true,
+      "ssim": 0.988589,
+      "text": {
+        "maximum_drift_pt": 0.016,
+        "reference_span_count": 288,
+        "rendered_span_count": 288,
+        "text_mismatches": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 15,
+  "rendered_page_count": 15,
+  "schema_version": 1,
+  "status": "wip",
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

@@ -1,0 +1,26 @@
+version: 1
+secondary:
+  canonical_sample: MATHEMATICS
+  equivalent_layout_subjects:
+    - MATHEMATICS
+    - BIOLOGY
+    - KISWAHILI
+    - CHEMISTRY
+    - EDK
+    - HTM
+    - FINE ART
+    - AGRICULTURE
+    - BKEEPING
+    - BUSINES STUDIES
+    - BIBLE KNOWLEDGE
+    - COMPUTER SCIENCE
+    - CHINES LANGUAGE
+    - ENGLISH LANGUAGE
+    - FOOD
+    - FRENCH LANGUAGE
+    - GEOGRAPHY
+    - HISTORY
+    - MUSIC
+    - PHYSICS
+    - SPORT STUDIES
+    - THEATRE ARTS

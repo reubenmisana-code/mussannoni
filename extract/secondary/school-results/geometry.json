@@ -1,0 +1,1827 @@
+{
+  "dpi": 300,
+  "measurement_source": "PyMuPDF",
+  "pages": [
+    {
+      "baseline_count": 66,
+      "candidate_left_edges": [
+        {
+          "occurrences": 29,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 27,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 17,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 15,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 273.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 296.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 326.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 330.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 279.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 358.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 263.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 314.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 136.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 167.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 225.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 249.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 273.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 298.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 328.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 172.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 171.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 24,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 4,
+          "pitch_pt": 12.72
+        },
+        {
+          "occurrences": 3,
+          "pitch_pt": 11.16
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 21.6
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 15.48
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 28.23
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 4.92
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 10.8
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.27
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.78,
+        709.3724,
+        550.602
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 61.398,
+        "left": 48.84,
+        "right": 82.6276,
+        "top": 56.78
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 1,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 74,
+      "candidate_left_edges": [
+        {
+          "occurrences": 37,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 29,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 27,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 33,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        715.9659,
+        522.402
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 89.598,
+        "left": 48.84,
+        "right": 76.0341,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 2,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 34,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 32,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 274.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        710.8046,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 81.1954,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 3,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 32,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 30,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 23,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 16,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        720.7575,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 71.2425,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 4,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 27,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        721.1205,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 70.8795,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 5,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 33,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 32,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 274.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        720.7575,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 71.2425,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 6,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 34,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 33,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 274.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        720.7575,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 71.2425,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 7,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 27,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 13,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 301.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        720.4144,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 71.5856,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 8,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 28,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 27,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 21,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 18,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 10,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        712.3623,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 79.6377,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 9,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 36,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 31,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 28,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        718.9557,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 73.0443,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 10,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 30,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 29,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        716.3158,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 75.6842,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 11,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 78,
+      "candidate_left_edges": [
+        {
+          "occurrences": 39,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 39,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 36,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 26,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 25,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 22,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 17,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 301.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 35,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        715.5964,
+        547.842
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 64.158,
+        "left": 48.84,
+        "right": 76.4036,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 12,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 76,
+      "candidate_left_edges": [
+        {
+          "occurrences": 38,
+          "x_pt": 90.5
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 316.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 49.0
+        },
+        {
+          "occurrences": 38,
+          "x_pt": 224.0
+        },
+        {
+          "occurrences": 37,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 35,
+          "x_pt": 297.0
+        },
+        {
+          "occurrences": 29,
+          "x_pt": 274.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 299.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 274.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 245.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 270.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 34,
+          "pitch_pt": 12.24
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 12.27
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 12.26
+        }
+      ],
+      "content_bbox": [
+        48.84,
+        56.567,
+        715.2399,
+        535.122
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 76.878,
+        "left": 48.84,
+        "right": 76.7601,
+        "top": 56.567
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 13,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 50,
+      "candidate_left_edges": [
+        {
+          "occurrences": 13,
+          "x_pt": 61.0
+        },
+        {
+          "occurrences": 13,
+          "x_pt": 91.0
+        },
+        {
+          "occurrences": 13,
+          "x_pt": 646.0
+        },
+        {
+          "occurrences": 13,
+          "x_pt": 675.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 220.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 271.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 555.0
+        },
+        {
+          "occurrences": 10,
+          "x_pt": 45.5
+        },
+        {
+          "occurrences": 10,
+          "x_pt": 581.5
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 443.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 246.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 533.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 617.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 470.5
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 496.5
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 326.0
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 412.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 379.5
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 298.5
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 355.0
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 316.5
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 441.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 248.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 414.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 353.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 472.5
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 381.5
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 531.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 619.0
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 296.5
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 11,
+          "pitch_pt": 11.04
+        },
+        {
+          "occurrences": 4,
+          "pitch_pt": 10.32
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 11.16
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 9.84
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 9.72
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 9.36
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 20.28
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 10.68
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 9.99
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 20.16
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 15.84
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 5.16
+        }
+      ],
+      "content_bbox": [
+        45.36,
+        65.384,
+        741.3238,
+        394.222
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 217.778,
+        "left": 45.36,
+        "right": 50.6762,
+        "top": 65.384
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 14,
+      "rotation": 0,
+      "width_pt": 792.0
+    },
+    {
+      "baseline_count": 18,
+      "candidate_left_edges": [
+        {
+          "occurrences": 13,
+          "x_pt": 61.0
+        },
+        {
+          "occurrences": 13,
+          "x_pt": 91.0
+        },
+        {
+          "occurrences": 12,
+          "x_pt": 224.5
+        },
+        {
+          "occurrences": 12,
+          "x_pt": 250.0
+        },
+        {
+          "occurrences": 12,
+          "x_pt": 275.5
+        },
+        {
+          "occurrences": 12,
+          "x_pt": 328.0
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 641.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 683.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 300.5
+        },
+        {
+          "occurrences": 11,
+          "x_pt": 357.0
+        },
+        {
+          "occurrences": 10,
+          "x_pt": 531.0
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 659.5
+        },
+        {
+          "occurrences": 9,
+          "x_pt": 618.0
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 472.5
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 590.0
+        },
+        {
+          "occurrences": 8,
+          "x_pt": 558.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 414.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 501.5
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 416.0
+        },
+        {
+          "occurrences": 7,
+          "x_pt": 386.5
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 443.0
+        },
+        {
+          "occurrences": 6,
+          "x_pt": 503.5
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 662.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 384.5
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 560.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 588.0
+        },
+        {
+          "occurrences": 5,
+          "x_pt": 445.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 620.0
+        },
+        {
+          "occurrences": 4,
+          "x_pt": 474.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 248.0
+        }
+      ],
+      "common_row_pitches": [
+        {
+          "occurrences": 11,
+          "pitch_pt": 11.16
+        },
+        {
+          "occurrences": 2,
+          "pitch_pt": 10.8
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 8.88
+        },
+        {
+          "occurrences": 1,
+          "pitch_pt": 11.19
+        }
+      ],
+      "content_bbox": [
+        45.36,
+        66.224,
+        695.3032,
+        240.482
+      ],
+      "crop_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "height_pt": 612.0,
+      "margins_pt": {
+        "bottom": 371.518,
+        "left": 45.36,
+        "right": 96.6968,
+        "top": 66.224
+      },
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 15,
+      "rotation": 0,
+      "width_pt": 792.0
+    }
+  ],
+  "schema_version": 1
+}
