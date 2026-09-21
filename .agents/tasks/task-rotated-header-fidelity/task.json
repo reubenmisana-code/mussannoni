@@ -1,7 +1,14 @@
 {
   "task_id": "task-rotated-header-fidelity",
   "task_description": "Raise SARS PDF reproduction fidelity toward pixel-identity, with a focus on the two user-reported defects: text that fails to rotate and rotated column headers (e.g. R/RANK, C/RANK, PERFORMANCE SUMMARY) that are poorly merged/placed. Fix the measured rotated-header placement logic in tools/ (unstable single-sample rotated calibration, missing advance-width distribution for rotated runs, and split rotated headings rendered as disjoint fragments), regenerate all committed output/render/report evidence and the README status table, quantify the before/after improvement, and keep the pytest suite green. corpus/ is read-only and fidelity thresholds are never relaxed.",
-  "status": "in_progress",
+  "status": "completed",
   "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
-  "blocked_reason": null
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "make doctor 'environment ready'; uv run ruff check . clean; uv run pytest 654 passed, 46 skipped. Corpus/ untouched (0 files), THRESHOLDS in compare.py/test_fidelity.py unchanged. Rotated-header defect (R/RANK, C/RANK, PERFORMANCE SUMMARY) fixed via tune.py rotated-face sample floor + rotation-aware character_chunks in scaffold.py; propagated corpus-wide by full `make convert` regen. 29 reports improved worst_ssim, 0 regressed >1e-4, pages_passing preserved at 11 (no report lost a page it previously passed). No standalone Docker/Dockerfile in this project so docker_build is not applicable. worst_text_drift_pt rose on a few already-failing reports (single worst-span outliers from clean zero-base re-measure; median drift stays ~0.1-0.2pt; those reports failed SSIM before and after with 0 passing pages, so no gate regression). test_fidelity.py exercises the regenerated report.json against the unchanged gates and is green."
+  }
 }
