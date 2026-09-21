@@ -1,0 +1,7 @@
+{
+  "task_id": "task-rotated-header-fidelity",
+  "task_description": "Raise SARS PDF reproduction fidelity toward pixel-identity, with a focus on the two user-reported defects: text that fails to rotate and rotated column headers (e.g. R/RANK, C/RANK, PERFORMANCE SUMMARY) that are poorly merged/placed. Fix the measured rotated-header placement logic in tools/ (unstable single-sample rotated calibration, missing advance-width distribution for rotated runs, and split rotated headings rendered as disjoint fragments), regenerate all committed output/render/report evidence and the README status table, quantify the before/after improvement, and keep the pytest suite green. corpus/ is read-only and fidelity thresholds are never relaxed.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}
