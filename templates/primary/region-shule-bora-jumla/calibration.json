@@ -1,0 +1,68 @@
+{
+  "by_size": {
+    "5.05": {
+      "dx": -0.079,
+      "dy": -1.365,
+      "samples": 342
+    },
+    "5.41": {
+      "dx": -0.024,
+      "dy": -0.12,
+      "samples": 170
+    },
+    "5.53": {
+      "dx": -5.098,
+      "dy": -0.204,
+      "samples": 14
+    },
+    "5.89": {
+      "dx": -0.141,
+      "dy": -0.57,
+      "samples": 1669
+    },
+    "6.01": {
+      "dx": -5.527,
+      "dy": -0.51,
+      "samples": 21
+    },
+    "6.61": {
+      "dx": -0.052,
+      "dy": -0.42,
+      "samples": 962
+    },
+    "6.73": {
+      "dx": -0.139,
+      "dy": -0.51,
+      "samples": 42
+    },
+    "7.57": {
+      "dx": -0.07,
+      "dy": -1.2,
+      "samples": 11
+    },
+    "8.42": {
+      "dx": -0.021,
+      "dy": -1.14,
+      "samples": 5
+    },
+    "8.78": {
+      "dx": -0.018,
+      "dy": -0.735,
+      "samples": 8
+    }
+  },
+  "global": {
+    "dx": -0.093,
+    "dy": -0.54,
+    "samples": 3245
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_bora_jumla",
+  "residual": {
+    "dx": -0.0,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

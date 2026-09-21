@@ -1,0 +1,78 @@
+{
+  "by_size": {
+    "5.17": {
+      "dx": -0.022,
+      "dy": -1.5,
+      "samples": 50
+    },
+    "5.41": {
+      "dx": -0.022,
+      "dy": 0.03,
+      "samples": 170
+    },
+    "5.53": {
+      "dx": -0.059,
+      "dy": -0.45,
+      "samples": 40
+    },
+    "5.65": {
+      "dx": -0.019,
+      "dy": -0.33,
+      "samples": 289
+    },
+    "5.77": {
+      "dx": -0.05,
+      "dy": -0.57,
+      "samples": 178
+    },
+    "5.89": {
+      "dx": -0.041,
+      "dy": -0.659,
+      "samples": 39
+    },
+    "6.01": {
+      "dx": -0.05,
+      "dy": -0.57,
+      "samples": 195
+    },
+    "6.37": {
+      "dx": -0.016,
+      "dy": -0.15,
+      "samples": 5
+    },
+    "6.61": {
+      "dx": -0.009,
+      "dy": -0.39,
+      "samples": 10
+    },
+    "6.73": {
+      "dx": -0.02,
+      "dy": -0.54,
+      "samples": 5
+    },
+    "6.97": {
+      "dx": -0.013,
+      "dy": -0.93,
+      "samples": 25
+    },
+    "7.81": {
+      "dx": -0.008,
+      "dy": -1.47,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.032,
+    "dy": -0.36,
+    "samples": 1015
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_best_students_overall",
+  "residual": {
+    "dx": 0.001,
+    "dy": 0.09
+  },
+  "schema_version": 1
+}

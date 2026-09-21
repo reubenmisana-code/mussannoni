@@ -1,40 +1,41 @@
+/* Shared page box and table primitives. Measured values live in each report's CSS. */
+
 @font-face {
-  font-family: "Liberation Sans";
-  src: url("fonts/liberation-sans-regular.ttf") format("truetype");
-  font-style: normal;
+  font-family: "Report Sans";
+  src: url("fonts/report-sans-regular.otf") format("opentype");
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Liberation Sans";
-  src: url("fonts/liberation-sans-bold.ttf") format("truetype");
-  font-style: normal;
+  font-family: "Report Sans";
+  src: url("fonts/report-sans-bold.otf") format("opentype");
   font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Liberation Serif";
-  src: url("fonts/liberation-serif-bold.ttf") format("truetype");
+  font-family: "Report Serif";
+  src: url("fonts/report-serif-regular.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
-  font-weight: 700;
 }
 
 @font-face {
-  font-family: "Evidence Tahoma";
-  src: url("fonts/BCDEEE-Tahoma-Bold-14.ttf") format("truetype");
-  font-style: normal;
+  font-family: "Report Serif";
+  src: url("fonts/report-serif-bold.otf") format("opentype");
   font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Evidence Arial Narrow";
-  src: url("fonts/BCDFEE-ArialNarrow-Bold-42.ttf") format("truetype");
+  font-family: "Report Mono";
+  src: url("fonts/report-mono-regular.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
-  font-weight: 700;
 }
 
 @page {
-  size: 11in 8.5in;
   margin: 0;
 }
 
@@ -42,14 +43,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: white;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
 .report-page {
+  position: relative;
   box-sizing: border-box;
-  width: 792pt;
-  height: 612pt;
-  margin: 0;
   overflow: hidden;
   break-inside: avoid;
 }
@@ -58,9 +59,61 @@ body {
   break-after: page;
 }
 
-.report-page svg {
-  display: block;
-  width: 792pt;
-  height: 612pt;
-  overflow: hidden;
+.report-vectors,
+.report-rules {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  shape-rendering: crispEdges;
+}
+
+/* Rules paint over the cell fills, in the same order as the reference. */
+.report-rules {
+  z-index: 2;
+}
+
+/* The measured grid: fixed layout so colgroup widths are honoured exactly. */
+.report-grid {
+  position: absolute;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.report-grid td {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  vertical-align: top;
+  text-align: left;
+}
+
+/*
+ * Cell text is placed at its measured offset inside its own cell. The grid (columns, rows,
+ * spans, fills, borders) is real table markup; the offsets exist because these reports are
+ * spreadsheet prints whose glyph positions are fixed, and the fidelity gates are sub-point.
+ * Zero height keeps a line from ever growing its row.
+ */
+.cell-line {
+  position: absolute;
+  height: 0;
+  line-height: 1;
+  white-space: pre;
+}
+
+.spacer {
+  display: inline-block;
+  height: 0;
+}
+
+/* Text painted outside any table cell, placed from the page origin. */
+.page-text {
+  position: absolute;
+  inset: 0;
 }

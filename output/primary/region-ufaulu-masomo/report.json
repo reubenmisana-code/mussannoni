@@ -1,0 +1,105 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 2.2328,
+      "maximum_column_edge_drift_pt": 0.12,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.972795,
+      "text": {
+        "maximum_drift_pt": 0.78,
+        "median_drift_pt": 0.33,
+        "missing_characters": 0,
+        "reference_character_count": 1345,
+        "reference_span_count": 236,
+        "rendered_character_count": 1345,
+        "rendered_span_count": 236,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 3.1257,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.963055,
+      "text": {
+        "maximum_drift_pt": 5.254,
+        "median_drift_pt": 0.12,
+        "missing_characters": 0,
+        "reference_character_count": 1069,
+        "reference_span_count": 210,
+        "rendered_character_count": 1069,
+        "rendered_span_count": 210,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 3.0571,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.963842,
+      "text": {
+        "maximum_drift_pt": 5.352,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1073,
+        "reference_span_count": 207,
+        "rendered_character_count": 1073,
+        "rendered_span_count": 207,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "region_ufaulu_masomo",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.972795,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.24,
+    "worst_pixel_delta_percent": 3.1257,
+    "worst_ssim": 0.963055,
+    "worst_text_drift_pt": 5.352
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

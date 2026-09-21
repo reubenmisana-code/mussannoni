@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "6.01": {
+      "dx": -0.067,
+      "dy": -0.75,
+      "samples": 100
+    },
+    "6.49": {
+      "dx": -0.016,
+      "dy": -0.33,
+      "samples": 239
+    },
+    "6.97": {
+      "dx": -0.089,
+      "dy": -0.72,
+      "samples": 1547
+    },
+    "8.06": {
+      "dx": -0.102,
+      "dy": -0.9,
+      "samples": 36
+    },
+    "9.02": {
+      "dx": -0.013,
+      "dy": -0.06,
+      "samples": 10
+    }
+  },
+  "global": {
+    "dx": -0.071,
+    "dy": -0.72,
+    "samples": 1932
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_bora_masomo_serikali",
+  "residual": {
+    "dx": -0.001,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

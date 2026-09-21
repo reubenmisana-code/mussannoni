@@ -1,155 +1,227 @@
+"""Machine-read the reference PDFs: text spans, vector rules, geometry, fonts, rasters.
+
+Nothing here is hand-typed. Every number comes from PyMuPDF. Stored rasters are review
+evidence only - fidelity metrics are always recomputed from the PDFs at 300 dpi.
+"""
+
 from __future__ import annotations
 
 import argparse
+import json
 from collections import Counter
 from itertools import pairwise
 from pathlib import Path
 from typing import Any
 
 import pymupdf as fitz
+from PIL import Image
 
-from tools.common import extraction_dir, find_report, reference_path, set_status, write_json
+from tools.common import (
+    extraction_dir,
+    find_report,
+    load_catalog,
+    reference_path,
+    set_status,
+    write_json,
+)
 
-DPI = 300
-
-
-def serialise(value: Any) -> Any:
-    if isinstance(value, (fitz.Point, fitz.Rect, fitz.IRect, fitz.Quad, fitz.Matrix)):
-        return list(value)
-    if isinstance(value, bytes):
-        return {"byte_length": len(value)}
-    if isinstance(value, dict):
-        return {str(key): serialise(item) for key, item in value.items()}
-    if isinstance(value, (list, tuple)):
-        return [serialise(item) for item in value]
-    if isinstance(value, float):
-        return round(value, 4)
-    return value
+METRIC_DPI = 300
+REVIEW_RASTER_DPI = 150
+RASTER_COLOURS = 256
 
 
-def colour_hex(value: int) -> str:
-    return f"#{value & 0xFFFFFF:06x}"
+class Interner:
+    """Collapse repeated span styles and paint styles into a shared table."""
+
+    def __init__(self) -> None:
+        self.keys: dict[str, int] = {}
+        self.values: list[dict[str, Any]] = []
+
+    def intern(self, value: dict[str, Any]) -> int:
+        key = json.dumps(value, sort_keys=True, separators=(",", ":"))
+        if key not in self.keys:
+            self.keys[key] = len(self.values)
+            self.values.append(value)
+        return self.keys[key]
 
 
-def pdf_colour_hex(value: tuple[float, ...] | None) -> str | None:
-    if value is None or len(value) < 3:
+def write_compact_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
+
+
+def colour_components(value: tuple[float, ...] | int | None) -> list[float] | None:
+    if value is None:
         return None
-    channels = [max(0, min(255, round(channel * 255))) for channel in value[:3]]
-    return "#" + "".join(f"{channel:02x}" for channel in channels)
-
-
-def pdf_colour_css(value: tuple[float, ...] | None) -> str | None:
-    if value is None or len(value) < 3:
+    if isinstance(value, int):
+        return [round(((value >> shift) & 0xFF) / 255, 4) for shift in (16, 8, 0)]
+    if len(value) < 3:
         return None
-    return "color(srgb " + " ".join(f"{channel:.6f}" for channel in value[:3]) + ")"
+    return [round(channel, 4) for channel in value[:3]]
 
 
-def extract_rectangles(page: fitz.Page) -> list[dict[str, Any]]:
+def encode_item(item: tuple) -> list[Any]:
+    """Encode one path primitive compactly: rectangles, lines, beziers and quads."""
+    kind = item[0]
+    if kind == "re":
+        rectangle = item[1]
+        return [
+            "re",
+            round(rectangle.x0, 2),
+            round(rectangle.y0, 2),
+            round(rectangle.width, 2),
+            round(rectangle.height, 2),
+        ]
+    points: list[float] = []
+    for value in item[1:]:
+        if isinstance(value, fitz.Point):
+            points += [round(value.x, 2), round(value.y, 2)]
+        elif isinstance(value, fitz.Quad):
+            for corner in (value.ul, value.ur, value.lr, value.ll):
+                points += [round(corner.x, 2), round(corner.y, 2)]
+    return [kind, *points]
+
+
+def extract_paths(
+    page: fitz.Page, paints: Interner
+) -> tuple[list[list[Any]], list[dict[str, Any]]]:
+    """Return (encoded paths, axis-aligned rectangles).
+
+    Encoded paths preserve every painted primitive in paint order as
+    ``[paint_index, item, item, ...]``. The rectangle view is what the table grid is built from.
+    """
+    encoded: list[list[Any]] = []
     rectangles: list[dict[str, Any]] = []
     for drawing in page.get_drawings(extended=True):
         if drawing.get("type") not in {"f", "s", "fs"}:
             continue
-        for item in drawing.get("items", []):
-            if item[0] != "re":
-                raise ValueError(
-                    f"Unsupported vector primitive on page {page.number + 1}: {item[0]}"
-                )
-            rectangle = item[1]
-            rectangles.append(
-                {
-                    "x": round(rectangle.x0, 4),
-                    "y": round(rectangle.y0, 4),
-                    "width": round(rectangle.width, 4),
-                    "height": round(rectangle.height, 4),
-                    "fill": pdf_colour_hex(drawing.get("fill")),
-                    "fill_css": pdf_colour_css(drawing.get("fill")),
-                    "fill_opacity": round(drawing.get("fill_opacity") or 0.0, 4),
-                    "stroke": pdf_colour_hex(drawing.get("color")),
-                    "stroke_css": pdf_colour_css(drawing.get("color")),
-                    "stroke_opacity": round(drawing.get("stroke_opacity") or 0.0, 4),
-                    "stroke_width": round(drawing.get("width") or 0.0, 4),
-                    "sequence": drawing.get("seqno"),
-                }
-            )
-    return rectangles
+        paint = {
+            "kind": drawing["type"],
+            "fill": colour_components(drawing.get("fill")),
+            "fill_opacity": round(drawing.get("fill_opacity") or 1.0, 3),
+            "stroke": colour_components(drawing.get("color")),
+            "stroke_width": round(drawing.get("width") or 0.0, 3),
+        }
+        paint_index = paints.intern(paint)
+        items = [encode_item(item) for item in drawing.get("items", [])]
+        encoded.append([paint_index, *items])
+        for item in items:
+            if item[0] == "re":
+                rectangles.append({"x": item[1], "y": item[2], "w": item[3], "h": item[4]})
+    return encoded, rectangles
 
 
-def extract_spans(page: fitz.Page) -> list[dict[str, Any]]:
-    text = page.get_text("dict", sort=True)
-    spans: list[dict[str, Any]] = []
-    for block_index, block in enumerate(text.get("blocks", [])):
+def extract_spans(page: fitz.Page, styles: Interner) -> list[list[Any]]:
+    """Encode spans as ``[style_index, x0, y0, x1, y1, ox, oy, text]``."""
+    spans: list[list[Any]] = []
+    for block in page.get_text("dict", sort=True).get("blocks", []):
         if block.get("type") != 0:
             continue
-        for line_index, line in enumerate(block.get("lines", [])):
-            for span_index, span in enumerate(line.get("spans", [])):
+        for line in block.get("lines", []):
+            for span in line.get("spans", []):
                 bbox = span["bbox"]
-                spans.append(
+                origin = span.get("origin") or (bbox[0], bbox[3])
+                style_index = styles.intern(
                     {
-                        "block": block_index,
-                        "line": line_index,
-                        "span": span_index,
-                        "text": span["text"],
-                        "x0": round(bbox[0], 4),
-                        "y0": round(bbox[1], 4),
-                        "x1": round(bbox[2], 4),
-                        "y1": round(bbox[3], 4),
-                        "origin": serialise(span.get("origin")),
                         "font": span["font"],
-                        "size_pt": round(span["size"], 4),
-                        "flags": span["flags"],
-                        "char_flags": span.get("char_flags"),
-                        "color": span["color"],
-                        "color_hex": colour_hex(span["color"]),
+                        "size_pt": round(span["size"], 2),
+                        "bold": bool(span["flags"] & 2**4) or "Bold" in span["font"],
+                        "italic": bool(span["flags"] & 2**1),
+                        "colour": colour_components(span["color"]),
                         "alpha": span.get("alpha", 255),
-                        "ascender": round(span.get("ascender", 0.0), 4),
-                        "descender": round(span.get("descender", 0.0), 4),
                     }
+                )
+                spans.append(
+                    [
+                        style_index,
+                        round(bbox[0], 2),
+                        round(bbox[1], 2),
+                        round(bbox[2], 2),
+                        round(bbox[3], 2),
+                        round(float(origin[0]), 2),
+                        round(float(origin[1]), 2),
+                        span["text"],
+                    ]
                 )
     return spans
 
 
-def infer_geometry(page: fitz.Page, spans: list[dict[str, Any]]) -> dict[str, Any]:
-    x0 = min((span["x0"] for span in spans), default=0.0)
-    y0 = min((span["y0"] for span in spans), default=0.0)
-    x1 = max((span["x1"] for span in spans), default=page.rect.width)
-    y1 = max((span["y1"] for span in spans), default=page.rect.height)
-    baselines = sorted(
-        {
-            round(float(span["origin"][1]), 2)
-            for span in spans
-            if span.get("origin") and len(span["origin"]) > 1
-        }
-    )
-    pitches = [round(b - a, 2) for a, b in pairwise(baselines) if 2 <= b - a <= 30]
-    common_pitches = [
-        {"pitch_pt": pitch, "occurrences": count}
-        for pitch, count in Counter(pitches).most_common(12)
+def horizontal_bands(rectangles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Thin wide rectangles are horizontal rules; thin tall ones are column separators."""
+    rules = [item for item in rectangles if item["h"] <= 1.5 and item["w"] >= 5]
+    return [
+        {"y": item["y"], "x0": item["x"], "x1": round(item["x"] + item["w"], 2)} for item in rules
     ]
-    x_edges = Counter(round(span["x0"] * 2) / 2 for span in spans)
+
+
+def column_edges(rectangles: list[dict[str, Any]]) -> list[float]:
+    separators = [item for item in rectangles if item["w"] <= 1.5 and item["h"] >= 5]
+    return sorted({round(item["x"] + item["w"] / 2, 2) for item in separators})
+
+
+def infer_geometry(
+    page: fitz.Page,
+    spans: list[list[Any]],
+    rectangles: list[dict[str, Any]],
+    styles: list[dict[str, Any]],
+) -> dict[str, Any]:
+    x0 = min((span[1] for span in spans), default=0.0)
+    y0 = min((span[2] for span in spans), default=0.0)
+    x1 = max((span[3] for span in spans), default=page.rect.width)
+    y1 = max((span[4] for span in spans), default=page.rect.height)
+    baselines = sorted({span[6] for span in spans})
+    pitches = [round(b - a, 2) for a, b in pairwise(baselines) if 2 <= b - a <= 30]
+    left_edges = Counter(round(span[1] * 2) / 2 for span in spans)
+    sizes = Counter(styles[span[0]]["size_pt"] for span in spans)
     return {
         "page_number": page.number + 1,
-        "width_pt": round(page.rect.width, 4),
-        "height_pt": round(page.rect.height, 4),
+        "width_pt": round(page.rect.width, 2),
+        "height_pt": round(page.rect.height, 2),
         "orientation": "landscape" if page.rect.width > page.rect.height else "portrait",
         "rotation": page.rotation,
-        "media_box": serialise(page.mediabox),
-        "crop_box": serialise(page.cropbox),
-        "content_bbox": [x0, y0, x1, y1],
+        "media_box": [round(value, 2) for value in tuple(page.mediabox)],
+        "content_bbox": [round(x0, 2), round(y0, 2), round(x1, 2), round(y1, 2)],
         "margins_pt": {
-            "left": round(x0, 4),
-            "top": round(y0, 4),
-            "right": round(page.rect.width - x1, 4),
-            "bottom": round(page.rect.height - y1, 4),
+            "left": round(x0, 2),
+            "top": round(y0, 2),
+            "right": round(page.rect.width - x1, 2),
+            "bottom": round(page.rect.height - y1, 2),
         },
+        "span_count": len(spans),
+        "rectangle_count": len(rectangles),
         "baseline_count": len(baselines),
-        "common_row_pitches": common_pitches,
-        "candidate_left_edges": [
-            {"x_pt": edge, "occurrences": count} for edge, count in x_edges.most_common(30)
+        "row_pitch_candidates": [
+            {"pitch_pt": pitch, "occurrences": count}
+            for pitch, count in Counter(pitches).most_common(8)
         ],
+        "font_size_histogram": [
+            {"size_pt": size, "occurrences": count} for size, count in sizes.most_common()
+        ],
+        "measured_column_edges": column_edges(rectangles),
+        "candidate_left_edges": [
+            {"x_pt": edge, "occurrences": count} for edge, count in left_edges.most_common(40)
+        ],
+        "horizontal_rule_count": len(horizontal_bands(rectangles)),
     }
 
 
-def extract(level: str, report_key: str) -> Path:
+def save_raster(page: fitz.Page, path: Path) -> None:
+    """Write a palette-compressed review raster.
+
+    Fidelity metrics never read these files; ``tools/compare.py`` rasterises both PDFs at
+    300 dpi at comparison time. These exist so a reviewer can see the reference in a diff.
+    """
+    pixmap = page.get_pixmap(dpi=REVIEW_RASTER_DPI, alpha=False, colorspace=fitz.csRGB)
+    image = Image.frombytes("RGB", (pixmap.width, pixmap.height), pixmap.samples)
+    image.convert("P", palette=Image.ADAPTIVE, colors=RASTER_COLOURS).save(path, optimize=True)
+
+
+def extract(level: str, report_key: str, *, rasters: bool = True) -> Path:
     report = find_report(level, report_key)
     source = reference_path(report)
     if not source.exists():
@@ -161,16 +233,19 @@ def extract(level: str, report_key: str) -> Path:
     all_rules: list[dict[str, Any]] = []
     all_geometry: list[dict[str, Any]] = []
     fonts: dict[tuple[Any, ...], dict[str, Any]] = {}
+    styles = Interner()
+    paints = Interner()
 
     with fitz.open(source) as document:
         for page in document:
-            spans = extract_spans(page)
+            spans = extract_spans(page, styles)
+            paths, rectangles = extract_paths(page, paints)
             all_spans.append({"page": page.number + 1, "spans": spans})
-            rectangles = extract_rectangles(page)
-            all_rules.append({"page": page.number + 1, "rectangles": rectangles})
-            all_geometry.append(infer_geometry(page, spans))
+            all_rules.append({"page": page.number + 1, "paths": paths})
+            all_geometry.append(infer_geometry(page, spans, rectangles, styles.values))
             for font in page.get_fonts(full=True):
                 key = tuple(font)
+                pages = sorted(set(fonts.get(key, {}).get("pages", [])) | {page.number + 1})
                 fonts[key] = {
                     "xref": font[0],
                     "extension": font[1],
@@ -178,41 +253,71 @@ def extract(level: str, report_key: str) -> Path:
                     "base_font": font[3],
                     "resource_name": font[4],
                     "encoding": font[5],
-                    "referencer": font[6] if len(font) > 6 else None,
-                    "pages": sorted(set(fonts.get(key, {}).get("pages", [])) | {page.number + 1}),
+                    "embedded": font[1] != "n/a",
+                    "pages": pages,
                 }
-            pixmap = page.get_pixmap(dpi=DPI, alpha=False, colorspace=fitz.csRGB)
-            pixmap.save(destination / f"page-{page.number + 1:02d}.png")
+            if rasters:
+                save_raster(page, destination / f"page-{page.number + 1:02d}.png")
 
         embedded_dir = destination / "embedded-fonts"
         for font in fonts.values():
-            if not font["xref"]:
+            if not font["xref"] or not font["embedded"]:
                 continue
             try:
-                base_name, extension, _font_type, content = document.extract_font(font["xref"])
+                base_name, extension, _type, content = document.extract_font(font["xref"])
             except (RuntimeError, ValueError):
                 continue
             if not content:
                 continue
             embedded_dir.mkdir(exist_ok=True)
-            safe_name = "".join(
-                char if char.isalnum() or char in "-_" else "-" for char in base_name
-            )
-            font_path = embedded_dir / f"{safe_name}-{font['xref']}.{extension or 'bin'}"
+            safe = "".join(char if char.isalnum() or char in "-_" else "-" for char in base_name)
+            font_path = embedded_dir / f"{safe}-{font['xref']}.{extension or 'bin'}"
             font_path.write_bytes(content)
             font["extracted_file"] = font_path.relative_to(destination).as_posix()
             font["extracted_byte_size"] = len(content)
 
-    write_json(destination / "spans.json", {"schema_version": 1, "pages": all_spans})
-    write_json(destination / "rules.json", {"schema_version": 1, "pages": all_rules})
+    write_compact_json(
+        destination / "spans.json",
+        {
+            "schema_version": 3,
+            "row_format": ["style_index", "x0", "y0", "x1", "y1", "origin_x", "origin_y", "text"],
+            "styles": styles.values,
+            "pages": all_spans,
+        },
+    )
+    write_compact_json(
+        destination / "rules.json",
+        {
+            "schema_version": 3,
+            "row_format": ["paint_index", "item..."],
+            "item_format": {
+                "re": ["re", "x", "y", "w", "h"],
+                "l": ["l", "x0", "y0", "x1", "y1"],
+                "c": ["c", "x0", "y0", "x1", "y1", "x2", "y2", "x3", "y3"],
+                "qu": ["qu", "8 corner coordinates"],
+            },
+            "paints": paints.values,
+            "pages": all_rules,
+        },
+    )
     write_json(
         destination / "geometry.json",
-        {"schema_version": 1, "measurement_source": "PyMuPDF", "dpi": DPI, "pages": all_geometry},
+        {
+            "schema_version": 3,
+            "measurement_source": "PyMuPDF",
+            "metric_dpi": METRIC_DPI,
+            "review_raster_dpi": REVIEW_RASTER_DPI,
+            "raster_note": (
+                "page-NN.png are palette-compressed review rasters. Fidelity metrics are always "
+                "recomputed from the reference and rendered PDFs at 300 dpi by tools/compare.py."
+            ),
+            "pages": all_geometry,
+        },
     )
     write_json(
         destination / "fonts.json",
         {
-            "schema_version": 1,
+            "schema_version": 3,
             "fonts": sorted(fonts.values(), key=lambda item: (item["xref"], item["base_font"])),
         },
     )
@@ -220,14 +325,31 @@ def extract(level: str, report_key: str) -> Path:
     return destination
 
 
+def extract_all(*, rasters: bool = True) -> None:
+    for report in load_catalog()["reports"]:
+        destination = extract(report["level"], report["report_key"], rasters=rasters)
+        geometry = json.loads((destination / "geometry.json").read_text(encoding="utf-8"))
+        spans = sum(page["span_count"] for page in geometry["pages"])
+        rectangles = sum(page["rectangle_count"] for page in geometry["pages"])
+        print(
+            f"{report['ordinal']:>2} {report['level']:<9} {report['report_key']:<38} "
+            f"{len(geometry['pages']):>3}p {spans:>6} spans {rectangles:>7} rects"
+        )
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Extract measured PDF structure and 300-dpi baselines"
-    )
-    parser.add_argument("level", choices=("secondary", "primary"))
-    parser.add_argument("report_key")
+    parser = argparse.ArgumentParser(description="Extract measured structure and 300-dpi baselines")
+    parser.add_argument("level", nargs="?", choices=("secondary", "primary"))
+    parser.add_argument("report_key", nargs="?")
+    parser.add_argument("--all", action="store_true")
+    parser.add_argument("--no-rasters", action="store_true")
     args = parser.parse_args()
-    print(extract(args.level, args.report_key))
+    if args.all:
+        extract_all(rasters=not args.no_rasters)
+        return
+    if not args.level or not args.report_key:
+        parser.error("provide LEVEL and REPORT_KEY, or --all")
+    print(extract(args.level, args.report_key, rasters=not args.no_rasters))
 
 
 if __name__ == "__main__":

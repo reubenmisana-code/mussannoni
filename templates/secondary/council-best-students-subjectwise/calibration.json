@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "11.04": {
+      "dx": -0.01,
+      "dy": -1.285,
+      "samples": 6
+    },
+    "7.56": {
+      "dx": -0.035,
+      "dy": -1.15,
+      "samples": 34
+    },
+    "8.28": {
+      "dx": -0.051,
+      "dy": -1.12,
+      "samples": 285
+    },
+    "9.0": {
+      "dx": -0.045,
+      "dy": -0.01,
+      "samples": 1671
+    },
+    "9.6": {
+      "dx": -0.015,
+      "dy": -0.61,
+      "samples": 19
+    }
+  },
+  "global": {
+    "dx": -0.044,
+    "dy": -0.16,
+    "samples": 2015
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_best_students_subjectwise",
+  "residual": {
+    "dx": -0.001,
+    "dy": 0.1
+  },
+  "schema_version": 1
+}

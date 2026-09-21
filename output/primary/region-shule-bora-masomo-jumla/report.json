@@ -1,0 +1,105 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 5.0873,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.944669,
+      "text": {
+        "maximum_drift_pt": 6.422,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1855,
+        "reference_span_count": 661,
+        "rendered_character_count": 1855,
+        "rendered_span_count": 661,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.5548,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.953582,
+      "text": {
+        "maximum_drift_pt": 6.422,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1742,
+        "reference_span_count": 674,
+        "rendered_character_count": 1742,
+        "rendered_span_count": 673,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 4.6298,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.954017,
+      "text": {
+        "maximum_drift_pt": 6.422,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1870,
+        "reference_span_count": 671,
+        "rendered_character_count": 1870,
+        "rendered_span_count": 670,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "region_shule_bora_masomo_jumla",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.954017,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.48,
+    "worst_pixel_delta_percent": 5.0873,
+    "worst_ssim": 0.944669,
+    "worst_text_drift_pt": 6.422
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

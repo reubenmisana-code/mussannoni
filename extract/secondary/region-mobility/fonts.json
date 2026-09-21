@@ -1,0 +1,107 @@
+{
+  "fonts": [
+    {
+      "base_font": "CIDFont+F1",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 342524,
+      "extracted_file": "embedded-fonts/CIDFont-F1-11.ttf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "resource_name": "F1",
+      "type": "Type0",
+      "xref": 11
+    },
+    {
+      "base_font": "CIDFont+F2",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 377684,
+      "extracted_file": "embedded-fonts/CIDFont-F2-19.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F2",
+      "type": "Type0",
+      "xref": 19
+    },
+    {
+      "base_font": "CIDFont+F2",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 377684,
+      "extracted_file": "embedded-fonts/CIDFont-F2-19.ttf",
+      "pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "resource_name": "F3",
+      "type": "Type0",
+      "xref": 19
+    },
+    {
+      "base_font": "CIDFont+F3",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 360144,
+      "extracted_file": "embedded-fonts/CIDFont-F3-27.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F3",
+      "type": "Type0",
+      "xref": 27
+    },
+    {
+      "base_font": "CIDFont+F3",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 360144,
+      "extracted_file": "embedded-fonts/CIDFont-F3-27.ttf",
+      "pages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "resource_name": "F2",
+      "type": "Type0",
+      "xref": 27
+    },
+    {
+      "base_font": "CIDFont+F4",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 243588,
+      "extracted_file": "embedded-fonts/CIDFont-F4-35.ttf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "resource_name": "F4",
+      "type": "Type0",
+      "xref": 35
+    }
+  ],
+  "schema_version": 3
+}

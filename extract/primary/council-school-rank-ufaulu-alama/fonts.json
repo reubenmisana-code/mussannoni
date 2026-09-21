@@ -1,0 +1,52 @@
+{
+  "fonts": [
+    {
+      "base_font": "Arial-BoldMT",
+      "embedded": false,
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "resource_name": "F1",
+      "type": "TrueType",
+      "xref": 7
+    },
+    {
+      "base_font": "BCDEEE+ArialNarrow-Bold",
+      "embedded": true,
+      "encoding": "WinAnsiEncoding",
+      "extension": "ttf",
+      "extracted_byte_size": 69688,
+      "extracted_file": "embedded-fonts/BCDEEE-ArialNarrow-Bold-10.ttf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "resource_name": "F2",
+      "type": "TrueType",
+      "xref": 10
+    },
+    {
+      "base_font": "ArialMT",
+      "embedded": false,
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "resource_name": "F3",
+      "type": "TrueType",
+      "xref": 12
+    }
+  ],
+  "schema_version": 3
+}

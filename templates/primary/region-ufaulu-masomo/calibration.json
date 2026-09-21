@@ -1,0 +1,68 @@
+{
+  "by_size": {
+    "4.09": {
+      "dx": -0.079,
+      "dy": -1.5,
+      "samples": 178
+    },
+    "4.69": {
+      "dx": -0.101,
+      "dy": -0.66,
+      "samples": 37
+    },
+    "5.77": {
+      "dx": -0.009,
+      "dy": -0.42,
+      "samples": 5
+    },
+    "5.89": {
+      "dx": -0.082,
+      "dy": -0.69,
+      "samples": 13
+    },
+    "6.01": {
+      "dx": -0.091,
+      "dy": -0.6,
+      "samples": 17
+    },
+    "6.49": {
+      "dx": -0.12,
+      "dy": -0.405,
+      "samples": 6
+    },
+    "6.85": {
+      "dx": -0.042,
+      "dy": -0.81,
+      "samples": 157
+    },
+    "6.97": {
+      "dx": -0.06,
+      "dy": -0.72,
+      "samples": 159
+    },
+    "7.81": {
+      "dx": -0.014,
+      "dy": -1.17,
+      "samples": 33
+    },
+    "8.06": {
+      "dx": -0.04,
+      "dy": -0.93,
+      "samples": 25
+    }
+  },
+  "global": {
+    "dx": -0.062,
+    "dy": -0.93,
+    "samples": 634
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_ufaulu_masomo",
+  "residual": {
+    "dx": 0.001,
+    "dy": -0.06
+  },
+  "schema_version": 1
+}

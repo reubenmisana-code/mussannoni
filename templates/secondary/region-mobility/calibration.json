@@ -1,0 +1,48 @@
+{
+  "by_size": {
+    "10.54": {
+      "dx": -0.015,
+      "dy": 0.09,
+      "samples": 6
+    },
+    "11.62": {
+      "dx": -0.033,
+      "dy": -0.81,
+      "samples": 13
+    },
+    "6.95": {
+      "dx": -0.028,
+      "dy": -0.75,
+      "samples": 2368
+    },
+    "7.43": {
+      "dx": -0.05,
+      "dy": -1.14,
+      "samples": 2110
+    },
+    "8.5": {
+      "dx": -0.067,
+      "dy": -1.2,
+      "samples": 32
+    },
+    "9.58": {
+      "dx": -0.047,
+      "dy": -0.51,
+      "samples": 16
+    }
+  },
+  "global": {
+    "dx": -0.048,
+    "dy": -0.9,
+    "samples": 4548
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_mobility",
+  "residual": {
+    "dx": -0.0,
+    "dy": 0.03
+  },
+  "schema_version": 1
+}

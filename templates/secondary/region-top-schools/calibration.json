@@ -1,0 +1,48 @@
+{
+  "by_size": {
+    "4.33": {
+      "dx": -0.004,
+      "dy": -1.53,
+      "samples": 35
+    },
+    "4.69": {
+      "dx": -0.024,
+      "dy": -0.93,
+      "samples": 210
+    },
+    "5.04": {
+      "dx": -4.76,
+      "dy": -1.534,
+      "samples": 6
+    },
+    "5.05": {
+      "dx": -0.08,
+      "dy": -1.32,
+      "samples": 1851
+    },
+    "5.77": {
+      "dx": -0.072,
+      "dy": -0.27,
+      "samples": 160
+    },
+    "6.49": {
+      "dx": -0.042,
+      "dy": -0.195,
+      "samples": 52
+    }
+  },
+  "global": {
+    "dx": -0.072,
+    "dy": -1.2,
+    "samples": 2314
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_top_schools",
+  "residual": {
+    "dx": 0.001,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

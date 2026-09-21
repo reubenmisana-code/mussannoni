@@ -1,0 +1,38 @@
+{
+  "by_size": {
+    "4.32": {
+      "dx": -0.03,
+      "dy": -1.48,
+      "samples": 598
+    },
+    "5.04": {
+      "dx": -0.07,
+      "dy": -1.38,
+      "samples": 2593
+    },
+    "5.76": {
+      "dx": -0.098,
+      "dy": -0.22,
+      "samples": 32
+    },
+    "7.2": {
+      "dx": -0.009,
+      "dy": -0.73,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.063,
+    "dy": -1.41,
+    "samples": 3231
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_school_rank_serikali",
+  "residual": {
+    "dx": 0.003,
+    "dy": 0.02
+  },
+  "schema_version": 1
+}

@@ -28,8 +28,8 @@ def render(level: str, report_key: str) -> Path:
     )
     template = environment.get_template("template.html")
     fixture["assets"] = {
-        "shared_css_uri": (ROOT / "templates" / "_shared" / "reset.css").as_uri(),
-        "report_css_uri": (source_dir / "report.css").as_uri(),
+        "shared_css": (ROOT / "templates" / "_shared" / "reset.css").as_uri(),
+        "report_css": (source_dir / "report.css").as_uri(),
     }
     html = template.render(**fixture)
     html_path = work_dir / "rendered.html"

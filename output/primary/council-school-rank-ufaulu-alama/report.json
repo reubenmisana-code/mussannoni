@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 8.2763,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.920172,
+      "text": {
+        "maximum_drift_pt": 5.396,
+        "median_drift_pt": 0.2,
+        "missing_characters": 0,
+        "reference_character_count": 4528,
+        "reference_span_count": 1171,
+        "rendered_character_count": 4528,
+        "rendered_span_count": 1168,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 6,
+        "unmatched_rendered_spans": 3
+      }
+    },
+    {
+      "differing_pixels_percent": 13.2057,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.871642,
+      "text": {
+        "maximum_drift_pt": 5.408,
+        "median_drift_pt": 0.22,
+        "missing_characters": 0,
+        "reference_character_count": 6735,
+        "reference_span_count": 1912,
+        "rendered_character_count": 6735,
+        "rendered_span_count": 1910,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 2
+      }
+    },
+    {
+      "differing_pixels_percent": 13.0671,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.875185,
+      "text": {
+        "maximum_drift_pt": 5.408,
+        "median_drift_pt": 0.22,
+        "missing_characters": 0,
+        "reference_character_count": 6820,
+        "reference_span_count": 1921,
+        "rendered_character_count": 6820,
+        "rendered_span_count": 1919,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 2
+      }
+    },
+    {
+      "differing_pixels_percent": 3.1537,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.970571,
+      "text": {
+        "maximum_drift_pt": 5.385,
+        "median_drift_pt": 0.08,
+        "missing_characters": 0,
+        "reference_character_count": 1607,
+        "reference_span_count": 426,
+        "rendered_character_count": 1607,
+        "rendered_span_count": 424,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 2
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "council_school_rank_ufaulu_alama",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.970571,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.36,
+    "worst_pixel_delta_percent": 13.2057,
+    "worst_ssim": 0.871642,
+    "worst_text_drift_pt": 5.408
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

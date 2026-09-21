@@ -1,0 +1,117 @@
+{
+  "fonts": [
+    {
+      "base_font": "CIDFont+F1",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 345648,
+      "extracted_file": "embedded-fonts/CIDFont-F1-11.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F1",
+      "type": "Type0",
+      "xref": 11
+    },
+    {
+      "base_font": "CIDFont+F1",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 345648,
+      "extracted_file": "embedded-fonts/CIDFont-F1-11.ttf",
+      "pages": [
+        2
+      ],
+      "resource_name": "F2",
+      "type": "Type0",
+      "xref": 11
+    },
+    {
+      "base_font": "CIDFont+F2",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 362296,
+      "extracted_file": "embedded-fonts/CIDFont-F2-19.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F2",
+      "type": "Type0",
+      "xref": 19
+    },
+    {
+      "base_font": "CIDFont+F2",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 362296,
+      "extracted_file": "embedded-fonts/CIDFont-F2-19.ttf",
+      "pages": [
+        2
+      ],
+      "resource_name": "F1",
+      "type": "Type0",
+      "xref": 19
+    },
+    {
+      "base_font": "CIDFont+F3",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 387208,
+      "extracted_file": "embedded-fonts/CIDFont-F3-27.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F3",
+      "type": "Type0",
+      "xref": 27
+    },
+    {
+      "base_font": "CIDFont+F3",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 387208,
+      "extracted_file": "embedded-fonts/CIDFont-F3-27.ttf",
+      "pages": [
+        2
+      ],
+      "resource_name": "F4",
+      "type": "Type0",
+      "xref": 27
+    },
+    {
+      "base_font": "CIDFont+F4",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 92296,
+      "extracted_file": "embedded-fonts/CIDFont-F4-36.ttf",
+      "pages": [
+        1
+      ],
+      "resource_name": "F4",
+      "type": "Type0",
+      "xref": 36
+    },
+    {
+      "base_font": "CIDFont+F4",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 92296,
+      "extracted_file": "embedded-fonts/CIDFont-F4-36.ttf",
+      "pages": [
+        2
+      ],
+      "resource_name": "F3",
+      "type": "Type0",
+      "xref": 36
+    }
+  ],
+  "schema_version": 3
+}

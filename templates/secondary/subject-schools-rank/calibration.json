@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "6.11": {
+      "dx": -0.04,
+      "dy": -0.75,
+      "samples": 4248
+    },
+    "6.59": {
+      "dx": -0.017,
+      "dy": -0.39,
+      "samples": 7
+    },
+    "7.19": {
+      "dx": -0.083,
+      "dy": -0.93,
+      "samples": 2406
+    }
+  },
+  "global": {
+    "dx": -0.049,
+    "dy": -0.81,
+    "samples": 6662
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "subject_schools_rank",
+  "residual": {
+    "dx": 0.003,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

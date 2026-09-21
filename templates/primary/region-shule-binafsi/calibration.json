@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "3.97": {
+      "dx": -0.009,
+      "dy": -1.38,
+      "samples": 1003
+    },
+    "4.33": {
+      "dx": -0.018,
+      "dy": -1.74,
+      "samples": 326
+    },
+    "4.57": {
+      "dx": -0.019,
+      "dy": -1.2,
+      "samples": 6937
+    },
+    "5.29": {
+      "dx": -0.019,
+      "dy": -0.93,
+      "samples": 47
+    },
+    "6.01": {
+      "dx": -0.013,
+      "dy": -0.42,
+      "samples": 15
+    }
+  },
+  "global": {
+    "dx": -0.018,
+    "dy": -1.23,
+    "samples": 8332
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_binafsi",
+  "residual": {
+    "dx": 0.0,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

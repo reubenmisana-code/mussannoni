@@ -1,0 +1,105 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 5.7539,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.93941,
+      "text": {
+        "maximum_drift_pt": 5.729,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1822,
+        "reference_span_count": 679,
+        "rendered_character_count": 1822,
+        "rendered_span_count": 651,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 30,
+        "unmatched_rendered_spans": 2
+      }
+    },
+    {
+      "differing_pixels_percent": 5.2475,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.947509,
+      "text": {
+        "maximum_drift_pt": 5.729,
+        "median_drift_pt": 0.24,
+        "missing_characters": 0,
+        "reference_character_count": 1731,
+        "reference_span_count": 675,
+        "rendered_character_count": 1731,
+        "rendered_span_count": 659,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 18,
+        "unmatched_rendered_spans": 2
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7363,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.955946,
+      "text": {
+        "maximum_drift_pt": 6.421,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1724,
+        "reference_span_count": 672,
+        "rendered_character_count": 1724,
+        "rendered_span_count": 671,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "region_shule_bora_masomo_serikali",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.955946,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.48,
+    "worst_pixel_delta_percent": 5.7539,
+    "worst_ssim": 0.93941,
+    "worst_text_drift_pt": 6.421
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

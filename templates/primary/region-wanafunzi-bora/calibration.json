@@ -1,0 +1,88 @@
+{
+  "by_size": {
+    "4.81": {
+      "dx": -0.036,
+      "dy": -1.08,
+      "samples": 122
+    },
+    "5.17": {
+      "dx": -0.044,
+      "dy": -1.53,
+      "samples": 226
+    },
+    "5.29": {
+      "dx": -0.035,
+      "dy": -0.93,
+      "samples": 296
+    },
+    "5.41": {
+      "dx": -0.03,
+      "dy": -0.12,
+      "samples": 102
+    },
+    "5.65": {
+      "dx": -0.084,
+      "dy": -0.42,
+      "samples": 150
+    },
+    "5.77": {
+      "dx": -0.086,
+      "dy": -0.48,
+      "samples": 360
+    },
+    "5.89": {
+      "dx": -0.087,
+      "dy": -0.645,
+      "samples": 120
+    },
+    "6.01": {
+      "dx": -0.166,
+      "dy": -0.81,
+      "samples": 30
+    },
+    "6.13": {
+      "dx": -0.129,
+      "dy": -0.93,
+      "samples": 90
+    },
+    "6.37": {
+      "dx": -0.125,
+      "dy": -0.09,
+      "samples": 30
+    },
+    "7.21": {
+      "dx": -0.014,
+      "dy": -1.2,
+      "samples": 5
+    },
+    "7.81": {
+      "dx": -0.011,
+      "dy": -1.47,
+      "samples": 5
+    },
+    "7.93": {
+      "dx": -0.006,
+      "dy": -0.93,
+      "samples": 15
+    },
+    "8.18": {
+      "dx": -0.007,
+      "dy": -0.78,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.063,
+    "dy": -0.81,
+    "samples": 1564
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_wanafunzi_bora",
+  "residual": {
+    "dx": -0.0,
+    "dy": -0.09
+  },
+  "schema_version": 1
+}

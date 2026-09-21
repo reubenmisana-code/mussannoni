@@ -1,0 +1,255 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 4.791,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.935929,
+      "text": {
+        "maximum_drift_pt": 5.428,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1745,
+        "reference_span_count": 115,
+        "rendered_character_count": 1745,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7437,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.936297,
+      "text": {
+        "maximum_drift_pt": 5.446,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1760,
+        "reference_span_count": 115,
+        "rendered_character_count": 1760,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 3.9892,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.960672,
+      "text": {
+        "maximum_drift_pt": 5.334,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1721,
+        "reference_span_count": 115,
+        "rendered_character_count": 1721,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.2928,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.945483,
+      "text": {
+        "maximum_drift_pt": 5.142,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1713,
+        "reference_span_count": 115,
+        "rendered_character_count": 1713,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.6782,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.939939,
+      "text": {
+        "maximum_drift_pt": 5.223,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1730,
+        "reference_span_count": 115,
+        "rendered_character_count": 1730,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7064,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.937565,
+      "text": {
+        "maximum_drift_pt": 5.426,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1739,
+        "reference_span_count": 115,
+        "rendered_character_count": 1739,
+        "rendered_span_count": 105,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 20,
+        "unmatched_rendered_spans": 10
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7149,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 7,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.938805,
+      "text": {
+        "maximum_drift_pt": 5.223,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1757,
+        "reference_span_count": 115,
+        "rendered_character_count": 1757,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.9196,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 8,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.934001,
+      "text": {
+        "maximum_drift_pt": 5.439,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1793,
+        "reference_span_count": 115,
+        "rendered_character_count": 1793,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7545,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 9,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.936963,
+      "text": {
+        "maximum_drift_pt": 5.436,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1738,
+        "reference_span_count": 115,
+        "rendered_character_count": 1738,
+        "rendered_span_count": 115,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 9,
+  "report_key": "region_best_students_overall",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.960672,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 9,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_pixel_delta_percent": 4.9196,
+    "worst_ssim": 0.934001,
+    "worst_text_drift_pt": 5.446
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

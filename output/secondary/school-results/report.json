@@ -1,11 +1,12 @@
 {
-  "dpi": 300,
-  "engine": "chromium via agent-browser",
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
   "page_count_equal": true,
   "pages": [
     {
-      "differing_pixels_percent": 7.17331,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 10.205,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 1,
       "page_size_equal": true,
       "page_size_pt": [
@@ -13,18 +14,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.943265,
+      "ssim": 0.871364,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 219,
-        "rendered_span_count": 219,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.61,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 3433,
+        "reference_span_count": 217,
+        "rendered_character_count": 3433,
+        "rendered_span_count": 217,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 8.837386,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.1689,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 2,
       "page_size_equal": true,
       "page_size_pt": [
@@ -32,18 +39,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.924781,
+      "ssim": 0.83904,
       "text": {
-        "maximum_drift_pt": 0.015,
+        "maximum_drift_pt": 0.4,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4555,
         "reference_span_count": 259,
+        "rendered_character_count": 4555,
         "rendered_span_count": 259,
-        "text_mismatches": 0
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.173749,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.76,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 3,
       "page_size_equal": true,
       "page_size_pt": [
@@ -51,18 +64,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.924469,
+      "ssim": 0.832041,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4677,
+        "reference_span_count": 271,
+        "rendered_character_count": 4677,
+        "rendered_span_count": 271,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.345752,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.9389,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 4,
       "page_size_equal": true,
       "page_size_pt": [
@@ -70,18 +89,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.920332,
+      "ssim": 0.828356,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4781,
+        "reference_span_count": 272,
+        "rendered_character_count": 4781,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.195722,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.7774,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 5,
       "page_size_equal": true,
       "page_size_pt": [
@@ -89,18 +114,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.924735,
+      "ssim": 0.831502,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4711,
+        "reference_span_count": 272,
+        "rendered_character_count": 4711,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.302496,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.7712,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 6,
       "page_size_equal": true,
       "page_size_pt": [
@@ -108,18 +139,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.92423,
+      "ssim": 0.834828,
       "text": {
-        "maximum_drift_pt": 0.015,
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4778,
         "reference_span_count": 273,
+        "rendered_character_count": 4778,
         "rendered_span_count": 273,
-        "text_mismatches": 0
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.399667,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.8713,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 7,
       "page_size_equal": true,
       "page_size_pt": [
@@ -127,18 +164,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.919954,
+      "ssim": 0.831346,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4746,
+        "reference_span_count": 272,
+        "rendered_character_count": 4746,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.275995,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.8802,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 8,
       "page_size_equal": true,
       "page_size_pt": [
@@ -146,18 +189,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.921484,
+      "ssim": 0.82999,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4733,
+        "reference_span_count": 272,
+        "rendered_character_count": 4733,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.203577,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.7525,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 9,
       "page_size_equal": true,
       "page_size_pt": [
@@ -165,18 +214,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.922236,
+      "ssim": 0.832243,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4668,
+        "reference_span_count": 272,
+        "rendered_character_count": 4668,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.545609,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 14.2267,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 10,
       "page_size_equal": true,
       "page_size_pt": [
@@ -184,18 +239,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.921923,
+      "ssim": 0.823873,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4888,
+        "reference_span_count": 272,
+        "rendered_character_count": 4888,
+        "rendered_span_count": 272,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.533214,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 14.0559,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 11,
       "page_size_equal": true,
       "page_size_pt": [
@@ -203,18 +264,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.919552,
+      "ssim": 0.827957,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4846,
+        "reference_span_count": 271,
+        "rendered_character_count": 4846,
+        "rendered_span_count": 271,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.388877,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.9139,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 12,
       "page_size_equal": true,
       "page_size_pt": [
@@ -222,18 +289,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.921738,
+      "ssim": 0.830694,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 273,
-        "rendered_span_count": 273,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4768,
+        "reference_span_count": 270,
+        "rendered_character_count": 4768,
+        "rendered_span_count": 270,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 9.180309,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 13.6035,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 13,
       "page_size_equal": true,
       "page_size_pt": [
@@ -241,18 +314,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.923861,
+      "ssim": 0.8356,
       "text": {
-        "maximum_drift_pt": 0.015,
-        "reference_span_count": 266,
-        "rendered_span_count": 266,
-        "text_mismatches": 0
+        "maximum_drift_pt": 0.486,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 4691,
+        "reference_span_count": 265,
+        "rendered_character_count": 4691,
+        "rendered_span_count": 265,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 4.510541,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 6.2537,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 14,
       "page_size_equal": true,
       "page_size_pt": [
@@ -260,18 +339,24 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.973465,
+      "ssim": 0.951443,
       "text": {
-        "maximum_drift_pt": 0.015,
+        "maximum_drift_pt": 6.795,
+        "median_drift_pt": 0.19,
+        "missing_characters": 0,
+        "reference_character_count": 1643,
         "reference_span_count": 321,
+        "rendered_character_count": 1643,
         "rendered_span_count": 321,
-        "text_mismatches": 0
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
-      "differing_pixels_percent": 2.011075,
-      "maximum_column_edge_drift_pt": 0.0,
+      "differing_pixels_percent": 3.6268,
+      "maximum_column_edge_drift_pt": 0.24,
       "page": 15,
       "page_size_equal": true,
       "page_size_pt": [
@@ -279,21 +364,38 @@
         612.0
       ],
       "passes": false,
-      "raster_dimensions_equal": true,
-      "ssim": 0.988589,
+      "ssim": 0.972869,
       "text": {
-        "maximum_drift_pt": 0.016,
+        "maximum_drift_pt": 0.64,
+        "median_drift_pt": 0.19,
+        "missing_characters": 0,
+        "reference_character_count": 706,
         "reference_span_count": 288,
+        "rendered_character_count": 706,
         "rendered_span_count": 288,
-        "text_mismatches": 0
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     }
   ],
   "passes": false,
   "reference_page_count": 15,
-  "rendered_page_count": 15,
-  "schema_version": 1,
+  "report_key": "school_results",
+  "schema_version": 2,
   "status": "wip",
+  "summary": {
+    "best_ssim": 0.972869,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 15,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.24,
+    "worst_pixel_delta_percent": 14.2267,
+    "worst_ssim": 0.823873,
+    "worst_text_drift_pt": 6.795
+  },
   "thresholds": {
     "maximum_column_edge_drift_pt": 0.5,
     "maximum_differing_pixels_percent": 0.5,

@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 3.5056,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.964699,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1782,
+        "reference_span_count": 366,
+        "rendered_character_count": 1782,
+        "rendered_span_count": 364,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 3,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 3.5263,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.96443,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1779,
+        "reference_span_count": 366,
+        "rendered_character_count": 1779,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 3.6019,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.962745,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1772,
+        "reference_span_count": 366,
+        "rendered_character_count": 1772,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 3.1006,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.971712,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.073,
+        "missing_characters": 0,
+        "reference_character_count": 1396,
+        "reference_span_count": 366,
+        "rendered_character_count": 1396,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "region_halmashauri_jumla",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.971712,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_pixel_delta_percent": 3.6019,
+    "worst_ssim": 0.962745,
+    "worst_text_drift_pt": 0.75
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

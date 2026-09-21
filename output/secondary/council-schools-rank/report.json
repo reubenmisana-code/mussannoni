@@ -1,0 +1,55 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 13.334,
+      "maximum_column_edge_drift_pt": 0.12,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.88829,
+      "text": {
+        "maximum_drift_pt": 3.9,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 8425,
+        "reference_span_count": 2677,
+        "rendered_character_count": 8425,
+        "rendered_span_count": 2676,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 1,
+  "report_key": "council_schools_rank",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.88829,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 1,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.12,
+    "worst_pixel_delta_percent": 13.334,
+    "worst_ssim": 0.88829,
+    "worst_text_drift_pt": 3.9
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

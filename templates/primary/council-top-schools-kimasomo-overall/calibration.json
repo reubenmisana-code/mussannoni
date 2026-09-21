@@ -1,0 +1,38 @@
+{
+  "by_size": {
+    "5.28": {
+      "dx": -0.083,
+      "dy": -0.91,
+      "samples": 295
+    },
+    "5.76": {
+      "dx": -0.087,
+      "dy": -0.53,
+      "samples": 1794
+    },
+    "6.12": {
+      "dx": -0.043,
+      "dy": -0.79,
+      "samples": 42
+    },
+    "7.08": {
+      "dx": -0.091,
+      "dy": -0.175,
+      "samples": 58
+    }
+  },
+  "global": {
+    "dx": -0.087,
+    "dy": -0.54,
+    "samples": 2189
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_top_schools_kimasomo_overall",
+  "residual": {
+    "dx": -0.002,
+    "dy": -0.04
+  },
+  "schema_version": 1
+}

@@ -1,6 +1,6 @@
 {
-  "dpi": 300,
   "measurement_source": "PyMuPDF",
+  "metric_dpi": 300,
   "pages": [
     {
       "baseline_count": 66,
@@ -124,9 +124,113 @@
         {
           "occurrences": 1,
           "x_pt": 171.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 172.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 59.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 109.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 219.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 240.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 271.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 295.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 482.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 276.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 301.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.78,
+        709.37,
+        550.6
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 182,
+          "size_pt": 6.6
+        },
+        {
+          "occurrences": 29,
+          "size_pt": 7.2
+        },
+        {
+          "occurrences": 7,
+          "size_pt": 8.16
+        },
+        {
+          "occurrences": 1,
+          "size_pt": 9.24
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 452,
+      "margins_pt": {
+        "bottom": 61.4,
+        "left": 48.84,
+        "right": 82.63,
+        "top": 56.78
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        134.3,
+        135.26,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        343.61,
+        344.57,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 1,
+      "rectangle_count": 2759,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 24,
           "pitch_pt": 12.24
@@ -158,40 +262,9 @@
         {
           "occurrences": 1,
           "pitch_pt": 10.8
-        },
-        {
-          "occurrences": 1,
-          "pitch_pt": 12.27
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.78,
-        709.3724,
-        550.602
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 61.398,
-        "left": 48.84,
-        "right": 82.6276,
-        "top": 56.78
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 1,
-      "rotation": 0,
+      "span_count": 219,
       "width_pt": 792.0
     },
     {
@@ -246,7 +319,55 @@
           "x_pt": 301.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        715.97,
+        522.4
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 259,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 532,
+      "margins_pt": {
+        "bottom": 89.6,
+        "left": 48.84,
+        "right": 76.03,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 2,
+      "rectangle_count": 3291,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 33,
           "pitch_pt": 12.24
@@ -260,34 +381,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        715.9659,
-        522.402
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 89.598,
-        "left": 48.84,
-        "right": 76.0341,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 2,
-      "rotation": 0,
+      "span_count": 259,
       "width_pt": 792.0
     },
     {
@@ -346,7 +440,55 @@
           "x_pt": 274.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        710.8,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 81.2,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 3,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -360,34 +502,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        710.8046,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 81.1954,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 3,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -458,7 +573,55 @@
           "x_pt": 301.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        720.76,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 71.24,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 4,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -472,34 +635,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        720.7575,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 71.2425,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 4,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -558,7 +694,55 @@
           "x_pt": 301.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        721.12,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 70.88,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 5,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -572,34 +756,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        721.1205,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 70.8795,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 5,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -646,7 +803,55 @@
           "x_pt": 274.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        720.76,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 71.24,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 6,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -660,34 +865,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        720.7575,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 71.2425,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 6,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -754,7 +932,55 @@
           "x_pt": 274.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        720.76,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 71.24,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 7,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -768,34 +994,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        720.7575,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 71.2425,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 7,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -866,7 +1065,55 @@
           "x_pt": 301.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        720.41,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 71.59,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 8,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -880,34 +1127,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        720.4144,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 71.5856,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 8,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -970,7 +1190,55 @@
           "x_pt": 301.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        712.36,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 79.64,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 9,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -984,34 +1252,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        712.3623,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 79.6377,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 9,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -1082,7 +1323,55 @@
           "x_pt": 301.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        718.96,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 73.04,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 10,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -1096,34 +1385,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        718.9557,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 73.0443,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 10,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -1190,7 +1452,55 @@
           "x_pt": 301.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        716.32,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 75.68,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 11,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -1204,34 +1514,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        716.3158,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 75.6842,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 11,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -1302,7 +1585,55 @@
           "x_pt": 301.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        715.6,
+        547.84
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 273,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 560,
+      "margins_pt": {
+        "bottom": 64.16,
+        "left": 48.84,
+        "right": 76.4,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 12,
+      "rectangle_count": 3467,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 35,
           "pitch_pt": 12.24
@@ -1316,34 +1647,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        715.5964,
-        547.842
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 64.158,
-        "left": 48.84,
-        "right": 76.4036,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 12,
-      "rotation": 0,
+      "span_count": 273,
       "width_pt": 792.0
     },
     {
@@ -1402,7 +1706,55 @@
           "x_pt": 301.5
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        48.84,
+        56.57,
+        715.24,
+        535.12
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 266,
+          "size_pt": 6.6
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 546,
+      "margins_pt": {
+        "bottom": 76.88,
+        "left": 48.84,
+        "right": 76.76,
+        "top": 56.57
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 13,
+      "rectangle_count": 3380,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 34,
           "pitch_pt": 12.24
@@ -1416,34 +1768,7 @@
           "pitch_pt": 12.26
         }
       ],
-      "content_bbox": [
-        48.84,
-        56.567,
-        715.2399,
-        535.122
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 76.878,
-        "left": 48.84,
-        "right": 76.7601,
-        "top": 56.567
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 13,
-      "rotation": 0,
+      "span_count": 266,
       "width_pt": 792.0
     },
     {
@@ -1568,9 +1893,139 @@
         {
           "occurrences": 3,
           "x_pt": 296.5
+        },
+        {
+          "occurrences": 3,
+          "x_pt": 328.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 288.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 384.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 501.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 324.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 498.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 300.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 222.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 273.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 559.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        45.36,
+        65.38,
+        741.32,
+        394.22
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 294,
+          "size_pt": 7.2
+        },
+        {
+          "occurrences": 13,
+          "size_pt": 8.16
+        },
+        {
+          "occurrences": 13,
+          "size_pt": 6.6
+        },
+        {
+          "occurrences": 1,
+          "size_pt": 9.24
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 710,
+      "margins_pt": {
+        "bottom": 217.78,
+        "left": 45.36,
+        "right": 50.68,
+        "top": 65.38
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        134.3,
+        135.26,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        343.61,
+        344.57,
+        372.89,
+        373.85,
+        402.17,
+        403.13,
+        431.47,
+        432.43,
+        460.75,
+        461.71,
+        490.03,
+        490.99,
+        519.31,
+        520.27,
+        548.59,
+        549.55,
+        577.87,
+        578.83,
+        608.5,
+        609.46,
+        637.78,
+        638.74,
+        655.78,
+        656.74,
+        673.78,
+        674.74,
+        703.06,
+        704.02,
+        745.9,
+        746.86
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 14,
+      "rectangle_count": 4206,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 11,
           "pitch_pt": 11.04
@@ -1602,52 +2057,9 @@
         {
           "occurrences": 1,
           "pitch_pt": 10.68
-        },
-        {
-          "occurrences": 1,
-          "pitch_pt": 9.99
-        },
-        {
-          "occurrences": 1,
-          "pitch_pt": 20.16
-        },
-        {
-          "occurrences": 1,
-          "pitch_pt": 15.84
-        },
-        {
-          "occurrences": 1,
-          "pitch_pt": 5.16
         }
       ],
-      "content_bbox": [
-        45.36,
-        65.384,
-        741.3238,
-        394.222
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 217.778,
-        "left": 45.36,
-        "right": 50.6762,
-        "top": 65.384
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 14,
-      "rotation": 0,
+      "span_count": 321,
       "width_pt": 792.0
     },
     {
@@ -1772,9 +2184,127 @@
         {
           "occurrences": 2,
           "x_pt": 248.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 326.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 298.5
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 355.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 441.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 533.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 644.0
+        },
+        {
+          "occurrences": 2,
+          "x_pt": 685.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 45.5
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 649.0
+        },
+        {
+          "occurrences": 1,
+          "x_pt": 249.0
         }
       ],
-      "common_row_pitches": [
+      "content_bbox": [
+        45.36,
+        66.22,
+        695.3,
+        240.48
+      ],
+      "font_size_histogram": [
+        {
+          "occurrences": 265,
+          "size_pt": 7.2
+        },
+        {
+          "occurrences": 23,
+          "size_pt": 8.16
+        }
+      ],
+      "height_pt": 612.0,
+      "horizontal_rule_count": 614,
+      "margins_pt": {
+        "bottom": 371.52,
+        "left": 45.36,
+        "right": 96.7,
+        "top": 66.22
+      },
+      "measured_column_edges": [
+        43.32,
+        44.28,
+        88.82,
+        89.78,
+        213.02,
+        213.98,
+        238.34,
+        239.3,
+        263.69,
+        264.65,
+        289.01,
+        289.97,
+        314.33,
+        315.29,
+        343.61,
+        344.57,
+        372.89,
+        373.85,
+        402.17,
+        403.13,
+        431.47,
+        432.43,
+        460.75,
+        461.71,
+        490.03,
+        490.99,
+        519.31,
+        520.27,
+        548.59,
+        549.55,
+        577.87,
+        578.83,
+        608.5,
+        609.46,
+        637.78,
+        638.74,
+        655.78,
+        656.74,
+        673.78,
+        674.74,
+        703.06,
+        704.02
+      ],
+      "media_box": [
+        0.0,
+        0.0,
+        792.0,
+        612.0
+      ],
+      "orientation": "landscape",
+      "page_number": 15,
+      "rectangle_count": 3618,
+      "rotation": 0,
+      "row_pitch_candidates": [
         {
           "occurrences": 11,
           "pitch_pt": 11.16
@@ -1792,36 +2322,11 @@
           "pitch_pt": 11.19
         }
       ],
-      "content_bbox": [
-        45.36,
-        66.224,
-        695.3032,
-        240.482
-      ],
-      "crop_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "height_pt": 612.0,
-      "margins_pt": {
-        "bottom": 371.518,
-        "left": 45.36,
-        "right": 96.6968,
-        "top": 66.224
-      },
-      "media_box": [
-        0.0,
-        0.0,
-        792.0,
-        612.0
-      ],
-      "orientation": "landscape",
-      "page_number": 15,
-      "rotation": 0,
+      "span_count": 288,
       "width_pt": 792.0
     }
   ],
-  "schema_version": 1
+  "raster_note": "page-NN.png are palette-compressed review rasters. Fidelity metrics are always recomputed from the reference and rendered PDFs at 300 dpi by tools/compare.py.",
+  "review_raster_dpi": 150,
+  "schema_version": 3
 }

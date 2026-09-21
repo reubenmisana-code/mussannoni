@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "3.48": {
+      "dx": -0.121,
+      "dy": -0.52,
+      "samples": 8
+    },
+    "3.84": {
+      "dx": -0.131,
+      "dy": -1.15,
+      "samples": 9
+    },
+    "4.2": {
+      "dx": -0.022,
+      "dy": -1.61,
+      "samples": 1046
+    },
+    "4.92": {
+      "dx": -0.082,
+      "dy": -1.47,
+      "samples": 4183
+    },
+    "5.64": {
+      "dx": -0.049,
+      "dy": -0.43,
+      "samples": 160
+    }
+  },
+  "global": {
+    "dx": -0.078,
+    "dy": -1.47,
+    "samples": 5410
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_school_rank_ufaulu_alama",
+  "residual": {
+    "dx": -0.003,
+    "dy": -0.01
+  },
+  "schema_version": 1
+}

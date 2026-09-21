@@ -1,0 +1,48 @@
+{
+  "by_size": {
+    "4.08": {
+      "dx": -3.836,
+      "dy": -1.396,
+      "samples": 6
+    },
+    "4.45": {
+      "dx": -0.022,
+      "dy": -1.86,
+      "samples": 2535
+    },
+    "4.8": {
+      "dx": -4.481,
+      "dy": -1.21,
+      "samples": 6
+    },
+    "4.81": {
+      "dx": -0.113,
+      "dy": -1.32,
+      "samples": 12445
+    },
+    "5.41": {
+      "dx": -0.084,
+      "dy": -0.78,
+      "samples": 67
+    },
+    "6.13": {
+      "dx": -0.127,
+      "dy": -0.84,
+      "samples": 59
+    }
+  },
+  "global": {
+    "dx": -0.108,
+    "dy": -1.38,
+    "samples": 15119
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_schools_rank_overall",
+  "residual": {
+    "dx": 0.006,
+    "dy": 0.06
+  },
+  "schema_version": 1
+}

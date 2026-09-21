@@ -1,0 +1,180 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 11.983,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.882914,
+      "text": {
+        "maximum_drift_pt": 1.11,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 7012,
+        "reference_span_count": 2446,
+        "rendered_character_count": 7012,
+        "rendered_span_count": 2413,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 44,
+        "unmatched_rendered_spans": 11
+      }
+    },
+    {
+      "differing_pixels_percent": 13.637,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.874675,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 8514,
+        "reference_span_count": 2978,
+        "rendered_character_count": 8514,
+        "rendered_span_count": 2965,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 26,
+        "unmatched_rendered_spans": 13
+      }
+    },
+    {
+      "differing_pixels_percent": 14.7834,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.861079,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 9730,
+        "reference_span_count": 2979,
+        "rendered_character_count": 9730,
+        "rendered_span_count": 2966,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 26,
+        "unmatched_rendered_spans": 13
+      }
+    },
+    {
+      "differing_pixels_percent": 14.8351,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.859761,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 9778,
+        "reference_span_count": 2979,
+        "rendered_character_count": 9778,
+        "rendered_span_count": 2968,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 22,
+        "unmatched_rendered_spans": 11
+      }
+    },
+    {
+      "differing_pixels_percent": 14.5969,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.861767,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 9534,
+        "reference_span_count": 2979,
+        "rendered_character_count": 9534,
+        "rendered_span_count": 2965,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 28,
+        "unmatched_rendered_spans": 14
+      }
+    },
+    {
+      "differing_pixels_percent": 4.7235,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.958157,
+      "text": {
+        "maximum_drift_pt": 0.75,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 3185,
+        "reference_span_count": 986,
+        "rendered_character_count": 3185,
+        "rendered_span_count": 985,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 6,
+  "report_key": "region_schools_rank_overall",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.958157,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 6,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_pixel_delta_percent": 14.8351,
+    "worst_ssim": 0.859761,
+    "worst_text_drift_pt": 1.11
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

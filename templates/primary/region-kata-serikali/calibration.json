@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "3.85": {
+      "dx": -0.015,
+      "dy": -1.2,
+      "samples": 299
+    },
+    "4.21": {
+      "dx": -0.015,
+      "dy": -1.65,
+      "samples": 382
+    },
+    "4.57": {
+      "dx": -0.042,
+      "dy": -1.2,
+      "samples": 5986
+    },
+    "5.17": {
+      "dx": -0.038,
+      "dy": -1.65,
+      "samples": 234
+    },
+    "5.77": {
+      "dx": -0.015,
+      "dy": -0.72,
+      "samples": 199
+    }
+  },
+  "global": {
+    "dx": -0.038,
+    "dy": -1.29,
+    "samples": 7106
+  },
+  "iterations": 3,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_kata_serikali",
+  "residual": {
+    "dx": 0.003,
+    "dy": -0.03
+  },
+  "schema_version": 1
+}

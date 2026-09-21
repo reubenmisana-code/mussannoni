@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "6.36": {
+      "dx": -0.043,
+      "dy": -0.25,
+      "samples": 704
+    },
+    "6.84": {
+      "dx": -0.031,
+      "dy": -0.68,
+      "samples": 28
+    },
+    "7.8": {
+      "dx": -0.023,
+      "dy": -1.44,
+      "samples": 21
+    }
+  },
+  "global": {
+    "dx": -0.043,
+    "dy": -0.27,
+    "samples": 753
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_best_students",
+  "residual": {
+    "dx": 0.002,
+    "dy": -0.04
+  },
+  "schema_version": 1
+}

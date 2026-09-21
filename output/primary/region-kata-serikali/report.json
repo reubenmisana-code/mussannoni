@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 10.5546,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.896461,
+      "text": {
+        "maximum_drift_pt": 1.44,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 6809,
+        "reference_span_count": 2143,
+        "rendered_character_count": 6809,
+        "rendered_span_count": 2142,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 10.5466,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.906208,
+      "text": {
+        "maximum_drift_pt": 0.78,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 7532,
+        "reference_span_count": 2354,
+        "rendered_character_count": 7532,
+        "rendered_span_count": 2353,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 10.4887,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.909544,
+      "text": {
+        "maximum_drift_pt": 0.78,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 7552,
+        "reference_span_count": 2354,
+        "rendered_character_count": 7552,
+        "rendered_span_count": 2353,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 1.5018,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.988519,
+      "text": {
+        "maximum_drift_pt": 0.6,
+        "median_drift_pt": 0.12,
+        "missing_characters": 0,
+        "reference_character_count": 961,
+        "reference_span_count": 263,
+        "rendered_character_count": 961,
+        "rendered_span_count": 262,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "region_kata_serikali",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.988519,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.3,
+    "worst_pixel_delta_percent": 10.5546,
+    "worst_ssim": 0.896461,
+    "worst_text_drift_pt": 1.44
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

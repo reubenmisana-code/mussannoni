@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "6.6": {
+      "dx": -0.045,
+      "dy": -0.396,
+      "samples": 3434
+    },
+    "7.2": {
+      "dx": -0.058,
+      "dy": -0.89,
+      "samples": 584
+    },
+    "8.16": {
+      "dx": -0.063,
+      "dy": -1.19,
+      "samples": 43
+    }
+  },
+  "global": {
+    "dx": -0.045,
+    "dy": -0.456,
+    "samples": 4063
+  },
+  "iterations": 4,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "school_results",
+  "residual": {
+    "dx": -0.005,
+    "dy": -0.006
+  },
+  "schema_version": 1
+}

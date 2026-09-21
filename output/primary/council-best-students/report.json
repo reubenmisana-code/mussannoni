@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 6.0265,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.932243,
+      "text": {
+        "maximum_drift_pt": 5.635,
+        "median_drift_pt": 0.17,
+        "missing_characters": 0,
+        "reference_character_count": 2641,
+        "reference_span_count": 552,
+        "rendered_character_count": 2641,
+        "rendered_span_count": 549,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 6,
+        "unmatched_rendered_spans": 3
+      }
+    },
+    {
+      "differing_pixels_percent": 2.6721,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.968356,
+      "text": {
+        "maximum_drift_pt": 5.635,
+        "median_drift_pt": 0.25,
+        "missing_characters": 0,
+        "reference_character_count": 1331,
+        "reference_span_count": 275,
+        "rendered_character_count": 1331,
+        "rendered_span_count": 273,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 2
+      }
+    },
+    {
+      "differing_pixels_percent": 5.7125,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.937085,
+      "text": {
+        "maximum_drift_pt": 5.635,
+        "median_drift_pt": 0.19,
+        "missing_characters": 0,
+        "reference_character_count": 2577,
+        "reference_span_count": 549,
+        "rendered_character_count": 2577,
+        "rendered_span_count": 546,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 6,
+        "unmatched_rendered_spans": 3
+      }
+    },
+    {
+      "differing_pixels_percent": 3.0183,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.965611,
+      "text": {
+        "maximum_drift_pt": 4.827,
+        "median_drift_pt": 0.13,
+        "missing_characters": 0,
+        "reference_character_count": 1318,
+        "reference_span_count": 275,
+        "rendered_character_count": 1318,
+        "rendered_span_count": 273,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 2
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "council_best_students",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.968356,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.24,
+    "worst_pixel_delta_percent": 6.0265,
+    "worst_ssim": 0.932243,
+    "worst_text_drift_pt": 5.635
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "3.85": {
+      "dx": -0.014,
+      "dy": -0.93,
+      "samples": 116
+    },
+    "4.21": {
+      "dx": -0.024,
+      "dy": -1.635,
+      "samples": 124
+    },
+    "4.57": {
+      "dx": -0.066,
+      "dy": -1.2,
+      "samples": 1969
+    },
+    "5.17": {
+      "dx": -0.162,
+      "dy": -1.59,
+      "samples": 85
+    },
+    "5.77": {
+      "dx": 0.006,
+      "dy": -0.69,
+      "samples": 66
+    }
+  },
+  "global": {
+    "dx": -0.053,
+    "dy": -1.2,
+    "samples": 2366
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_kata_binafsi",
+  "residual": {
+    "dx": -0.001,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

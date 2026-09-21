@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "4.56": {
+      "dx": -0.097,
+      "dy": -0.825,
+      "samples": 115
+    },
+    "4.92": {
+      "dx": -0.026,
+      "dy": -1.325,
+      "samples": 18
+    },
+    "5.28": {
+      "dx": -0.1,
+      "dy": -0.85,
+      "samples": 611
+    },
+    "6.12": {
+      "dx": -0.019,
+      "dy": -0.725,
+      "samples": 52
+    },
+    "6.84": {
+      "dx": -0.022,
+      "dy": -0.34,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.097,
+    "dy": -0.84,
+    "samples": 801
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_kata_rank_grading",
+  "residual": {
+    "dx": -0.006,
+    "dy": 0.02
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "4.8": {
+      "dx": -0.037,
+      "dy": -1.15,
+      "samples": 477
+    },
+    "5.64": {
+      "dx": -0.182,
+      "dy": -0.33,
+      "samples": 1891
+    },
+    "6.36": {
+      "dx": -0.168,
+      "dy": -0.01,
+      "samples": 36
+    },
+    "7.2": {
+      "dx": -0.105,
+      "dy": -0.85,
+      "samples": 11
+    },
+    "8.04": {
+      "dx": -0.012,
+      "dy": -0.64,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.17,
+    "dy": -0.46,
+    "samples": 2420
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_top_schools_grading",
+  "residual": {
+    "dx": -0.008,
+    "dy": -0.05
+  },
+  "schema_version": 1
+}

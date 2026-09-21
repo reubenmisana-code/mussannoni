@@ -1,0 +1,80 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 9.6656,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.904897,
+      "text": {
+        "maximum_drift_pt": 1.35,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 5789,
+        "reference_span_count": 2143,
+        "rendered_character_count": 5789,
+        "rendered_span_count": 2142,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "differing_pixels_percent": 1.2561,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.988319,
+      "text": {
+        "maximum_drift_pt": 0.6,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 733,
+        "reference_span_count": 227,
+        "rendered_character_count": 733,
+        "rendered_span_count": 226,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 2,
+  "report_key": "region_kata_binafsi",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.988319,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 2,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.3,
+    "worst_pixel_delta_percent": 9.6656,
+    "worst_ssim": 0.904897,
+    "worst_text_drift_pt": 1.35
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

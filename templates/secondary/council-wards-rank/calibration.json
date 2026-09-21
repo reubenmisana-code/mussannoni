@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "5.64": {
+      "dx": -0.095,
+      "dy": -0.28,
+      "samples": 6
+    },
+    "6.72": {
+      "dx": -0.012,
+      "dy": -0.57,
+      "samples": 23
+    },
+    "7.32": {
+      "dx": -0.075,
+      "dy": -1.025,
+      "samples": 323
+    },
+    "7.8": {
+      "dx": -0.063,
+      "dy": -1.22,
+      "samples": 70
+    },
+    "9.0": {
+      "dx": -0.08,
+      "dy": -0.01,
+      "samples": 11
+    }
+  },
+  "global": {
+    "dx": -0.073,
+    "dy": -1.04,
+    "samples": 437
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_wards_rank",
+  "residual": {
+    "dx": -0.006,
+    "dy": 0.08
+  },
+  "schema_version": 1
+}

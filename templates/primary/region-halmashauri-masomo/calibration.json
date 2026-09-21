@@ -1,0 +1,48 @@
+{
+  "by_size": {
+    "4.09": {
+      "dx": -0.016,
+      "dy": -1.38,
+      "samples": 40
+    },
+    "4.57": {
+      "dx": -0.014,
+      "dy": -0.9,
+      "samples": 8
+    },
+    "4.81": {
+      "dx": -0.066,
+      "dy": -1.2,
+      "samples": 1627
+    },
+    "5.29": {
+      "dx": -0.072,
+      "dy": -0.72,
+      "samples": 318
+    },
+    "5.41": {
+      "dx": -0.029,
+      "dy": -0.18,
+      "samples": 155
+    },
+    "6.13": {
+      "dx": -0.053,
+      "dy": -0.735,
+      "samples": 40
+    }
+  },
+  "global": {
+    "dx": -0.063,
+    "dy": -1.17,
+    "samples": 2188
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_halmashauri_masomo",
+  "residual": {
+    "dx": 0.0,
+    "dy": -0.15
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,43 @@
+{
+  "by_size": {
+    "3.72": {
+      "dx": -0.095,
+      "dy": -1.42,
+      "samples": 51
+    },
+    "4.32": {
+      "dx": -0.076,
+      "dy": -1.42,
+      "samples": 200
+    },
+    "4.92": {
+      "dx": -0.025,
+      "dy": -0.97,
+      "samples": 15
+    },
+    "5.64": {
+      "dx": -0.092,
+      "dy": -0.43,
+      "samples": 6
+    },
+    "6.24": {
+      "dx": -0.009,
+      "dy": -0.13,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.074,
+    "dy": -1.42,
+    "samples": 277
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_ufaulu_wa_masomo",
+  "residual": {
+    "dx": -0.001,
+    "dy": 0.04
+  },
+  "schema_version": 1
+}

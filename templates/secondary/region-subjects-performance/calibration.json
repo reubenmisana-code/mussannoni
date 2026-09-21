@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "10.1": {
+      "dx": -0.017,
+      "dy": -0.03,
+      "samples": 19
+    },
+    "8.66": {
+      "dx": -0.049,
+      "dy": -1.44,
+      "samples": 163
+    },
+    "9.38": {
+      "dx": -0.041,
+      "dy": -0.54,
+      "samples": 307
+    }
+  },
+  "global": {
+    "dx": -0.039,
+    "dy": -0.72,
+    "samples": 489
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_subjects_performance",
+  "residual": {
+    "dx": 0.005,
+    "dy": 0.0
+  },
+  "schema_version": 1
+}

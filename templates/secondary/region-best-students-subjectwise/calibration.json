@@ -1,0 +1,58 @@
+{
+  "by_size": {
+    "7.33": {
+      "dx": -0.026,
+      "dy": -0.945,
+      "samples": 100
+    },
+    "7.69": {
+      "dx": -0.012,
+      "dy": -0.93,
+      "samples": 6
+    },
+    "8.18": {
+      "dx": -0.037,
+      "dy": -0.93,
+      "samples": 1486
+    },
+    "8.3": {
+      "dx": -0.046,
+      "dy": -1.14,
+      "samples": 641
+    },
+    "8.54": {
+      "dx": -0.02,
+      "dy": -1.08,
+      "samples": 90
+    },
+    "8.78": {
+      "dx": -0.029,
+      "dy": -0.9,
+      "samples": 47
+    },
+    "9.74": {
+      "dx": -0.016,
+      "dy": 0.06,
+      "samples": 75
+    },
+    "9.98": {
+      "dx": -0.018,
+      "dy": -0.15,
+      "samples": 35
+    }
+  },
+  "global": {
+    "dx": -0.038,
+    "dy": -0.99,
+    "samples": 2480
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_best_students_subjectwise",
+  "residual": {
+    "dx": -0.001,
+    "dy": 0.09
+  },
+  "schema_version": 1
+}

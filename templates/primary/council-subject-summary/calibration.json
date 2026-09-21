@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "6.48": {
+      "dx": -0.039,
+      "dy": -0.42,
+      "samples": 35
+    },
+    "7.56": {
+      "dx": -0.068,
+      "dy": -1.29,
+      "samples": 340
+    },
+    "8.64": {
+      "dx": -0.012,
+      "dy": -1.305,
+      "samples": 8
+    }
+  },
+  "global": {
+    "dx": -0.066,
+    "dy": -1.26,
+    "samples": 388
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_subject_summary",
+  "residual": {
+    "dx": -0.005,
+    "dy": -0.17
+  },
+  "schema_version": 1
+}

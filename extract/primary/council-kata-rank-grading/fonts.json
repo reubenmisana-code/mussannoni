@@ -1,0 +1,29 @@
+{
+  "fonts": [
+    {
+      "base_font": "Arial-BoldMT",
+      "embedded": false,
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1
+      ],
+      "resource_name": "F1",
+      "type": "TrueType",
+      "xref": 7
+    },
+    {
+      "base_font": "ArialMT",
+      "embedded": false,
+      "encoding": "WinAnsiEncoding",
+      "extension": "n/a",
+      "pages": [
+        1
+      ],
+      "resource_name": "F2",
+      "type": "TrueType",
+      "xref": 10
+    }
+  ],
+  "schema_version": 3
+}

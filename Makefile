@@ -1,27 +1,49 @@
-.PHONY: sync fetch-secondary-school extract-secondary-school scaffold-secondary-school render-secondary-school verify-secondary-school convert-secondary-school lint test
+.PHONY: sync catalog fetch extract fonts convert convert-secondary convert-primary status lint format test check
+
+REPORT ?=
+LEVEL ?=
 
 sync:
 	uv sync
 
-fetch-secondary-school:
-	uv run python -m tools.fetch secondary school_results
+# Rebuild the 46-entry catalog from the two live listing pages.
+catalog:
+	uv run python -m tools.catalog
 
-extract-secondary-school:
-	uv run python -m tools.extract secondary school_results
+# Fetch every reference PDF. Existing files are never replaced without --force.
+fetch:
+	uv run python -m tools.fetch --all
 
-scaffold-secondary-school:
-	uv run python -m tools.scaffold secondary school_results
+extract:
+	uv run python -m tools.extract --all
 
-render-secondary-school:
-	uv run python -m tools.render secondary school_results
+fonts:
+	uv run python -m tools.fonts
 
-verify-secondary-school:
-	uv run python -m tools.compare secondary school_results
+# Full loop for the whole corpus: scaffold, render, tune, render, compare.
+convert:
+	uv run python -m tools.convert --all
 
-convert-secondary-school: extract-secondary-school scaffold-secondary-school render-secondary-school verify-secondary-school
+convert-secondary:
+	uv run python -m tools.convert --all --only secondary
+
+convert-primary:
+	uv run python -m tools.convert --all --only primary
+
+# Single report, e.g. make convert-one LEVEL=secondary REPORT=school_results
+convert-one:
+	uv run python -m tools.convert $(LEVEL) $(REPORT)
+
+status:
+	uv run python -m tools.status
 
 lint:
 	uv run ruff check .
 
+format:
+	uv run ruff format tools tests
+
 test:
 	uv run pytest
+
+check: lint test

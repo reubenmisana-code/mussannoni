@@ -1,0 +1,78 @@
+{
+  "by_size": {
+    "4.45": {
+      "dx": -0.2,
+      "dy": -1.41,
+      "samples": 10
+    },
+    "4.81": {
+      "dx": -0.121,
+      "dy": -1.14,
+      "samples": 292
+    },
+    "5.05": {
+      "dx": -0.215,
+      "dy": -1.395,
+      "samples": 20
+    },
+    "5.17": {
+      "dx": -0.124,
+      "dy": -1.29,
+      "samples": 293
+    },
+    "5.29": {
+      "dx": -0.237,
+      "dy": -0.87,
+      "samples": 9
+    },
+    "5.53": {
+      "dx": -0.125,
+      "dy": -0.27,
+      "samples": 482
+    },
+    "5.65": {
+      "dx": -0.099,
+      "dy": -0.3,
+      "samples": 68
+    },
+    "5.77": {
+      "dx": -0.151,
+      "dy": -0.57,
+      "samples": 228
+    },
+    "6.01": {
+      "dx": -0.137,
+      "dy": -0.87,
+      "samples": 79
+    },
+    "6.25": {
+      "dx": -0.207,
+      "dy": -0.81,
+      "samples": 12
+    },
+    "6.49": {
+      "dx": -0.084,
+      "dy": -0.48,
+      "samples": 108
+    },
+    "6.73": {
+      "dx": -0.133,
+      "dy": -0.72,
+      "samples": 48
+    }
+  },
+  "global": {
+    "dx": -0.128,
+    "dy": -0.66,
+    "samples": 1654
+  },
+  "iterations": 2,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_council_performance",
+  "residual": {
+    "dx": -0.001,
+    "dy": -0.03
+  },
+  "schema_version": 1
+}

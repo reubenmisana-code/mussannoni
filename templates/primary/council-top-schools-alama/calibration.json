@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "5.64": {
+      "dx": -0.062,
+      "dy": -0.22,
+      "samples": 8
+    },
+    "7.44": {
+      "dx": -0.052,
+      "dy": -1.0,
+      "samples": 851
+    },
+    "8.76": {
+      "dx": -0.018,
+      "dy": -0.82,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.052,
+    "dy": -1.0,
+    "samples": 864
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_top_schools_alama",
+  "residual": {
+    "dx": 0.003,
+    "dy": 0.16
+  },
+  "schema_version": 1
+}

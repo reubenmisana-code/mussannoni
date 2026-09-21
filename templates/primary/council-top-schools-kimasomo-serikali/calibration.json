@@ -1,0 +1,38 @@
+{
+  "by_size": {
+    "5.52": {
+      "dx": -0.079,
+      "dy": -0.27,
+      "samples": 288
+    },
+    "6.0": {
+      "dx": -0.074,
+      "dy": -0.79,
+      "samples": 1966
+    },
+    "6.48": {
+      "dx": -0.048,
+      "dy": -0.16,
+      "samples": 38
+    },
+    "7.32": {
+      "dx": -0.078,
+      "dy": -0.91,
+      "samples": 58
+    }
+  },
+  "global": {
+    "dx": -0.074,
+    "dy": -0.72,
+    "samples": 2350
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_top_schools_kimasomo_serikali",
+  "residual": {
+    "dx": 0.0,
+    "dy": -0.25
+  },
+  "schema_version": 1
+}

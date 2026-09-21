@@ -1,0 +1,48 @@
+{
+  "by_size": {
+    "4.09": {
+      "dx": 0.098,
+      "dy": -1.38,
+      "samples": 2777
+    },
+    "4.45": {
+      "dx": -0.013,
+      "dy": -1.68,
+      "samples": 1852
+    },
+    "4.81": {
+      "dx": -0.039,
+      "dy": -1.23,
+      "samples": 28304
+    },
+    "5.41": {
+      "dx": -0.045,
+      "dy": 0.18,
+      "samples": 91
+    },
+    "6.13": {
+      "dx": -0.027,
+      "dy": -0.75,
+      "samples": 16
+    },
+    "6.85": {
+      "dx": -0.009,
+      "dy": -0.51,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.037,
+    "dy": -1.23,
+    "samples": 33045
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_serikali",
+  "residual": {
+    "dx": 0.0,
+    "dy": 0.06
+  },
+  "schema_version": 1
+}

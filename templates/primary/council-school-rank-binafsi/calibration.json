@@ -1,0 +1,33 @@
+{
+  "by_size": {
+    "4.2": {
+      "dx": -0.018,
+      "dy": -1.53,
+      "samples": 520
+    },
+    "4.92": {
+      "dx": -0.041,
+      "dy": -1.406,
+      "samples": 2583
+    },
+    "5.64": {
+      "dx": -0.053,
+      "dy": -0.32,
+      "samples": 36
+    }
+  },
+  "global": {
+    "dx": -0.039,
+    "dy": -1.42,
+    "samples": 3143
+  },
+  "iterations": 2,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_school_rank_binafsi",
+  "residual": {
+    "dx": 0.001,
+    "dy": -0.02
+  },
+  "schema_version": 1
+}

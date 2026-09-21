@@ -1,0 +1,105 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "differing_pixels_percent": 5.412,
+      "maximum_column_edge_drift_pt": 0.42,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.945129,
+      "text": {
+        "maximum_drift_pt": 6.014,
+        "median_drift_pt": 0.22,
+        "missing_characters": 0,
+        "reference_character_count": 2051,
+        "reference_span_count": 757,
+        "rendered_character_count": 2051,
+        "rendered_span_count": 757,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 5.7709,
+      "maximum_column_edge_drift_pt": 0.42,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.942386,
+      "text": {
+        "maximum_drift_pt": 5.815,
+        "median_drift_pt": 0.29,
+        "missing_characters": 0,
+        "reference_character_count": 2159,
+        "reference_span_count": 811,
+        "rendered_character_count": 2159,
+        "rendered_span_count": 811,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "differing_pixels_percent": 5.7594,
+      "maximum_column_edge_drift_pt": 0.42,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.942498,
+      "text": {
+        "maximum_drift_pt": 5.815,
+        "median_drift_pt": 0.28,
+        "missing_characters": 0,
+        "reference_character_count": 2112,
+        "reference_span_count": 784,
+        "rendered_character_count": 2112,
+        "rendered_span_count": 784,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "council_top_schools_kimasomo_serikali",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.945129,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.42,
+    "worst_pixel_delta_percent": 5.7709,
+    "worst_ssim": 0.942386,
+    "worst_text_drift_pt": 6.014
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

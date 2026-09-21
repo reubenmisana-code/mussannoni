@@ -1,0 +1,63 @@
+{
+  "fonts": [
+    {
+      "base_font": "CIDFont+F1",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 364144,
+      "extracted_file": "embedded-fonts/CIDFont-F1-11.ttf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "resource_name": "F1",
+      "type": "Type0",
+      "xref": 11
+    },
+    {
+      "base_font": "CIDFont+F2",
+      "embedded": true,
+      "encoding": "Identity-H",
+      "extension": "ttf",
+      "extracted_byte_size": 387400,
+      "extracted_file": "embedded-fonts/CIDFont-F2-19.ttf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "resource_name": "F2",
+      "type": "Type0",
+      "xref": 19
+    }
+  ],
+  "schema_version": 3
+}
