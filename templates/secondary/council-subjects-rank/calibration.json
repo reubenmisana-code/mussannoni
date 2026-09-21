@@ -1,0 +1,67 @@
+{
+  "by_face": {
+    "Arial-BoldMT|10.8|0": {
+      "dx": -0.0688,
+      "dy": -1.0,
+      "samples": 124
+    },
+    "Arial-BoldMT|11.64|0": {
+      "dx": -0.008,
+      "dy": -0.92,
+      "samples": 8
+    },
+    "Arial-BoldMT|9.96|0": {
+      "dx": -0.0198,
+      "dy": -0.255,
+      "samples": 60
+    },
+    "ArialMT|10.8|0": {
+      "dx": -0.0416,
+      "dy": -1.0,
+      "samples": 78
+    },
+    "ArialMT|9.96|0": {
+      "dx": -0.0159,
+      "dy": -0.25,
+      "samples": 46
+    },
+    "ArialNarrow-Bold|9.96|0": {
+      "dx": -0.0384,
+      "dy": -0.59,
+      "samples": 2
+    }
+  },
+  "by_size": {
+    "10.8": {
+      "dx": -0.0617,
+      "dy": -1.0,
+      "samples": 202
+    },
+    "11.64": {
+      "dx": -0.008,
+      "dy": -0.92,
+      "samples": 8
+    },
+    "9.96": {
+      "dx": -0.0198,
+      "dy": -0.25,
+      "samples": 108
+    }
+  },
+  "global": {
+    "dx": -0.042,
+    "dy": -0.79,
+    "samples": 318
+  },
+  "iterations": 1,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_subjects_rank",
+  "residual": {
+    "dx": -0.0416,
+    "dy": -0.79,
+    "worst_dx": 0.0784,
+    "worst_dy": 1.31
+  },
+  "schema_version": 1
+}

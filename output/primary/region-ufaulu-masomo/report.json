@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2699,
+        "differing_pixels_percent_tolerance_32": 1.304,
+        "differing_pixels_percent_tolerance_8": 1.8895,
+        "explained_by_one_pixel_jitter_percent": 99.7301,
+        "ink_ratio": 1.00384,
+        "mean_absolute_difference": 1.7281
+      },
+      "differing_pixels_percent": 2.0473,
+      "maximum_column_edge_drift_pt": 0.12,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.977061,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.33,
+        "missing_characters": 0,
+        "reference_character_count": 1345,
+        "reference_span_count": 236,
+        "rendered_character_count": 1345,
+        "rendered_span_count": 236,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1336,
+        "differing_pixels_percent_tolerance_32": 1.301,
+        "differing_pixels_percent_tolerance_8": 1.8784,
+        "explained_by_one_pixel_jitter_percent": 99.8664,
+        "ink_ratio": 0.99531,
+        "mean_absolute_difference": 1.5662
+      },
+      "differing_pixels_percent": 2.2495,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.983445,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.12,
+        "missing_characters": 0,
+        "reference_character_count": 1069,
+        "reference_span_count": 210,
+        "rendered_character_count": 1069,
+        "rendered_span_count": 223,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2039,
+        "differing_pixels_percent_tolerance_32": 1.5951,
+        "differing_pixels_percent_tolerance_8": 2.1994,
+        "explained_by_one_pixel_jitter_percent": 99.7961,
+        "ink_ratio": 0.99583,
+        "mean_absolute_difference": 2.018
+      },
+      "differing_pixels_percent": 2.45,
+      "maximum_column_edge_drift_pt": 0.24,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.977798,
+      "text": {
+        "maximum_drift_pt": 0.54,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1073,
+        "reference_span_count": 207,
+        "rendered_character_count": 1073,
+        "rendered_span_count": 219,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 14
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "region_ufaulu_masomo",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.983445,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.24,
+    "worst_explained_by_one_pixel_jitter_percent": 99.7301,
+    "worst_pixel_delta_percent": 2.45,
+    "worst_ssim": 0.977061,
+    "worst_text_drift_pt": 0.57
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

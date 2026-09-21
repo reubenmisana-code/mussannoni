@@ -1,0 +1,64 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1521,
+        "differing_pixels_percent_tolerance_32": 3.5511,
+        "differing_pixels_percent_tolerance_8": 4.856,
+        "explained_by_one_pixel_jitter_percent": 99.8479,
+        "ink_ratio": 1.01203,
+        "mean_absolute_difference": 4.05
+      },
+      "differing_pixels_percent": 5.2583,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.957506,
+      "text": {
+        "maximum_drift_pt": 0.46,
+        "median_drift_pt": 0.2,
+        "missing_characters": 0,
+        "reference_character_count": 2893,
+        "reference_span_count": 803,
+        "rendered_character_count": 2893,
+        "rendered_span_count": 812,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 11
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 1,
+  "report_key": "council_kata_rank_grading",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.957506,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 1,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.36,
+    "worst_explained_by_one_pixel_jitter_percent": 99.8479,
+    "worst_pixel_delta_percent": 5.2583,
+    "worst_ssim": 0.957506,
+    "worst_text_drift_pt": 0.46
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

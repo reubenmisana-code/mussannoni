@@ -1,0 +1,82 @@
+{
+  "by_face": {
+    "Arial-BoldMT|4.56|0": {
+      "dx": -0.1143,
+      "dy": -1.0,
+      "samples": 96
+    },
+    "Arial-BoldMT|5.28|0": {
+      "dx": -0.0948,
+      "dy": -0.83,
+      "samples": 467
+    },
+    "Arial-BoldMT|6.12|0": {
+      "dx": -0.0191,
+      "dy": -0.74,
+      "samples": 52
+    },
+    "Arial-BoldMT|6.84|0": {
+      "dx": -0.02,
+      "dy": -0.53,
+      "samples": 5
+    },
+    "ArialMT|4.56|0": {
+      "dx": -0.0178,
+      "dy": -0.96,
+      "samples": 18
+    },
+    "ArialMT|4.92|0": {
+      "dx": -0.0192,
+      "dy": -1.23,
+      "samples": 18
+    },
+    "ArialMT|5.28|0": {
+      "dx": -0.0927,
+      "dy": -0.92,
+      "samples": 143
+    }
+  },
+  "by_size": {
+    "4.56": {
+      "dx": -0.0997,
+      "dy": -0.985,
+      "samples": 114
+    },
+    "4.92": {
+      "dx": -0.0192,
+      "dy": -1.23,
+      "samples": 18
+    },
+    "5.28": {
+      "dx": -0.0936,
+      "dy": -0.86,
+      "samples": 610
+    },
+    "6.12": {
+      "dx": -0.0191,
+      "dy": -0.74,
+      "samples": 52
+    },
+    "6.84": {
+      "dx": -0.02,
+      "dy": -0.53,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.091,
+    "dy": -0.86,
+    "samples": 799
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_kata_rank_grading",
+  "residual": {
+    "dx": -0.0912,
+    "dy": -0.86,
+    "worst_dx": 0.1689,
+    "worst_dy": 1.61
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,102 @@
+{
+  "by_face": {
+    "CIDFont+F1|4.57|0": {
+      "dx": -0.1373,
+      "dy": -1.05,
+      "samples": 1
+    },
+    "CIDFont+F1|4.69|0": {
+      "dx": -0.1509,
+      "dy": -0.75,
+      "samples": 1
+    },
+    "CIDFont+F1|5.29|0": {
+      "dx": -0.0916,
+      "dy": -0.75,
+      "samples": 530
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.1023,
+      "dy": 0.0,
+      "samples": 522
+    },
+    "CIDFont+F1|6.13|0": {
+      "dx": -0.0879,
+      "dy": -0.66,
+      "samples": 59
+    },
+    "CIDFont+F1|6.25|0": {
+      "dx": -0.0641,
+      "dy": 0.06,
+      "samples": 63
+    },
+    "CIDFont+F1|6.85|0": {
+      "dx": -0.0061,
+      "dy": -0.57,
+      "samples": 11
+    },
+    "CIDFont+F1|6.97|0": {
+      "dx": -0.0126,
+      "dy": -0.675,
+      "samples": 18
+    },
+    "CIDFont+F2|5.29|0": {
+      "dx": -0.0853,
+      "dy": -0.765,
+      "samples": 128
+    },
+    "CIDFont+F2|5.41|0": {
+      "dx": -0.0744,
+      "dy": 0.045,
+      "samples": 128
+    }
+  },
+  "by_size": {
+    "5.29": {
+      "dx": -0.0885,
+      "dy": -0.75,
+      "samples": 658
+    },
+    "5.41": {
+      "dx": -0.0872,
+      "dy": 0.0,
+      "samples": 650
+    },
+    "6.13": {
+      "dx": -0.0879,
+      "dy": -0.66,
+      "samples": 59
+    },
+    "6.25": {
+      "dx": -0.0641,
+      "dy": 0.06,
+      "samples": 63
+    },
+    "6.85": {
+      "dx": -0.0061,
+      "dy": -0.57,
+      "samples": 11
+    },
+    "6.97": {
+      "dx": -0.0126,
+      "dy": -0.675,
+      "samples": 18
+    }
+  },
+  "global": {
+    "dx": -0.086,
+    "dy": -0.45,
+    "samples": 1461
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_halmashauri_jumla",
+  "residual": {
+    "dx": -0.0858,
+    "dy": -0.45,
+    "worst_dx": 0.1813,
+    "worst_dy": 1.08
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,511 @@
+version: 1
+sources:
+  secondary: https://sars.ac.tz/results/exam/form-two-mock-result/2026/mwanza/mwanza-cc-1787231849
+  primary: https://sars.ac.tz/results/exam/matokeo-darasa-la-iv-mock-mkoa/2026/mwanza/mwanza-cc-1787231849
+reports:
+- ordinal: 1
+  level: secondary
+  report_key: school_results
+  identity: school-results
+  scope: school
+  title: SCHOOL RESULTS
+  sample_unit: S0333-MWANZA SECONDARY SCHOOL
+  object_key: results/pdfs/5fey7F9UhmsiPFV0mBlusPnf46lORLdMvzzPj2yA.pdf
+  source_url: https://sars.ac.tz/view-results?file=results%2Fpdfs%2F5fey7F9UhmsiPFV0mBlusPnf46lORLdMvzzPj2yA.pdf&name=S0333-MWANZA%20SECONDARY%20SCHOOL
+  status: wip
+  aliases: []
+- ordinal: 2
+  level: secondary
+  report_key: council_subjects_rank
+  identity: council-subjects-rank
+  scope: council
+  title: SUBJECTS RANK
+  sample_unit: MWANZA CC SUBJECTS RANK
+  object_key: summaries/IwgpPsXkyCRDmoPMKhXqyWhyR8QrZKWxCvt06Owb.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FIwgpPsXkyCRDmoPMKhXqyWhyR8QrZKWxCvt06Owb.pdf&name=MWANZA%20CC%20%20SUBJECTS%20RANK
+  status: wip
+  aliases: []
+- ordinal: 3
+  level: secondary
+  report_key: council_schools_rank
+  identity: council-schools-rank
+  scope: council
+  title: SCHOOLS RANK
+  sample_unit: MWANZA CC SCHOOLS RANK
+  object_key: summaries/Q2EmnvJ6qCsPFDf8mkCkKDE6aziVT7ayElYmL4NF.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FQ2EmnvJ6qCsPFDf8mkCkKDE6aziVT7ayElYmL4NF.pdf&name=MWANZA%20CC%20SCHOOLS%20RANK
+  status: wip
+  aliases: []
+- ordinal: 4
+  level: secondary
+  report_key: council_wards_rank
+  identity: council-wards-rank
+  scope: council
+  title: WARDS RANK
+  sample_unit: MWANZA CC Wards Rank
+  object_key: summaries/2RVG4HsWnuqCwK6oRTX6godN1PfmK1mOsQ827Nws.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F2RVG4HsWnuqCwK6oRTX6godN1PfmK1mOsQ827Nws.pdf&name=MWANZA%20CC%20Wards%20Rank
+  status: wip
+  aliases: []
+- ordinal: 5
+  level: secondary
+  report_key: council_top_schools
+  identity: council-top-schools
+  scope: council
+  title: 10 BEST SCHOOLS
+  sample_unit: MWANZA CC 10 BEST SCHOOLS
+  object_key: summaries/syyAwRZ4MQ514SYo7MCyGR25jXzBIcuLY9UhWKLj.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FsyyAwRZ4MQ514SYo7MCyGR25jXzBIcuLY9UhWKLj.pdf&name=MWANZA%20CC%2010%20BEST%20SCHOOLS
+  status: wip
+  aliases: []
+- ordinal: 6
+  level: secondary
+  report_key: council_best_students
+  identity: council-best-students
+  scope: council
+  title: 10 BEST STUDENTS
+  sample_unit: MWANZA CC 10 BEST STUDENTS
+  object_key: summaries/GGtXvrCnotavbFMomhMg4fQNJen7kfYiJL39fao7.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FGGtXvrCnotavbFMomhMg4fQNJen7kfYiJL39fao7.pdf&name=MWANZA%20CC%2010%20BEST%20STUDENTS
+  status: wip
+  aliases: []
+- ordinal: 7
+  level: secondary
+  report_key: council_best_students_subjectwise
+  identity: council-best-students-subjectwise
+  scope: council
+  title: 10 BEST STUDENTS SUBJECTWISE
+  sample_unit: MWANZA CC 10 BEST STUDENTS SUBJECTWISE
+  object_key: summaries/WGNaZYCpBzscAPACV0RSI4gAf5Rxi9FrkP5ABlCW.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FWGNaZYCpBzscAPACV0RSI4gAf5Rxi9FrkP5ABlCW.pdf&name=MWANZA%20CC%2010%20BEST%20STUDENTS%20SUBJECTWISE
+  status: wip
+  aliases: []
+- ordinal: 8
+  level: secondary
+  report_key: council_schools_rank_subjectwise
+  identity: council-schools-rank-subjectwise
+  scope: council
+  title: SCHOOLS RANK SUBJECTWISE
+  sample_unit: MWANZA CC SCHOOLS RANK SUBJECTWISE
+  object_key: summaries/LYha0fglMQ3d4oK1sWum3xlKY1R4wIxmOcQtthBm.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FLYha0fglMQ3d4oK1sWum3xlKY1R4wIxmOcQtthBm.pdf&name=MWANZA%20CC%20SCHOOLS%20RANK%20SUBJECTWISE
+  status: wip
+  aliases: []
+- ordinal: 9
+  level: secondary
+  report_key: subject_schools_rank
+  identity: subject-schools-rank
+  scope: subject
+  title: SCHOOL RANK-MATHEMATICS
+  sample_unit: Mwanza School Rank-Mathematics
+  object_key: summaries/C429b3NtLhgdVqqd1ZQm2nPQHK01HbHFAG53bcPU.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FC429b3NtLhgdVqqd1ZQm2nPQHK01HbHFAG53bcPU.pdf&name=Mwanza%20School%20Rank-Mathematics
+  status: wip
+  aliases: []
+- ordinal: 10
+  level: secondary
+  report_key: region_schools_rank_overall
+  identity: region-schools-rank-overall
+  scope: region
+  title: SCHOOLS RANK OVERALL
+  sample_unit: Mwanza schools rank Overall
+  object_key: summaries/3xTv0vDcHADDVo9Luv1rIaIlzX884dz7vQJYXTlW.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F3xTv0vDcHADDVo9Luv1rIaIlzX884dz7vQJYXTlW.pdf&name=Mwanza%20schools%20rank%20Overall
+  status: wip
+  aliases: []
+- ordinal: 11
+  level: secondary
+  report_key: region_schools_rank_government
+  identity: region-schools-rank-government
+  scope: region
+  title: SCHOOLS RANK FOR GOVERNMENTS
+  sample_unit: Mwanza Schools Rank For Governments
+  object_key: summaries/gpwhQMGUnL5u3AixU4FTv4raz2Rl8jbU7kEWspt1.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FgpwhQMGUnL5u3AixU4FTv4raz2Rl8jbU7kEWspt1.pdf&name=Mwanza%20Schools%20Rank%20For%20Governments
+  status: wip
+  aliases: []
+- ordinal: 12
+  level: secondary
+  report_key: region_schools_rank_private
+  identity: region-schools-rank-private
+  scope: region
+  title: SCHOOL RANK FOR PRIVATES
+  sample_unit: Mwanza School Rank for Privates
+  object_key: summaries/4N1uZtQzDeAi4Ktm8aMLqvmGkr3n7M8vHcfr8xHo.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F4N1uZtQzDeAi4Ktm8aMLqvmGkr3n7M8vHcfr8xHo.pdf&name=Mwanza%20School%20Rank%20for%20Privates
+  status: wip
+  aliases: []
+- ordinal: 13
+  level: secondary
+  report_key: region_top_schools
+  identity: region-top-schools
+  scope: region
+  title: TOP 10 SCHOOLS
+  sample_unit: Mwanza Top 10 Schools
+  object_key: summaries/ux5kq5xriMCB2L5LI63uInfnU4u0wy03iW7ViItR.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2Fux5kq5xriMCB2L5LI63uInfnU4u0wy03iW7ViItR.pdf&name=Mwanza%20Top%2010%20Schools
+  status: wip
+  aliases: []
+- ordinal: 14
+  level: secondary
+  report_key: region_best_students_overall
+  identity: region-best-students-overall
+  scope: region
+  title: BEST STUDENTS-OVERALL
+  sample_unit: Mwanza Best Students-Overall
+  object_key: summaries/PVAUsYH1Aws611jawrmeBHp9xYgAmeMRA5X3fmA4.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FPVAUsYH1Aws611jawrmeBHp9xYgAmeMRA5X3fmA4.pdf&name=Mwanza%20Best%20Students-Overall
+  status: wip
+  aliases: []
+- ordinal: 15
+  level: secondary
+  report_key: region_best_students_subjectwise
+  identity: region-best-students-subjectwise
+  scope: region
+  title: BEST STUDENTS-SUBJECTWISE
+  sample_unit: Mwanza Best students-Subjectwise
+  object_key: summaries/TAIOCo3M7MdTNLR5ARFFhjWWSqYOJLvnTDYOmUMv.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FTAIOCo3M7MdTNLR5ARFFhjWWSqYOJLvnTDYOmUMv.pdf&name=Mwanza%20Best%20students-Subjectwise
+  status: wip
+  aliases: []
+- ordinal: 16
+  level: secondary
+  report_key: region_council_performance
+  identity: region-council-performance
+  scope: region
+  title: F2 DISTRICT PERFORMANCE
+  sample_unit: Mwanza f2 District Performance
+  object_key: summaries/IZAdvG4Nop3ovOBbr7ExkcLT9luVyJH5RLPzo67o.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FIZAdvG4Nop3ovOBbr7ExkcLT9luVyJH5RLPzo67o.pdf&name=Mwanza%20f2%20District%20Performance
+  status: wip
+  aliases: []
+- ordinal: 17
+  level: secondary
+  report_key: region_subjects_performance
+  identity: region-subjects-performance
+  scope: region
+  title: OVERALL SUBJECTS PERFORMANCE
+  sample_unit: Mwanza Overall Subjects Performance
+  object_key: summaries/9UFMoP50rJKDKOundSQ0NEIVpzihGyLvrA9yq9UK.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F9UFMoP50rJKDKOundSQ0NEIVpzihGyLvrA9yq9UK.pdf&name=Mwanza%20Overall%20Subjects%20Performance
+  status: wip
+  aliases: []
+- ordinal: 18
+  level: secondary
+  report_key: region_mobility
+  identity: region-mobility
+  scope: region
+  title: F2 MOCK MOBILITY 2026
+  sample_unit: Mwanza f2 Mock Mobility 2026
+  object_key: summaries/xuqcsxwyjMomy6hIAPm7PaAS8UIm2fqO903TyutL.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FxuqcsxwyjMomy6hIAPm7PaAS8UIm2fqO903TyutL.pdf&name=Mwanza%20f2%20Mock%20Mobility%202026
+  status: wip
+  aliases: []
+- ordinal: 19
+  level: primary
+  report_key: school_results
+  identity: school-results
+  scope: school
+  title: SCHOOL RESULTS
+  sample_unit: PS1304014-BUTIMBA PRIMARY SCHOOL
+  object_key: results/pdfs/0S2sSedl0dnKTAx6uebosAIohX1CexSkMoxAHIn0.pdf
+  source_url: https://sars.ac.tz/view-results?file=results%2Fpdfs%2F0S2sSedl0dnKTAx6uebosAIohX1CexSkMoxAHIn0.pdf&name=PS1304014-BUTIMBA%20%20PRIMARY%20SCHOOL
+  status: wip
+  aliases: []
+- ordinal: 20
+  level: primary
+  report_key: council_kata_rank_alama
+  identity: council-kata-rank-alama
+  scope: council
+  title: KATA RANK ALAMA
+  sample_unit: MWANZA CC KATA RANK ALAMA
+  object_key: summaries/NNz96wVLPDIeDad9ByS8cXZWsqVlOyleylzebiGy.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FNNz96wVLPDIeDad9ByS8cXZWsqVlOyleylzebiGy.pdf&name=MWANZA%20CC%20KATA%20RANK%20ALAMA
+  status: wip
+  aliases: []
+- ordinal: 21
+  level: primary
+  report_key: council_kata_rank_grading
+  identity: council-kata-rank-grading
+  scope: council
+  title: KATA RANK GRADING
+  sample_unit: MWANZA CC KATA RANK GRADING
+  object_key: summaries/M854h9BjycM750c4M9VH4dGAVxjd7DjPtWSLBph5.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FM854h9BjycM750c4M9VH4dGAVxjd7DjPtWSLBph5.pdf&name=MWANZA%20CC%20KATA%20RANK%20GRADING
+  status: wip
+  aliases: []
+- ordinal: 22
+  level: primary
+  report_key: council_school_rank_binafsi
+  identity: council-school-rank-binafsi
+  scope: council
+  title: SCHOOL RANK BINAFSI
+  sample_unit: MWANZA CC SCHOOL RANK BINAFSI
+  object_key: summaries/rhmcgRW1iRT8uSvr67ZdLv9jIZu5c5wa9IFLOdrs.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FrhmcgRW1iRT8uSvr67ZdLv9jIZu5c5wa9IFLOdrs.pdf&name=MWANZA%20CC%20SCHOOL%20RANK%20BINAFSI
+  status: wip
+  aliases: []
+- ordinal: 23
+  level: primary
+  report_key: council_school_rank_serikali
+  identity: council-school-rank-serikali
+  scope: council
+  title: SCHOOL RANK SERIKALI
+  sample_unit: MWANZA CC SCHOOL RANK SERIKALI
+  object_key: summaries/x302uQVdVjXzlXF1Zh6UaELnE2OwoDg62rzsm4iI.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2Fx302uQVdVjXzlXF1Zh6UaELnE2OwoDg62rzsm4iI.pdf&name=MWANZA%20CC%20SCHOOL%20RANK%20SERIKALI
+  status: wip
+  aliases: []
+- ordinal: 24
+  level: primary
+  report_key: council_school_rank_in_grade
+  identity: council-school-rank-in-grade
+  scope: council
+  title: SCHOOL RANK IN GRADE
+  sample_unit: MWANZA CC SCHOOL RANK IN GRADE
+  object_key: summaries/inElsx0pu8zQ58qks2eYuJcCQlfqRvZfWirp5CLc.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FinElsx0pu8zQ58qks2eYuJcCQlfqRvZfWirp5CLc.pdf&name=MWANZA%20CC%20SCHOOL%20RANK%20IN%20GRADE
+  status: wip
+  aliases: []
+- ordinal: 25
+  level: primary
+  report_key: council_school_rank_ufaulu_alama
+  identity: council-school-rank-ufaulu-alama
+  scope: council
+  title: SCHOOL RANK UFAULU ALAMA
+  sample_unit: MWANZA CC SCHOOL RANK UFAULU ALAMA
+  object_key: summaries/Ru7ybio1sSclh7sxsDUMje9nXCKR8h89XxOROTBa.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FRu7ybio1sSclh7sxsDUMje9nXCKR8h89XxOROTBa.pdf&name=MWANZA%20CC%20SCHOOL%20RANK%20UFAULU%20ALAMA
+  status: wip
+  aliases: []
+- ordinal: 26
+  level: primary
+  report_key: council_best_students
+  identity: council-best-students
+  scope: council
+  title: 10 BEST STUDENTS
+  sample_unit: MWANZA CC 10 BEST STUDENTS
+  object_key: summaries/khh5KQEi6gu4BuptmwOd2BzGyvox10eoW0MJBUdq.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2Fkhh5KQEi6gu4BuptmwOd2BzGyvox10eoW0MJBUdq.pdf&name=MWANZA%20CC%2010%20BEST%20STUDENTS
+  status: wip
+  aliases: []
+- ordinal: 27
+  level: primary
+  report_key: council_top_schools_alama
+  identity: council-top-schools-alama
+  scope: council
+  title: 10 BEST SCHOOLS ALAMA
+  sample_unit: MWANZA CC 10 BEST SCHOOLS ALAMA
+  object_key: summaries/8u1GMTCOMtcYmo0TItlZehCYNEdbSfdRqz130ktj.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F8u1GMTCOMtcYmo0TItlZehCYNEdbSfdRqz130ktj.pdf&name=MWANZA%20CC%2010%20BEST%20SCHOOLS%20ALAMA
+  status: wip
+  aliases: []
+- ordinal: 28
+  level: primary
+  report_key: council_top_schools_grading
+  identity: council-top-schools-grading
+  scope: council
+  title: 10 BEST SCHOOLS GRADING
+  sample_unit: MWANZA CC 10 BEST SCHOOLS GRADING
+  object_key: summaries/duRAiaeRAcvs0Hb4OVXsXUb1mFCpK1JSxYSJIsQS.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FduRAiaeRAcvs0Hb4OVXsXUb1mFCpK1JSxYSJIsQS.pdf&name=MWANZA%20CC%2010%20BEST%20SCHOOLS%20GRADING
+  status: wip
+  aliases: []
+- ordinal: 29
+  level: primary
+  report_key: council_top_schools_kimasomo_overall
+  identity: council-top-schools-kimasomo-overall
+  scope: council
+  title: 10 BEST SCHOOLS KIMASOMO OVERALL
+  sample_unit: MWANZA CC 10 BEST SCHOOLS KIMASOMO OVERALL
+  object_key: summaries/RdTKkXiuXJE5CulBzIPQRvVmrlsBo3cJ810xegpP.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FRdTKkXiuXJE5CulBzIPQRvVmrlsBo3cJ810xegpP.pdf&name=MWANZA%20CC%2010%20BEST%20SCHOOLS%20KIMASOMO%20OVERALL
+  status: wip
+  aliases: []
+- ordinal: 30
+  level: primary
+  report_key: council_top_schools_kimasomo_serikali
+  identity: council-top-schools-kimasomo-serikali
+  scope: council
+  title: 10 BEST SCHOOLS KIMASOMO SERIKALI
+  sample_unit: MWANZA CC 10 BEST SCHOOLS KIMASOMO SERIKALI
+  object_key: summaries/SJpnI81r3RisdX4dCeVdjJU5sqQgCCQiMQd4DXPY.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FSJpnI81r3RisdX4dCeVdjJU5sqQgCCQiMQd4DXPY.pdf&name=MWANZA%20CC%2010%20BEST%20SCHOOLS%20KIMASOMO%20SERIKALI
+  status: wip
+  aliases: []
+- ordinal: 31
+  level: primary
+  report_key: council_subject_summary
+  identity: council-subject-summary
+  scope: council
+  title: SUBJECT SUMMARY
+  sample_unit: MWANZA CC SUBJECT SUMMARY
+  object_key: summaries/OjYgXqCadK9IdhvYRJ1Zjb59LS0QnPzWFU8RYLhf.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FOjYgXqCadK9IdhvYRJ1Zjb59LS0QnPzWFU8RYLhf.pdf&name=MWANZA%20CC%20SUBJECT%20SUMMARY
+  status: wip
+  aliases: []
+- ordinal: 32
+  level: primary
+  report_key: council_ufaulu_wa_masomo
+  identity: council-ufaulu-wa-masomo
+  scope: council
+  title: UFAULU WA MASOMO
+  sample_unit: MWANZA CC UFAULU WA MASOMO
+  object_key: summaries/6wMIRovENFzNMx634HSRnH0D0MDXkWPp2F3zDpa3.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F6wMIRovENFzNMx634HSRnH0D0MDXkWPp2F3zDpa3.pdf&name=MWANZA%20CC%20UFAULU%20WA%20MASOMO
+  status: wip
+  aliases: []
+- ordinal: 33
+  level: primary
+  report_key: region_kata_serikali
+  identity: region-kata-serikali
+  scope: region
+  title: MKOA KATA SHULE ZA SERIKALI STD4 2026
+  sample_unit: MKOA KATA SHULE ZA SERIKALI STD4 2026
+  object_key: summaries/XGs6p0YI5e8VDvdccoC6zjpidmdhEwiVFXUp04Xu.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FXGs6p0YI5e8VDvdccoC6zjpidmdhEwiVFXUp04Xu.pdf&name=MKOA%20KATA%20SHULE%20ZA%20SERIKALI%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 34
+  level: primary
+  report_key: region_kata_binafsi
+  identity: region-kata-binafsi
+  scope: region
+  title: MKOA KATA SHULE BINAFSI STD4 2026
+  sample_unit: MKOA KATA SHULE BINAFSI STD4 2026
+  object_key: summaries/FSceqtMBh2gp8cg8lBOQJS8NeBi1XY7Mp0y23F8T.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FFSceqtMBh2gp8cg8lBOQJS8NeBi1XY7Mp0y23F8T.pdf&name=MKOA%20KATA%20SHULE%20BINAFSI%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 35
+  level: primary
+  report_key: region_kata_jumla
+  identity: region-kata-jumla
+  scope: region
+  title: KATA STD4 JUMLA 2026
+  sample_unit: KATA STD4 JUMLA 2026
+  object_key: summaries/zpFNuqWCOfsecwVsjtMURsIZW4cKgTHhhO7Lvti3.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FzpFNuqWCOfsecwVsjtMURsIZW4cKgTHhhO7Lvti3.pdf&name=KATA%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []
+- ordinal: 36
+  level: primary
+  report_key: region_shule_bora_jumla
+  identity: region-shule-bora-jumla
+  scope: region
+  title: MKOA SHULE BORA STD4 JUMLA 2026
+  sample_unit: MKOA SHULE BORA STD4 JUMLA 2026
+  object_key: summaries/LHjvR1Ey48ZHqkLYzkLRibmb1OXPRR9cxdtRMBJd.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FLHjvR1Ey48ZHqkLYzkLRibmb1OXPRR9cxdtRMBJd.pdf&name=MKOA%20SHULE%20BORA%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []
+- ordinal: 37
+  level: primary
+  report_key: region_shule_bora_masomo_serikali
+  identity: region-shule-bora-masomo-serikali
+  scope: region
+  title: MKOA SHULE BORA MASOMO SERIKALI STD4 2026
+  sample_unit: MKOA SHULE BORA MASOMO SERIKALI STD4 2026
+  object_key: summaries/fL41sXAHzTSakTreJEVdo8xXS8Ol1t7jIbcZh2Fh.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FfL41sXAHzTSakTreJEVdo8xXS8Ol1t7jIbcZh2Fh.pdf&name=MKOA%20SHULE%20BORA%20MASOMO%20SERIKALI%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 38
+  level: primary
+  report_key: region_shule_bora_masomo_jumla
+  identity: region-shule-bora-masomo-jumla
+  scope: region
+  title: MKOA SHULE BORA MASOMO STD4 JUMLA 2026
+  sample_unit: MKOA SHULE BORA MASOMO STD4 JUMLA 2026
+  object_key: summaries/KL3WNm0F77zMYr2WnjDEmdFQhkRLtBJjKNPdt2Gm.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FKL3WNm0F77zMYr2WnjDEmdFQhkRLtBJjKNPdt2Gm.pdf&name=MKOA%20SHULE%20BORA%20MASOMO%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []
+- ordinal: 39
+  level: primary
+  report_key: region_ufaulu_masomo
+  identity: region-ufaulu-masomo
+  scope: region
+  title: MKOA UFAULU MASOMO STD4 2026
+  sample_unit: MKOA UFAULU MASOMO STD4 2026
+  object_key: summaries/Et46YRJOJy54Kw07s4MCxyBYrs1etOq80io5DUxY.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FEt46YRJOJy54Kw07s4MCxyBYrs1etOq80io5DUxY.pdf&name=MKOA%20UFAULU%20MASOMO%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 40
+  level: primary
+  report_key: region_ufaulu_masomo_jumla
+  identity: region-ufaulu-masomo-jumla
+  scope: region
+  title: MKOA UFAULU MASOMO STD4 JUMLA 2026
+  sample_unit: MKOA UFAULU MASOMO STD4 JUMLA 2026
+  object_key: summaries/yGzzRS4oVQ7dn8Y7raHBmOnNWkloND9Oa8kpFdob.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FyGzzRS4oVQ7dn8Y7raHBmOnNWkloND9Oa8kpFdob.pdf&name=MKOA%20UFAULU%20MASOMO%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []
+- ordinal: 41
+  level: primary
+  report_key: region_wanafunzi_bora
+  identity: region-wanafunzi-bora
+  scope: region
+  title: MKOA WANAFUNZI BORA STD4 2026
+  sample_unit: MKOA WANAFUNZI BORA STD4 2026
+  object_key: summaries/Zcxwy2MTbppDDyOTCZoK6nZnCmlinwHStTNUSxR8.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FZcxwy2MTbppDDyOTCZoK6nZnCmlinwHStTNUSxR8.pdf&name=MKOA%20WANAFUNZI%20BORA%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 42
+  level: primary
+  report_key: region_shule_serikali
+  identity: region-shule-serikali
+  scope: region
+  title: SHULE SERIKALI STD4 2026
+  sample_unit: SHULE SERIKALI STD4 2026
+  object_key: summaries/ejRhvemC61etQX0jL1O1oSCdAh3uPJRjVvw0NI8S.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FejRhvemC61etQX0jL1O1oSCdAh3uPJRjVvw0NI8S.pdf&name=SHULE%20SERIKALI%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 43
+  level: primary
+  report_key: region_shule_binafsi
+  identity: region-shule-binafsi
+  scope: region
+  title: SHULE BINAFSI STD4 2026
+  sample_unit: SHULE BINAFSI STD4 2026
+  object_key: summaries/ie67SoTgcofzPfEHY9yeNkonIW1hSZXl4Hq0gQw3.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2Fie67SoTgcofzPfEHY9yeNkonIW1hSZXl4Hq0gQw3.pdf&name=SHULE%20BINAFSI%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 44
+  level: primary
+  report_key: region_shule_nafasi_jumla
+  identity: region-shule-nafasi-jumla
+  scope: region
+  title: SHULE NAFASI STD4 JUMLA 2026
+  sample_unit: SHULE NAFASI STD4 JUMLA 2026
+  object_key: summaries/PJBinoA60Dy8ZeF4MExSCoP9hN6ECaWffMzGhT61.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FPJBinoA60Dy8ZeF4MExSCoP9hN6ECaWffMzGhT61.pdf&name=SHULE%20NAFASI%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []
+- ordinal: 45
+  level: primary
+  report_key: region_halmashauri_masomo
+  identity: region-halmashauri-masomo
+  scope: region
+  title: HALMASHAURI MASOMO STD4 2026
+  sample_unit: HALMASHAURI MASOMO STD4 2026
+  object_key: summaries/KGg5fkIxxunZ2HG0aiNPsByktZvVaebJ5pY8pXPx.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2FKGg5fkIxxunZ2HG0aiNPsByktZvVaebJ5pY8pXPx.pdf&name=HALMASHAURI%20MASOMO%20STD4%202026
+  status: wip
+  aliases: []
+- ordinal: 46
+  level: primary
+  report_key: region_halmashauri_jumla
+  identity: region-halmashauri-jumla
+  scope: region
+  title: HALMASHAURI STD4 JUMLA 2026
+  sample_unit: HALMASHAURI STD4 JUMLA 2026
+  object_key: summaries/9mvUyADdBx1rUbbCnXo4POV2h8ZtNOBHRSisZ5wz.pdf
+  source_url: https://sars.ac.tz/view-results?file=summaries%2F9mvUyADdBx1rUbbCnXo4POV2h8ZtNOBHRSisZ5wz.pdf&name=HALMASHAURI%20STD4%20JUMLA%202026
+  status: wip
+  aliases: []

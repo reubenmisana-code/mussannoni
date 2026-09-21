@@ -1,0 +1,112 @@
+{
+  "by_face": {
+    "Arial-BoldMT|10.08|0": {
+      "dx": -0.0118,
+      "dy": -0.335,
+      "samples": 4
+    },
+    "Arial-BoldMT|5.64|0": {
+      "dx": -0.0953,
+      "dy": -0.515,
+      "samples": 6
+    },
+    "Arial-BoldMT|6.72|0": {
+      "dx": -0.1042,
+      "dy": -0.65,
+      "samples": 3
+    },
+    "Arial-BoldMT|7.32|0": {
+      "dx": -0.0948,
+      "dy": -1.09,
+      "samples": 227
+    },
+    "Arial-BoldMT|7.8|0": {
+      "dx": -0.0591,
+      "dy": -1.36,
+      "samples": 56
+    },
+    "Arial-BoldMT|9.0|0": {
+      "dx": -0.0635,
+      "dy": -0.375,
+      "samples": 2
+    },
+    "ArialMT|6.72|0": {
+      "dx": -0.0061,
+      "dy": -0.675,
+      "samples": 12
+    },
+    "ArialMT|7.32|0": {
+      "dx": -0.0519,
+      "dy": -1.105,
+      "samples": 90
+    },
+    "ArialMT|7.8|0": {
+      "dx": -0.0716,
+      "dy": -1.31,
+      "samples": 5
+    },
+    "ArialNarrow-Bold|6.72|0": {
+      "dx": -0.0223,
+      "dy": -0.83,
+      "samples": 3
+    },
+    "ArialNarrow-Bold|7.8|0": {
+      "dx": -0.0341,
+      "dy": -0.92,
+      "samples": 1
+    },
+    "TimesNewRomanPS-BoldMT|7.8|0": {
+      "dx": -0.089,
+      "dy": -1.37,
+      "samples": 8
+    },
+    "TimesNewRomanPS-BoldMT|9.0|0": {
+      "dx": -0.0753,
+      "dy": -0.32,
+      "samples": 9
+    }
+  },
+  "by_size": {
+    "5.64": {
+      "dx": -0.0953,
+      "dy": -0.515,
+      "samples": 6
+    },
+    "6.72": {
+      "dx": -0.0061,
+      "dy": -0.675,
+      "samples": 18
+    },
+    "7.32": {
+      "dx": -0.0678,
+      "dy": -1.09,
+      "samples": 317
+    },
+    "7.8": {
+      "dx": -0.0655,
+      "dy": -1.36,
+      "samples": 70
+    },
+    "9.0": {
+      "dx": -0.0753,
+      "dy": -0.32,
+      "samples": 11
+    }
+  },
+  "global": {
+    "dx": -0.067,
+    "dy": -1.12,
+    "samples": 426
+  },
+  "iterations": 1,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_wards_rank",
+  "residual": {
+    "dx": -0.0669,
+    "dy": -1.12,
+    "worst_dx": 0.1155,
+    "worst_dy": 1.76
+  },
+  "schema_version": 1
+}

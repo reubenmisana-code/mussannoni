@@ -1,0 +1,87 @@
+{
+  "by_face": {
+    "CIDFont+F1|6.01|0": {
+      "dx": -0.035,
+      "dy": -0.84,
+      "samples": 92
+    },
+    "CIDFont+F1|6.49|0": {
+      "dx": -0.203,
+      "dy": -0.36,
+      "samples": 60
+    },
+    "CIDFont+F1|6.97|0": {
+      "dx": -0.1022,
+      "dy": -0.72,
+      "samples": 998
+    },
+    "CIDFont+F1|8.06|0": {
+      "dx": -0.1146,
+      "dy": -0.66,
+      "samples": 33
+    },
+    "CIDFont+F1|9.02|0": {
+      "dx": -0.0125,
+      "dy": -0.09,
+      "samples": 10
+    },
+    "CIDFont+F2|6.49|0": {
+      "dx": -0.0124,
+      "dy": -0.36,
+      "samples": 177
+    },
+    "CIDFont+F2|6.97|0": {
+      "dx": -0.0806,
+      "dy": -0.72,
+      "samples": 487
+    },
+    "CIDFont+F3|6.01|0": {
+      "dx": -0.1983,
+      "dy": -0.66,
+      "samples": 6
+    }
+  },
+  "by_size": {
+    "6.01": {
+      "dx": -0.0577,
+      "dy": -0.84,
+      "samples": 98
+    },
+    "6.49": {
+      "dx": -0.0124,
+      "dy": -0.36,
+      "samples": 237
+    },
+    "6.97": {
+      "dx": -0.0806,
+      "dy": -0.72,
+      "samples": 1485
+    },
+    "8.06": {
+      "dx": -0.1146,
+      "dy": -0.66,
+      "samples": 33
+    },
+    "9.02": {
+      "dx": -0.0125,
+      "dy": -0.09,
+      "samples": 10
+    }
+  },
+  "global": {
+    "dx": -0.07,
+    "dy": -0.72,
+    "samples": 1863
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_bora_masomo_serikali",
+  "residual": {
+    "dx": -0.0699,
+    "dy": -0.72,
+    "worst_dx": 0.2083,
+    "worst_dy": 1.14
+  },
+  "schema_version": 1
+}

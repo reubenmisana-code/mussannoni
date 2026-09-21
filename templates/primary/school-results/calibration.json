@@ -1,0 +1,112 @@
+{
+  "by_face": {
+    "Arial-BoldMT|4.2|0": {
+      "dx": -0.1197,
+      "dy": -1.4,
+      "samples": 1
+    },
+    "Arial-BoldMT|4.68|0": {
+      "dx": -0.0977,
+      "dy": -0.65,
+      "samples": 3
+    },
+    "Arial-BoldMT|5.16|0": {
+      "dx": -0.1174,
+      "dy": -1.4,
+      "samples": 3
+    },
+    "Arial-BoldMT|5.76|0": {
+      "dx": -0.0869,
+      "dy": -0.65,
+      "samples": 18
+    },
+    "Arial-BoldMT|6.24|0": {
+      "dx": -0.0611,
+      "dy": -0.05,
+      "samples": 533
+    },
+    "Arial-BoldMT|7.32|0": {
+      "dx": -0.0298,
+      "dy": -0.93,
+      "samples": 72
+    },
+    "Arial-BoldMT|8.28|0": {
+      "dx": -0.012,
+      "dy": -1.1,
+      "samples": 1
+    },
+    "ArialMT|6.24|0": {
+      "dx": -0.0434,
+      "dy": -0.07,
+      "samples": 1368
+    },
+    "ArialNarrow-Bold|4.68|0": {
+      "dx": -0.0597,
+      "dy": -1.17,
+      "samples": 12
+    },
+    "ArialNarrow-Bold|5.16|0": {
+      "dx": -0.0745,
+      "dy": -1.445,
+      "samples": 2
+    },
+    "ArialNarrow-Bold|5.76|0": {
+      "dx": -0.0625,
+      "dy": -0.62,
+      "samples": 181
+    },
+    "ArialNarrow-Bold|6.24|0": {
+      "dx": -0.0441,
+      "dy": 0.08,
+      "samples": 36
+    },
+    "Calibri|5.76|0": {
+      "dx": -0.0045,
+      "dy": -0.54,
+      "samples": 5
+    }
+  },
+  "by_size": {
+    "4.68": {
+      "dx": -0.0597,
+      "dy": -1.17,
+      "samples": 15
+    },
+    "5.16": {
+      "dx": -0.1169,
+      "dy": -1.4,
+      "samples": 5
+    },
+    "5.76": {
+      "dx": -0.0625,
+      "dy": -0.62,
+      "samples": 204
+    },
+    "6.24": {
+      "dx": -0.0489,
+      "dy": -0.05,
+      "samples": 1937
+    },
+    "7.32": {
+      "dx": -0.0298,
+      "dy": -0.93,
+      "samples": 72
+    }
+  },
+  "global": {
+    "dx": -0.051,
+    "dy": -0.07,
+    "samples": 2235
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "school_results",
+  "residual": {
+    "dx": -0.0508,
+    "dy": -0.07,
+    "worst_dx": 0.1379,
+    "worst_dy": 1.7
+  },
+  "schema_version": 1
+}

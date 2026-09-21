@@ -1,0 +1,163 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4045,
+        "differing_pixels_percent_tolerance_32": 6.0798,
+        "differing_pixels_percent_tolerance_8": 8.9263,
+        "explained_by_one_pixel_jitter_percent": 99.5955,
+        "ink_ratio": 0.98493,
+        "mean_absolute_difference": 6.86
+      },
+      "differing_pixels_percent": 9.7468,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.917432,
+      "text": {
+        "maximum_drift_pt": 0.63,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 6809,
+        "reference_span_count": 2143,
+        "rendered_character_count": 6809,
+        "rendered_span_count": 2151,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 10
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.5565,
+        "differing_pixels_percent_tolerance_32": 6.1583,
+        "differing_pixels_percent_tolerance_8": 9.0143,
+        "explained_by_one_pixel_jitter_percent": 99.4435,
+        "ink_ratio": 0.99732,
+        "mean_absolute_difference": 7.1277
+      },
+      "differing_pixels_percent": 9.9257,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.916944,
+      "text": {
+        "maximum_drift_pt": 0.72,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 7532,
+        "reference_span_count": 2354,
+        "rendered_character_count": 7532,
+        "rendered_span_count": 2362,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 10
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.5639,
+        "differing_pixels_percent_tolerance_32": 6.1876,
+        "differing_pixels_percent_tolerance_8": 9.0364,
+        "explained_by_one_pixel_jitter_percent": 99.4361,
+        "ink_ratio": 0.99716,
+        "mean_absolute_difference": 7.223
+      },
+      "differing_pixels_percent": 9.9341,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.918949,
+      "text": {
+        "maximum_drift_pt": 0.72,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 7552,
+        "reference_span_count": 2354,
+        "rendered_character_count": 7552,
+        "rendered_span_count": 2362,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 10
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1122,
+        "differing_pixels_percent_tolerance_32": 0.9586,
+        "differing_pixels_percent_tolerance_8": 1.328,
+        "explained_by_one_pixel_jitter_percent": 99.8878,
+        "ink_ratio": 1.01541,
+        "mean_absolute_difference": 1.0362
+      },
+      "differing_pixels_percent": 1.4681,
+      "maximum_column_edge_drift_pt": 0.3,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.988779,
+      "text": {
+        "maximum_drift_pt": 0.66,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 961,
+        "reference_span_count": 263,
+        "rendered_character_count": 961,
+        "rendered_span_count": 271,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 10
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "region_kata_serikali",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.988779,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.3,
+    "worst_explained_by_one_pixel_jitter_percent": 99.4361,
+    "worst_pixel_delta_percent": 9.9341,
+    "worst_ssim": 0.916944,
+    "worst_text_drift_pt": 0.72
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

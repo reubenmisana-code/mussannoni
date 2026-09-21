@@ -1,0 +1,229 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2416,
+        "differing_pixels_percent_tolerance_32": 1.9891,
+        "differing_pixels_percent_tolerance_8": 2.6027,
+        "explained_by_one_pixel_jitter_percent": 99.7584,
+        "ink_ratio": 0.98325,
+        "mean_absolute_difference": 2.4553
+      },
+      "differing_pixels_percent": 2.919,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.973255,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1788,
+        "reference_span_count": 366,
+        "rendered_character_count": 1788,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1167,
+        "differing_pixels_percent_tolerance_32": 1.6183,
+        "differing_pixels_percent_tolerance_8": 2.2926,
+        "explained_by_one_pixel_jitter_percent": 99.8833,
+        "ink_ratio": 0.98762,
+        "mean_absolute_difference": 1.954
+      },
+      "differing_pixels_percent": 2.5988,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.979558,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1779,
+        "reference_span_count": 366,
+        "rendered_character_count": 1779,
+        "rendered_span_count": 365,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1136,
+        "differing_pixels_percent_tolerance_32": 1.5894,
+        "differing_pixels_percent_tolerance_8": 2.2479,
+        "explained_by_one_pixel_jitter_percent": 99.8864,
+        "ink_ratio": 0.9876,
+        "mean_absolute_difference": 1.9144
+      },
+      "differing_pixels_percent": 2.5421,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.979798,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1790,
+        "reference_span_count": 365,
+        "rendered_character_count": 1790,
+        "rendered_span_count": 365,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1113,
+        "differing_pixels_percent_tolerance_32": 1.6009,
+        "differing_pixels_percent_tolerance_8": 2.2756,
+        "explained_by_one_pixel_jitter_percent": 99.8887,
+        "ink_ratio": 0.98953,
+        "mean_absolute_difference": 1.9434
+      },
+      "differing_pixels_percent": 2.5749,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.979492,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1800,
+        "reference_span_count": 365,
+        "rendered_character_count": 1800,
+        "rendered_span_count": 365,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1181,
+        "differing_pixels_percent_tolerance_32": 1.6299,
+        "differing_pixels_percent_tolerance_8": 2.3024,
+        "explained_by_one_pixel_jitter_percent": 99.8819,
+        "ink_ratio": 0.98898,
+        "mean_absolute_difference": 1.9762
+      },
+      "differing_pixels_percent": 2.6031,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.979204,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1797,
+        "reference_span_count": 365,
+        "rendered_character_count": 1797,
+        "rendered_span_count": 365,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1133,
+        "differing_pixels_percent_tolerance_32": 1.6142,
+        "differing_pixels_percent_tolerance_8": 2.2835,
+        "explained_by_one_pixel_jitter_percent": 99.8867,
+        "ink_ratio": 0.98896,
+        "mean_absolute_difference": 1.9556
+      },
+      "differing_pixels_percent": 2.5853,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.979402,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1790,
+        "reference_span_count": 365,
+        "rendered_character_count": 1790,
+        "rendered_span_count": 365,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 6,
+  "report_key": "region_halmashauri_masomo",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.979798,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 6,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_explained_by_one_pixel_jitter_percent": 99.7584,
+    "worst_pixel_delta_percent": 2.919,
+    "worst_ssim": 0.973255,
+    "worst_text_drift_pt": 0.45
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

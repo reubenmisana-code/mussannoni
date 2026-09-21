@@ -1,0 +1,163 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.6164,
+        "differing_pixels_percent_tolerance_32": 7.36,
+        "differing_pixels_percent_tolerance_8": 10.5375,
+        "explained_by_one_pixel_jitter_percent": 99.3836,
+        "ink_ratio": 0.98186,
+        "mean_absolute_difference": 9.0507
+      },
+      "differing_pixels_percent": 11.4615,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.903507,
+      "text": {
+        "maximum_drift_pt": 0.66,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 8302,
+        "reference_span_count": 2681,
+        "rendered_character_count": 8302,
+        "rendered_span_count": 2682,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 31,
+        "unmatched_rendered_spans": 32
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.7289,
+        "differing_pixels_percent_tolerance_32": 9.7191,
+        "differing_pixels_percent_tolerance_8": 13.3459,
+        "explained_by_one_pixel_jitter_percent": 99.2711,
+        "ink_ratio": 0.97907,
+        "mean_absolute_difference": 11.7469
+      },
+      "differing_pixels_percent": 14.4278,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.875789,
+      "text": {
+        "maximum_drift_pt": 0.63,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 10387,
+        "reference_span_count": 3174,
+        "rendered_character_count": 10387,
+        "rendered_span_count": 3180,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 8
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.7351,
+        "differing_pixels_percent_tolerance_32": 9.668,
+        "differing_pixels_percent_tolerance_8": 13.2833,
+        "explained_by_one_pixel_jitter_percent": 99.2649,
+        "ink_ratio": 0.97898,
+        "mean_absolute_difference": 11.6871
+      },
+      "differing_pixels_percent": 14.3345,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.876305,
+      "text": {
+        "maximum_drift_pt": 0.63,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 10290,
+        "reference_span_count": 3174,
+        "rendered_character_count": 10290,
+        "rendered_span_count": 3180,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 8
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.6158,
+        "differing_pixels_percent_tolerance_32": 8.6168,
+        "differing_pixels_percent_tolerance_8": 11.903,
+        "explained_by_one_pixel_jitter_percent": 99.3842,
+        "ink_ratio": 0.97938,
+        "mean_absolute_difference": 10.2886
+      },
+      "differing_pixels_percent": 12.874,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.891283,
+      "text": {
+        "maximum_drift_pt": 0.6,
+        "median_drift_pt": 0.187,
+        "missing_characters": 0,
+        "reference_character_count": 9359,
+        "reference_span_count": 2897,
+        "rendered_character_count": 9359,
+        "rendered_span_count": 2903,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 8
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "region_schools_rank_government",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.903507,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_explained_by_one_pixel_jitter_percent": 99.2649,
+    "worst_pixel_delta_percent": 14.4278,
+    "worst_ssim": 0.875789,
+    "worst_text_drift_pt": 0.66
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

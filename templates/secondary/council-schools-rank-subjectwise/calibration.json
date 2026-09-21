@@ -1,0 +1,87 @@
+{
+  "by_face": {
+    "Arial-BoldMT|6.12|0": {
+      "dx": -0.0852,
+      "dy": -0.715,
+      "samples": 2
+    },
+    "Arial-BoldMT|6.72|0": {
+      "dx": -0.0689,
+      "dy": -0.56,
+      "samples": 737
+    },
+    "Arial-BoldMT|7.32|0": {
+      "dx": -0.07,
+      "dy": -1.04,
+      "samples": 281
+    },
+    "Arial-BoldMT|7.8|0": {
+      "dx": -0.0578,
+      "dy": -1.57,
+      "samples": 5296
+    },
+    "Arial-BoldMT|9.0|0": {
+      "dx": -0.0076,
+      "dy": -0.08,
+      "samples": 2
+    },
+    "ArialMT|6.72|0": {
+      "dx": -0.0178,
+      "dy": -0.576,
+      "samples": 1440
+    },
+    "ArialMT|7.8|0": {
+      "dx": -0.0237,
+      "dy": -1.57,
+      "samples": 3154
+    },
+    "ArialNarrow-Bold|6.72|0": {
+      "dx": -0.0556,
+      "dy": -0.74,
+      "samples": 18
+    },
+    "ArialNarrow-Bold|7.32|0": {
+      "dx": -0.0761,
+      "dy": -1.18,
+      "samples": 464
+    },
+    "ArialNarrow-Bold|7.8|0": {
+      "dx": -0.0204,
+      "dy": -0.41,
+      "samples": 2
+    }
+  },
+  "by_size": {
+    "6.72": {
+      "dx": -0.0286,
+      "dy": -0.576,
+      "samples": 2195
+    },
+    "7.32": {
+      "dx": -0.0761,
+      "dy": -1.12,
+      "samples": 745
+    },
+    "7.8": {
+      "dx": -0.0495,
+      "dy": -1.57,
+      "samples": 8452
+    }
+  },
+  "global": {
+    "dx": -0.05,
+    "dy": -1.45,
+    "samples": 11396
+  },
+  "iterations": 1,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_schools_rank_subjectwise",
+  "residual": {
+    "dx": -0.0495,
+    "dy": -1.45,
+    "worst_dx": 0.1041,
+    "worst_dy": 2.07
+  },
+  "schema_version": 1
+}

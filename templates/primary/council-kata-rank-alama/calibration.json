@@ -1,0 +1,112 @@
+{
+  "by_face": {
+    "Arial-BoldMT|4.8|0": {
+      "dx": -0.0603,
+      "dy": -1.04,
+      "samples": 1
+    },
+    "Arial-BoldMT|5.28|0": {
+      "dx": -0.1225,
+      "dy": -0.876,
+      "samples": 118
+    },
+    "Arial-BoldMT|6.0|0": {
+      "dx": -0.0439,
+      "dy": -0.7,
+      "samples": 295
+    },
+    "Arial-BoldMT|6.12|0": {
+      "dx": -0.0416,
+      "dy": -0.8,
+      "samples": 191
+    },
+    "Arial-BoldMT|7.08|0": {
+      "dx": -0.0173,
+      "dy": -0.11,
+      "samples": 9
+    },
+    "Arial-BoldMT|7.92|0": {
+      "dx": -0.0214,
+      "dy": -0.53,
+      "samples": 1
+    },
+    "ArialMT|5.28|0": {
+      "dx": -0.0213,
+      "dy": -0.925,
+      "samples": 36
+    },
+    "ArialMT|6.0|0": {
+      "dx": -0.0918,
+      "dy": -0.685,
+      "samples": 108
+    },
+    "ArialMT|6.12|0": {
+      "dx": -0.0207,
+      "dy": -0.89,
+      "samples": 12
+    },
+    "ArialNarrow-Bold|4.44|0": {
+      "dx": -0.096,
+      "dy": -0.78,
+      "samples": 4
+    },
+    "ArialNarrow-Bold|4.8|0": {
+      "dx": -0.1061,
+      "dy": -1.385,
+      "samples": 8
+    },
+    "ArialNarrow-Bold|5.28|0": {
+      "dx": -0.076,
+      "dy": -1.01,
+      "samples": 14
+    },
+    "ArialNarrow-Bold|6.12|0": {
+      "dx": -0.0925,
+      "dy": -0.11,
+      "samples": 13
+    }
+  },
+  "by_size": {
+    "4.8": {
+      "dx": -0.0958,
+      "dy": -1.37,
+      "samples": 9
+    },
+    "5.28": {
+      "dx": -0.075,
+      "dy": -0.89,
+      "samples": 168
+    },
+    "6.0": {
+      "dx": -0.0744,
+      "dy": -0.7,
+      "samples": 403
+    },
+    "6.12": {
+      "dx": -0.0364,
+      "dy": -0.77,
+      "samples": 216
+    },
+    "7.08": {
+      "dx": -0.0173,
+      "dy": -0.11,
+      "samples": 9
+    }
+  },
+  "global": {
+    "dx": -0.059,
+    "dy": -0.77,
+    "samples": 810
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_kata_rank_alama",
+  "residual": {
+    "dx": -0.0585,
+    "dy": -0.77,
+    "worst_dx": 0.1661,
+    "worst_dy": 1.52
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "faces": {
+    "'Report Mono'|400|normal": 0.461313,
+    "'Times New Roman', 'Report Serif'|400|italic": 0.451831,
+    "'Times New Roman', 'Report Serif'|400|normal": 0.581369,
+    "'Times New Roman', 'Report Serif'|700|normal": 0.516602,
+    "Arial, 'Report Sans'|400|italic": 0.636659,
+    "Arial, 'Report Sans'|400|normal": 0.691948,
+    "Arial, 'Report Sans'|700|italic": 0.57189,
+    "Arial, 'Report Sans'|700|normal": 0.701428
+  },
+  "note": "baseline_factor is the measured distance from the top of a `line-height: 1` line box to the text baseline, in em, as produced by the rendering engine.",
+  "probe_size_pt": 10.0,
+  "schema_version": 1
+}

@@ -1,0 +1,67 @@
+{
+  "by_face": {
+    "Arial-BoldMT|5.64|0": {
+      "dx": -0.0663,
+      "dy": -0.155,
+      "samples": 8
+    },
+    "Arial-BoldMT|6.24|90": {
+      "dx": 0.1983,
+      "dy": -0.14,
+      "samples": 1
+    },
+    "Arial-BoldMT|7.44|0": {
+      "dx": -0.0803,
+      "dy": -1.16,
+      "samples": 259
+    },
+    "Arial-BoldMT|8.76|0": {
+      "dx": -0.0116,
+      "dy": -0.56,
+      "samples": 5
+    },
+    "ArialMT|7.44|0": {
+      "dx": -0.0486,
+      "dy": -1.16,
+      "samples": 444
+    },
+    "ArialNarrow-Bold|7.44|0": {
+      "dx": -0.0698,
+      "dy": -1.295,
+      "samples": 8
+    }
+  },
+  "by_size": {
+    "5.64": {
+      "dx": -0.0663,
+      "dy": -0.155,
+      "samples": 8
+    },
+    "7.44": {
+      "dx": -0.0547,
+      "dy": -1.16,
+      "samples": 711
+    },
+    "8.76": {
+      "dx": -0.0116,
+      "dy": -0.56,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.055,
+    "dy": -1.16,
+    "samples": 724
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "council_top_schools_alama",
+  "residual": {
+    "dx": -0.0547,
+    "dy": -1.16,
+    "worst_dx": 0.0916,
+    "worst_dy": 1.55
+  },
+  "schema_version": 1
+}

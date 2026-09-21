@@ -1,0 +1,130 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.3317,
+        "differing_pixels_percent_tolerance_32": 2.224,
+        "differing_pixels_percent_tolerance_8": 4.107,
+        "explained_by_one_pixel_jitter_percent": 99.6683,
+        "ink_ratio": 0.99579,
+        "mean_absolute_difference": 3.2571
+      },
+      "differing_pixels_percent": 4.5049,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.959572,
+      "text": {
+        "maximum_drift_pt": 0.36,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1855,
+        "reference_span_count": 661,
+        "rendered_character_count": 1855,
+        "rendered_span_count": 671,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 2,
+        "unmatched_rendered_spans": 12
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2716,
+        "differing_pixels_percent_tolerance_32": 1.8875,
+        "differing_pixels_percent_tolerance_8": 3.6746,
+        "explained_by_one_pixel_jitter_percent": 99.7284,
+        "ink_ratio": 0.99429,
+        "mean_absolute_difference": 2.7931
+      },
+      "differing_pixels_percent": 4.1058,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.965505,
+      "text": {
+        "maximum_drift_pt": 0.39,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1742,
+        "reference_span_count": 674,
+        "rendered_character_count": 1742,
+        "rendered_span_count": 683,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 13
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.189,
+        "differing_pixels_percent_tolerance_32": 1.9079,
+        "differing_pixels_percent_tolerance_8": 3.6473,
+        "explained_by_one_pixel_jitter_percent": 99.811,
+        "ink_ratio": 0.99459,
+        "mean_absolute_difference": 2.7119
+      },
+      "differing_pixels_percent": 4.1222,
+      "maximum_column_edge_drift_pt": 0.48,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.967502,
+      "text": {
+        "maximum_drift_pt": 0.39,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1870,
+        "reference_span_count": 671,
+        "rendered_character_count": 1870,
+        "rendered_span_count": 680,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 13
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 3,
+  "report_key": "region_shule_bora_masomo_jumla",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.967502,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 3,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.48,
+    "worst_explained_by_one_pixel_jitter_percent": 99.6683,
+    "worst_pixel_delta_percent": 4.5049,
+    "worst_ssim": 0.959572,
+    "worst_text_drift_pt": 0.39
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

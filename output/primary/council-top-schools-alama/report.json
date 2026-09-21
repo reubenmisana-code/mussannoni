@@ -1,0 +1,97 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.3461,
+        "differing_pixels_percent_tolerance_32": 4.1564,
+        "differing_pixels_percent_tolerance_8": 5.5143,
+        "explained_by_one_pixel_jitter_percent": 99.6539,
+        "ink_ratio": 1.0094,
+        "mean_absolute_difference": 5.4538
+      },
+      "differing_pixels_percent": 5.9212,
+      "maximum_column_edge_drift_pt": 0.6,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.940984,
+      "text": {
+        "maximum_drift_pt": 0.552,
+        "median_drift_pt": 0.31,
+        "missing_characters": 0,
+        "reference_character_count": 2342,
+        "reference_span_count": 488,
+        "rendered_character_count": 2342,
+        "rendered_span_count": 530,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 55,
+        "unmatched_rendered_spans": 97
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2579,
+        "differing_pixels_percent_tolerance_32": 2.8836,
+        "differing_pixels_percent_tolerance_8": 4.3069,
+        "explained_by_one_pixel_jitter_percent": 99.7421,
+        "ink_ratio": 1.0547,
+        "mean_absolute_difference": 3.7087
+      },
+      "differing_pixels_percent": 4.5654,
+      "maximum_column_edge_drift_pt": 0.6,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.956923,
+      "text": {
+        "maximum_drift_pt": 0.552,
+        "median_drift_pt": 0.19,
+        "missing_characters": 0,
+        "reference_character_count": 2141,
+        "reference_span_count": 488,
+        "rendered_character_count": 2141,
+        "rendered_span_count": 530,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 55,
+        "unmatched_rendered_spans": 97
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 2,
+  "report_key": "council_top_schools_alama",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.956923,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 2,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.6,
+    "worst_explained_by_one_pixel_jitter_percent": 99.6539,
+    "worst_pixel_delta_percent": 5.9212,
+    "worst_ssim": 0.940984,
+    "worst_text_drift_pt": 0.552
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

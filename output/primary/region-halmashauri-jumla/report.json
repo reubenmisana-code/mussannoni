@@ -1,0 +1,163 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1446,
+        "differing_pixels_percent_tolerance_32": 1.797,
+        "differing_pixels_percent_tolerance_8": 2.5036,
+        "explained_by_one_pixel_jitter_percent": 99.8554,
+        "ink_ratio": 0.99415,
+        "mean_absolute_difference": 2.1233
+      },
+      "differing_pixels_percent": 2.8754,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.977835,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1782,
+        "reference_span_count": 366,
+        "rendered_character_count": 1782,
+        "rendered_span_count": 364,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 3,
+        "unmatched_rendered_spans": 1
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1553,
+        "differing_pixels_percent_tolerance_32": 1.8187,
+        "differing_pixels_percent_tolerance_8": 2.5294,
+        "explained_by_one_pixel_jitter_percent": 99.8447,
+        "ink_ratio": 0.99454,
+        "mean_absolute_difference": 2.1386
+      },
+      "differing_pixels_percent": 2.8846,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.977485,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1779,
+        "reference_span_count": 366,
+        "rendered_character_count": 1779,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1641,
+        "differing_pixels_percent_tolerance_32": 1.9571,
+        "differing_pixels_percent_tolerance_8": 2.741,
+        "explained_by_one_pixel_jitter_percent": 99.8359,
+        "ink_ratio": 0.99086,
+        "mean_absolute_difference": 2.4017
+      },
+      "differing_pixels_percent": 3.1287,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.973272,
+      "text": {
+        "maximum_drift_pt": 0.54,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1772,
+        "reference_span_count": 366,
+        "rendered_character_count": 1772,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.0506,
+        "differing_pixels_percent_tolerance_32": 1.3532,
+        "differing_pixels_percent_tolerance_8": 2.1456,
+        "explained_by_one_pixel_jitter_percent": 99.9494,
+        "ink_ratio": 1.00314,
+        "mean_absolute_difference": 1.4401
+      },
+      "differing_pixels_percent": 2.5041,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.986176,
+      "text": {
+        "maximum_drift_pt": 0.54,
+        "median_drift_pt": 0.07,
+        "missing_characters": 0,
+        "reference_character_count": 1396,
+        "reference_span_count": 366,
+        "rendered_character_count": 1396,
+        "rendered_span_count": 366,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "region_halmashauri_jumla",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.986176,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_explained_by_one_pixel_jitter_percent": 99.8359,
+    "worst_pixel_delta_percent": 3.1287,
+    "worst_ssim": 0.973272,
+    "worst_text_drift_pt": 0.54
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

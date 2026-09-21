@@ -1,0 +1,229 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1263,
+        "differing_pixels_percent_tolerance_32": 1.0993,
+        "differing_pixels_percent_tolerance_8": 1.8185,
+        "explained_by_one_pixel_jitter_percent": 99.8737,
+        "ink_ratio": 0.99717,
+        "mean_absolute_difference": 1.3964
+      },
+      "differing_pixels_percent": 2.0496,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.983466,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.27,
+        "missing_characters": 0,
+        "reference_character_count": 1177,
+        "reference_span_count": 389,
+        "rendered_character_count": 1177,
+        "rendered_span_count": 393,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1007,
+        "differing_pixels_percent_tolerance_32": 1.2014,
+        "differing_pixels_percent_tolerance_8": 1.7709,
+        "explained_by_one_pixel_jitter_percent": 99.8993,
+        "ink_ratio": 1.00277,
+        "mean_absolute_difference": 1.4643
+      },
+      "differing_pixels_percent": 1.9595,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.983124,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.27,
+        "missing_characters": 0,
+        "reference_character_count": 1156,
+        "reference_span_count": 385,
+        "rendered_character_count": 1156,
+        "rendered_span_count": 389,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.0356,
+        "differing_pixels_percent_tolerance_32": 0.7934,
+        "differing_pixels_percent_tolerance_8": 1.3728,
+        "explained_by_one_pixel_jitter_percent": 99.9644,
+        "ink_ratio": 0.99442,
+        "mean_absolute_difference": 0.9027
+      },
+      "differing_pixels_percent": 1.5952,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.989894,
+      "text": {
+        "maximum_drift_pt": 0.51,
+        "median_drift_pt": 0.12,
+        "missing_characters": 0,
+        "reference_character_count": 1066,
+        "reference_span_count": 385,
+        "rendered_character_count": 1066,
+        "rendered_span_count": 389,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.0706,
+        "differing_pixels_percent_tolerance_32": 1.1467,
+        "differing_pixels_percent_tolerance_8": 1.6972,
+        "explained_by_one_pixel_jitter_percent": 99.9294,
+        "ink_ratio": 0.98252,
+        "mean_absolute_difference": 1.338
+      },
+      "differing_pixels_percent": 1.8941,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.984739,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.24,
+        "missing_characters": 0,
+        "reference_character_count": 1165,
+        "reference_span_count": 385,
+        "rendered_character_count": 1165,
+        "rendered_span_count": 389,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1456,
+        "differing_pixels_percent_tolerance_32": 1.2983,
+        "differing_pixels_percent_tolerance_8": 1.9205,
+        "explained_by_one_pixel_jitter_percent": 99.8544,
+        "ink_ratio": 1.00116,
+        "mean_absolute_difference": 1.612
+      },
+      "differing_pixels_percent": 2.1045,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.981291,
+      "text": {
+        "maximum_drift_pt": 0.48,
+        "median_drift_pt": 0.27,
+        "missing_characters": 0,
+        "reference_character_count": 1198,
+        "reference_span_count": 385,
+        "rendered_character_count": 1198,
+        "rendered_span_count": 389,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.0704,
+        "differing_pixels_percent_tolerance_32": 1.0882,
+        "differing_pixels_percent_tolerance_8": 1.6625,
+        "explained_by_one_pixel_jitter_percent": 99.9296,
+        "ink_ratio": 0.99342,
+        "mean_absolute_difference": 1.2775
+      },
+      "differing_pixels_percent": 1.8323,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.985273,
+      "text": {
+        "maximum_drift_pt": 0.45,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1037,
+        "reference_span_count": 385,
+        "rendered_character_count": 1037,
+        "rendered_span_count": 389,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 1,
+        "unmatched_rendered_spans": 5
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 6,
+  "report_key": "region_top_schools",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.989894,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 6,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_explained_by_one_pixel_jitter_percent": 99.8544,
+    "worst_pixel_delta_percent": 2.1045,
+    "worst_ssim": 0.981291,
+    "worst_text_drift_pt": 0.51
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

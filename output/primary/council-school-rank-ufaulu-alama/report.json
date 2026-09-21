@@ -1,0 +1,163 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.396,
+        "differing_pixels_percent_tolerance_32": 5.1925,
+        "differing_pixels_percent_tolerance_8": 6.9048,
+        "explained_by_one_pixel_jitter_percent": 99.604,
+        "ink_ratio": 0.97642,
+        "mean_absolute_difference": 6.1042
+      },
+      "differing_pixels_percent": 7.6068,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.937878,
+      "text": {
+        "maximum_drift_pt": 0.52,
+        "median_drift_pt": 0.2,
+        "missing_characters": 0,
+        "reference_character_count": 4528,
+        "reference_span_count": 1171,
+        "rendered_character_count": 4528,
+        "rendered_span_count": 1216,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 9,
+        "unmatched_rendered_spans": 54
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.6413,
+        "differing_pixels_percent_tolerance_32": 7.8526,
+        "differing_pixels_percent_tolerance_8": 11.8124,
+        "explained_by_one_pixel_jitter_percent": 99.3587,
+        "ink_ratio": 1.0992,
+        "mean_absolute_difference": 9.6201
+      },
+      "differing_pixels_percent": 12.8221,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.883696,
+      "text": {
+        "maximum_drift_pt": 0.666,
+        "median_drift_pt": 0.22,
+        "missing_characters": 0,
+        "reference_character_count": 6735,
+        "reference_span_count": 1912,
+        "rendered_character_count": 6735,
+        "rendered_span_count": 1937,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 5,
+        "unmatched_rendered_spans": 30
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.6383,
+        "differing_pixels_percent_tolerance_32": 7.8828,
+        "differing_pixels_percent_tolerance_8": 11.738,
+        "explained_by_one_pixel_jitter_percent": 99.3617,
+        "ink_ratio": 1.1048,
+        "mean_absolute_difference": 9.6899
+      },
+      "differing_pixels_percent": 12.7436,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.885682,
+      "text": {
+        "maximum_drift_pt": 0.666,
+        "median_drift_pt": 0.22,
+        "missing_characters": 0,
+        "reference_character_count": 6820,
+        "reference_span_count": 1921,
+        "rendered_character_count": 6820,
+        "rendered_span_count": 1946,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 5,
+        "unmatched_rendered_spans": 30
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1637,
+        "differing_pixels_percent_tolerance_32": 1.972,
+        "differing_pixels_percent_tolerance_8": 2.8067,
+        "explained_by_one_pixel_jitter_percent": 99.8363,
+        "ink_ratio": 1.06382,
+        "mean_absolute_difference": 2.3603
+      },
+      "differing_pixels_percent": 3.0483,
+      "maximum_column_edge_drift_pt": 0.36,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.973287,
+      "text": {
+        "maximum_drift_pt": 0.61,
+        "median_drift_pt": 0.08,
+        "missing_characters": 0,
+        "reference_character_count": 1607,
+        "reference_span_count": 426,
+        "rendered_character_count": 1607,
+        "rendered_span_count": 451,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 5,
+        "unmatched_rendered_spans": 30
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 4,
+  "report_key": "council_school_rank_ufaulu_alama",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.973287,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 4,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.36,
+    "worst_explained_by_one_pixel_jitter_percent": 99.3587,
+    "worst_pixel_delta_percent": 12.8221,
+    "worst_ssim": 0.883696,
+    "worst_text_drift_pt": 0.666
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "by_face": {
+    "CIDFont+F1|4.09|0": {
+      "dx": -0.0703,
+      "dy": -1.47,
+      "samples": 108
+    },
+    "CIDFont+F1|4.45|0": {
+      "dx": 0.0108,
+      "dy": -1.68,
+      "samples": 191
+    },
+    "CIDFont+F1|4.81|0": {
+      "dx": -0.077,
+      "dy": -1.23,
+      "samples": 3908
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.0342,
+      "dy": -0.33,
+      "samples": 372
+    },
+    "CIDFont+F1|6.13|0": {
+      "dx": -0.0468,
+      "dy": -0.9,
+      "samples": 18
+    },
+    "CIDFont+F1|6.85|0": {
+      "dx": -0.0108,
+      "dy": -0.51,
+      "samples": 5
+    },
+    "CIDFont+F1|7.57|0": {
+      "dx": -0.0052,
+      "dy": -1.14,
+      "samples": 1
+    },
+    "CIDFont+F2|4.09|0": {
+      "dx": -0.0066,
+      "dy": -1.38,
+      "samples": 191
+    },
+    "CIDFont+F2|4.45|0": {
+      "dx": -0.0183,
+      "dy": -1.68,
+      "samples": 382
+    },
+    "CIDFont+F2|4.81|0": {
+      "dx": -0.0577,
+      "dy": -1.23,
+      "samples": 1875
+    }
+  },
+  "by_size": {
+    "4.09": {
+      "dx": -0.0066,
+      "dy": -1.47,
+      "samples": 299
+    },
+    "4.45": {
+      "dx": -0.0089,
+      "dy": -1.68,
+      "samples": 573
+    },
+    "4.81": {
+      "dx": -0.0726,
+      "dy": -1.23,
+      "samples": 5783
+    },
+    "5.41": {
+      "dx": -0.0342,
+      "dy": -0.33,
+      "samples": 372
+    },
+    "6.13": {
+      "dx": -0.0468,
+      "dy": -0.9,
+      "samples": 18
+    },
+    "6.85": {
+      "dx": -0.0108,
+      "dy": -0.51,
+      "samples": 5
+    }
+  },
+  "global": {
+    "dx": -0.067,
+    "dy": -1.23,
+    "samples": 7051
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_kata_jumla",
+  "residual": {
+    "dx": -0.0673,
+    "dy": -1.23,
+    "worst_dx": 0.1917,
+    "worst_dy": 2.13
+  },
+  "schema_version": 1
+}

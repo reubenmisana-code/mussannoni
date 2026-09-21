@@ -1,0 +1,328 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "secondary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4593,
+        "differing_pixels_percent_tolerance_32": 2.6373,
+        "differing_pixels_percent_tolerance_8": 3.6821,
+        "explained_by_one_pixel_jitter_percent": 99.5407,
+        "ink_ratio": 0.98857,
+        "mean_absolute_difference": 3.6777
+      },
+      "differing_pixels_percent": 4.082,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.95712,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1745,
+        "reference_span_count": 115,
+        "rendered_character_count": 1745,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4729,
+        "differing_pixels_percent_tolerance_32": 2.6183,
+        "differing_pixels_percent_tolerance_8": 3.6237,
+        "explained_by_one_pixel_jitter_percent": 99.5271,
+        "ink_ratio": 0.9883,
+        "mean_absolute_difference": 3.6202
+      },
+      "differing_pixels_percent": 4.0231,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.958007,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1760,
+        "reference_span_count": 115,
+        "rendered_character_count": 1760,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.212,
+        "differing_pixels_percent_tolerance_32": 2.2258,
+        "differing_pixels_percent_tolerance_8": 3.3121,
+        "explained_by_one_pixel_jitter_percent": 99.788,
+        "ink_ratio": 0.99609,
+        "mean_absolute_difference": 2.8247
+      },
+      "differing_pixels_percent": 3.6487,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 3,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.970442,
+      "text": {
+        "maximum_drift_pt": 0.54,
+        "median_drift_pt": 0.18,
+        "missing_characters": 0,
+        "reference_character_count": 1721,
+        "reference_span_count": 115,
+        "rendered_character_count": 1721,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2475,
+        "differing_pixels_percent_tolerance_32": 2.259,
+        "differing_pixels_percent_tolerance_8": 3.2113,
+        "explained_by_one_pixel_jitter_percent": 99.7525,
+        "ink_ratio": 0.99733,
+        "mean_absolute_difference": 2.9282
+      },
+      "differing_pixels_percent": 3.4788,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 4,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.967832,
+      "text": {
+        "maximum_drift_pt": 0.54,
+        "median_drift_pt": 0.15,
+        "missing_characters": 0,
+        "reference_character_count": 1713,
+        "reference_span_count": 115,
+        "rendered_character_count": 1713,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.9718,
+        "differing_pixels_percent_tolerance_32": 3.1584,
+        "differing_pixels_percent_tolerance_8": 4.4161,
+        "explained_by_one_pixel_jitter_percent": 99.0282,
+        "ink_ratio": 0.94485,
+        "mean_absolute_difference": 5.0549
+      },
+      "differing_pixels_percent": 4.6353,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 5,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.935859,
+      "text": {
+        "maximum_drift_pt": 0.72,
+        "median_drift_pt": 0.39,
+        "missing_characters": 0,
+        "reference_character_count": 1730,
+        "reference_span_count": 115,
+        "rendered_character_count": 1730,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4326,
+        "differing_pixels_percent_tolerance_32": 2.5936,
+        "differing_pixels_percent_tolerance_8": 3.6078,
+        "explained_by_one_pixel_jitter_percent": 99.5674,
+        "ink_ratio": 0.98812,
+        "mean_absolute_difference": 3.5682
+      },
+      "differing_pixels_percent": 3.9886,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 6,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.958887,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1739,
+        "reference_span_count": 115,
+        "rendered_character_count": 1739,
+        "rendered_span_count": 116,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 24,
+        "unmatched_rendered_spans": 25
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.9313,
+        "differing_pixels_percent_tolerance_32": 3.208,
+        "differing_pixels_percent_tolerance_8": 4.4562,
+        "explained_by_one_pixel_jitter_percent": 99.0687,
+        "ink_ratio": 0.94777,
+        "mean_absolute_difference": 5.1033
+      },
+      "differing_pixels_percent": 4.6729,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 7,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.935026,
+      "text": {
+        "maximum_drift_pt": 0.72,
+        "median_drift_pt": 0.39,
+        "missing_characters": 0,
+        "reference_character_count": 1757,
+        "reference_span_count": 115,
+        "rendered_character_count": 1757,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4943,
+        "differing_pixels_percent_tolerance_32": 2.694,
+        "differing_pixels_percent_tolerance_8": 3.7446,
+        "explained_by_one_pixel_jitter_percent": 99.5057,
+        "ink_ratio": 0.98749,
+        "mean_absolute_difference": 3.7292
+      },
+      "differing_pixels_percent": 4.151,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 8,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.956728,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1793,
+        "reference_span_count": 115,
+        "rendered_character_count": 1793,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.4842,
+        "differing_pixels_percent_tolerance_32": 2.6773,
+        "differing_pixels_percent_tolerance_8": 3.6917,
+        "explained_by_one_pixel_jitter_percent": 99.5158,
+        "ink_ratio": 0.98908,
+        "mean_absolute_difference": 3.6691
+      },
+      "differing_pixels_percent": 4.069,
+      "maximum_column_edge_drift_pt": 0.18,
+      "page": 9,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.957622,
+      "text": {
+        "maximum_drift_pt": 0.57,
+        "median_drift_pt": 0.21,
+        "missing_characters": 0,
+        "reference_character_count": 1738,
+        "reference_span_count": 115,
+        "rendered_character_count": 1738,
+        "rendered_span_count": 126,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 15
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 9,
+  "report_key": "region_best_students_overall",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.970442,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 9,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.18,
+    "worst_explained_by_one_pixel_jitter_percent": 99.0282,
+    "worst_pixel_delta_percent": 4.6729,
+    "worst_ssim": 0.935026,
+    "worst_text_drift_pt": 0.72
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

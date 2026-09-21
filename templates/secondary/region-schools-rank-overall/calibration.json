@@ -1,0 +1,92 @@
+{
+  "by_face": {
+    "CIDFont+F1|4.81|0": {
+      "dx": -0.1641,
+      "dy": -1.2,
+      "samples": 7
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.098,
+      "dy": -1.17,
+      "samples": 54
+    },
+    "CIDFont+F1|6.13|0": {
+      "dx": -0.1224,
+      "dy": -0.72,
+      "samples": 49
+    },
+    "CIDFont+F2|4.45|0": {
+      "dx": -0.1505,
+      "dy": -1.77,
+      "samples": 383
+    },
+    "CIDFont+F2|4.81|0": {
+      "dx": -0.1469,
+      "dy": -1.41,
+      "samples": 7792
+    },
+    "CIDFont+F2|5.41|0": {
+      "dx": -0.0591,
+      "dy": -0.09,
+      "samples": 13
+    },
+    "CIDFont+F2|6.13|0": {
+      "dx": -0.1256,
+      "dy": -0.93,
+      "samples": 10
+    },
+    "CIDFont+F2|6.85|0": {
+      "dx": -0.0089,
+      "dy": -0.39,
+      "samples": 1
+    },
+    "CIDFont+F3|4.45|0": {
+      "dx": -0.0205,
+      "dy": -1.77,
+      "samples": 2147
+    },
+    "CIDFont+F3|4.81|0": {
+      "dx": -0.0799,
+      "dy": -1.41,
+      "samples": 4615
+    }
+  },
+  "by_size": {
+    "4.45": {
+      "dx": -0.0269,
+      "dy": -1.77,
+      "samples": 2530
+    },
+    "4.81": {
+      "dx": -0.1186,
+      "dy": -1.41,
+      "samples": 12414
+    },
+    "5.41": {
+      "dx": -0.0831,
+      "dy": -1.14,
+      "samples": 67
+    },
+    "6.13": {
+      "dx": -0.1224,
+      "dy": -0.87,
+      "samples": 59
+    }
+  },
+  "global": {
+    "dx": -0.114,
+    "dy": -1.44,
+    "samples": 15071
+  },
+  "iterations": 1,
+  "level": "secondary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_schools_rank_overall",
+  "residual": {
+    "dx": -0.1144,
+    "dy": -1.44,
+    "worst_dx": 0.2272,
+    "worst_dy": 5.91
+  },
+  "schema_version": 1
+}

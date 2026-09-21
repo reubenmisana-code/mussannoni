@@ -1,0 +1,97 @@
+{
+  "engine": "chromium (headless, print-to-pdf)",
+  "level": "primary",
+  "metric_dpi": 300,
+  "page_count_equal": true,
+  "pages": [
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2072,
+        "differing_pixels_percent_tolerance_32": 4.8027,
+        "differing_pixels_percent_tolerance_8": 5.9806,
+        "explained_by_one_pixel_jitter_percent": 99.7928,
+        "ink_ratio": 1.00592,
+        "mean_absolute_difference": 5.3715
+      },
+      "differing_pixels_percent": 6.4507,
+      "maximum_column_edge_drift_pt": 0.42,
+      "page": 1,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.944184,
+      "text": {
+        "maximum_drift_pt": 0.53,
+        "median_drift_pt": 0.2,
+        "missing_characters": 0,
+        "reference_character_count": 3051,
+        "reference_span_count": 776,
+        "rendered_character_count": 3051,
+        "rendered_span_count": 827,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 10,
+        "unmatched_rendered_spans": 61
+      }
+    },
+    {
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.0277,
+        "differing_pixels_percent_tolerance_32": 0.6021,
+        "differing_pixels_percent_tolerance_8": 0.7818,
+        "explained_by_one_pixel_jitter_percent": 99.9723,
+        "ink_ratio": 1.00398,
+        "mean_absolute_difference": 0.6971
+      },
+      "differing_pixels_percent": 0.8443,
+      "maximum_column_edge_drift_pt": 0.42,
+      "page": 2,
+      "page_size_equal": true,
+      "page_size_pt": [
+        792.0,
+        612.0
+      ],
+      "passes": false,
+      "ssim": 0.99228,
+      "text": {
+        "maximum_drift_pt": 0.25,
+        "median_drift_pt": 0.19,
+        "missing_characters": 0,
+        "reference_character_count": 379,
+        "reference_span_count": 68,
+        "rendered_character_count": 379,
+        "rendered_span_count": 100,
+        "surplus_characters": 0,
+        "text_content_equal": true,
+        "unmatched_reference_spans": 5,
+        "unmatched_rendered_spans": 37
+      }
+    }
+  ],
+  "passes": false,
+  "reference_page_count": 2,
+  "report_key": "council_kata_rank_alama",
+  "schema_version": 2,
+  "status": "wip",
+  "summary": {
+    "best_ssim": 0.99228,
+    "blank_pages": 0,
+    "pages_passing": 0,
+    "pages_total": 2,
+    "text_content_equal": true,
+    "worst_column_drift_pt": 0.42,
+    "worst_explained_by_one_pixel_jitter_percent": 99.7928,
+    "worst_pixel_delta_percent": 6.4507,
+    "worst_ssim": 0.944184,
+    "worst_text_drift_pt": 0.53
+  },
+  "thresholds": {
+    "maximum_column_edge_drift_pt": 0.5,
+    "maximum_differing_pixels_percent": 0.5,
+    "maximum_text_drift_pt": 1.0,
+    "minimum_ssim": 0.98
+  }
+}

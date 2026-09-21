@@ -1,0 +1,142 @@
+{
+  "by_face": {
+    "CIDFont+F1|5.05|0": {
+      "dx": -0.1656,
+      "dy": -1.32,
+      "samples": 222
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.2501,
+      "dy": -0.18,
+      "samples": 40
+    },
+    "CIDFont+F1|5.53|90": {
+      "dx": -0.0084,
+      "dy": -0.1211,
+      "samples": 1
+    },
+    "CIDFont+F1|5.89|0": {
+      "dx": -0.1621,
+      "dy": -0.54,
+      "samples": 1165
+    },
+    "CIDFont+F1|6.01|0": {
+      "dx": -0.0605,
+      "dy": -0.63,
+      "samples": 9
+    },
+    "CIDFont+F1|6.01|90": {
+      "dx": -0.5778,
+      "dy": -0.2389,
+      "samples": 1
+    },
+    "CIDFont+F1|6.61|0": {
+      "dx": -0.1061,
+      "dy": -0.51,
+      "samples": 251
+    },
+    "CIDFont+F1|6.73|0": {
+      "dx": -0.1407,
+      "dy": -0.42,
+      "samples": 39
+    },
+    "CIDFont+F1|7.57|0": {
+      "dx": -0.0699,
+      "dy": -1.23,
+      "samples": 11
+    },
+    "CIDFont+F1|8.42|0": {
+      "dx": -0.0127,
+      "dy": -1.32,
+      "samples": 5
+    },
+    "CIDFont+F1|8.78|0": {
+      "dx": -0.0148,
+      "dy": -0.705,
+      "samples": 8
+    },
+    "CIDFont+F2|5.05|0": {
+      "dx": -0.0173,
+      "dy": -1.35,
+      "samples": 110
+    },
+    "CIDFont+F2|5.41|0": {
+      "dx": -0.0234,
+      "dy": -0.18,
+      "samples": 130
+    },
+    "CIDFont+F2|5.89|0": {
+      "dx": -0.1322,
+      "dy": -0.57,
+      "samples": 488
+    },
+    "CIDFont+F2|6.61|0": {
+      "dx": -0.0239,
+      "dy": -0.45,
+      "samples": 503
+    }
+  },
+  "by_size": {
+    "5.05": {
+      "dx": -0.0653,
+      "dy": -1.335,
+      "samples": 332
+    },
+    "5.41": {
+      "dx": -0.0234,
+      "dy": -0.18,
+      "samples": 170
+    },
+    "5.89": {
+      "dx": -0.1405,
+      "dy": -0.54,
+      "samples": 1653
+    },
+    "6.01": {
+      "dx": -0.0605,
+      "dy": -0.63,
+      "samples": 9
+    },
+    "6.61": {
+      "dx": -0.0431,
+      "dy": -0.48,
+      "samples": 754
+    },
+    "6.73": {
+      "dx": -0.1407,
+      "dy": -0.42,
+      "samples": 39
+    },
+    "7.57": {
+      "dx": -0.0699,
+      "dy": -1.23,
+      "samples": 11
+    },
+    "8.42": {
+      "dx": -0.0127,
+      "dy": -1.32,
+      "samples": 5
+    },
+    "8.78": {
+      "dx": -0.0148,
+      "dy": -0.705,
+      "samples": 8
+    }
+  },
+  "global": {
+    "dx": -0.095,
+    "dy": -0.54,
+    "samples": 2981
+  },
+  "iterations": 1,
+  "level": "primary",
+  "note": "cumulative correction in points; the scaffold subtracts it from placed text",
+  "report_key": "region_shule_bora_jumla",
+  "residual": {
+    "dx": -0.0953,
+    "dy": -0.54,
+    "worst_dx": 0.2652,
+    "worst_dy": 1.71
+  },
+  "schema_version": 1
+}
