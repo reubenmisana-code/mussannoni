@@ -75,7 +75,7 @@ class FontResolver:
         return font
 
     def character_chunks(
-        self, style: Style, text: str, offsets: tuple[float, ...]
+        self, style: Style, text: str, offsets: tuple[float, ...], rotation: int = 0
     ) -> list[dict[str, Any]]:
         """Split a run so every glyph lands on its reference offset.
 
@@ -83,10 +83,19 @@ class FontResolver:
         because its producer emitted explicit per-glyph adjustments. Each chunk therefore
         carries the correction needed before it, and consecutive characters that need none stay
         in one chunk, so the markup only grows where the reference actually asks for it.
+
+        For a 90-degree run the reference records each glyph's offset as movement *up* the page
+        (negative along the y axis), while the font's advances and the CSS inline axis after
+        ``rotate(-90deg)`` both run in that same upward direction as a positive magnitude. The
+        two are only comparable in magnitude, so rotated offsets are taken as ``abs`` before the
+        per-glyph correction is computed; otherwise the sign flip doubled every offset and the
+        header spread to twice its height.
         """
         font = self.measuring_font(style)
         if font is None or not offsets or len(offsets) != len(text):
             return []
+        if rotation:
+            offsets = tuple(abs(offset) for offset in offsets)
         try:
             natural = [font.text_length(text[:index], fontsize=style.size_pt) for index in range(len(text))]
         except (RuntimeError, ValueError):
@@ -381,7 +390,7 @@ def build_lines(
             # rendering the space as well counts that space twice and pushes the run right.
             left = run.origin_x - cell.x
             top = run.baseline - baseline_drop - cell.y
-        chunks = resolver.character_chunks(run.style, run.text, run.char_offsets)
+        chunks = resolver.character_chunks(run.style, run.text, run.char_offsets, run.rotation)
         spacing = 0.0
         if not chunks:
             extent = abs(run.baseline - run.y_extent) if run.rotation else run.x1 - run.x0

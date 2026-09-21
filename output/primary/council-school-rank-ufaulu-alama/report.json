@@ -6,14 +6,14 @@
   "pages": [
     {
       "diagnostics": {
-        "beyond_one_pixel_jitter_percent": 0.396,
-        "differing_pixels_percent_tolerance_32": 5.1925,
-        "differing_pixels_percent_tolerance_8": 6.9048,
-        "explained_by_one_pixel_jitter_percent": 99.604,
-        "ink_ratio": 0.97642,
-        "mean_absolute_difference": 6.1042
+        "beyond_one_pixel_jitter_percent": 0.3756,
+        "differing_pixels_percent_tolerance_32": 5.188,
+        "differing_pixels_percent_tolerance_8": 6.9044,
+        "explained_by_one_pixel_jitter_percent": 99.6244,
+        "ink_ratio": 0.9802,
+        "mean_absolute_difference": 6.0704
       },
-      "differing_pixels_percent": 7.6068,
+      "differing_pixels_percent": 7.6076,
       "maximum_column_edge_drift_pt": 0.36,
       "page": 1,
       "page_size_equal": true,
@@ -22,7 +22,7 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.937878,
+      "ssim": 0.938429,
       "text": {
         "maximum_drift_pt": 0.52,
         "median_drift_pt": 0.2,
@@ -30,23 +30,23 @@
         "reference_character_count": 4528,
         "reference_span_count": 1171,
         "rendered_character_count": 4528,
-        "rendered_span_count": 1216,
+        "rendered_span_count": 1171,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 9,
-        "unmatched_rendered_spans": 54
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
       "diagnostics": {
-        "beyond_one_pixel_jitter_percent": 0.6413,
-        "differing_pixels_percent_tolerance_32": 7.8526,
-        "differing_pixels_percent_tolerance_8": 11.8124,
-        "explained_by_one_pixel_jitter_percent": 99.3587,
-        "ink_ratio": 1.0992,
-        "mean_absolute_difference": 9.6201
+        "beyond_one_pixel_jitter_percent": 0.6375,
+        "differing_pixels_percent_tolerance_32": 7.849,
+        "differing_pixels_percent_tolerance_8": 11.8123,
+        "explained_by_one_pixel_jitter_percent": 99.3625,
+        "ink_ratio": 1.10106,
+        "mean_absolute_difference": 9.6035
       },
-      "differing_pixels_percent": 12.8221,
+      "differing_pixels_percent": 12.8237,
       "maximum_column_edge_drift_pt": 0.36,
       "page": 2,
       "page_size_equal": true,
@@ -55,7 +55,7 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.883696,
+      "ssim": 0.883996,
       "text": {
         "maximum_drift_pt": 0.666,
         "median_drift_pt": 0.22,
@@ -63,23 +63,23 @@
         "reference_character_count": 6735,
         "reference_span_count": 1912,
         "rendered_character_count": 6735,
-        "rendered_span_count": 1937,
+        "rendered_span_count": 1912,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 5,
-        "unmatched_rendered_spans": 30
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
       "diagnostics": {
-        "beyond_one_pixel_jitter_percent": 0.6383,
-        "differing_pixels_percent_tolerance_32": 7.8828,
-        "differing_pixels_percent_tolerance_8": 11.738,
-        "explained_by_one_pixel_jitter_percent": 99.3617,
-        "ink_ratio": 1.1048,
-        "mean_absolute_difference": 9.6899
+        "beyond_one_pixel_jitter_percent": 0.6344,
+        "differing_pixels_percent_tolerance_32": 7.8791,
+        "differing_pixels_percent_tolerance_8": 11.7378,
+        "explained_by_one_pixel_jitter_percent": 99.3656,
+        "ink_ratio": 1.10676,
+        "mean_absolute_difference": 9.6733
       },
-      "differing_pixels_percent": 12.7436,
+      "differing_pixels_percent": 12.7453,
       "maximum_column_edge_drift_pt": 0.36,
       "page": 3,
       "page_size_equal": true,
@@ -88,7 +88,7 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.885682,
+      "ssim": 0.885982,
       "text": {
         "maximum_drift_pt": 0.666,
         "median_drift_pt": 0.22,
@@ -96,23 +96,23 @@
         "reference_character_count": 6820,
         "reference_span_count": 1921,
         "rendered_character_count": 6820,
-        "rendered_span_count": 1946,
+        "rendered_span_count": 1921,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 5,
-        "unmatched_rendered_spans": 30
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     },
     {
       "diagnostics": {
-        "beyond_one_pixel_jitter_percent": 0.1637,
-        "differing_pixels_percent_tolerance_32": 1.972,
-        "differing_pixels_percent_tolerance_8": 2.8067,
-        "explained_by_one_pixel_jitter_percent": 99.8363,
-        "ink_ratio": 1.06382,
-        "mean_absolute_difference": 2.3603
+        "beyond_one_pixel_jitter_percent": 0.1598,
+        "differing_pixels_percent_tolerance_32": 1.9684,
+        "differing_pixels_percent_tolerance_8": 2.8065,
+        "explained_by_one_pixel_jitter_percent": 99.8402,
+        "ink_ratio": 1.07053,
+        "mean_absolute_difference": 2.3437
       },
-      "differing_pixels_percent": 3.0483,
+      "differing_pixels_percent": 3.05,
       "maximum_column_edge_drift_pt": 0.36,
       "page": 4,
       "page_size_equal": true,
@@ -121,7 +121,7 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.973287,
+      "ssim": 0.973587,
       "text": {
         "maximum_drift_pt": 0.61,
         "median_drift_pt": 0.08,
@@ -129,11 +129,11 @@
         "reference_character_count": 1607,
         "reference_span_count": 426,
         "rendered_character_count": 1607,
-        "rendered_span_count": 451,
+        "rendered_span_count": 426,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 5,
-        "unmatched_rendered_spans": 30
+        "unmatched_reference_spans": 0,
+        "unmatched_rendered_spans": 0
       }
     }
   ],
@@ -143,15 +143,15 @@
   "schema_version": 2,
   "status": "wip",
   "summary": {
-    "best_ssim": 0.973287,
+    "best_ssim": 0.973587,
     "blank_pages": 0,
     "pages_passing": 0,
     "pages_total": 4,
     "text_content_equal": true,
     "worst_column_drift_pt": 0.36,
-    "worst_explained_by_one_pixel_jitter_percent": 99.3587,
-    "worst_pixel_delta_percent": 12.8221,
-    "worst_ssim": 0.883696,
+    "worst_explained_by_one_pixel_jitter_percent": 99.3625,
+    "worst_pixel_delta_percent": 12.8237,
+    "worst_ssim": 0.883996,
     "worst_text_drift_pt": 0.666
   },
   "thresholds": {

@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-003",
+  "type": "chore",
+  "description": "Propagate the rotated-header fix across the entire corpus and refresh all committed evidence so the improvement is verifiable end-to-end. FEAT-002 proves and applies the fix on the worst rotation-heavy reports; this feature re-runs the full conversion loop for every report, regenerates the committed output/*/{rendered.pdf,report.json,diff-page-NN.png} and templates/*/{fixture.json,report.css,calibration.json}, refreshes the README conversion-status table, and confirms the whole suite is green with no regressions. Depends on FEAT-002. corpus/ stays untouched; thresholds stay untouched.",
+  "status": "pending",
+  "steps": [
+    "Confirm the environment is still ready (`make doctor` prints 'environment ready').",
+    "Re-run the full corpus conversion: `make convert` (== `uv run python -m tools.convert --all`), which for all 46 reports runs scaffold->render->tune->scaffold->render->compare and rewrites templates/*/{fixture.json,report.css,calibration.json} and output/*/{rendered.pdf,report.json,diff-page-NN.png}. This is long-running; allow a generous timeout and run it to completion. If a single report errors, convert.py continues and lists failures at the end - investigate and re-run any failed report with `make convert-one`.",
+    "Regenerate the README status table: `make status` (== `uv run python -m tools.status`), which rewrites the conversion-status block from output/*/report.json.",
+    "Aggregate before/after across the corpus: compare each report's worst_ssim, worst_pixel_delta_percent, worst_text_drift_pt, worst_column_drift_pt and pages_passing against the pre-change committed values (git can show the diff of README.md and output/*/report.json). Confirm the rotation-heavy reports improved and that no report regressed materially. Record the corpus-level summary (how many reports improved, any that regressed and why) in this feature's findings.",
+    "Run `uv run ruff check .` and `uv run pytest` (== `make check`) and confirm both are green. test_fidelity.py enforces that status matches measurements and that no `done` report fails a gate; test_templates.py enforces no literal sample values leaked into templates.",
+    "Leave the working tree committable: all regenerated artifacts staged-ready, no stray files under work/ (gitignored) or corpus/ touched. Do NOT push or open a PR - the orchestrator handles that."
+  ],
+  "acceptance_criteria": [
+    "`make convert` completes for all 46 reports with no unresolved failures (any transient render failure is re-run to success).",
+    "output/*/report.json and README.md conversion-status table are regenerated and reflect the new measurements.",
+    "Across the corpus, the rotation-heavy reports show improved worst_ssim and/or reduced worst_text_drift_pt versus the committed baseline, and no report regresses on any gate it previously passed.",
+    "`uv run ruff check .` is clean and `uv run pytest` is green.",
+    "No file under corpus/ is modified; THRESHOLDS are unchanged; the tree is in a committable state."
+  ],
+  "verification": [
+    "make convert",
+    "make status",
+    "make check"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
