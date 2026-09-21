@@ -5,7 +5,15 @@
   "page_count_equal": true,
   "pages": [
     {
-      "differing_pixels_percent": 8.5576,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.3964,
+        "differing_pixels_percent_tolerance_32": 5.2632,
+        "differing_pixels_percent_tolerance_8": 7.106,
+        "explained_by_one_pixel_jitter_percent": 99.6036,
+        "ink_ratio": 1.00571,
+        "mean_absolute_difference": 6.885
+      },
+      "differing_pixels_percent": 7.7901,
       "maximum_column_edge_drift_pt": 0.24,
       "page": 1,
       "page_size_equal": true,
@@ -14,23 +22,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.911306,
+      "ssim": 0.933032,
       "text": {
-        "maximum_drift_pt": 6.212,
+        "maximum_drift_pt": 0.46,
         "median_drift_pt": 0.16,
         "missing_characters": 0,
         "reference_character_count": 3041,
         "reference_span_count": 176,
         "rendered_character_count": 3041,
-        "rendered_span_count": 174,
+        "rendered_span_count": 204,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 4,
-        "unmatched_rendered_spans": 2
+        "unmatched_reference_spans": 8,
+        "unmatched_rendered_spans": 36
       }
     },
     {
-      "differing_pixels_percent": 8.9664,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.3006,
+        "differing_pixels_percent_tolerance_32": 6.6238,
+        "differing_pixels_percent_tolerance_8": 7.6135,
+        "explained_by_one_pixel_jitter_percent": 99.6994,
+        "ink_ratio": 0.99319,
+        "mean_absolute_difference": 7.5881
+      },
+      "differing_pixels_percent": 8.3263,
       "maximum_column_edge_drift_pt": 0.24,
       "page": 2,
       "page_size_equal": true,
@@ -39,23 +55,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.913574,
+      "ssim": 0.933038,
       "text": {
-        "maximum_drift_pt": 6.212,
+        "maximum_drift_pt": 0.49,
         "median_drift_pt": 0.19,
         "missing_characters": 0,
         "reference_character_count": 2979,
         "reference_span_count": 178,
         "rendered_character_count": 2979,
-        "rendered_span_count": 174,
+        "rendered_span_count": 204,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 8,
-        "unmatched_rendered_spans": 4
+        "unmatched_reference_spans": 12,
+        "unmatched_rendered_spans": 38
       }
     },
     {
-      "differing_pixels_percent": 7.3387,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.346,
+        "differing_pixels_percent_tolerance_32": 3.5468,
+        "differing_pixels_percent_tolerance_8": 6.1421,
+        "explained_by_one_pixel_jitter_percent": 99.654,
+        "ink_ratio": 1.0186,
+        "mean_absolute_difference": 5.5221
+      },
+      "differing_pixels_percent": 6.7838,
       "maximum_column_edge_drift_pt": 0.24,
       "page": 3,
       "page_size_equal": true,
@@ -64,23 +88,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.923491,
+      "ssim": 0.941037,
       "text": {
-        "maximum_drift_pt": 6.212,
+        "maximum_drift_pt": 0.37,
         "median_drift_pt": 0.2,
         "missing_characters": 0,
         "reference_character_count": 2943,
         "reference_span_count": 178,
         "rendered_character_count": 2943,
-        "rendered_span_count": 173,
+        "rendered_span_count": 203,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 10,
-        "unmatched_rendered_spans": 5
+        "unmatched_reference_spans": 14,
+        "unmatched_rendered_spans": 39
       }
     },
     {
-      "differing_pixels_percent": 8.3174,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.3449,
+        "differing_pixels_percent_tolerance_32": 5.275,
+        "differing_pixels_percent_tolerance_8": 7.0912,
+        "explained_by_one_pixel_jitter_percent": 99.6551,
+        "ink_ratio": 1.00564,
+        "mean_absolute_difference": 6.834
+      },
+      "differing_pixels_percent": 7.7547,
       "maximum_column_edge_drift_pt": 0.24,
       "page": 4,
       "page_size_equal": true,
@@ -89,23 +121,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.916449,
+      "ssim": 0.933792,
       "text": {
-        "maximum_drift_pt": 6.212,
+        "maximum_drift_pt": 0.4,
         "median_drift_pt": 0.2,
         "missing_characters": 0,
         "reference_character_count": 3056,
         "reference_span_count": 178,
         "rendered_character_count": 3056,
-        "rendered_span_count": 176,
+        "rendered_span_count": 206,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 4,
-        "unmatched_rendered_spans": 2
+        "unmatched_reference_spans": 8,
+        "unmatched_rendered_spans": 36
       }
     },
     {
-      "differing_pixels_percent": 3.7845,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2406,
+        "differing_pixels_percent_tolerance_32": 1.9162,
+        "differing_pixels_percent_tolerance_8": 3.1814,
+        "explained_by_one_pixel_jitter_percent": 99.7594,
+        "ink_ratio": 1.01695,
+        "mean_absolute_difference": 2.9632
+      },
+      "differing_pixels_percent": 3.54,
       "maximum_column_edge_drift_pt": 0.24,
       "page": 5,
       "page_size_equal": true,
@@ -114,19 +154,19 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.962275,
+      "ssim": 0.968218,
       "text": {
-        "maximum_drift_pt": 6.212,
+        "maximum_drift_pt": 0.43,
         "median_drift_pt": 0.16,
         "missing_characters": 0,
         "reference_character_count": 1525,
         "reference_span_count": 89,
         "rendered_character_count": 1525,
-        "rendered_span_count": 88,
+        "rendered_span_count": 103,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 2,
-        "unmatched_rendered_spans": 1
+        "unmatched_reference_spans": 4,
+        "unmatched_rendered_spans": 18
       }
     }
   ],
@@ -136,15 +176,16 @@
   "schema_version": 2,
   "status": "wip",
   "summary": {
-    "best_ssim": 0.962275,
+    "best_ssim": 0.968218,
     "blank_pages": 0,
     "pages_passing": 0,
     "pages_total": 5,
     "text_content_equal": true,
     "worst_column_drift_pt": 0.24,
-    "worst_pixel_delta_percent": 8.9664,
-    "worst_ssim": 0.911306,
-    "worst_text_drift_pt": 6.212
+    "worst_explained_by_one_pixel_jitter_percent": 99.6036,
+    "worst_pixel_delta_percent": 8.3263,
+    "worst_ssim": 0.933032,
+    "worst_text_drift_pt": 0.49
   },
   "thresholds": {
     "maximum_column_edge_drift_pt": 0.5,

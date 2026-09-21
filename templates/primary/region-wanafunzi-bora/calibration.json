@@ -1,88 +1,197 @@
 {
+  "by_face": {
+    "CIDFont+F1|4.45|0": {
+      "dx": -0.0497,
+      "dy": -1.605,
+      "samples": 4
+    },
+    "CIDFont+F1|4.81|0": {
+      "dx": -0.0672,
+      "dy": -1.17,
+      "samples": 52
+    },
+    "CIDFont+F1|4.93|0": {
+      "dx": -0.1076,
+      "dy": -1.08,
+      "samples": 4
+    },
+    "CIDFont+F1|5.17|0": {
+      "dx": -0.1716,
+      "dy": -1.365,
+      "samples": 36
+    },
+    "CIDFont+F1|5.29|0": {
+      "dx": -0.1335,
+      "dy": -0.84,
+      "samples": 108
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.1411,
+      "dy": -0.12,
+      "samples": 36
+    },
+    "CIDFont+F1|5.65|0": {
+      "dx": -0.0497,
+      "dy": -0.24,
+      "samples": 28
+    },
+    "CIDFont+F1|6.01|0": {
+      "dx": -0.1655,
+      "dy": -0.675,
+      "samples": 28
+    },
+    "CIDFont+F1|6.13|0": {
+      "dx": -0.1228,
+      "dy": -0.9,
+      "samples": 84
+    },
+    "CIDFont+F1|6.37|0": {
+      "dx": -0.1228,
+      "dy": -0.21,
+      "samples": 28
+    },
+    "CIDFont+F1|7.21|0": {
+      "dx": -0.0094,
+      "dy": -0.6,
+      "samples": 5
+    },
+    "CIDFont+F1|7.81|0": {
+      "dx": -0.0113,
+      "dy": -1.56,
+      "samples": 5
+    },
+    "CIDFont+F1|7.93|0": {
+      "dx": -0.0075,
+      "dy": -0.54,
+      "samples": 15
+    },
+    "CIDFont+F1|8.18|0": {
+      "dx": -0.007,
+      "dy": -1.05,
+      "samples": 5
+    },
+    "CIDFont+F2|4.81|0": {
+      "dx": -0.0201,
+      "dy": -1.11,
+      "samples": 70
+    },
+    "CIDFont+F2|5.17|0": {
+      "dx": -0.0372,
+      "dy": -1.44,
+      "samples": 130
+    },
+    "CIDFont+F2|5.29|0": {
+      "dx": -0.0217,
+      "dy": -0.9,
+      "samples": 188
+    },
+    "CIDFont+F2|5.41|0": {
+      "dx": -0.0256,
+      "dy": -0.21,
+      "samples": 66
+    },
+    "CIDFont+F2|5.65|0": {
+      "dx": -0.0943,
+      "dy": -0.33,
+      "samples": 61
+    },
+    "CIDFont+F2|5.77|0": {
+      "dx": -0.079,
+      "dy": -0.3,
+      "samples": 180
+    },
+    "CIDFont+F2|5.89|0": {
+      "dx": -0.0859,
+      "dy": -0.36,
+      "samples": 61
+    }
+  },
   "by_size": {
     "4.81": {
-      "dx": -0.036,
-      "dy": -1.08,
+      "dx": -0.0336,
+      "dy": -1.14,
       "samples": 122
     },
     "5.17": {
-      "dx": -0.044,
-      "dy": -1.53,
-      "samples": 226
+      "dx": -0.0446,
+      "dy": -1.44,
+      "samples": 166
     },
     "5.29": {
-      "dx": -0.035,
-      "dy": -0.93,
+      "dx": -0.0375,
+      "dy": -0.84,
       "samples": 296
     },
     "5.41": {
-      "dx": -0.03,
-      "dy": -0.12,
+      "dx": -0.0361,
+      "dy": -0.21,
       "samples": 102
     },
     "5.65": {
-      "dx": -0.084,
-      "dy": -0.42,
-      "samples": 150
+      "dx": -0.0572,
+      "dy": -0.33,
+      "samples": 89
     },
     "5.77": {
-      "dx": -0.086,
-      "dy": -0.48,
-      "samples": 360
+      "dx": -0.079,
+      "dy": -0.3,
+      "samples": 180
     },
     "5.89": {
-      "dx": -0.087,
-      "dy": -0.645,
-      "samples": 120
+      "dx": -0.0859,
+      "dy": -0.36,
+      "samples": 61
     },
     "6.01": {
-      "dx": -0.166,
-      "dy": -0.81,
-      "samples": 30
+      "dx": -0.1655,
+      "dy": -0.675,
+      "samples": 28
     },
     "6.13": {
-      "dx": -0.129,
-      "dy": -0.93,
-      "samples": 90
+      "dx": -0.1228,
+      "dy": -0.9,
+      "samples": 84
     },
     "6.37": {
-      "dx": -0.125,
-      "dy": -0.09,
-      "samples": 30
+      "dx": -0.1228,
+      "dy": -0.21,
+      "samples": 28
     },
     "7.21": {
-      "dx": -0.014,
-      "dy": -1.2,
+      "dx": -0.0094,
+      "dy": -0.6,
       "samples": 5
     },
     "7.81": {
-      "dx": -0.011,
-      "dy": -1.47,
+      "dx": -0.0113,
+      "dy": -1.56,
       "samples": 5
     },
     "7.93": {
-      "dx": -0.006,
-      "dy": -0.93,
+      "dx": -0.0075,
+      "dy": -0.54,
       "samples": 15
     },
     "8.18": {
       "dx": -0.007,
-      "dy": -0.78,
+      "dy": -1.05,
       "samples": 5
     }
   },
   "global": {
-    "dx": -0.063,
-    "dy": -0.81,
-    "samples": 1564
+    "dx": -0.053,
+    "dy": -0.78,
+    "samples": 1194
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_wanafunzi_bora",
   "residual": {
-    "dx": -0.0,
-    "dy": -0.09
+    "dx": -0.0535,
+    "dy": -0.78,
+    "worst_dx": 0.1842,
+    "worst_dy": 1.83
   },
   "schema_version": 1
 }

@@ -116,14 +116,84 @@ def extract_paths(
     return encoded, rectangles
 
 
+def simple_font_widths(document: fitz.Document, xref: int) -> dict[str, int]:
+    """Advance widths a non-embedded font declares, keyed by character code.
+
+    A report that names Arial without embedding it still tells the renderer how wide every
+    character is, and those numbers are not the installed face's: this corpus advances 'E' by
+    672/1000 em where Arial itself uses 667. The reference is authoritative, so the widths have
+    to be captured to be reproduced.
+    """
+    kind, first_char = document.xref_get_key(xref, "FirstChar")
+    if kind != "int":
+        return {}
+    kind, value = document.xref_get_key(xref, "Widths")
+    if kind == "xref":
+        value = document.xref_object(int(value.split()[0]), compressed=True)
+    if not isinstance(value, str) or "[" not in value:
+        return {}
+    numbers = value[value.index("[") + 1 : value.rindex("]")].split()
+    widths: dict[str, int] = {}
+    for offset, number in enumerate(numbers):
+        try:
+            width = round(float(number))
+        except ValueError:
+            continue
+        if width:
+            widths[str(int(first_char) + offset)] = width
+    return widths
+
+
+def rotation_of(line: dict[str, Any]) -> int:
+    """Writing direction in degrees, from the line's direction vector.
+
+    Vertical column headings are common in these reports - 38 of the 46 carry them - and a
+    rotated span reports an origin that is not its left edge, so the rotation has to travel
+    with the span or the text is rebuilt lying on its side.
+    """
+    cosine, sine = (round(value, 3) for value in line.get("dir", (1.0, 0.0)))
+    if (cosine, sine) == (1.0, 0.0):
+        return 0
+    if (cosine, sine) in {(0.0, -1.0), (-0.0, -1.0)}:
+        return 90
+    if (cosine, sine) in {(-1.0, 0.0), (-1.0, -0.0)}:
+        return 180
+    if (cosine, sine) in {(0.0, 1.0), (-0.0, 1.0)}:
+        return 270
+    raise ValueError(f"Unsupported writing direction {(cosine, sine)}")
+
+
+def character_offsets(span: dict[str, Any], rotation: int) -> list[float]:
+    """Each character's advance from the start of its span, as the reference positions it.
+
+    The declared font widths are not the whole story: these producers also emit explicit
+    per-glyph adjustments, so the text on the page is spaced slightly differently from what the
+    widths alone would give. Capturing the actual offsets is the only way to put every glyph
+    back exactly where it was.
+    """
+    characters = span.get("chars") or []
+    if len(characters) < 2:
+        return []
+    axis = 1 if rotation in (90, 270) else 0
+    origin = float(characters[0]["origin"][axis])
+    offsets = [round(float(char["origin"][axis]) - origin, 3) for char in characters]
+    return offsets if any(offsets) else []
+
+
 def extract_spans(page: fitz.Page, styles: Interner) -> list[list[Any]]:
-    """Encode spans as ``[style_index, x0, y0, x1, y1, ox, oy, text]``."""
+    """Encode spans as ``[style_index, x0, y0, x1, y1, ox, oy, text, rotation, char_offsets]``.
+
+    The two trailing fields are omitted when they carry nothing: rotation for horizontal text,
+    and the character offsets for single-character spans.
+    """
     spans: list[list[Any]] = []
-    for block in page.get_text("dict", sort=True).get("blocks", []):
+    for block in page.get_text("rawdict", sort=True).get("blocks", []):
         if block.get("type") != 0:
             continue
         for line in block.get("lines", []):
+            rotation = rotation_of(line)
             for span in line.get("spans", []):
+                span["text"] = "".join(char["c"] for char in span.get("chars", []))
                 bbox = span["bbox"]
                 origin = span.get("origin") or (bbox[0], bbox[3])
                 style_index = styles.intern(
@@ -136,18 +206,22 @@ def extract_spans(page: fitz.Page, styles: Interner) -> list[list[Any]]:
                         "alpha": span.get("alpha", 255),
                     }
                 )
-                spans.append(
-                    [
-                        style_index,
-                        round(bbox[0], 2),
-                        round(bbox[1], 2),
-                        round(bbox[2], 2),
-                        round(bbox[3], 2),
-                        round(float(origin[0]), 2),
-                        round(float(origin[1]), 2),
-                        span["text"],
-                    ]
-                )
+                row: list[Any] = [
+                    style_index,
+                    round(bbox[0], 2),
+                    round(bbox[1], 2),
+                    round(bbox[2], 2),
+                    round(bbox[3], 2),
+                    round(float(origin[0]), 2),
+                    round(float(origin[1]), 2),
+                    span["text"],
+                ]
+                offsets = character_offsets(span, rotation)
+                if rotation or offsets:
+                    row.append(rotation)
+                if offsets:
+                    row.append(offsets)
+                spans.append(row)
     return spans
 
 
@@ -246,7 +320,7 @@ def extract(level: str, report_key: str, *, rasters: bool = True) -> Path:
             for font in page.get_fonts(full=True):
                 key = tuple(font)
                 pages = sorted(set(fonts.get(key, {}).get("pages", [])) | {page.number + 1})
-                fonts[key] = {
+                record = {
                     "xref": font[0],
                     "extension": font[1],
                     "type": font[2],
@@ -256,6 +330,9 @@ def extract(level: str, report_key: str, *, rasters: bool = True) -> Path:
                     "embedded": font[1] != "n/a",
                     "pages": pages,
                 }
+                if not record["embedded"]:
+                    record["widths"] = simple_font_widths(document, font[0])
+                fonts[key] = record
             if rasters:
                 save_raster(page, destination / f"page-{page.number + 1:02d}.png")
 

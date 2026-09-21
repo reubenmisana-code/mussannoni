@@ -1,43 +1,107 @@
 {
+  "by_face": {
+    "Arial-BoldMT|4.2|0": {
+      "dx": -0.1763,
+      "dy": -1.58,
+      "samples": 366
+    },
+    "Arial-BoldMT|4.92|0": {
+      "dx": -0.0697,
+      "dy": -1.46,
+      "samples": 2643
+    },
+    "Arial-BoldMT|5.64|0": {
+      "dx": -0.0474,
+      "dy": -0.23,
+      "samples": 138
+    },
+    "Arial-BoldMT|6.36|0": {
+      "dx": -0.0127,
+      "dy": -0.335,
+      "samples": 4
+    },
+    "ArialMT|4.2|0": {
+      "dx": -0.0131,
+      "dy": -1.61,
+      "samples": 674
+    },
+    "ArialMT|4.92|0": {
+      "dx": -0.0953,
+      "dy": -1.46,
+      "samples": 1022
+    },
+    "ArialMT|5.64|0": {
+      "dx": -0.0273,
+      "dy": -0.245,
+      "samples": 4
+    },
+    "ArialNarrow-Bold|3.48|0": {
+      "dx": -0.1211,
+      "dy": -0.98,
+      "samples": 8
+    },
+    "ArialNarrow-Bold|3.84|0": {
+      "dx": -0.1295,
+      "dy": -0.95,
+      "samples": 9
+    },
+    "ArialNarrow-Bold|4.2|0": {
+      "dx": -0.1024,
+      "dy": -1.4,
+      "samples": 5
+    },
+    "ArialNarrow-Bold|4.92|0": {
+      "dx": -0.1127,
+      "dy": -1.19,
+      "samples": 3
+    },
+    "ArialNarrow-Bold|5.64|0": {
+      "dx": -0.0787,
+      "dy": -0.62,
+      "samples": 12
+    }
+  },
   "by_size": {
     "3.48": {
-      "dx": -0.121,
-      "dy": -0.52,
+      "dx": -0.1211,
+      "dy": -0.98,
       "samples": 8
     },
     "3.84": {
-      "dx": -0.131,
-      "dy": -1.15,
+      "dx": -0.1295,
+      "dy": -0.95,
       "samples": 9
     },
     "4.2": {
-      "dx": -0.022,
-      "dy": -1.61,
-      "samples": 1046
+      "dx": -0.0169,
+      "dy": -1.6,
+      "samples": 1045
     },
     "4.92": {
-      "dx": -0.082,
-      "dy": -1.47,
-      "samples": 4183
+      "dx": -0.0798,
+      "dy": -1.46,
+      "samples": 3668
     },
     "5.64": {
-      "dx": -0.049,
-      "dy": -0.43,
-      "samples": 160
+      "dx": -0.0474,
+      "dy": -0.23,
+      "samples": 154
     }
   },
   "global": {
-    "dx": -0.078,
-    "dy": -1.47,
-    "samples": 5410
+    "dx": -0.075,
+    "dy": -1.46,
+    "samples": 4888
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_school_rank_ufaulu_alama",
   "residual": {
-    "dx": -0.003,
-    "dy": -0.01
+    "dx": -0.0748,
+    "dy": -1.46,
+    "worst_dx": 0.1834,
+    "worst_dy": 2.226
   },
   "schema_version": 1
 }

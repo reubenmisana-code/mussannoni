@@ -1,28 +1,65 @@
 {
+  "by_face": {
+    "CIDFont+F1|3.97|0": {
+      "dx": 0.0057,
+      "dy": -1.35,
+      "samples": 626
+    },
+    "CIDFont+F1|4.57|0": {
+      "dx": -0.0231,
+      "dy": -1.2,
+      "samples": 5052
+    },
+    "CIDFont+F1|5.29|0": {
+      "dx": -0.0211,
+      "dy": -0.6,
+      "samples": 49
+    },
+    "CIDFont+F1|6.01|0": {
+      "dx": -0.0183,
+      "dy": -0.54,
+      "samples": 15
+    },
+    "CIDFont+F2|3.97|0": {
+      "dx": -0.0145,
+      "dy": -1.47,
+      "samples": 379
+    },
+    "CIDFont+F2|4.33|0": {
+      "dx": -0.011,
+      "dy": -1.71,
+      "samples": 326
+    },
+    "CIDFont+F2|4.57|0": {
+      "dx": 0.0175,
+      "dy": -1.2,
+      "samples": 1885
+    }
+  },
   "by_size": {
     "3.97": {
-      "dx": -0.009,
+      "dx": -0.0047,
       "dy": -1.38,
-      "samples": 1003
+      "samples": 1005
     },
     "4.33": {
-      "dx": -0.018,
-      "dy": -1.74,
+      "dx": -0.011,
+      "dy": -1.71,
       "samples": 326
     },
     "4.57": {
-      "dx": -0.019,
+      "dx": -0.0201,
       "dy": -1.2,
       "samples": 6937
     },
     "5.29": {
-      "dx": -0.019,
-      "dy": -0.93,
-      "samples": 47
+      "dx": -0.0211,
+      "dy": -0.6,
+      "samples": 49
     },
     "6.01": {
-      "dx": -0.013,
-      "dy": -0.42,
+      "dx": -0.0183,
+      "dy": -0.54,
       "samples": 15
     }
   },
@@ -31,13 +68,15 @@
     "dy": -1.23,
     "samples": 8332
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_shule_binafsi",
   "residual": {
-    "dx": 0.0,
-    "dy": 0.0
+    "dx": -0.018,
+    "dy": -1.23,
+    "worst_dx": 0.1184,
+    "worst_dy": 2.43
   },
   "schema_version": 1
 }

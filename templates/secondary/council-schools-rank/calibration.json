@@ -1,48 +1,112 @@
 {
-  "by_size": {
-    "3.6": {
-      "dx": -0.208,
-      "dy": -1.466,
-      "samples": 7
+  "by_face": {
+    "Arial-BoldMT|3.6|0": {
+      "dx": -0.0284,
+      "dy": -1.76,
+      "samples": 3
     },
+    "Arial-BoldMT|3.6|90": {
+      "dx": -1.795,
+      "dy": 0.22,
+      "samples": 1
+    },
+    "Arial-BoldMT|3.96|0": {
+      "dx": -0.21,
+      "dy": -1.31,
+      "samples": 192
+    },
+    "Arial-BoldMT|4.2|0": {
+      "dx": -0.1487,
+      "dy": -1.48,
+      "samples": 1583
+    },
+    "Arial-BoldMT|4.8|0": {
+      "dx": -0.1128,
+      "dy": -0.95,
+      "samples": 42
+    },
+    "Arial-BoldMT|5.4|0": {
+      "dx": -0.2031,
+      "dy": -0.35,
+      "samples": 1
+    },
+    "Arial-BoldMT|6.0|0": {
+      "dx": -0.0148,
+      "dy": -0.84,
+      "samples": 5
+    },
+    "ArialMT|3.96|0": {
+      "dx": -0.0211,
+      "dy": -1.31,
+      "samples": 253
+    },
+    "ArialMT|4.2|0": {
+      "dx": -0.102,
+      "dy": -1.48,
+      "samples": 511
+    },
+    "ArialNarrow-Bold|3.6|0": {
+      "dx": -0.2064,
+      "dy": -1.97,
+      "samples": 1
+    },
+    "TimesNewRomanPS-BoldMT|4.2|0": {
+      "dx": -0.1614,
+      "dy": -1.37,
+      "samples": 10
+    },
+    "TimesNewRomanPS-BoldMT|4.8|0": {
+      "dx": -0.106,
+      "dy": -0.68,
+      "samples": 40
+    },
+    "TimesNewRomanPS-BoldMT|5.4|0": {
+      "dx": -0.1112,
+      "dy": -1.04,
+      "samples": 7
+    }
+  },
+  "by_size": {
     "3.96": {
-      "dx": -0.036,
-      "dy": -1.29,
-      "samples": 447
+      "dx": -0.0238,
+      "dy": -1.31,
+      "samples": 445
     },
     "4.2": {
-      "dx": -0.112,
-      "dy": -1.46,
-      "samples": 2108
+      "dx": -0.1184,
+      "dy": -1.48,
+      "samples": 2104
     },
     "4.8": {
-      "dx": -0.112,
-      "dy": -1.15,
-      "samples": 100
+      "dx": -0.1111,
+      "dy": -0.95,
+      "samples": 82
     },
     "5.4": {
-      "dx": -0.127,
-      "dy": -0.505,
+      "dx": -0.1284,
+      "dy": -0.965,
       "samples": 8
     },
     "6.0": {
-      "dx": -0.011,
-      "dy": -0.36,
+      "dx": -0.0148,
+      "dy": -0.84,
       "samples": 5
     }
   },
   "global": {
-    "dx": -0.121,
-    "dy": -1.44,
-    "samples": 2675
+    "dx": -0.113,
+    "dy": -1.46,
+    "samples": 2648
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_schools_rank",
   "residual": {
-    "dx": -0.008,
-    "dy": 0.02
+    "dx": -0.1131,
+    "dy": -1.46,
+    "worst_dx": 0.2134,
+    "worst_dy": 1.97
   },
   "schema_version": 1
 }

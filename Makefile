@@ -1,4 +1,12 @@
-.PHONY: sync catalog fetch extract fonts convert convert-secondary convert-primary status lint format test check
+.PHONY: setup doctor sync catalog fetch extract fonts convert convert-secondary convert-primary convert-one status lint format test check
+
+# Install poppler and the licensed report faces. Idempotent; re-run after any env reset.
+setup:
+	bash scripts/setup-environment.sh
+
+# Report whether the environment can produce trustworthy measurements.
+doctor:
+	uv run python -m tools.doctor
 
 REPORT ?=
 LEVEL ?=

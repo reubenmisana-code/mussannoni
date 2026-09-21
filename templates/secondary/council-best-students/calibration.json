@@ -1,33 +1,57 @@
 {
+  "by_face": {
+    "Arial-BoldMT|6.36|0": {
+      "dx": -0.0509,
+      "dy": -0.14,
+      "samples": 9
+    },
+    "Arial-BoldMT|6.84|0": {
+      "dx": -0.022,
+      "dy": -0.69,
+      "samples": 28
+    },
+    "Arial-BoldMT|7.8|0": {
+      "dx": -0.0214,
+      "dy": -1.46,
+      "samples": 21
+    },
+    "ArialMT|6.36|0": {
+      "dx": -0.0453,
+      "dy": -0.2,
+      "samples": 695
+    }
+  },
   "by_size": {
     "6.36": {
-      "dx": -0.043,
-      "dy": -0.25,
+      "dx": -0.0453,
+      "dy": -0.2,
       "samples": 704
     },
     "6.84": {
-      "dx": -0.031,
-      "dy": -0.68,
+      "dx": -0.022,
+      "dy": -0.69,
       "samples": 28
     },
     "7.8": {
-      "dx": -0.023,
-      "dy": -1.44,
+      "dx": -0.0214,
+      "dy": -1.46,
       "samples": 21
     }
   },
   "global": {
-    "dx": -0.043,
-    "dy": -0.27,
+    "dx": -0.045,
+    "dy": -0.25,
     "samples": 753
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_best_students",
   "residual": {
-    "dx": 0.002,
-    "dy": -0.04
+    "dx": -0.0453,
+    "dy": -0.25,
+    "worst_dx": 0.0528,
+    "worst_dy": 1.76
   },
   "schema_version": 1
 }

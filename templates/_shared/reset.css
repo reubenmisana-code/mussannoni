@@ -45,7 +45,19 @@ body {
   padding: 0;
   background: #fff;
   -webkit-font-smoothing: antialiased;
+  /*
+   * The reference is a spreadsheet print: every glyph sits at the advance width recorded in
+   * the PDF, with no kerning, no ligatures and no optical sizing. Leaving the browser's
+   * typographic niceties on shifts glyphs inside a word by fractions of a point, which shows
+   * up as per-glyph jitter against the reference.
+   */
   text-rendering: geometricPrecision;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "calt" 0;
+  font-optical-sizing: none;
+  letter-spacing: 0;
+  font-synthesis: none;
 }
 
 .report-page {
@@ -66,7 +78,12 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  shape-rendering: crispEdges;
+  /*
+   * geometricPrecision, never crispEdges: crispEdges snaps edges to whole device pixels, which
+   * moved and fattened the 0.48 pt hairlines - they spread across three raster rows where the
+   * reference uses two. The rules must keep the exact coordinates measured from the PDF.
+   */
+  shape-rendering: geometricPrecision;
 }
 
 /* Rules paint over the cell fills, in the same order as the reference. */
@@ -105,6 +122,24 @@ body {
   height: 0;
   line-height: 1;
   white-space: pre;
+  transform-origin: 0 0;
+}
+
+/*
+ * Vertical column headings. Rotating about the box's top-left corner puts the distance from
+ * the box top to the baseline along x, which is exactly how the reference reports a rotated
+ * span: its origin is not its left edge.
+ */
+.rot90 {
+  transform: rotate(-90deg);
+}
+
+.rot180 {
+  transform: rotate(180deg);
+}
+
+.rot270 {
+  transform: rotate(90deg);
 }
 
 .spacer {

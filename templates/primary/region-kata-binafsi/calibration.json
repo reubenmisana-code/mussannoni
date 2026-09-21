@@ -1,43 +1,92 @@
 {
+  "by_face": {
+    "CIDFont+F1|3.85|0": {
+      "dx": -0.0424,
+      "dy": -0.765,
+      "samples": 54
+    },
+    "CIDFont+F1|4.57|0": {
+      "dx": -0.0656,
+      "dy": -1.17,
+      "samples": 1399
+    },
+    "CIDFont+F1|5.17|0": {
+      "dx": -0.157,
+      "dy": -1.65,
+      "samples": 85
+    },
+    "CIDFont+F1|5.77|0": {
+      "dx": 0.0028,
+      "dy": -0.69,
+      "samples": 51
+    },
+    "CIDFont+F1|6.37|0": {
+      "dx": -0.0127,
+      "dy": -0.015,
+      "samples": 4
+    },
+    "CIDFont+F1|7.09|0": {
+      "dx": -0.0091,
+      "dy": -0.9,
+      "samples": 2
+    },
+    "CIDFont+F2|3.85|0": {
+      "dx": -0.0127,
+      "dy": -1.35,
+      "samples": 62
+    },
+    "CIDFont+F2|4.21|0": {
+      "dx": -0.0127,
+      "dy": -1.65,
+      "samples": 124
+    },
+    "CIDFont+F2|4.57|0": {
+      "dx": -0.0656,
+      "dy": -1.2,
+      "samples": 547
+    }
+  },
   "by_size": {
     "3.85": {
-      "dx": -0.014,
-      "dy": -0.93,
+      "dx": -0.0127,
+      "dy": -0.9,
       "samples": 116
     },
     "4.21": {
-      "dx": -0.024,
-      "dy": -1.635,
+      "dx": -0.0127,
+      "dy": -1.65,
       "samples": 124
     },
     "4.57": {
-      "dx": -0.066,
+      "dx": -0.0656,
       "dy": -1.2,
-      "samples": 1969
+      "samples": 1946
     },
     "5.17": {
-      "dx": -0.162,
-      "dy": -1.59,
+      "dx": -0.157,
+      "dy": -1.65,
       "samples": 85
     },
     "5.77": {
-      "dx": 0.006,
+      "dx": 0.0028,
       "dy": -0.69,
-      "samples": 66
+      "samples": 51
     }
   },
   "global": {
-    "dx": -0.053,
+    "dx": -0.052,
     "dy": -1.2,
-    "samples": 2366
+    "samples": 2328
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_kata_binafsi",
   "residual": {
-    "dx": -0.001,
-    "dy": 0.0
+    "dx": -0.0521,
+    "dy": -1.2,
+    "worst_dx": 0.1631,
+    "worst_dy": 2.34
   },
   "schema_version": 1
 }

@@ -1,48 +1,107 @@
 {
+  "by_face": {
+    "CIDFont+F1|7.43|0": {
+      "dx": -0.0281,
+      "dy": -1.2,
+      "samples": 2
+    },
+    "CIDFont+F1|9.58|0": {
+      "dx": -0.0384,
+      "dy": -0.63,
+      "samples": 14
+    },
+    "CIDFont+F2|5.87|0": {
+      "dx": -0.0291,
+      "dy": -0.54,
+      "samples": 3
+    },
+    "CIDFont+F2|6.95|0": {
+      "dx": -0.0217,
+      "dy": -0.75,
+      "samples": 1297
+    },
+    "CIDFont+F3|10.54|0": {
+      "dx": -0.0511,
+      "dy": -0.06,
+      "samples": 16
+    },
+    "CIDFont+F3|11.62|0": {
+      "dx": -0.0281,
+      "dy": -0.78,
+      "samples": 13
+    },
+    "CIDFont+F3|6.95|0": {
+      "dx": -0.067,
+      "dy": -0.75,
+      "samples": 702
+    },
+    "CIDFont+F3|7.43|0": {
+      "dx": -0.0486,
+      "dy": -1.17,
+      "samples": 2106
+    },
+    "CIDFont+F3|8.5|0": {
+      "dx": -0.0631,
+      "dy": -1.11,
+      "samples": 32
+    },
+    "CIDFont+F3|9.58|0": {
+      "dx": -0.0717,
+      "dy": -0.45,
+      "samples": 7
+    },
+    "CIDFont+F4|6.95|0": {
+      "dx": -0.0661,
+      "dy": -0.75,
+      "samples": 351
+    }
+  },
   "by_size": {
     "10.54": {
-      "dx": -0.015,
-      "dy": 0.09,
-      "samples": 6
+      "dx": -0.0511,
+      "dy": -0.06,
+      "samples": 16
     },
     "11.62": {
-      "dx": -0.033,
-      "dy": -0.81,
+      "dx": -0.0281,
+      "dy": -0.78,
       "samples": 13
     },
     "6.95": {
-      "dx": -0.028,
+      "dx": -0.0304,
       "dy": -0.75,
-      "samples": 2368
+      "samples": 2350
     },
     "7.43": {
-      "dx": -0.05,
-      "dy": -1.14,
-      "samples": 2110
+      "dx": -0.0486,
+      "dy": -1.17,
+      "samples": 2108
     },
     "8.5": {
-      "dx": -0.067,
-      "dy": -1.2,
+      "dx": -0.0631,
+      "dy": -1.11,
       "samples": 32
     },
     "9.58": {
-      "dx": -0.047,
-      "dy": -0.51,
-      "samples": 16
+      "dx": -0.0506,
+      "dy": -0.63,
+      "samples": 21
     }
   },
   "global": {
     "dx": -0.048,
-    "dy": -0.9,
-    "samples": 4548
+    "dy": -0.96,
+    "samples": 4543
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_mobility",
   "residual": {
-    "dx": -0.0,
-    "dy": 0.03
+    "dx": -0.0484,
+    "dy": -0.96,
+    "worst_dx": 0.0745,
+    "worst_dy": 1.59
   },
   "schema_version": 1
 }

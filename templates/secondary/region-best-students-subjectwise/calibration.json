@@ -1,58 +1,117 @@
 {
+  "by_face": {
+    "CIDFont+F1|7.33|0": {
+      "dx": -0.0179,
+      "dy": -0.9,
+      "samples": 74
+    },
+    "CIDFont+F1|8.18|0": {
+      "dx": -0.0291,
+      "dy": -1.08,
+      "samples": 1090
+    },
+    "CIDFont+F1|8.3|0": {
+      "dx": -0.0407,
+      "dy": -1.05,
+      "samples": 471
+    },
+    "CIDFont+F2|7.33|0": {
+      "dx": -0.0413,
+      "dy": -0.9,
+      "samples": 10
+    },
+    "CIDFont+F2|7.69|0": {
+      "dx": -0.0164,
+      "dy": -1.59,
+      "samples": 6
+    },
+    "CIDFont+F2|8.18|0": {
+      "dx": -0.0488,
+      "dy": -1.2,
+      "samples": 159
+    },
+    "CIDFont+F2|8.3|0": {
+      "dx": -0.0572,
+      "dy": -1.05,
+      "samples": 90
+    },
+    "CIDFont+F2|8.54|0": {
+      "dx": -0.0267,
+      "dy": -1.29,
+      "samples": 90
+    },
+    "CIDFont+F2|8.78|0": {
+      "dx": -0.0319,
+      "dy": -0.45,
+      "samples": 47
+    },
+    "CIDFont+F2|9.74|0": {
+      "dx": -0.0127,
+      "dy": 0.03,
+      "samples": 75
+    },
+    "CIDFont+F2|9.98|0": {
+      "dx": -0.0145,
+      "dy": -0.33,
+      "samples": 35
+    }
+  },
   "by_size": {
     "7.33": {
-      "dx": -0.026,
-      "dy": -0.945,
-      "samples": 100
+      "dx": -0.0202,
+      "dy": -0.9,
+      "samples": 84
     },
     "7.69": {
-      "dx": -0.012,
-      "dy": -0.93,
+      "dx": -0.0164,
+      "dy": -1.59,
       "samples": 6
     },
     "8.18": {
-      "dx": -0.037,
-      "dy": -0.93,
-      "samples": 1486
+      "dx": -0.0309,
+      "dy": -1.08,
+      "samples": 1249
     },
     "8.3": {
-      "dx": -0.046,
-      "dy": -1.14,
-      "samples": 641
+      "dx": -0.0449,
+      "dy": -1.05,
+      "samples": 561
     },
     "8.54": {
-      "dx": -0.02,
-      "dy": -1.08,
+      "dx": -0.0267,
+      "dy": -1.29,
       "samples": 90
     },
     "8.78": {
-      "dx": -0.029,
-      "dy": -0.9,
+      "dx": -0.0319,
+      "dy": -0.45,
       "samples": 47
     },
     "9.74": {
-      "dx": -0.016,
-      "dy": 0.06,
+      "dx": -0.0127,
+      "dy": 0.03,
       "samples": 75
     },
     "9.98": {
-      "dx": -0.018,
-      "dy": -0.15,
+      "dx": -0.0145,
+      "dy": -0.33,
       "samples": 35
     }
   },
   "global": {
-    "dx": -0.038,
-    "dy": -0.99,
-    "samples": 2480
+    "dx": -0.032,
+    "dy": -1.08,
+    "samples": 2147
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_best_students_subjectwise",
   "residual": {
-    "dx": -0.001,
-    "dy": 0.09
+    "dx": -0.0316,
+    "dy": -1.08,
+    "worst_dx": 0.0815,
+    "worst_dy": 1.59
   },
   "schema_version": 1
 }

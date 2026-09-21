@@ -1,43 +1,92 @@
 {
+  "by_face": {
+    "Arial-BoldMT|3.36|0": {
+      "dx": -0.19,
+      "dy": -0.76,
+      "samples": 294
+    },
+    "Arial-BoldMT|3.84|0": {
+      "dx": -0.0964,
+      "dy": -0.76,
+      "samples": 1571
+    },
+    "Arial-BoldMT|3.96|0": {
+      "dx": -0.1731,
+      "dy": -1.48,
+      "samples": 1287
+    },
+    "Arial-BoldMT|4.56|0": {
+      "dx": -0.1283,
+      "dy": -0.77,
+      "samples": 35
+    },
+    "Arial-BoldMT|5.04|0": {
+      "dx": -0.0979,
+      "dy": -1.34,
+      "samples": 4
+    },
+    "Arial-BoldMT|5.64|0": {
+      "dx": -0.0191,
+      "dy": 0.07,
+      "samples": 5
+    },
+    "ArialMT|3.36|0": {
+      "dx": -0.0322,
+      "dy": -0.74,
+      "samples": 839
+    },
+    "ArialMT|3.84|0": {
+      "dx": -0.2083,
+      "dy": -0.76,
+      "samples": 336
+    },
+    "ArialMT|3.96|0": {
+      "dx": -0.1405,
+      "dy": -1.48,
+      "samples": 1048
+    }
+  },
   "by_size": {
     "3.36": {
-      "dx": -0.025,
-      "dy": -0.73,
-      "samples": 1137
+      "dx": -0.0356,
+      "dy": -0.74,
+      "samples": 1133
     },
     "3.84": {
-      "dx": -0.089,
-      "dy": -0.75,
-      "samples": 2358
+      "dx": -0.1895,
+      "dy": -0.76,
+      "samples": 1907
     },
     "3.96": {
-      "dx": -0.16,
-      "dy": -1.47,
-      "samples": 2740
+      "dx": -0.1595,
+      "dy": -1.48,
+      "samples": 2335
     },
     "4.56": {
-      "dx": -0.127,
-      "dy": -0.76,
+      "dx": -0.1283,
+      "dy": -0.77,
       "samples": 35
     },
     "5.64": {
-      "dx": -0.016,
-      "dy": -0.59,
+      "dx": -0.0191,
+      "dy": 0.07,
       "samples": 5
     }
   },
   "global": {
-    "dx": -0.132,
-    "dy": -1.45,
-    "samples": 6279
+    "dx": -0.143,
+    "dy": -1.46,
+    "samples": 5419
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_school_rank_in_grade",
   "residual": {
-    "dx": 0.011,
-    "dy": 0.01
+    "dx": -0.1431,
+    "dy": -1.46,
+    "worst_dx": 0.2626,
+    "worst_dy": 1.54
   },
   "schema_version": 1
 }

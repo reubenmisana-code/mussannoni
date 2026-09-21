@@ -8,6 +8,7 @@ are only written for pages that fail, as diff evidence.
 from __future__ import annotations
 
 import argparse
+import shutil
 import subprocess
 from collections import Counter
 from pathlib import Path
@@ -16,6 +17,7 @@ from typing import Any
 import numpy as np
 import pymupdf as fitz
 from PIL import Image
+from scipy.ndimage import maximum_filter, minimum_filter
 from skimage.metrics import structural_similarity
 
 from tools.common import (
@@ -42,14 +44,29 @@ BASELINE_TOLERANCE_PT = 0.6
 
 
 def page_spans(page: fitz.Page) -> list[dict[str, Any]]:
+    """Spans anchored on their first visible glyph and their baseline.
+
+    The gate is defined on the baseline and the left edge, so the anchor must be the first
+    glyph that actually marks the page. Neither the text origin nor the span bounding box will
+    do: both sit a space-width to the left when a span begins with a space, and the reference
+    and the render do not group spaces into spans the same way - which showed up as 5 pt of
+    phantom drift on text that was in exactly the right place.
+    """
     spans = []
-    for block in page.get_text("dict", sort=True).get("blocks", []):
+    for block in page.get_text("rawdict", sort=True).get("blocks", []):
         if block.get("type") != 0:
             continue
         for line in block.get("lines", []):
             for span in line.get("spans", []):
-                if span["text"].strip():
-                    spans.append({"text": span["text"].strip(), "origin": span["origin"]})
+                visible = [char for char in span.get("chars", []) if char["c"].strip()]
+                if not visible:
+                    continue
+                spans.append(
+                    {
+                        "text": "".join(char["c"] for char in span["chars"]).strip(),
+                        "origin": (visible[0]["bbox"][0], span["origin"][1]),
+                    }
+                )
     return spans
 
 
@@ -187,6 +204,14 @@ def assign_nearest(
     return drifts
 
 
+def require_rasteriser() -> None:
+    if shutil.which("pdftoppm") is None:
+        raise RuntimeError(
+            "pdftoppm (poppler) is not installed, so the reference and the render cannot be "
+            "rasterised by the same engine. Run `make setup` first."
+        )
+
+
 def raster_pages(pdf: Path, work: Path, prefix: str) -> list[Path]:
     """Rasterise a whole PDF at 300 dpi with poppler.
 
@@ -223,6 +248,34 @@ def load_raster(path: Path) -> np.ndarray:
         return np.asarray(image.convert("RGB"))
 
 
+def pixel_diagnostics(reference: np.ndarray, rendered: np.ndarray) -> dict[str, Any]:
+    """Describe *how* the pixels differ, without softening the gate.
+
+    The gate counts any pixel that is not identical, which is the right bar but a blunt
+    instrument: it cannot distinguish a glyph in the wrong place from a glyph whose edge is
+    antialiased a shade differently. These numbers separate the two, so the remaining gap can
+    be characterised honestly instead of argued about.
+    """
+    left = reference.astype(np.int16).mean(axis=2)
+    right = rendered.astype(np.int16).mean(axis=2)
+    difference = np.abs(left - right)
+
+    neighbourhood_low = minimum_filter(left, size=3)
+    neighbourhood_high = maximum_filter(left, size=3)
+    within_jitter = (right >= neighbourhood_low - 8) & (right <= neighbourhood_high + 8)
+
+    reference_ink = float((255 - left).sum())
+    rendered_ink = float((255 - right).sum())
+    return {
+        "differing_pixels_percent_tolerance_8": round(float((difference > 8).mean() * 100), 4),
+        "differing_pixels_percent_tolerance_32": round(float((difference > 32).mean() * 100), 4),
+        "explained_by_one_pixel_jitter_percent": round(float(within_jitter.mean() * 100), 4),
+        "beyond_one_pixel_jitter_percent": round(float((~within_jitter).mean() * 100), 4),
+        "ink_ratio": round(rendered_ink / reference_ink, 5) if reference_ink else None,
+        "mean_absolute_difference": round(float(difference.mean()), 4),
+    }
+
+
 def save_diff(reference: np.ndarray, candidate: np.ndarray, path: Path) -> None:
     mask = np.any(reference != candidate, axis=2)
     luminosity = (reference.mean(axis=2) * 0.35 + 160).clip(0, 255).astype(np.uint8)
@@ -240,6 +293,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
     rendered_pdf = destination / "rendered.pdf"
     if not rendered_pdf.exists():
         raise FileNotFoundError(f"Render the report first: {rendered_pdf}")
+    require_rasteriser()
     destination.mkdir(parents=True, exist_ok=True)
     for stale in destination.glob("diff-page-*.png"):
         stale.unlink()
@@ -265,6 +319,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
                 and abs(source_page.rect.height - rendered_page.rect.height) < 0.01
                 and source_page.rotation == rendered_page.rotation
             )
+            diagnostics: dict[str, Any] = {}
             if dimensions_equal:
                 pixel_delta = float(np.any(source_pixels != rendered_pixels, axis=2).mean() * 100)
                 ssim = float(
@@ -272,6 +327,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
                         source_pixels, rendered_pixels, channel_axis=2, data_range=255
                     )
                 )
+                diagnostics = pixel_diagnostics(source_pixels, rendered_pixels)
             else:
                 pixel_delta, ssim = 100.0, 0.0
 
@@ -314,6 +370,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
                     "text": text,
                     "maximum_column_edge_drift_pt": column_drift,
                     "passes": passes,
+                    "diagnostics": diagnostics,
                 }
             )
 
@@ -351,10 +408,16 @@ def summarise(pages: list[dict[str, Any]]) -> dict[str, Any]:
         for page in scored
         if page["maximum_column_edge_drift_pt"] is not None
     ]
+    jitter = [
+        page["diagnostics"]["explained_by_one_pixel_jitter_percent"]
+        for page in scored
+        if page.get("diagnostics")
+    ]
     return {
         "pages_passing": sum(1 for page in scored if page["passes"]),
         "pages_total": len(pages),
         "blank_pages": sum(1 for page in scored if page["text"]["reference_character_count"] == 0),
+        "worst_explained_by_one_pixel_jitter_percent": min(jitter) if jitter else None,
         "worst_ssim": min(page["ssim"] for page in scored),
         "best_ssim": max(page["ssim"] for page in scored),
         "worst_pixel_delta_percent": max(page["differing_pixels_percent"] for page in scored),

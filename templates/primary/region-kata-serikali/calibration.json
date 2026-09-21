@@ -1,43 +1,92 @@
 {
+  "by_face": {
+    "CIDFont+F1|3.85|0": {
+      "dx": -0.0386,
+      "dy": -0.78,
+      "samples": 108
+    },
+    "CIDFont+F1|4.57|0": {
+      "dx": -0.0492,
+      "dy": -1.23,
+      "samples": 4231
+    },
+    "CIDFont+F1|5.17|0": {
+      "dx": -0.0281,
+      "dy": -1.65,
+      "samples": 234
+    },
+    "CIDFont+F1|5.77|0": {
+      "dx": -0.0206,
+      "dy": -0.75,
+      "samples": 156
+    },
+    "CIDFont+F1|6.37|0": {
+      "dx": -0.0127,
+      "dy": -0.015,
+      "samples": 4
+    },
+    "CIDFont+F1|7.09|0": {
+      "dx": -0.0094,
+      "dy": -0.87,
+      "samples": 2
+    },
+    "CIDFont+F2|3.85|0": {
+      "dx": -0.0127,
+      "dy": -1.38,
+      "samples": 191
+    },
+    "CIDFont+F2|4.21|0": {
+      "dx": -0.0127,
+      "dy": -1.65,
+      "samples": 382
+    },
+    "CIDFont+F2|4.57|0": {
+      "dx": -0.0305,
+      "dy": -1.23,
+      "samples": 1695
+    }
+  },
   "by_size": {
     "3.85": {
-      "dx": -0.015,
-      "dy": -1.2,
+      "dx": -0.0127,
+      "dy": -1.14,
       "samples": 299
     },
     "4.21": {
-      "dx": -0.015,
+      "dx": -0.0127,
       "dy": -1.65,
       "samples": 382
     },
     "4.57": {
-      "dx": -0.042,
-      "dy": -1.2,
-      "samples": 5986
+      "dx": -0.0444,
+      "dy": -1.23,
+      "samples": 5926
     },
     "5.17": {
-      "dx": -0.038,
+      "dx": -0.0281,
       "dy": -1.65,
       "samples": 234
     },
     "5.77": {
-      "dx": -0.015,
-      "dy": -0.72,
-      "samples": 199
+      "dx": -0.0206,
+      "dy": -0.75,
+      "samples": 156
     }
   },
   "global": {
-    "dx": -0.038,
-    "dy": -1.29,
-    "samples": 7106
+    "dx": -0.039,
+    "dy": -1.26,
+    "samples": 7003
   },
-  "iterations": 3,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_kata_serikali",
   "residual": {
-    "dx": 0.003,
-    "dy": -0.03
+    "dx": -0.0389,
+    "dy": -1.26,
+    "worst_dx": 0.1631,
+    "worst_dy": 2.34
   },
   "schema_version": 1
 }

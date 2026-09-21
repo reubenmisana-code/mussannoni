@@ -1,68 +1,172 @@
 {
+  "by_face": {
+    "CIDFont+F1|4.09|0": {
+      "dx": -0.1027,
+      "dy": -1.17,
+      "samples": 100
+    },
+    "CIDFont+F1|4.69|0": {
+      "dx": -0.1004,
+      "dy": -1.08,
+      "samples": 36
+    },
+    "CIDFont+F1|5.17|0": {
+      "dx": -0.0368,
+      "dy": -1.53,
+      "samples": 4
+    },
+    "CIDFont+F1|5.77|0": {
+      "dx": -0.0094,
+      "dy": -0.27,
+      "samples": 5
+    },
+    "CIDFont+F1|5.89|0": {
+      "dx": -0.0858,
+      "dy": -0.45,
+      "samples": 9
+    },
+    "CIDFont+F1|6.01|0": {
+      "dx": -0.0801,
+      "dy": -0.675,
+      "samples": 10
+    },
+    "CIDFont+F1|6.49|0": {
+      "dx": -0.1186,
+      "dy": -0.255,
+      "samples": 6
+    },
+    "CIDFont+F1|6.85|0": {
+      "dx": -0.0413,
+      "dy": -0.78,
+      "samples": 149
+    },
+    "CIDFont+F1|6.97|0": {
+      "dx": -0.0633,
+      "dy": -0.6,
+      "samples": 147
+    },
+    "CIDFont+F1|7.81|0": {
+      "dx": -0.0202,
+      "dy": -1.38,
+      "samples": 21
+    },
+    "CIDFont+F1|8.06|0": {
+      "dx": -0.0274,
+      "dy": -0.99,
+      "samples": 17
+    },
+    "CIDFont+F2|4.09|0": {
+      "dx": -0.0623,
+      "dy": -1.17,
+      "samples": 79
+    },
+    "CIDFont+F2|6.85|0": {
+      "dx": -0.015,
+      "dy": -0.78,
+      "samples": 8
+    },
+    "CIDFont+F2|6.97|0": {
+      "dx": -0.022,
+      "dy": -0.81,
+      "samples": 12
+    },
+    "CIDFont+F2|7.81|0": {
+      "dx": -0.0066,
+      "dy": -1.425,
+      "samples": 4
+    },
+    "CIDFont+F3|4.69|0": {
+      "dx": -0.1552,
+      "dy": -1.23,
+      "samples": 2
+    },
+    "CIDFont+F3|5.89|0": {
+      "dx": -0.0677,
+      "dy": -0.66,
+      "samples": 2
+    },
+    "CIDFont+F3|6.01|0": {
+      "dx": -0.1078,
+      "dy": -0.87,
+      "samples": 5
+    },
+    "CIDFont+F3|7.81|0": {
+      "dx": -0.0361,
+      "dy": -1.08,
+      "samples": 7
+    },
+    "CIDFont+F3|8.06|0": {
+      "dx": -0.0586,
+      "dy": -0.81,
+      "samples": 7
+    }
+  },
   "by_size": {
     "4.09": {
-      "dx": -0.079,
-      "dy": -1.5,
-      "samples": 178
+      "dx": -0.0853,
+      "dy": -1.17,
+      "samples": 179
     },
     "4.69": {
-      "dx": -0.101,
-      "dy": -0.66,
-      "samples": 37
+      "dx": -0.1074,
+      "dy": -1.08,
+      "samples": 38
     },
     "5.77": {
-      "dx": -0.009,
-      "dy": -0.42,
+      "dx": -0.0094,
+      "dy": -0.27,
       "samples": 5
     },
     "5.89": {
-      "dx": -0.082,
-      "dy": -0.69,
-      "samples": 13
+      "dx": -0.0786,
+      "dy": -0.57,
+      "samples": 11
     },
     "6.01": {
-      "dx": -0.091,
-      "dy": -0.6,
-      "samples": 17
+      "dx": -0.0931,
+      "dy": -0.69,
+      "samples": 15
     },
     "6.49": {
-      "dx": -0.12,
-      "dy": -0.405,
+      "dx": -0.1186,
+      "dy": -0.255,
       "samples": 6
     },
     "6.85": {
-      "dx": -0.042,
-      "dy": -0.81,
+      "dx": -0.0394,
+      "dy": -0.78,
       "samples": 157
     },
     "6.97": {
-      "dx": -0.06,
-      "dy": -0.72,
+      "dx": -0.0602,
+      "dy": -0.6,
       "samples": 159
     },
     "7.81": {
-      "dx": -0.014,
-      "dy": -1.17,
-      "samples": 33
+      "dx": -0.0218,
+      "dy": -1.2,
+      "samples": 32
     },
     "8.06": {
-      "dx": -0.04,
-      "dy": -0.93,
-      "samples": 25
+      "dx": -0.0435,
+      "dy": -0.84,
+      "samples": 24
     }
   },
   "global": {
     "dx": -0.062,
-    "dy": -0.93,
-    "samples": 634
+    "dy": -0.87,
+    "samples": 630
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_ufaulu_masomo",
   "residual": {
-    "dx": 0.001,
-    "dy": -0.06
+    "dx": -0.0623,
+    "dy": -0.87,
+    "worst_dx": 0.1687,
+    "worst_dy": 1.77
   },
   "schema_version": 1
 }

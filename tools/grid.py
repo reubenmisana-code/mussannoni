@@ -58,6 +58,10 @@ class Run:
     x0: float
     x1: float
     baseline: float
+    origin_x: float = 0.0
+    rotation: int = 0
+    y_extent: float = 0.0
+    char_offsets: tuple[float, ...] = ()
 
 
 @dataclass(slots=True)
@@ -260,6 +264,16 @@ def build_page_grid(page: PageEvidence) -> PageGrid:
     # boundary in HTML, so vertical merges have to stop there or every body row shifts.
     header_rows = detect_header_rows(cells)
     merge_vertically(cells, horizontal_index, row_edges, header_rows)
+    if not tiles_exactly(cells, rows, columns):
+        # A rowspan that does not tile leaves a hole, and HTML fills holes by sliding the rest
+        # of the row sideways - text then inherits a cell that moved. Vertical merging is only
+        # a structural nicety, so it is dropped for this page rather than risk the geometry.
+        for cell in cells:
+            if cell.row_span == 0:
+                cell.row_span = 1
+            elif cell.row_span > 1:
+                cell.row_span = 1
+                cell.height = round(row_edges[cell.row + 1] - cell.y, 2)
     attach_borders(cells, vertical_index, horizontal_index, column_edges, row_edges)
     measure_alignment(cells)
     rules = verticals + horizontals
@@ -277,6 +291,23 @@ def build_page_grid(page: PageEvidence) -> PageGrid:
         curved_paths=page.curved_paths,
         rules=rules,
     )
+
+
+def tiles_exactly(cells: list[Cell], rows: int, columns: int) -> bool:
+    """Every grid slot must be covered by exactly one emitted cell.
+
+    HTML places a row's cells left to right into whatever columns are still free, so a hole or
+    an overlap does not fail loudly - it silently shifts the rest of the row, and any text
+    positioned relative to those cells moves with it.
+    """
+    covered = [[0] * columns for _ in range(rows)]
+    for cell in cells:
+        if cell.row_span == 0:
+            continue
+        for row in range(cell.row, min(cell.row + cell.row_span, rows)):
+            for column in range(cell.column, min(cell.column + cell.column_span, columns)):
+                covered[row][column] += 1
+    return all(count == 1 for row in covered for count in row)
 
 
 def merge_vertically(
@@ -360,7 +391,19 @@ def attach_text(cells: list[Cell], spans: list[Span]) -> list[Span]:
         if best is None:
             loose.append(span)
             continue
-        best.runs.append(Run(span.text, span.style, span.x0, span.x1, span.oy))
+        best.runs.append(
+            Run(
+                span.text,
+                span.style,
+                span.x0,
+                span.x1,
+                span.oy,
+                span.ox,
+                span.rotation,
+                span.y0 if span.rotation else 0.0,
+                span.char_offsets,
+            )
+        )
     for cell in cells:
         cell.runs.sort(key=lambda run: (round(run.baseline, 1), run.x0))
     return loose
@@ -369,7 +412,9 @@ def attach_text(cells: list[Cell], spans: list[Span]) -> list[Span]:
 def measure_alignment(cells: list[Cell]) -> None:
     """Alignment and padding come from where the text actually sits inside the cell."""
     for cell in cells:
-        if not cell.runs:
+        # A rotated run's horizontal extent is its line height, not its text length, so
+        # horizontal alignment is meaningless for it.
+        if not cell.runs or any(run.rotation for run in cell.runs):
             continue
         left_gap = round(min(run.x0 for run in cell.runs) - cell.x, 2)
         right_gap = round(cell.x + cell.width - max(run.x1 for run in cell.runs), 2)

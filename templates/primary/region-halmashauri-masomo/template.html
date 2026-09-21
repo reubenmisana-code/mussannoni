@@ -1,4 +1,4 @@
-{% macro render_row(row) %}<tr style="height: {{ row.height_pt }}pt;">{% for cell in row.cells %}<td class="{{ cell.classes | join(' ') }}"{% if cell.colspan > 1 %} colspan="{{ cell.colspan }}"{% endif %}{% if cell.rowspan > 1 %} rowspan="{{ cell.rowspan }}"{% endif %} style="text-align: {{ cell.align }};{% if cell.pad_left %} padding-left: {{ cell.pad_left }}pt;{% endif %}{% if cell.pad_right %} padding-right: {{ cell.pad_right }}pt;{% endif %}">{% for line in cell.lines %}<div class="cell-line {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;">{% for run in line.runs %}{% if run.spacer_pt is defined %}<span class="spacer" style="width: {{ run.spacer_pt }}pt;"></span>{% endif %}<span class="{{ run.class }}">{{ run.text }}</span>{% endfor %}</div>{% endfor %}</td>{% endfor %}</tr>{% endmacro %}
+{% macro render_row(row) %}<tr style="height: {{ row.height_pt }}pt;">{% for cell in row.cells %}<td class="{{ cell.classes | join(' ') }}"{% if cell.colspan > 1 %} colspan="{{ cell.colspan }}"{% endif %}{% if cell.rowspan > 1 %} rowspan="{{ cell.rowspan }}"{% endif %} style="text-align: {{ cell.align }};{% if cell.pad_left %} padding-left: {{ cell.pad_left }}pt;{% endif %}{% if cell.pad_right %} padding-right: {{ cell.pad_right }}pt;{% endif %}">{% for line in cell.lines %}<div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">{% for run in line.runs %}{% if run.chunks %}{% for chunk in run.chunks %}<span class="{{ run.class }}"{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}>{{ chunk.text }}</span>{% endfor %}{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}{% endfor %}</div>{% endfor %}</td>{% endfor %}</tr>{% endmacro %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,8 +22,8 @@
       {% if page.loose_lines %}
       <div class="page-text">
         {% for line in page.loose_lines %}
-        <div class="cell-line {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;">
-          {%- for run in line.runs %}{% if run.spacer_pt is defined %}<span class="spacer" style="width: {{ run.spacer_pt }}pt;"></span>{% endif %}<span class="{{ run.class }}">{{ run.text }}</span>{% endfor %}
+        <div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">
+          {%- for run in line.runs %}{% if run.chunks %}{% for chunk in run.chunks %}<span class="{{ run.class }}"{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}>{{ chunk.text }}</span>{% endfor %}{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}{% endfor %}
         </div>
         {% endfor %}
       </div>

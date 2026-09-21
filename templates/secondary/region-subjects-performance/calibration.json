@@ -1,33 +1,67 @@
 {
+  "by_face": {
+    "CIDFont+F1|10.1|0": {
+      "dx": -0.0247,
+      "dy": -0.39,
+      "samples": 19
+    },
+    "CIDFont+F1|8.66|0": {
+      "dx": -0.0764,
+      "dy": -1.35,
+      "samples": 49
+    },
+    "CIDFont+F1|9.38|0": {
+      "dx": -0.0583,
+      "dy": -0.6,
+      "samples": 161
+    },
+    "CIDFont+F2|8.66|0": {
+      "dx": -0.067,
+      "dy": -0.465,
+      "samples": 4
+    },
+    "CIDFont+F3|8.66|0": {
+      "dx": -0.0155,
+      "dy": -1.455,
+      "samples": 108
+    },
+    "CIDFont+F3|9.38|0": {
+      "dx": -0.027,
+      "dy": -0.6,
+      "samples": 134
+    }
+  },
   "by_size": {
     "10.1": {
-      "dx": -0.017,
-      "dy": -0.03,
+      "dx": -0.0247,
+      "dy": -0.39,
       "samples": 19
     },
     "8.66": {
-      "dx": -0.049,
-      "dy": -1.44,
-      "samples": 163
+      "dx": -0.0493,
+      "dy": -1.41,
+      "samples": 161
     },
     "9.38": {
-      "dx": -0.041,
-      "dy": -0.54,
-      "samples": 307
+      "dx": -0.0433,
+      "dy": -0.6,
+      "samples": 295
     }
   },
   "global": {
-    "dx": -0.039,
-    "dy": -0.72,
-    "samples": 489
+    "dx": -0.043,
+    "dy": -0.78,
+    "samples": 475
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_subjects_performance",
   "residual": {
-    "dx": 0.005,
-    "dy": 0.0
+    "dx": -0.0429,
+    "dy": -0.78,
+    "worst_dx": 0.0999,
+    "worst_dy": 1.86
   },
   "schema_version": 1
 }

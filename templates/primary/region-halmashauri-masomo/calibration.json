@@ -1,48 +1,92 @@
 {
+  "by_face": {
+    "CIDFont+F1|4.81|0": {
+      "dx": -0.067,
+      "dy": -1.02,
+      "samples": 1267
+    },
+    "CIDFont+F1|5.29|0": {
+      "dx": -0.0768,
+      "dy": -0.78,
+      "samples": 246
+    },
+    "CIDFont+F1|5.41|0": {
+      "dx": -0.037,
+      "dy": -0.18,
+      "samples": 155
+    },
+    "CIDFont+F1|6.13|0": {
+      "dx": -0.0563,
+      "dy": -0.63,
+      "samples": 40
+    },
+    "CIDFont+F2|4.09|0": {
+      "dx": -0.0197,
+      "dy": -1.155,
+      "samples": 40
+    },
+    "CIDFont+F2|4.57|0": {
+      "dx": -0.0131,
+      "dy": -0.855,
+      "samples": 8
+    },
+    "CIDFont+F2|4.81|0": {
+      "dx": -0.0595,
+      "dy": -1.02,
+      "samples": 360
+    },
+    "CIDFont+F2|5.29|0": {
+      "dx": -0.0768,
+      "dy": -0.795,
+      "samples": 72
+    }
+  },
   "by_size": {
     "4.09": {
-      "dx": -0.016,
-      "dy": -1.38,
+      "dx": -0.0197,
+      "dy": -1.155,
       "samples": 40
     },
     "4.57": {
-      "dx": -0.014,
-      "dy": -0.9,
+      "dx": -0.0131,
+      "dy": -0.855,
       "samples": 8
     },
     "4.81": {
-      "dx": -0.066,
-      "dy": -1.2,
+      "dx": -0.0641,
+      "dy": -1.02,
       "samples": 1627
     },
     "5.29": {
-      "dx": -0.072,
-      "dy": -0.72,
+      "dx": -0.0768,
+      "dy": -0.78,
       "samples": 318
     },
     "5.41": {
-      "dx": -0.029,
+      "dx": -0.037,
       "dy": -0.18,
       "samples": 155
     },
     "6.13": {
-      "dx": -0.053,
-      "dy": -0.735,
+      "dx": -0.0563,
+      "dy": -0.63,
       "samples": 40
     }
   },
   "global": {
     "dx": -0.063,
-    "dy": -1.17,
+    "dy": -0.93,
     "samples": 2188
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "region_halmashauri_masomo",
   "residual": {
-    "dx": 0.0,
-    "dy": -0.15
+    "dx": -0.0626,
+    "dy": -0.93,
+    "worst_dx": 0.1282,
+    "worst_dy": 1.59
   },
   "schema_version": 1
 }

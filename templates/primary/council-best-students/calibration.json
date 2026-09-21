@@ -1,48 +1,92 @@
 {
+  "by_face": {
+    "Arial-BoldMT|3.96|0": {
+      "dx": -0.0782,
+      "dy": -1.13,
+      "samples": 12
+    },
+    "Arial-BoldMT|5.28|0": {
+      "dx": -0.1085,
+      "dy": -0.83,
+      "samples": 342
+    },
+    "Arial-BoldMT|6.12|0": {
+      "dx": -0.0225,
+      "dy": -0.71,
+      "samples": 42
+    },
+    "Arial-BoldMT|7.08|0": {
+      "dx": -0.0097,
+      "dy": 0.22,
+      "samples": 5
+    },
+    "Arial-BoldMT|7.92|0": {
+      "dx": -0.013,
+      "dy": -0.75,
+      "samples": 8
+    },
+    "ArialMT|5.28|0": {
+      "dx": -0.0284,
+      "dy": -0.8,
+      "samples": 792
+    },
+    "ArialNarrow-Bold|4.8|0": {
+      "dx": -0.0883,
+      "dy": -1.13,
+      "samples": 6
+    },
+    "ArialNarrow-Bold|5.28|0": {
+      "dx": -0.0909,
+      "dy": -0.815,
+      "samples": 6
+    }
+  },
   "by_size": {
     "3.96": {
-      "dx": -0.074,
-      "dy": -1.255,
+      "dx": -0.0782,
+      "dy": -1.13,
       "samples": 12
     },
     "4.8": {
-      "dx": -0.088,
-      "dy": -1.24,
+      "dx": -0.0883,
+      "dy": -1.13,
       "samples": 6
     },
     "5.28": {
-      "dx": -0.063,
-      "dy": -0.76,
-      "samples": 1516
+      "dx": -0.0405,
+      "dy": -0.83,
+      "samples": 1140
     },
     "6.12": {
-      "dx": -0.023,
-      "dy": -0.79,
-      "samples": 54
+      "dx": -0.0225,
+      "dy": -0.71,
+      "samples": 42
     },
     "7.08": {
-      "dx": -0.012,
-      "dy": -0.19,
+      "dx": -0.0097,
+      "dy": 0.22,
       "samples": 5
     },
     "7.92": {
-      "dx": -0.016,
+      "dx": -0.013,
       "dy": -0.75,
       "samples": 8
     }
   },
   "global": {
-    "dx": -0.053,
-    "dy": -0.76,
-    "samples": 1601
+    "dx": -0.04,
+    "dy": -0.83,
+    "samples": 1213
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_best_students",
   "residual": {
-    "dx": 0.002,
-    "dy": 0.07
+    "dx": -0.0405,
+    "dy": -0.83,
+    "worst_dx": 0.1244,
+    "worst_dy": 1.55
   },
   "schema_version": 1
 }

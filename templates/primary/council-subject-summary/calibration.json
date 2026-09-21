@@ -1,33 +1,77 @@
 {
+  "by_face": {
+    "Arial-BoldMT|6.48|0": {
+      "dx": -0.0826,
+      "dy": -0.08,
+      "samples": 7
+    },
+    "Arial-BoldMT|7.56|0": {
+      "dx": -0.063,
+      "dy": -1.06,
+      "samples": 147
+    },
+    "Arial-BoldMT|8.64|0": {
+      "dx": -0.0111,
+      "dy": -1.57,
+      "samples": 8
+    },
+    "ArialMT|7.56|0": {
+      "dx": -0.0634,
+      "dy": -1.18,
+      "samples": 187
+    },
+    "ArialNarrow-Bold|5.4|0": {
+      "dx": -0.0364,
+      "dy": -0.02,
+      "samples": 3
+    },
+    "ArialNarrow-Bold|6.0|0": {
+      "dx": -0.0897,
+      "dy": -0.56,
+      "samples": 2
+    },
+    "ArialNarrow-Bold|6.48|0": {
+      "dx": -0.0327,
+      "dy": -0.325,
+      "samples": 28
+    },
+    "ArialNarrow-Bold|7.56|0": {
+      "dx": -0.0548,
+      "dy": -1.625,
+      "samples": 6
+    }
+  },
   "by_size": {
     "6.48": {
-      "dx": -0.039,
-      "dy": -0.42,
+      "dx": -0.0327,
+      "dy": -0.25,
       "samples": 35
     },
     "7.56": {
-      "dx": -0.068,
-      "dy": -1.29,
+      "dx": -0.0634,
+      "dy": -1.12,
       "samples": 340
     },
     "8.64": {
-      "dx": -0.012,
-      "dy": -1.305,
+      "dx": -0.0111,
+      "dy": -1.57,
       "samples": 8
     }
   },
   "global": {
-    "dx": -0.066,
-    "dy": -1.26,
+    "dx": -0.061,
+    "dy": -1.09,
     "samples": 388
   },
-  "iterations": 2,
+  "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_subject_summary",
   "residual": {
-    "dx": -0.005,
-    "dy": -0.17
+    "dx": -0.0611,
+    "dy": -1.09,
+    "worst_dx": 0.1014,
+    "worst_dy": 1.67
   },
   "schema_version": 1
 }

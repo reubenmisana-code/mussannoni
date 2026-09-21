@@ -92,3 +92,50 @@ def test_report_css_declares_measured_page_box(report: dict) -> None:
     fixture = json.loads((template_dir(report) / "fixture.json").read_text())
     first = fixture["pages"][0]
     assert f"size: {first['width_pt']}pt {first['height_pt']}pt" in css
+
+
+
+@pytest.mark.parametrize("report", BUILT, ids=IDS)
+def test_rotated_headings_are_carried_through(report: dict) -> None:
+    """38 of the 46 reports set their column headings sideways.
+
+    A rotated span reports an origin that is not its left edge, so if the rotation is lost the
+    heading is rebuilt lying flat and lands several points out of place.
+    """
+    extraction = ROOT / "extract" / report["level"] / report["report_key"].replace("_", "-")
+    spans = json.loads((extraction / "spans.json").read_text())
+    rotated_in_evidence = sum(
+        1 for page in spans["pages"] for row in page["spans"] if len(row) > 8 and row[8]
+    )
+    fixture = json.loads((template_dir(report) / "fixture.json").read_text())
+    rotated_in_fixture = sum(
+        1
+        for page in fixture["pages"]
+        for row in page["rows"]
+        for cell in row["cells"]
+        for line in cell["lines"]
+        if line["rotation"]
+    ) + sum(1 for page in fixture["pages"] for line in page["loose_lines"] if line["rotation"])
+
+    assert rotated_in_fixture == rotated_in_evidence, report["report_key"]
+    if rotated_in_evidence:
+        css = (ROOT / "templates" / "_shared" / "reset.css").read_text()
+        assert ".rot90" in css and "rotate(-90deg)" in css
+        source = (template_dir(report) / "template.html").read_text()
+        assert "rot{{ line.rotation }}" in source
+
+
+@pytest.mark.parametrize("report", BUILT, ids=IDS)
+def test_calibration_is_a_recorded_measurement(report: dict) -> None:
+    """Placement corrections must come from a measured render, not a hand-tuned constant."""
+    path = template_dir(report) / "calibration.json"
+    assert path.exists(), report["report_key"]
+    calibration = json.loads(path.read_text())
+    assert calibration["iterations"] >= 1
+    assert calibration["by_face"], report["report_key"]
+    for key, entry in calibration["by_face"].items():
+        assert len(key.split("|")) == 3, key
+        assert entry["samples"] >= 1
+        # A correction is a sub-point nudge. Anything larger means a structural problem is
+        # being papered over instead of fixed.
+        assert abs(entry["dx"]) < 3.0 and abs(entry["dy"]) < 3.0, (report["report_key"], key, entry)

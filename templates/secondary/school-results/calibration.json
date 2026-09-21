@@ -1,33 +1,82 @@
 {
+  "by_face": {
+    "Arial-BoldMT|7.2|0": {
+      "dx": -0.0691,
+      "dy": -0.89,
+      "samples": 220
+    },
+    "Arial-BoldMT|8.16|0": {
+      "dx": -0.0481,
+      "dy": -0.74,
+      "samples": 3
+    },
+    "Arial-BoldMT|9.24|0": {
+      "dx": -0.1131,
+      "dy": -0.14,
+      "samples": 1
+    },
+    "ArialMT|6.6|0": {
+      "dx": -0.042,
+      "dy": -0.47,
+      "samples": 3434
+    },
+    "ArialMT|7.2|0": {
+      "dx": -0.0612,
+      "dy": -0.91,
+      "samples": 356
+    },
+    "Tahoma-Bold|8.16|0": {
+      "dx": -0.012,
+      "dy": -1.13,
+      "samples": 5
+    },
+    "TimesNewRomanPS-BoldMT|7.2|0": {
+      "dx": -0.0509,
+      "dy": -0.695,
+      "samples": 8
+    },
+    "TimesNewRomanPS-BoldMT|8.16|0": {
+      "dx": -0.0634,
+      "dy": -0.86,
+      "samples": 29
+    },
+    "TimesNewRomanPS-BoldMT|9.24|0": {
+      "dx": -0.0766,
+      "dy": -0.47,
+      "samples": 1
+    }
+  },
   "by_size": {
     "6.6": {
-      "dx": -0.045,
-      "dy": -0.396,
+      "dx": -0.042,
+      "dy": -0.47,
       "samples": 3434
     },
     "7.2": {
-      "dx": -0.058,
+      "dx": -0.062,
       "dy": -0.89,
       "samples": 584
     },
     "8.16": {
-      "dx": -0.063,
-      "dy": -1.19,
-      "samples": 43
+      "dx": -0.0594,
+      "dy": -0.86,
+      "samples": 37
     }
   },
   "global": {
-    "dx": -0.045,
-    "dy": -0.456,
-    "samples": 4063
+    "dx": -0.042,
+    "dy": -0.53,
+    "samples": 4057
   },
-  "iterations": 4,
+  "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "school_results",
   "residual": {
-    "dx": -0.005,
-    "dy": -0.006
+    "dx": -0.042,
+    "dy": -0.53,
+    "worst_dx": 0.1445,
+    "worst_dy": 1.34
   },
   "schema_version": 1
 }

@@ -46,10 +46,16 @@ class Span:
     ox: float
     oy: float
     text: str
+    rotation: int = 0
+    char_offsets: tuple[float, ...] = ()
 
     @property
     def width(self) -> float:
         return round(self.x1 - self.x0, 3)
+
+    @property
+    def is_rotated(self) -> bool:
+        return self.rotation != 0
 
 
 @dataclass(frozen=True, slots=True)
@@ -205,7 +211,18 @@ def load_evidence(directory: Path) -> list[PageEvidence]:
         number = page_doc["page"]
         geometry = geometry_by_page[number]
         spans = [
-            Span(styles[row[0]], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+            Span(
+                styles[row[0]],
+                row[1],
+                row[2],
+                row[3],
+                row[4],
+                row[5],
+                row[6],
+                row[7],
+                row[8] if len(row) > 8 else 0,
+                tuple(row[9]) if len(row) > 9 else (),
+            )
             for row in page_doc["spans"]
         ]
         paths: list[VectorPath] = []

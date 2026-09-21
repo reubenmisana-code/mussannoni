@@ -12,6 +12,8 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+import pymupdf
+
 from tools.common import (
     ROOT,
     extraction_dir,
@@ -23,6 +25,7 @@ from tools.common import (
 from tools.evidence import Style, load_evidence
 from tools.fonts import (
     BASE14_MAP,
+    SYSTEM_FONTS,
     FaceMetrics,
     base14_metrics,
     embedded_metrics,
@@ -48,6 +51,83 @@ class FontResolver:
         self.destination = destination
         self.report_font_dir = destination / "fonts"
         self.extraction = extraction_dir(report)
+        self._measures: dict[str, pymupdf.Font] = {}
+
+    def measuring_font(self, style: Style) -> pymupdf.Font | None:
+        """The font file the browser will actually lay this style out with."""
+        if style.font in self._measures:
+            return self._measures[style.font]
+        embedded = self._find_embedded(style.font)
+        font: pymupdf.Font | None = None
+        try:
+            if embedded is not None:
+                font = pymupdf.Font(fontfile=str(embedded))
+            else:
+                mapped = BASE14_MAP.get(style.font)
+                system = SYSTEM_FONTS.get(mapped[4]) if mapped and mapped[4] else None
+                if system is not None and system.exists():
+                    font = pymupdf.Font(fontfile=str(system))
+                elif mapped:
+                    font = pymupdf.Font(mapped[3])
+        except (RuntimeError, ValueError):
+            font = None
+        self._measures[style.font] = font
+        return font
+
+    def character_chunks(
+        self, style: Style, text: str, offsets: tuple[float, ...]
+    ) -> list[dict[str, Any]]:
+        """Split a run so every glyph lands on its reference offset.
+
+        The reference positions glyphs slightly apart from what the font's advances alone give,
+        because its producer emitted explicit per-glyph adjustments. Each chunk therefore
+        carries the correction needed before it, and consecutive characters that need none stay
+        in one chunk, so the markup only grows where the reference actually asks for it.
+        """
+        font = self.measuring_font(style)
+        if font is None or not offsets or len(offsets) != len(text):
+            return []
+        try:
+            natural = [font.text_length(text[:index], fontsize=style.size_pt) for index in range(len(text))]
+        except (RuntimeError, ValueError):
+            return []
+
+        chunks: list[dict[str, Any]] = []
+        pending = 0.0
+        current = ""
+        applied = 0.0
+        for index, character in enumerate(text):
+            correction = round((offsets[index] - natural[index]) - applied, 3)
+            if abs(correction) < 0.002 or index == 0:
+                current += character
+                continue
+            chunks.append({"text": current, "margin_pt": pending})
+            pending = correction
+            applied += correction
+            current = character
+        if current:
+            chunks.append({"text": current, "margin_pt": pending})
+        return chunks if len(chunks) > 1 else []
+
+    def letter_spacing(self, style: Style, text: str, reference_width: float) -> float:
+        """Spacing that makes a run end where the reference ends.
+
+        The reference PDF carries its producer's advance widths, and they are not the installed
+        face's: the reference advances 'E' by 672/1000 em where Arial advances 667. Per glyph
+        that is invisible, but it accumulates - a twenty character name finished 0.34 pt short.
+        Distributing the measured difference across the run removes the accumulation, so the
+        run starts and ends on the reference and no glyph inside it can drift far.
+        """
+        font = self.measuring_font(style)
+        if font is None or len(text) < 2 or reference_width <= 0:
+            return 0.0
+        try:
+            natural = font.text_length(text, fontsize=style.size_pt)
+        except (RuntimeError, ValueError):
+            return 0.0
+        if natural <= 0:
+            return 0.0
+        return (reference_width - natural) / (len(text) - 1)
 
     def resolve(self, style: Style) -> FaceMetrics:
         if style.font in self.faces:
@@ -250,7 +330,18 @@ def build_loose_lines(
         height=grid.height_pt,
     )
     carrier.runs = [
-        Run(span.text, span.style, span.x0, span.x1, span.oy) for span in grid.loose_spans
+        Run(
+            span.text,
+            span.style,
+            span.x0,
+            span.x1,
+            span.oy,
+            span.ox,
+            span.rotation,
+            span.y0 if span.rotation else 0.0,
+            span.char_offsets,
+        )
+        for span in grid.loose_spans
     ]
     carrier.runs.sort(key=lambda run: (round(run.baseline, 1), run.x0))
     return build_lines(carrier, style_class, resolver, calibration)
@@ -262,37 +353,55 @@ def build_lines(
     resolver: FontResolver,
     calibration: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """Group runs into baseline lines and place each line from its measured baseline."""
+    """Place every run at its own measured origin inside the cell.
+
+    Each run carries its own absolute position rather than flowing after its neighbour. Inline
+    flow makes a run's position depend on the advance width of everything before it on the
+    line, and any difference accumulates: Arial Narrow headings landed 6.8 pt to the left
+    because the run ahead of them measured differently. Absolute placement per run removes
+    that coupling entirely - every span sits where the reference puts it, independent of its
+    neighbours.
+    """
     if not cell.runs:
         return []
-    grouped: dict[float, list] = {}
-    for run in cell.runs:
-        grouped.setdefault(round(run.baseline, 2), []).append(run)
 
     lines: list[dict[str, Any]] = []
-    for baseline in sorted(grouped):
-        runs = sorted(grouped[baseline], key=lambda item: item.x0)
-        payload_runs = []
-        cursor: float | None = None
-        for run in runs:
-            entry: dict[str, Any] = {"class": style_class(run.style), "text": run.text}
-            if cursor is not None:
-                gap = round(run.x0 - cursor, 2)
-                if gap > 0.75:
-                    entry["spacer_pt"] = gap
-            payload_runs.append(entry)
-            cursor = run.x1
-        leader = runs[0].style
-        factor = resolver.resolve(leader).baseline_factor
-        dx, dy = correction_for(calibration, leader.size_pt)
+    for run in sorted(cell.runs, key=lambda item: (round(item.baseline, 3), item.x0)):
+        factor = resolver.resolve(run.style).baseline_factor
+        dx, dy = correction_for(calibration, run.style.font, run.style.size_pt, run.rotation)
+        baseline_drop = run.style.size_pt * factor
+        if run.rotation == 90:
+            # Rotated about the box's top-left corner, the distance from the box top to the
+            # baseline acts along x, and the text climbs the page from its origin.
+            left = run.origin_x - baseline_drop - cell.x
+            top = run.baseline - cell.y
+        else:
+            # Anchor on the text origin, not the bounding box. A span that begins with a space
+            # has a box that starts at its first visible glyph, so anchoring on the box while
+            # rendering the space as well counts that space twice and pushes the run right.
+            left = run.origin_x - cell.x
+            top = run.baseline - baseline_drop - cell.y
+        chunks = resolver.character_chunks(run.style, run.text, run.char_offsets)
+        spacing = 0.0
+        if not chunks:
+            extent = abs(run.baseline - run.y_extent) if run.rotation else run.x1 - run.x0
+            spacing = resolver.letter_spacing(run.style, run.text, extent)
         lines.append(
             {
-                # The leading run's style sits on the line box so `line-height: 1` resolves
-                # against the text's own font size rather than an inherited one.
-                "class": style_class(leader),
-                "left_pt": round(runs[0].x0 - cell.x - dx, 2),
-                "top_pt": round(baseline - leader.size_pt * factor - cell.y - dy, 2),
-                "runs": payload_runs,
+                # The run's own style sits on its line box so `line-height: 1` resolves against
+                # the text's own font size rather than an inherited one.
+                "class": style_class(run.style),
+                "left_pt": round(left - dx, 3),
+                "top_pt": round(top - dy, 3),
+                "rotation": run.rotation,
+                "letter_spacing_pt": round(spacing, 4),
+                "runs": [
+                    {
+                        "class": style_class(run.style),
+                        "text": run.text,
+                        "chunks": chunks,
+                    }
+                ],
             }
         )
     return lines
@@ -350,8 +459,8 @@ TEMPLATE_HTML = """<!doctype html>
       {% if page.loose_lines %}
       <div class="page-text">
         {% for line in page.loose_lines %}
-        <div class="cell-line {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;">
-          {%- for run in line.runs %}{% if run.spacer_pt is defined %}<span class="spacer" style="width: {{ run.spacer_pt }}pt;"></span>{% endif %}<span class="{{ run.class }}">{{ run.text }}</span>{% endfor %}
+        <div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">
+          {%- for run in line.runs %}{% if run.chunks %}{% for chunk in run.chunks %}<span class="{{ run.class }}"{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}>{{ chunk.text }}</span>{% endfor %}{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}{% endfor %}
         </div>
         {% endfor %}
       </div>
@@ -405,10 +514,16 @@ ROW_MACRO = (
     "{% if cell.pad_left %} padding-left: {{ cell.pad_left }}pt;{% endif %}"
     '{% if cell.pad_right %} padding-right: {{ cell.pad_right }}pt;{% endif %}">'
     "{% for line in cell.lines %}"
-    '<div class="cell-line {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;">'
+    '<div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}"'
+    ' style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;'
+    '{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">'
     "{% for run in line.runs %}"
-    '{% if run.spacer_pt is defined %}<span class="spacer" style="width: {{ run.spacer_pt }}pt;"></span>{% endif %}'
-    '<span class="{{ run.class }}">{{ run.text }}</span>'
+    '{% if run.chunks %}{% for chunk in run.chunks %}'
+    '<span class="{{ run.class }}"'
+    '{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}'
+    ">{{ chunk.text }}</span>"
+    "{% endfor %}"
+    '{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}'
     "{% endfor %}"
     "</div>"
     "{% endfor %}"

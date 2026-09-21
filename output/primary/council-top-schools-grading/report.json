@@ -5,7 +5,15 @@
   "page_count_equal": true,
   "pages": [
     {
-      "differing_pixels_percent": 5.7148,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.1933,
+        "differing_pixels_percent_tolerance_32": 3.3281,
+        "differing_pixels_percent_tolerance_8": 4.6446,
+        "explained_by_one_pixel_jitter_percent": 99.8067,
+        "ink_ratio": 1.00923,
+        "mean_absolute_difference": 3.691
+      },
+      "differing_pixels_percent": 5.0494,
       "maximum_column_edge_drift_pt": 0.18,
       "page": 1,
       "page_size_equal": true,
@@ -14,23 +22,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.946755,
+      "ssim": 0.960108,
       "text": {
-        "maximum_drift_pt": 5.165,
+        "maximum_drift_pt": 0.55,
         "median_drift_pt": 0.2,
         "missing_characters": 0,
         "reference_character_count": 2585,
         "reference_span_count": 819,
         "rendered_character_count": 2585,
-        "rendered_span_count": 815,
+        "rendered_span_count": 856,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 7,
-        "unmatched_rendered_spans": 3
+        "unmatched_reference_spans": 9,
+        "unmatched_rendered_spans": 46
       }
     },
     {
-      "differing_pixels_percent": 5.3932,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.2207,
+        "differing_pixels_percent_tolerance_32": 3.3974,
+        "differing_pixels_percent_tolerance_8": 4.6076,
+        "explained_by_one_pixel_jitter_percent": 99.7793,
+        "ink_ratio": 0.99998,
+        "mean_absolute_difference": 3.8278
+      },
+      "differing_pixels_percent": 4.9866,
       "maximum_column_edge_drift_pt": 0.18,
       "page": 2,
       "page_size_equal": true,
@@ -39,23 +55,31 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.950298,
+      "ssim": 0.959727,
       "text": {
-        "maximum_drift_pt": 5.212,
+        "maximum_drift_pt": 0.53,
         "median_drift_pt": 0.2,
         "missing_characters": 0,
         "reference_character_count": 2444,
         "reference_span_count": 816,
         "rendered_character_count": 2444,
-        "rendered_span_count": 811,
+        "rendered_span_count": 853,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 8,
-        "unmatched_rendered_spans": 3
+        "unmatched_reference_spans": 10,
+        "unmatched_rendered_spans": 47
       }
     },
     {
-      "differing_pixels_percent": 5.3333,
+      "diagnostics": {
+        "beyond_one_pixel_jitter_percent": 0.202,
+        "differing_pixels_percent_tolerance_32": 3.4296,
+        "differing_pixels_percent_tolerance_8": 4.5816,
+        "explained_by_one_pixel_jitter_percent": 99.798,
+        "ink_ratio": 1.00057,
+        "mean_absolute_difference": 3.8418
+      },
+      "differing_pixels_percent": 4.9244,
       "maximum_column_edge_drift_pt": 0.18,
       "page": 3,
       "page_size_equal": true,
@@ -64,19 +88,19 @@
         612.0
       ],
       "passes": false,
-      "ssim": 0.950803,
+      "ssim": 0.960119,
       "text": {
-        "maximum_drift_pt": 5.165,
+        "maximum_drift_pt": 0.53,
         "median_drift_pt": 0.2,
         "missing_characters": 0,
         "reference_character_count": 2497,
         "reference_span_count": 816,
         "rendered_character_count": 2497,
-        "rendered_span_count": 811,
+        "rendered_span_count": 853,
         "surplus_characters": 0,
         "text_content_equal": true,
-        "unmatched_reference_spans": 8,
-        "unmatched_rendered_spans": 3
+        "unmatched_reference_spans": 10,
+        "unmatched_rendered_spans": 47
       }
     }
   ],
@@ -86,15 +110,16 @@
   "schema_version": 2,
   "status": "wip",
   "summary": {
-    "best_ssim": 0.950803,
+    "best_ssim": 0.960119,
     "blank_pages": 0,
     "pages_passing": 0,
     "pages_total": 3,
     "text_content_equal": true,
     "worst_column_drift_pt": 0.18,
-    "worst_pixel_delta_percent": 5.7148,
-    "worst_ssim": 0.946755,
-    "worst_text_drift_pt": 5.212
+    "worst_explained_by_one_pixel_jitter_percent": 99.7793,
+    "worst_pixel_delta_percent": 5.0494,
+    "worst_ssim": 0.959727,
+    "worst_text_drift_pt": 0.55
   },
   "thresholds": {
     "maximum_column_edge_drift_pt": 0.5,
