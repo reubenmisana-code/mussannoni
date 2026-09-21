@@ -129,9 +129,19 @@ def residuals(level: str, report_key: str) -> dict[str, Any]:
     per_face = {}
     for key, pairs in sorted(by_face.items()):
         rotation = int(key.rsplit("|", 1)[-1])
+        old = previous_faces.get(key)
         if rotation and len(pairs) < MIN_ROTATED_FACE_SAMPLES:
+            # Sub-floor fresh sample: too few corroborating rotated residuals to trust this
+            # render's median, so it is not added. But if a previous calibration had already
+            # accumulated a corroborated correction for this key, carry it forward unchanged
+            # rather than dropping it - the cumulative model must not lose a hard-won rotated
+            # offset just because a later render happened to measure the face only once. A
+            # brand-new sub-floor rotated key (no previous entry) is still skipped entirely,
+            # since a single-sample rotated correction is the noise Defect 1 removed.
+            if old is not None:
+                per_face[key] = dict(old)
             continue
-        old = previous_faces.get(key, {})
+        old = old or {}
         per_face[key] = {
             "dx": round(float(old.get("dx", 0.0)) + statistics.median(dx for dx, _ in pairs), 4),
             "dy": round(float(old.get("dy", 0.0)) + statistics.median(dy for _, dy in pairs), 4),
