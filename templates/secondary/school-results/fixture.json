@@ -399172,7 +399172,7 @@
               "lines": [
                 {
                   "class": "t9",
-                  "left_pt": 11.055,
+                  "left_pt": 11.842,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -399183,23 +399183,23 @@
                           "text": "S"
                         },
                         {
-                          "margin_pt": -7.89,
+                          "margin_pt": 0.015,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -3.312,
+                          "margin_pt": 0.029,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "K"
                         }
                       ],
@@ -399207,7 +399207,7 @@
                       "text": "S/RANK"
                     }
                   ],
-                  "top_pt": 13.9
+                  "top_pt": 14.34
                 }
               ],
               "pad_left": 0.0,
@@ -399224,7 +399224,7 @@
               "lines": [
                 {
                   "class": "t9",
-                  "left_pt": 11.075,
+                  "left_pt": 11.862,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -399235,23 +399235,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -3.312,
+                          "margin_pt": 0.028,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "K"
                         }
                       ],
@@ -399259,7 +399259,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 13.9
+                  "top_pt": 14.34
                 }
               ],
               "pad_left": 0.0,
@@ -399276,7 +399276,7 @@
               "lines": [
                 {
                   "class": "t9",
-                  "left_pt": 11.705,
+                  "left_pt": 12.492,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -399287,23 +399287,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -3.312,
+                          "margin_pt": 0.028,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "K"
                         }
                       ],
@@ -399311,7 +399311,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 13.9
+                  "top_pt": 14.34
                 }
               ],
               "pad_left": 0.0,
@@ -399328,7 +399328,7 @@
               "lines": [
                 {
                   "class": "t9",
-                  "left_pt": 11.075,
+                  "left_pt": 11.862,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -399336,26 +399336,22 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "Z"
+                          "text": "Z/"
                         },
                         {
-                          "margin_pt": -7.214,
-                          "text": "/"
-                        },
-                        {
-                          "margin_pt": -3.305,
+                          "margin_pt": 0.021,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.574,
+                          "margin_pt": 0.052,
                           "text": "K"
                         }
                       ],
@@ -399363,7 +399359,7 @@
                       "text": "Z/RANK"
                     }
                   ],
-                  "top_pt": 13.9
+                  "top_pt": 14.34
                 }
               ],
               "pad_left": 0.0,

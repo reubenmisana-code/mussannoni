@@ -8,12 +8,22 @@
     "Arial-BoldMT|5.28|0": {
       "dx": -0.1085,
       "dy": -0.83,
-      "samples": 342
+      "samples": 402
+    },
+    "Arial-BoldMT|5.28|90": {
+      "dx": -0.8815,
+      "dy": -0.095,
+      "samples": 14
     },
     "Arial-BoldMT|6.12|0": {
       "dx": -0.0225,
       "dy": -0.71,
       "samples": 42
+    },
+    "Arial-BoldMT|6.12|90": {
+      "dx": -0.9567,
+      "dy": -0.155,
+      "samples": 16
     },
     "Arial-BoldMT|7.08|0": {
       "dx": -0.0097,
@@ -26,9 +36,9 @@
       "samples": 8
     },
     "ArialMT|5.28|0": {
-      "dx": -0.0284,
-      "dy": -0.8,
-      "samples": 792
+      "dx": -0.0405,
+      "dy": -0.815,
+      "samples": 1140
     },
     "ArialNarrow-Bold|4.8|0": {
       "dx": -0.0883,
@@ -53,9 +63,9 @@
       "samples": 6
     },
     "5.28": {
-      "dx": -0.0405,
+      "dx": -0.0606,
       "dy": -0.83,
-      "samples": 1140
+      "samples": 1548
     },
     "6.12": {
       "dx": -0.0225,
@@ -74,16 +84,16 @@
     }
   },
   "global": {
-    "dx": -0.04,
+    "dx": -0.053,
     "dy": -0.83,
-    "samples": 1213
+    "samples": 1621
   },
   "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_best_students",
   "residual": {
-    "dx": -0.0405,
+    "dx": -0.0526,
     "dy": -0.83,
     "worst_dx": 0.1244,
     "worst_dy": 1.55

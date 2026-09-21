@@ -1891,7 +1891,7 @@
               "lines": [
                 {
                   "class": "t5",
-                  "left_pt": 28.03,
+                  "left_pt": 28.722,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -1902,31 +1902,31 @@
                           "text": "S"
                         },
                         {
-                          "margin_pt": -8.924,
+                          "margin_pt": -0.04,
                           "text": "U"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "M"
                         },
                         {
-                          "margin_pt": -11.229,
+                          "margin_pt": 0.033,
                           "text": "M"
                         },
                         {
-                          "margin_pt": -11.23,
+                          "margin_pt": 0.034,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "Y"
                         },
                         {
-                          "margin_pt": -8.924,
+                          "margin_pt": -0.04,
                           "text": " "
                         }
                       ],
@@ -1934,11 +1934,11 @@
                       "text": "SUMMARY "
                     }
                   ],
-                  "top_pt": 4.84
+                  "top_pt": 5.07
                 },
                 {
                   "class": "t5",
-                  "left_pt": 36.57,
+                  "left_pt": 37.262,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -1949,43 +1949,43 @@
                           "text": "P"
                         },
                         {
-                          "margin_pt": -8.924,
+                          "margin_pt": -0.04,
                           "text": "E"
                         },
                         {
-                          "margin_pt": -8.924,
+                          "margin_pt": -0.04,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -8.184,
+                          "margin_pt": -0.026,
                           "text": "O"
                         },
                         {
-                          "margin_pt": -10.502,
+                          "margin_pt": 0.048,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "M"
                         },
                         {
-                          "margin_pt": -11.23,
+                          "margin_pt": 0.034,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "C"
                         },
                         {
-                          "margin_pt": -9.651,
+                          "margin_pt": -0.055,
                           "text": "E"
                         }
                       ],
@@ -1993,7 +1993,7 @@
                       "text": "PERFORMANCE"
                     }
                   ],
-                  "top_pt": 13.72
+                  "top_pt": 13.95
                 }
               ],
               "pad_left": 0.0,
@@ -4514,7 +4514,7 @@
               "lines": [
                 {
                   "class": "t5",
-                  "left_pt": 7.19,
+                  "left_pt": 7.882,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -4525,15 +4525,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -9.653,
+                          "margin_pt": -0.053,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -9.653,
+                          "margin_pt": -0.053,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -9.653,
+                          "margin_pt": -0.053,
                           "text": "K"
                         }
                       ],
@@ -4541,7 +4541,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 9.32
+                  "top_pt": 9.55
                 }
               ],
               "pad_left": 0.0,

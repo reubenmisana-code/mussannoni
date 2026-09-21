@@ -6,14 +6,24 @@
       "samples": 8
     },
     "Arial-BoldMT|6.24|90": {
-      "dx": 0.1983,
+      "dx": -0.1017,
       "dy": -0.14,
-      "samples": 1
+      "samples": 12
+    },
+    "Arial-BoldMT|6.84|90": {
+      "dx": -0.4919,
+      "dy": -0.11,
+      "samples": 15
     },
     "Arial-BoldMT|7.44|0": {
       "dx": -0.0803,
       "dy": -1.16,
-      "samples": 259
+      "samples": 287
+    },
+    "Arial-BoldMT|7.44|90": {
+      "dx": -0.852,
+      "dy": -0.02,
+      "samples": 5
     },
     "Arial-BoldMT|8.76|0": {
       "dx": -0.0116,
@@ -21,9 +31,9 @@
       "samples": 5
     },
     "ArialMT|7.44|0": {
-      "dx": -0.0486,
+      "dx": -0.0528,
       "dy": -1.16,
-      "samples": 444
+      "samples": 556
     },
     "ArialNarrow-Bold|7.44|0": {
       "dx": -0.0698,
@@ -38,9 +48,9 @@
       "samples": 8
     },
     "7.44": {
-      "dx": -0.0547,
+      "dx": -0.0555,
       "dy": -1.16,
-      "samples": 711
+      "samples": 851
     },
     "8.76": {
       "dx": -0.0116,
@@ -51,14 +61,14 @@
   "global": {
     "dx": -0.055,
     "dy": -1.16,
-    "samples": 724
+    "samples": 864
   },
   "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_top_schools_alama",
   "residual": {
-    "dx": -0.0547,
+    "dx": -0.0555,
     "dy": -1.16,
     "worst_dx": 0.0916,
     "worst_dy": 1.55

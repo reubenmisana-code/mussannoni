@@ -6661,7 +6661,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 8.374,
+                  "left_pt": 9.486,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -6672,23 +6672,19 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.15,
+                          "margin_pt": 0.044,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.149,
-                          "text": "F"
+                          "margin_pt": 0.043,
+                          "text": "FA"
                         },
                         {
-                          "margin_pt": -6.011,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -7.141,
+                          "margin_pt": 0.034,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.523,
+                          "margin_pt": -0.039,
                           "text": "I"
                         }
                       ],
@@ -6696,7 +6692,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 7.77
+                  "top_pt": 7.82
                 }
               ],
               "pad_left": 0.0,
@@ -69758,7 +69754,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 8.374,
+                  "left_pt": 9.486,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -69769,23 +69765,19 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.149,
+                          "margin_pt": 0.043,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.15,
-                          "text": "F"
+                          "margin_pt": 0.044,
+                          "text": "FA"
                         },
                         {
-                          "margin_pt": -6.011,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -7.141,
+                          "margin_pt": 0.034,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.523,
+                          "margin_pt": -0.039,
                           "text": "I"
                         }
                       ],
@@ -69793,7 +69785,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 7.75
+                  "top_pt": 7.8
                 }
               ],
               "pad_left": 0.0,
