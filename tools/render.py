@@ -22,12 +22,14 @@ import subprocess
 from pathlib import Path
 from typing import Protocol
 
+import pymupdf
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 
 from tools.common import ROOT, find_report, output_dir, template_dir, write_json
 
 DEFAULT_ENGINE = "chromium"
 ENGINE_ENV_VAR = "MUSSANNONI_ENGINE"
+
 
 
 class Engine(Protocol):
@@ -167,8 +169,73 @@ def build_html(level: str, report_key: str) -> tuple[str, Path, Path, str]:
     return html, work_dir, destination, base_url
 
 
-def render(level: str, report_key: str, *, engine: str | None = None) -> Path:
-    """Build the HTML once and render it to PDF through the selected engine."""
+def optimize_pdf(pdf_path: Path) -> None:
+    """Structurally recompress a rendered PDF in place, content-preserving.
+
+    Chromium/agent-browser emits every absolutely-positioned span as a plaintext PDF object with
+    no object streams, so a four-page render balloons past 1.5MB of uncompressed dictionaries.
+    Re-saving through PyMuPDF with object streams, deflate and garbage collection compacts that
+    ~5x while leaving every glyph, position and page geometry byte-identical. This is a purely
+    structural recompression: nothing is rescaled, re-rastered or downsampled, and both engines'
+    output runs through it. WeasyPrint output is already small, so this is a near no-op there.
+
+    The result is validated (still a ``%PDF-``, same page count, same page rectangles and
+    rotations) before it atomically replaces the original; anything else raises.
+    """
+    with pymupdf.open(pdf_path) as doc:
+        page_count = doc.page_count
+        geometry = [(round(page.rect.width, 3), round(page.rect.height, 3), page.rotation)
+                    for page in doc]
+        # Font subsetting is deliberately NOT attempted. It trims only ~2% further (5.9KB on a
+        # 4-page render), but it leaves the font tables in a state where the following save can
+        # run for many minutes instead of ~1s. That is not predictable from document size - it
+        # hit both a 33MB/16-page report and a 2.5MB one - so there is no safe guard to gate it
+        # behind. The structural recompression below is where the whole ~5x win comes from.
+        # A deterministic sibling name (not mkstemp) so an interrupted run leaves at most one
+        # stale file that the next run overwrites, instead of accumulating tmp*.pdf debris.
+        tmp_path = pdf_path.with_name(pdf_path.name + ".tmp")
+        tmp_path.unlink(missing_ok=True)
+        try:
+            # clean=True is deliberately NOT used: it rewrites every content stream, which on
+            # dense reports (region-shule-nafasi-jumla: 16 pages, 33MB) runs for over ten
+            # minutes, and it saves nothing - it measured ~1.4KB LARGER on a 4-page render.
+            doc.save(
+                str(tmp_path),
+                garbage=4,
+                deflate=True,
+                deflate_fonts=True,
+                use_objstms=1,
+            )
+        except Exception:
+            tmp_path.unlink(missing_ok=True)
+            raise
+
+    if not tmp_path.read_bytes().startswith(b"%PDF-"):
+        tmp_path.unlink(missing_ok=True)
+        raise RuntimeError(f"Optimized PDF is not a valid %PDF-: {pdf_path}")
+    with pymupdf.open(tmp_path) as optimized:
+        if optimized.page_count != page_count:
+            tmp_path.unlink(missing_ok=True)
+            raise RuntimeError(
+                f"Optimization changed page count {page_count} -> {optimized.page_count}: "
+                f"{pdf_path}"
+            )
+        new_geometry = [(round(page.rect.width, 3), round(page.rect.height, 3), page.rotation)
+                        for page in optimized]
+        if new_geometry != geometry:
+            tmp_path.unlink(missing_ok=True)
+            raise RuntimeError(f"Optimization changed page geometry: {pdf_path}")
+    os.replace(tmp_path, pdf_path)
+
+
+def render(
+    level: str, report_key: str, *, engine: str | None = None, optimize: bool = True
+) -> Path:
+    """Build the HTML once and render it to PDF through the selected engine.
+
+    Unless ``optimize`` is False, the engine's output is structurally recompressed in place by
+    :func:`optimize_pdf` (object streams + deflate + garbage collection), content-preserving.
+    """
     engine_name = resolve_engine(engine)
     implementation = ENGINES[engine_name]
     html, work_dir, destination, base_url = build_html(level, report_key)
@@ -185,9 +252,12 @@ def render(level: str, report_key: str, *, engine: str | None = None) -> Path:
         session=session,
     )
 
+    if optimize:
+        optimize_pdf(pdf_path)
+
     # Record the engine that produced this render so compare() reports it truthfully. Kept as a
-    # sidecar next to the PDF; a later post-render optimisation pass can extend this file too.
-    write_json(destination / "render-meta.json", {"engine": engine_name})
+    # sidecar next to the PDF; the optimize flag is recorded too for provenance.
+    write_json(destination / "render-meta.json", {"engine": engine_name, "optimized": optimize})
     return pdf_path
 
 
@@ -201,8 +271,14 @@ def main() -> None:
         default=None,
         help=f"rendering engine (default: {ENGINE_ENV_VAR} env var, else {DEFAULT_ENGINE})",
     )
+    parser.add_argument(
+        "--no-optimize",
+        dest="optimize",
+        action="store_false",
+        help="skip the structural PDF recompression pass (inspect raw engine output)",
+    )
     args = parser.parse_args()
-    path = render(args.level, args.report_key, engine=args.engine)
+    path = render(args.level, args.report_key, engine=args.engine, optimize=args.optimize)
     print(f"{resolve_engine(args.engine)}: {path}")
 
 

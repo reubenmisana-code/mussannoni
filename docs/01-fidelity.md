@@ -43,6 +43,23 @@ fails it while looking indistinguishable. Each page therefore also records diagn
 tolerance-based deltas - so the gap can be judged rather than guessed at. Those are
 diagnostics only; nothing in the pass/fail decision uses them.
 
+## Post-render size optimization
+
+The Chromium engine emits every absolutely-positioned span as its own uncompressed PDF object
+with no object streams, so a four-page render can carry more than 1.5 MB of plaintext object
+dictionaries - roughly 8× the size of the corresponding reference. After any engine writes
+`rendered.pdf`, `tools/render.py` runs a structural recompression pass (`optimize_pdf`) that
+reopens the file with PyMuPDF and re-saves it with object streams, deflate, font subsetting and
+garbage collection (`garbage=4, deflate=True, deflate_fonts=True, use_objstms=1, clean=True`).
+
+This is content-preserving: it is a structural recompression only, never a rescale, re-raster
+or downsample. The pass asserts that page count and every page's rectangle and rotation are
+unchanged, and rasterised pages are pixel-identical before and after, so it cannot move a
+report across a fidelity gate. It typically shrinks Chromium output about 5× (the
+council-best-students render drops from ~1.57 MB to ~318 KB), bringing renders down to roughly
+the size of the reference PDFs. WeasyPrint output is already small natively, so the pass is a
+near no-op there. Pass `--no-optimize` to `tools/render.py` to inspect raw engine output.
+
 ## How the comparison is made fair
 
 Both PDFs are rasterised by the same rasteriser, poppler, at 300 dpi.

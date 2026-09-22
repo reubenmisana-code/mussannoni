@@ -352,6 +352,17 @@ engine that produced each render in `output/<level>/<key>/render-meta.json`, and
 `tools/compare.py` reads it so `report.json`'s `engine` field always reflects
 what actually rendered the PDF.
 
+**Post-render size optimization.** Chromium emits every positioned span as an
+uncompressed PDF object with no object streams, so a four-page render can exceed
+1.5 MB — about 8× the reference. After any engine writes the PDF, `tools/render.py`
+runs a structural recompression pass (`optimize_pdf`) that re-saves it through
+PyMuPDF with object streams, deflate, font subsetting and garbage collection. This
+is content-preserving and pixel-identical (page count, geometry and rasterised
+pixels are unchanged and asserted so), and it brings Chromium renders down roughly
+5× — council-best-students drops from ~1.57 MB to ~318 KB, near the 185 KB original
+class. WeasyPrint output is natively small, so the pass is a near no-op there. The
+pass is on by default; pass `--no-optimize` to inspect raw engine output.
+
 Convert and verify against **chromium** first. If a template also needs to hold
 up under weasyprint, that is a second, separately recorded verification — a pass
 on one engine is not a pass on the other.
