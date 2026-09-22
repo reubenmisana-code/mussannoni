@@ -8,6 +8,7 @@ are only written for pages that fail, as diff evidence.
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import subprocess
 from collections import Counter
@@ -286,6 +287,26 @@ def save_diff(reference: np.ndarray, candidate: np.ndarray, path: Path) -> None:
     Image.fromarray(image).convert("P", palette=Image.ADAPTIVE, colors=64).save(path, optimize=True)
 
 
+ENGINE_LABELS = {
+    "chromium": "chromium (headless, print-to-pdf)",
+    "weasyprint": "weasyprint (in-process)",
+}
+
+
+def render_engine(destination: Path) -> str:
+    """The engine that produced rendered.pdf, from the render-meta.json sidecar.
+
+    Falls back to the historical chromium label when no sidecar is present (e.g. a render
+    committed before the pluggable-engine work), so existing reports keep their value.
+    """
+    meta_path = destination / "render-meta.json"
+    if meta_path.exists():
+        name = json.loads(meta_path.read_text(encoding="utf-8")).get("engine")
+        if name:
+            return ENGINE_LABELS.get(name, name)
+    return ENGINE_LABELS["chromium"]
+
+
 def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str, Any]:
     report = find_report(level, report_key)
     reference_pdf = reference_path(report)
@@ -293,6 +314,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
     rendered_pdf = destination / "rendered.pdf"
     if not rendered_pdf.exists():
         raise FileNotFoundError(f"Render the report first: {rendered_pdf}")
+    engine = render_engine(destination)
     require_rasteriser()
     destination.mkdir(parents=True, exist_ok=True)
     for stale in destination.glob("diff-page-*.png"):
@@ -379,7 +401,7 @@ def compare(level: str, report_key: str, *, keep_diffs: bool = True) -> dict[str
         "schema_version": 2,
         "report_key": report_key,
         "level": level,
-        "engine": "chromium (headless, print-to-pdf)",
+        "engine": engine,
         "metric_dpi": DPI,
         "thresholds": THRESHOLDS,
         "reference_page_count": len(page_reports),

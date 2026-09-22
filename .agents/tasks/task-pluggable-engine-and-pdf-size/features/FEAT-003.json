@@ -1,0 +1,34 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Bring rendered output PDF sizes down to roughly the size of the originals (or smaller) without breaking the fidelity comparison. Add a mandatory post-render PDF optimization pass (PyMuPDF object streams + deflate + garbage collection, optionally font subsetting) applied to every engine's output, then regenerate the committed corpus outputs and refresh the README status/size reporting. Root cause is confirmed: Chromium/agent-browser emits ~1.27MB of UNCOMPRESSED PDF object dictionaries with no object streams; a PyMuPDF re-save fixes it ~5x, pixel-identically.",
+  "status": "pending",
+  "steps": [
+    "In tools/render.py, add an `optimize_pdf(pdf_path: Path) -> None` step that runs AFTER every engine writes its PDF (engine-independent, so both chromium and weasyprint outputs are compacted). Implementation proven during routing: open with pymupdf, optionally `doc.subset_fonts(verbose=False)` inside a try/except (harmless if it fails), then save in place using `doc.save(tmp, garbage=4, deflate=True, deflate_fonts=True, use_objstms=1, clean=True)` and atomically replace the original (save to a sibling temp file then os.replace, since PyMuPDF cannot save over an open file). Re-validate the result still starts with b'%PDF-' and has the same page_count as before optimization; raise if not.",
+    "Guarantee the optimization never alters visual content or geometry: after saving, assert page_count is unchanged and page rectangles/rotation are unchanged. (Routing verified pixmaps are byte-identical at 150 dpi and extracted text is identical, so no content change is expected.) Do NOT rescale, re-raster, or downsample anything - this is a structural recompression only.",
+    "Make optimization the default but overridable: add a `--no-optimize` flag to tools/render.py (and thread an `optimize: bool = True` param through render()) so a debugging run can inspect the raw engine output. Default ON.",
+    "Verify size reduction on representative reports first: render+optimize primary council_best_students (expect ~1.57MB -> ~300-330KB, near or below the 185KB original class), council_school_rank_in_grade (expect ~5.1MB -> ~1MB), region_kata_jumla (~5.5MB -> ~1.06MB). Record before/after bytes and confirm rendered.pdf still opens and matches page count.",
+    "Regenerate the committed outputs for the WHOLE corpus so the size win is real and reviewable: run `make convert` (extract->scaffold->render->tune->render->compare across all 46 reports). This is long-running; if time-constrained, at minimum regenerate all outputs via a render+optimize+compare pass over every catalog entry so every committed output/.../rendered.pdf is the new smaller file and every report.json is refreshed. Use the default engine (chromium) so committed metrics stay comparable to the prior baseline; note that if poppler/fonts could not be installed in FEAT-001, the SSIM/pixel numbers will shift for environmental reasons - document this rather than editing thresholds.",
+    "Confirm the fidelity gate did not regress from the size change specifically: for a report rendered both before and after optimization with the SAME engine, the compare metrics (SSIM, pixel delta, text drift, column drift) must be effectively unchanged (optimization is pixel-identical), and no report that previously passed a page may now fail it due to optimization. Record a before/after comparison for at least council_best_students.",
+    "Refresh reporting: run `uv run python -m tools.status` to regenerate the README conversion-status table from the new report.json files. Additionally, surface the size improvement so the user can see it - e.g. add a rendered-vs-original byte-size column or a short size summary to tools/status.py output / README (follow the existing status-table generation pattern between the <!-- conversion-status:start/end --> markers; keep it generated, not hand-typed).",
+    "Update docs (docs/01-fidelity.md or README 'Rendering engine' / a short note) to state that rendered PDFs are structurally optimized post-render (object streams + deflate + garbage collection) to match reference file sizes, that this is content-preserving (pixel-identical), and that WeasyPrint output is natively small. Keep ruff clean and pytest green.",
+    "Add a test asserting the optimization is effective and safe: render one report, and assert the optimized rendered.pdf is dramatically smaller than an un-optimized (--no-optimize) render of the same report while having identical page_count and identical rasterized pixels (compare pymupdf pixmaps at a modest dpi). This test must exercise the real optimize_pdf code path and fail if optimization is removed."
+  ],
+  "acceptance_criteria": [
+    "Every committed output/<level>/<key>/rendered.pdf is regenerated and is dramatically smaller than before (target: roughly the size of the corresponding corpus/ original or smaller; the ~1.57MB council-best-students render becomes ~300-330KB against a 185KB original class, and multi-MB renders drop ~5x).",
+    "Total committed output PDF size is reduced by roughly 4-5x versus the ~174MB baseline recorded in FEAT-001.",
+    "Optimization is content-preserving: for at least council_best_students, rasterized pages are pixel-identical (or SSIM ~1.0) between pre- and post-optimization renders with the same engine, and page count/geometry are unchanged.",
+    "No report that previously passed a page's fidelity gate loses that pass due to the optimization step; THRESHOLDS unchanged; corpus/ untouched.",
+    "README conversion-status table is regenerated by tools/status.py and reflects the new outputs; a size indicator (rendered vs original) is visible.",
+    "New optimization test passes; `uv run pytest` and `uv run ruff check .` are green."
+  ],
+  "verification": [
+    "uv run python -m tools.render primary council_best_students --engine chromium",
+    "uv run python -c \"import os; s=os.path.getsize('output/primary/council-best-students/rendered.pdf'); print(s); assert s < 500000, s\"",
+    "uv run python -m tools.compare primary council_best_students",
+    "uv run pytest",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

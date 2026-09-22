@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-001",
+  "type": "chore",
+  "description": "Establish a green baseline and confirm the measured facts. Sync deps, run the environment setup, and record the current state so later size/fidelity changes are measured against a known-good starting point.",
+  "status": "completed",
+  "steps": [
+    "cd /projects/sandbox/mussannoni. Run `uv sync` to install all dependencies including weasyprint (already added to pyproject.toml/uv.lock during routing).",
+    "Run `make setup`. This uses dnf (available) to install poppler-utils, liberation fonts, and cabextract, then downloads licensed Arial/Times from sourceforge corefonts (OPEN_INTERNET is available). If any individual step fails, capture the exact error in findings; do NOT relax it silently.",
+    "Run `make doctor` and record the output. The goal is 'environment ready'. If poppler or fonts cannot be installed in this sandbox, record precisely what is missing in findings, because the pixel/SSIM metrics from tools/compare.py will then differ from the committed report.json values (PDF-size work does not depend on poppler and must still proceed).",
+    "Run `uv run ruff check .` and `uv run pytest` and record pass/fail counts to establish the baseline test state.",
+    "Record current committed output PDF sizes for reference: `find output -name rendered.pdf | xargs du -b | sort -n` and note total (~174MB across corpus) and a few representative files (council-best-students ~1.57MB vs corpus 185KB).",
+    "Confirm the import convention: the codebase uses `import pymupdf` (NOT `import fitz`). Verify with `uv run python -c \"import pymupdf; print(pymupdf.__version__)\"`."
+  ],
+  "acceptance_criteria": [
+    "`uv sync` completes and `uv run python -c \"import weasyprint, pymupdf\"` succeeds.",
+    "`uv run pytest` result is recorded (pass/skip counts).",
+    "`uv run ruff check .` result is recorded.",
+    "`make doctor` output is recorded, and any missing binary/font is documented in findings with its impact on metrics.",
+    "Baseline output PDF sizes are recorded in findings."
+  ],
+  "verification": [
+    "uv run pytest",
+    "uv run ruff check .",
+    "make doctor"
+  ],
+  "blocked_reason": null,
+  "findings": "GREEN BASELINE CONFIRMED. No source code changed (baseline-only feature). Working tree still only has the routing-time pyproject.toml + uv.lock (weasyprint) changes plus the .agents/ task dir.\n\nDEPS: `uv sync` -> 'Resolved 44 packages, Checked 38 packages' (no changes needed; already synced). Imports OK: weasyprint 70.0, pymupdf 1.28.2. Import convention CONFIRMED: `import pymupdf` works (NOT fitz).\n\nENVIRONMENT SETUP (`make setup`) SUCCEEDED FULLY (OPEN_INTERNET + dnf available on Amazon Linux 2023): installed poppler-utils, liberation-sans-fonts, liberation-serif-fonts, cabextract; downloaded licensed Arial/Times from sourceforge corefonts (arial32.exe, arialb32.exe, times32.exe) -> 9 faces into /usr/share/fonts/msttcore. fc-match resolves Arial->arial.ttf, Arial:bold->arialbd.ttf, Times New Roman->times.ttf. Script printed 'environment ready'. No missing binaries or fonts.\n\n`make doctor` -> 'environment ready: measurements are comparable to the committed results'. binaries: pdftoppm (poppler 24.08.0) [ok], agent-browser (/root/.nvm/versions/node/v22.23.2/bin/agent-browser) [ok]. All 7 licensed faces [ok]. This means tools/compare.py SSIM/pixel metrics WILL be comparable to committed report.json values, so fidelity re-measurement in later features is trustworthy.\n\nLINT: `uv run ruff check .` -> 'All checks passed!'\n\nTESTS: `uv run pytest` -> 654 passed, 46 skipped in ~11s (exit 0). The 46 skips are test_fidelity.py cases where report.json is still 'wip' (expected per context).\n\nBASELINE OUTPUT PDF SIZES: 46 rendered.pdf files, total 181,693,210 bytes (~173 MiB / ~182 MB). Representative: output/primary/council-best-students/rendered.pdf = 1,574,866 bytes vs corpus/primary/council-best-students.pdf = 185,490 bytes (~8.5x bloat, matches routing measurement). Smallest render: region-ufaulu-masomo-jumla 274,546 B; council-ufaulu-wa-masomo 347,697 B; council-subject-summary 407,971 B. Largest renders: region-shule-nafasi-jumla 33,073,245 B; region-shule-serikali 22,670,156 B; secondary/school-results 12,084,098 B. These are the pre-optimization baselines to measure FEAT-002/003 size reductions against."
+}
