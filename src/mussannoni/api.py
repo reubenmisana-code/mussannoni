@@ -41,7 +41,9 @@ def render_report(
                   "title": str,                  # optional; defaults to the measured title
                   "columns": [str, ...],         # optional; override the measured column labels
                   "header": {"0.3": str, ...},   # optional; override any header cell, "row.col"
+                  #           a list value sets one measured line each
                   "rows": [[value, ...], ...],   # required; or [{"LABEL": value, ...}, ...]
+                  "loose": {2: str, ...},        # optional; replace a loose letterhead line
                 }
 
             Rows may be lists (positional, by column) or mappings keyed by column label or

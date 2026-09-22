@@ -224,15 +224,142 @@ def _column_labels(header: list[dict[str, Any]], column_count: int) -> list[str]
     return best
 
 
+def _column_edges(widths: list[float]) -> list[float]:
+    """Cumulative left edges of a column grid, plus its right edge."""
+    edges = [0.0]
+    for width in widths:
+        edges.append(round(edges[-1] + width, 2))
+    return edges
+
+
+def _remap_row(row: dict[str, Any], source_widths: list[float],
+               target_widths: list[float]) -> dict[str, Any] | None:
+    """One measured row moved from a finer column grid onto a coarser one.
+
+    A page that carries two tables is measured on the union of both grids, so its columns
+    subdivide the grid the body pages repeat: ``school-results`` measures 11 columns on page 1
+    where the candidate rows use 9, the extra two being splits of the name and subjects columns.
+    Because the coarse grid's edges are a subset of the fine one's, every cell can be placed by
+    matching its left and right edge, which is what this does. Returns ``None`` if any cell does
+    not align, so a grid that is not a subdivision is refused rather than approximated.
+    """
+    source_edges = _column_edges(source_widths)
+    target_edges = _column_edges(target_widths)
+
+    def index_of(edge: float) -> int | None:
+        for position, value in enumerate(target_edges):
+            if abs(value - edge) < 0.05:
+                return position
+        return None
+
+    remapped: list[dict[str, Any]] = []
+    for cell in row["cells"]:
+        start = int(cell["column"])
+        span = int(cell.get("colspan", 1) or 1)
+        if start >= len(source_edges) - 1:
+            return None
+        left = index_of(source_edges[start])
+        right = index_of(source_edges[min(start + span, len(source_edges) - 1)])
+        if left is None or right is None or right <= left:
+            # A cell whose boundaries are interior to a target column cannot be placed.
+            continue
+        moved = dict(cell)
+        moved["column"] = left
+        moved["colspan"] = right - left
+        remapped.append(moved)
+    if not remapped:
+        return None
+    moved_row = dict(row)
+    moved_row["cells"] = remapped
+    return moved_row
+
+
+def _is_label_row(row: dict[str, Any]) -> bool:
+    """Whether a measured row labels its table rather than carrying data.
+
+    A label row names several columns, each with a word rather than a figure. Counted per cell,
+    not per line: the letterhead is a single wide cell holding many lines and must not be mistaken
+    for a label band.
+    """
+    cell_texts: list[str] = []
+    for cell in row["cells"]:
+        joined = " ".join(text.strip() for text in _cell_texts(cell) if text.strip())
+        if joined:
+            cell_texts.append(joined)
+    if len(cell_texts) < 3:
+        return False
+    return not any(_NUMERIC.match(text) for text in cell_texts)
+
+
+def _cell_texts(cell: dict[str, Any]) -> list[str]:
+    return [
+        "".join(run.get("text", "") for run in (line.get("runs") or []))
+        for line in (cell.get("lines") or [])
+    ]
+
+
+_NUMERIC = re.compile(r"^-?\d+(?:[.,]\d+)?%?$")
+
+
+def _transplanted_header(source: dict[str, Any],
+                         target_widths: list[float]) -> list[dict[str, Any]]:
+    """The header band for a repeating grid, taken from a compound first page.
+
+    When the body pages' own ``header_rows`` marks a data row — a continuation page has no
+    repeating label band of its own — the band has to come from the page that does carry it. Two
+    rows are taken: the letterhead, and the row that labels the repeating table's columns. Both
+    are remapped onto the repeating grid.
+    """
+    source_widths = [float(width) for width in source["columns"]]
+    rows = source["rows"]
+
+    letterhead = rows[0] if rows else None
+    label_row = None
+    for row in rows:
+        if _is_label_row(row):
+            label_row = row
+            break
+
+    band: list[dict[str, Any]] = []
+    for candidate in (letterhead, label_row):
+        if candidate is None:
+            continue
+        moved = _remap_row(candidate, source_widths, target_widths)
+        if moved is not None:
+            band.append(moved)
+    return band
+
+
 def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> dict[str, Any]:
     """Reduce a measured fixture to the layout a caller's data can be placed onto."""
     pages = fixture["pages"]
-    first = pages[0]
-    header_rows = int(first["header_rows"])
-    header = [dict(row) for row in first["rows"][:header_rows]]
-    columns = [float(width) for width in first["columns"]]
+    # The grid the report repeats, not simply page 1's. A first page that carries a summary band
+    # above the table is measured on the union of both grids, so its column set subdivides the one
+    # the body rows sit on. Distilling that page's grid leaves `table.columns` describing a table
+    # the rows do not belong to, and the labels come from the summary band instead of the table's
+    # own. Where page 1 already uses the repeating grid — which is every single-grid report — this
+    # is exactly the previous behaviour.
+    grid_sizes: Counter[int] = Counter(len(page["columns"]) for page in pages)
+    repeating_size = grid_sizes.most_common(1)[0][0]
+    body_pages = [page for page in pages if len(page["columns"]) == repeating_size]
+    compound_first_page = len(pages[0]["columns"]) != repeating_size
 
-    prototype = _body_prototype(pages, header_rows)
+    if compound_first_page:
+        first = body_pages[0]
+        columns = [float(width) for width in first["columns"]]
+        # The continuation pages' own `header_rows` marks a data row, because they carry no label
+        # band; take the band from the page that does, and treat every row here as body.
+        header = _transplanted_header(pages[0], columns)
+        header_rows = len(header)
+        body_skip = 0
+    else:
+        first = pages[0]
+        header_rows = int(first["header_rows"])
+        header = [dict(row) for row in first["rows"][:header_rows]]
+        columns = [float(width) for width in first["columns"]]
+        body_skip = header_rows
+
+    prototype = _body_prototype(body_pages, body_skip)
     layout: dict[str, Any] = {
         "schema_version": LAYOUT_SCHEMA_VERSION,
         "level": report["level"],
@@ -271,7 +398,9 @@ def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> 
     }
     if prototype:
         layout["body"] = prototype
-        layout["rows_per_page"] = _rows_per_page(pages, header_rows, prototype["row_height_pt"])
+        layout["rows_per_page"] = _rows_per_page(
+            body_pages, body_skip, prototype["row_height_pt"]
+        )
     else:
         # A report with no plain repeating body row (every band spans or is styled differently)
         # cannot be driven by the table API. Say so in the data rather than guessing a shape.

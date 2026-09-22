@@ -261,8 +261,15 @@ def _apply_header_overrides(
         for cell in row["cells"]:
             if int(cell["column"]) != column_index:
                 continue
+            # A list value addresses the cell's measured lines one by one; a scalar
+            # replaces the cell with a single line.
+            replacement = (
+                value
+                if isinstance(value, Sequence) and not isinstance(value, (str, bytes))
+                else _as_text(value)
+            )
             _rewrite_cell_text(
-                cell, _as_text(value), columns, styles, level, report_key
+                cell, replacement, columns, styles, level, report_key
             )
             break
         else:
@@ -274,35 +281,118 @@ def _apply_header_overrides(
 
 def _rewrite_cell_text(
     cell: dict[str, Any],
-    text: str,
+    text: str | Sequence[str],
     columns: Sequence[float],
     styles: Mapping[str, Any],
     level: str,
     report_key: str,
 ) -> None:
-    """Put new text into a measured cell, dropping the old string's glyph corrections."""
+    """Put new text into a measured cell, dropping the old string's glyph corrections.
+
+    ``text`` may be a single string or one string per measured line. A letterhead is one cell
+    holding several lines — the authority lines, the region, the exam title — and replacing it
+    with a single string would collapse them onto one baseline. Supplying a sequence keeps each
+    line at its own measured ``top_pt`` and text class, and re-centres each one for its new
+    string. Passing fewer strings than there are lines blanks the remainder, so a report can drop
+    a letterhead line it does not need.
+    """
     lines = cell.get("lines") or []
     if not lines:
         return
-    if not text:
+
+    if isinstance(text, (str, bytes)) or not isinstance(text, Sequence):
+        texts = [_as_text(text)]
+    else:
+        texts = [_as_text(value) for value in text]
+        if len(texts) > len(lines):
+            raise InvalidDataError(
+                f"A header override for report {report_key!r} supplied {len(texts)} lines but "
+                f"the measured cell has {len(lines)}"
+            )
+
+    if not any(texts):
         cell["lines"] = []
         return
 
-    line = lines[0]
-    line_class = line.get("class", "t0")
-    style = styles.get(line_class, {"size_pt": 8.0, "base14": "helv"})
     span = sum(
         float(columns[index])
         for index in range(
             int(cell["column"]), min(int(cell["column"]) + int(cell.get("colspan", 1)), len(columns))
         )
     )
-    width = _text_width(text, style, level, report_key)
-    line["left_pt"] = round(_offset(text, span, cell, width), 3)
-    # The measured letter spacing and per-cluster margins belong to the old string.
-    line["letter_spacing_pt"] = 0.0
-    line["runs"] = [{"class": line_class, "text": text, "chunks": []}]
-    cell["lines"] = [line]
+
+    rewritten: list[dict[str, Any]] = []
+    for index, line in enumerate(lines[: len(texts)]):
+        value = texts[index]
+        if not value:
+            continue
+        line_class = line.get("class", "t0")
+        style = styles.get(line_class, {"size_pt": 8.0, "base14": "helv"})
+        width = _text_width(value, style, level, report_key)
+        line["left_pt"] = round(_offset(value, span, cell, width), 3)
+        # The measured letter spacing and per-cluster margins belong to the old string.
+        line["letter_spacing_pt"] = 0.0
+        line["runs"] = [{"class": line_class, "text": value, "chunks": []}]
+        rewritten.append(line)
+    cell["lines"] = rewritten
+
+
+def _apply_loose_overrides(
+    loose_lines: list[dict[str, Any]],
+    overrides: Mapping[str, Any],
+    layout: Mapping[str, Any],
+    styles: Mapping[str, Any],
+    level: str,
+    report_key: str,
+) -> list[dict[str, Any]]:
+    """Replace the text of individual loose lines, addressed by their index.
+
+    Several reports draw the letterhead as absolutely-positioned lines beside the table rather
+    than as cells inside its header band. Those lines carry the reference exam's own region and
+    scope, so an application rendering a different exam has to be able to replace them — and
+    ``header`` cannot reach them, because they are not in the header band.
+
+    A line that was centred on the page is re-centred for its new string; one that was not keeps
+    its measured left edge. Setting a line to an empty string removes it.
+    """
+    page_width = float(layout["page"]["width_pt"])
+    removed: set[int] = set()
+
+    for address, value in overrides.items():
+        try:
+            index = int(str(address))
+        except ValueError as error:
+            raise InvalidDataError(
+                f"data['loose'] key {address!r} must be a line index, e.g. 2"
+            ) from error
+        if not 0 <= index < len(loose_lines):
+            raise InvalidDataError(
+                f"data['loose'] key {address!r} names line {index}, but report {report_key!r} "
+                f"has {len(loose_lines)} loose lines"
+            )
+
+        line = loose_lines[index]
+        text = _as_text(value)
+        if not text:
+            removed.add(index)
+            continue
+
+        line_class = line.get("class", "t0")
+        style = styles.get(line_class, {"size_pt": 8.0, "base14": "helv"})
+        old_text = "".join(run.get("text", "") for run in (line.get("runs") or []))
+        old_width = _text_width(old_text, style, level, report_key)
+        new_width = _text_width(text, style, level, report_key)
+        old_left = float(line.get("left_pt", 0.0) or 0.0)
+        # Within a point of centred counts as centred: the measurement records the
+        # reference's own rounding, not an exact midpoint.
+        was_centred = abs((old_left + old_width / 2.0) - page_width / 2.0) <= 2.0
+        if was_centred:
+            line["left_pt"] = round(max(0.0, (page_width - new_width) / 2.0), 3)
+        # The measured letter spacing and per-cluster margins belong to the old string.
+        line["letter_spacing_pt"] = 0.0
+        line["runs"] = [{"class": line_class, "text": text, "chunks": []}]
+
+    return [line for index, line in enumerate(loose_lines) if index not in removed]
 
 
 def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[str, Any]:
@@ -316,7 +406,9 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
                   "title": str,                  # optional; defaults to the measured title
                   "columns": [str, ...],         # optional; override the measured column labels
                   "header": {"0.3": str, ...},   # optional; override any header cell, "row.col"
+                  #           a list value sets one measured line each
                   "rows": [[value, ...], ...],   # required; or [{"LABEL": value, ...}, ...]
+                  "loose": {2: str, ...},        # optional; replace a loose letterhead line
                 }
 
     Returns:
@@ -344,11 +436,11 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
     labels = list(layout["header"].get("labels") or [])
     labels += [""] * (len(columns) - len(labels))
 
-    unknown = set(data) - {"title", "columns", "header", "rows"}
+    unknown = set(data) - {"title", "columns", "header", "rows", "loose"}
     if unknown:
         raise InvalidDataError(
             f"Unknown key(s) in data: {sorted(unknown)}. "
-            "Expected any of: title, columns, header, rows."
+            "Expected any of: title, columns, header, rows, loose."
         )
 
     rows = _normalise_rows(data, labels, len(columns))
@@ -389,6 +481,12 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
     page_template = layout["page"]
     decorations = layout.get("decorations") or {}
 
+    loose_lines = deepcopy(decorations.get("loose_lines") or [])
+    if data.get("loose"):
+        loose_lines = _apply_loose_overrides(
+            loose_lines, data["loose"], layout, styles, level, report_key
+        )
+
     pages: list[dict[str, Any]] = []
     for number, chunk in enumerate(chunks, start=1):
         page_rows = deepcopy(header_rows)
@@ -428,7 +526,7 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
                 "rows": page_rows,
                 "vectors": deepcopy(decorations.get("vectors") or []),
                 "rules": _synthesise_rules(layout, body_heights),
-                "loose_lines": deepcopy(decorations.get("loose_lines") or []),
+                "loose_lines": deepcopy(loose_lines),
             }
         )
 

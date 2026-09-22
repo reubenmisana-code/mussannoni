@@ -515,57 +515,60 @@ Progress is counted in `done`, never in "templates written".
 
 46 reports in the catalog: **46** wip.
 
+Committed renders total **33.9 MB** vs **13.1 MB** of corpus originals (2.59× the originals). Renders are structurally optimized post-render (object streams + deflate + garbage collection), which is content-preserving and pixel-identical.
+
 `Pages` counts pages meeting every gate. Metrics are the worst value across the
-report's pages, measured at 300 dpi by `tools/compare.py`. Progress is counted in
+report's pages, measured at 300 dpi by `tools/compare.py`. `Rendered` / `Original` are
+the `output/` PDF versus the `corpus/` reference byte sizes. Progress is counted in
 `done` only.
 
-| # | Level | `report_key` | Pages | SSIM (worst) | Pixel delta (worst) | Text drift | Column drift | Status |
-|---|-------|--------------|-------|--------------|---------------------|------------|--------------|--------|
-| 1 | SECONDARY | `school_results` | 0/15 | 0.8976 | 11.84% | 0.49 pt | 0.24 pt | `wip` |
-| 2 | SECONDARY | `council_subjects_rank` | 0/2 | 0.9387 | 5.81% | 0.43 pt | 0.42 pt | `wip` |
-| 3 | SECONDARY | `council_schools_rank` | 0/1 | 0.8998 | 12.77% | 0.6 pt | 0.12 pt | `wip` |
-| 4 | SECONDARY | `council_wards_rank` | 0/1 | 0.9608 | 4.94% | 0.52 pt | 0.24 pt | `wip` |
-| 5 | SECONDARY | `council_top_schools` | 0/3 | 0.9541 | 5.34% | 0.52 pt | 0.18 pt | `wip` |
-| 6 | SECONDARY | `council_best_students` | 0/5 | 0.9342 | 8.30% | 0.502 pt | 0.24 pt | `wip` |
-| 7 | SECONDARY | `council_best_students_subjectwise` | 10/30 | 0.9743 | 2.56% | 0.55 pt | 0.66 pt | `wip` |
-| 8 | SECONDARY | `council_schools_rank_subjectwise` | 1/24 | 0.9286 | 8.70% | 0.806 pt | 0.54 pt | `wip` |
-| 9 | SECONDARY | `subject_schools_rank` | 0/6 | 0.9281 | 8.95% | 0.57 pt | 0.48 pt | `wip` |
-| 10 | SECONDARY | `region_schools_rank_overall` | 0/6 | 0.8821 | 13.84% | 0.66 pt | 0.18 pt | `wip` |
-| 11 | SECONDARY | `region_schools_rank_government` | 0/4 | 0.8759 | 14.42% | 0.66 pt | 0.18 pt | `wip` |
-| 12 | SECONDARY | `region_schools_rank_private` | 0/2 | 0.9004 | 11.31% | 0.66 pt | 0.18 pt | `wip` |
-| 13 | SECONDARY | `region_top_schools` | 0/6 | 0.9815 | 2.10% | 0.51 pt | 0.18 pt | `wip` |
-| 14 | SECONDARY | `region_best_students_overall` | 0/9 | 0.9356 | 4.66% | 0.72 pt | 0.18 pt | `wip` |
-| 15 | SECONDARY | `region_best_students_subjectwise` | 0/23 | 0.9803 | 2.17% | 0.66 pt | 0.6 pt | `wip` |
-| 16 | SECONDARY | `region_council_performance` | 0/5 | 0.9767 | 2.82% | 1.746 pt | 0.24 pt | `wip` |
-| 17 | SECONDARY | `region_subjects_performance` | 0/2 | 0.9591 | 4.56% | 0.57 pt | 0.72 pt | `wip` |
-| 18 | SECONDARY | `region_mobility` | 0/6 | 0.9299 | 8.44% | 0.45 pt | 0.48 pt | `wip` |
-| 19 | PRIMARY | `school_results` | 0/5 | 0.9375 | 7.65% | 0.67 pt | 0.48 pt | `wip` |
-| 20 | PRIMARY | `council_kata_rank_alama` | 0/2 | 0.9444 | 6.48% | 1.152 pt | 0.42 pt | `wip` |
-| 21 | PRIMARY | `council_kata_rank_grading` | 0/1 | 0.9577 | 5.25% | 0.46 pt | 0.36 pt | `wip` |
-| 22 | PRIMARY | `council_school_rank_binafsi` | 0/2 | 0.9459 | 8.27% | 0.636 pt | 0.36 pt | `wip` |
-| 23 | PRIMARY | `council_school_rank_serikali` | 0/2 | 0.9370 | 8.38% | 0.52 pt | 0.36 pt | `wip` |
-| 24 | PRIMARY | `council_school_rank_in_grade` | 0/3 | 0.9066 | 10.47% | 0.73 pt | 0.24 pt | `wip` |
-| 25 | PRIMARY | `council_school_rank_ufaulu_alama` | 0/4 | 0.8840 | 12.82% | 0.666 pt | 0.36 pt | `wip` |
-| 26 | PRIMARY | `council_best_students` | 0/4 | 0.9590 | 5.05% | 0.53 pt | 0.24 pt | `wip` |
-| 27 | PRIMARY | `council_top_schools_alama` | 0/2 | 0.9456 | 5.74% | 0.53 pt | 0.6 pt | `wip` |
-| 28 | PRIMARY | `council_top_schools_grading` | 0/3 | 0.9607 | 5.03% | 0.55 pt | 0.18 pt | `wip` |
-| 29 | PRIMARY | `council_top_schools_kimasomo_overall` | 0/3 | 0.9600 | 5.02% | 0.56 pt | 0.42 pt | `wip` |
-| 30 | PRIMARY | `council_top_schools_kimasomo_serikali` | 0/3 | 0.9458 | 5.50% | 0.55 pt | 0.42 pt | `wip` |
-| 31 | PRIMARY | `council_subject_summary` | 0/1 | 0.9557 | 4.81% | 0.64 pt | 0.24 pt | `wip` |
-| 32 | PRIMARY | `council_ufaulu_wa_masomo` | 0/1 | 0.9785 | 2.42% | 0.91 pt | 0.12 pt | `wip` |
-| 33 | PRIMARY | `region_kata_serikali` | 0/4 | 0.9169 | 9.94% | 0.72 pt | 0.3 pt | `wip` |
-| 34 | PRIMARY | `region_kata_binafsi` | 0/2 | 0.9287 | 8.90% | 0.63 pt | 0.3 pt | `wip` |
-| 35 | PRIMARY | `region_kata_jumla` | 0/4 | 0.9070 | 11.41% | 0.57 pt | 0.3 pt | `wip` |
-| 36 | PRIMARY | `region_shule_bora_jumla` | 0/5 | 0.9624 | 4.57% | 1.479 pt | 0.54 pt | `wip` |
-| 37 | PRIMARY | `region_shule_bora_masomo_serikali` | 0/3 | 0.9616 | 4.78% | 0.57 pt | 0.48 pt | `wip` |
-| 38 | PRIMARY | `region_shule_bora_masomo_jumla` | 0/3 | 0.9600 | 4.49% | 0.39 pt | 0.48 pt | `wip` |
-| 39 | PRIMARY | `region_ufaulu_masomo` | 0/3 | 0.9771 | 2.44% | 0.593 pt | 0.24 pt | `wip` |
-| 40 | PRIMARY | `region_ufaulu_masomo_jumla` | 0/1 | 0.9771 | 2.05% | 0.45 pt | 0.12 pt | `wip` |
-| 41 | PRIMARY | `region_wanafunzi_bora` | 0/6 | 0.9778 | 2.60% | 0.6 pt | 0.42 pt | `wip` |
-| 42 | PRIMARY | `region_shule_serikali` | 0/15 | 0.9223 | 8.94% | 0.57 pt | 0.3 pt | `wip` |
-| 43 | PRIMARY | `region_shule_binafsi` | 0/4 | 0.9296 | 8.80% | 1.02 pt | 0.3 pt | `wip` |
-| 44 | PRIMARY | `region_shule_nafasi_jumla` | 0/16 | 0.8931 | 11.19% | 0.66 pt | 0.3 pt | `wip` |
-| 45 | PRIMARY | `region_halmashauri_masomo` | 0/6 | 0.9733 | 2.92% | 0.45 pt | 0.18 pt | `wip` |
-| 46 | PRIMARY | `region_halmashauri_jumla` | 0/4 | 0.9733 | 3.13% | 0.54 pt | 0.18 pt | `wip` |
+| # | Level | `report_key` | Pages | SSIM (worst) | Pixel delta (worst) | Text drift | Column drift | Rendered | Original | Status |
+|---|-------|--------------|-------|--------------|---------------------|------------|--------------|----------|----------|--------|
+| 1 | SECONDARY | `school_results` | 0/15 | 0.8976 | 11.84% | 0.49 pt | 0.24 pt | 2511 KB | 879 KB | `wip` |
+| 2 | SECONDARY | `council_subjects_rank` | 0/2 | 0.9387 | 5.81% | 0.43 pt | 0.42 pt | 109 KB | 64 KB | `wip` |
+| 3 | SECONDARY | `council_schools_rank` | 0/1 | 0.8998 | 12.77% | 0.6 pt | 0.12 pt | 381 KB | 257 KB | `wip` |
+| 4 | SECONDARY | `council_wards_rank` | 0/1 | 0.9608 | 4.94% | 0.52 pt | 0.24 pt | 119 KB | 73 KB | `wip` |
+| 5 | SECONDARY | `council_top_schools` | 0/3 | 0.9541 | 5.34% | 0.52 pt | 0.18 pt | 323 KB | 237 KB | `wip` |
+| 6 | SECONDARY | `council_best_students` | 0/5 | 0.9342 | 8.30% | 0.502 pt | 0.24 pt | 483 KB | 127 KB | `wip` |
+| 7 | SECONDARY | `council_best_students_subjectwise` | 10/30 | 0.9743 | 2.56% | 0.55 pt | 0.66 pt | 428 KB | 241 KB | `wip` |
+| 8 | SECONDARY | `council_schools_rank_subjectwise` | 1/24 | 0.9286 | 8.70% | 0.806 pt | 0.54 pt | 1742 KB | 1083 KB | `wip` |
+| 9 | SECONDARY | `subject_schools_rank` | 0/6 | 0.9281 | 8.95% | 0.57 pt | 0.48 pt | 983 KB | 279 KB | `wip` |
+| 10 | SECONDARY | `region_schools_rank_overall` | 0/6 | 0.8821 | 13.84% | 0.66 pt | 0.18 pt | 1857 KB | 362 KB | `wip` |
+| 11 | SECONDARY | `region_schools_rank_government` | 0/4 | 0.8759 | 14.42% | 0.66 pt | 0.18 pt | 1468 KB | 336 KB | `wip` |
+| 12 | SECONDARY | `region_schools_rank_private` | 0/2 | 0.9004 | 11.31% | 0.66 pt | 0.18 pt | 490 KB | 307 KB | `wip` |
+| 13 | SECONDARY | `region_top_schools` | 0/6 | 0.9815 | 2.10% | 0.51 pt | 0.18 pt | 326 KB | 285 KB | `wip` |
+| 14 | SECONDARY | `region_best_students_overall` | 0/9 | 0.9356 | 4.66% | 0.72 pt | 0.18 pt | 502 KB | 321 KB | `wip` |
+| 15 | SECONDARY | `region_best_students_subjectwise` | 0/23 | 0.9803 | 2.17% | 0.66 pt | 0.6 pt | 676 KB | 268 KB | `wip` |
+| 16 | SECONDARY | `region_council_performance` | 0/5 | 0.9767 | 2.82% | 1.746 pt | 0.24 pt | 328 KB | 640 KB | `wip` |
+| 17 | SECONDARY | `region_subjects_performance` | 0/2 | 0.9591 | 4.56% | 0.57 pt | 0.72 pt | 162 KB | 217 KB | `wip` |
+| 18 | SECONDARY | `region_mobility` | 0/6 | 0.9299 | 8.44% | 0.45 pt | 0.48 pt | 976 KB | 396 KB | `wip` |
+| 19 | PRIMARY | `school_results` | 0/5 | 0.9375 | 7.65% | 0.67 pt | 0.48 pt | 386 KB | 324 KB | `wip` |
+| 20 | PRIMARY | `council_kata_rank_alama` | 0/2 | 0.9444 | 6.48% | 1.152 pt | 0.42 pt | 178 KB | 126 KB | `wip` |
+| 21 | PRIMARY | `council_kata_rank_grading` | 0/1 | 0.9577 | 5.25% | 0.46 pt | 0.36 pt | 153 KB | 84 KB | `wip` |
+| 22 | PRIMARY | `council_school_rank_binafsi` | 0/2 | 0.9459 | 8.27% | 0.636 pt | 0.36 pt | 440 KB | 275 KB | `wip` |
+| 23 | PRIMARY | `council_school_rank_serikali` | 0/2 | 0.9370 | 8.38% | 0.52 pt | 0.36 pt | 427 KB | 282 KB | `wip` |
+| 24 | PRIMARY | `council_school_rank_in_grade` | 0/3 | 0.9066 | 10.47% | 0.73 pt | 0.24 pt | 953 KB | 558 KB | `wip` |
+| 25 | PRIMARY | `council_school_rank_ufaulu_alama` | 0/4 | 0.8840 | 12.82% | 0.666 pt | 0.36 pt | 889 KB | 494 KB | `wip` |
+| 26 | PRIMARY | `council_best_students` | 0/4 | 0.9590 | 5.05% | 0.53 pt | 0.24 pt | 310 KB | 181 KB | `wip` |
+| 27 | PRIMARY | `council_top_schools_alama` | 0/2 | 0.9456 | 5.74% | 0.53 pt | 0.6 pt | 197 KB | 117 KB | `wip` |
+| 28 | PRIMARY | `council_top_schools_grading` | 0/3 | 0.9607 | 5.03% | 0.55 pt | 0.18 pt | 361 KB | 233 KB | `wip` |
+| 29 | PRIMARY | `council_top_schools_kimasomo_overall` | 0/3 | 0.9600 | 5.02% | 0.56 pt | 0.42 pt | 332 KB | 259 KB | `wip` |
+| 30 | PRIMARY | `council_top_schools_kimasomo_serikali` | 0/3 | 0.9458 | 5.50% | 0.55 pt | 0.42 pt | 323 KB | 255 KB | `wip` |
+| 31 | PRIMARY | `council_subject_summary` | 0/1 | 0.9557 | 4.81% | 0.64 pt | 0.24 pt | 110 KB | 72 KB | `wip` |
+| 32 | PRIMARY | `council_ufaulu_wa_masomo` | 0/1 | 0.9785 | 2.42% | 0.91 pt | 0.12 pt | 97 KB | 67 KB | `wip` |
+| 33 | PRIMARY | `region_kata_serikali` | 0/4 | 0.9169 | 9.94% | 0.72 pt | 0.3 pt | 986 KB | 261 KB | `wip` |
+| 34 | PRIMARY | `region_kata_binafsi` | 0/2 | 0.9287 | 8.90% | 0.63 pt | 0.3 pt | 331 KB | 204 KB | `wip` |
+| 35 | PRIMARY | `region_kata_jumla` | 0/4 | 0.9070 | 11.41% | 0.57 pt | 0.3 pt | 1035 KB | 258 KB | `wip` |
+| 36 | PRIMARY | `region_shule_bora_jumla` | 0/5 | 0.9624 | 4.57% | 1.479 pt | 0.54 pt | 488 KB | 218 KB | `wip` |
+| 37 | PRIMARY | `region_shule_bora_masomo_serikali` | 0/3 | 0.9616 | 4.78% | 0.57 pt | 0.48 pt | 291 KB | 220 KB | `wip` |
+| 38 | PRIMARY | `region_shule_bora_masomo_jumla` | 0/3 | 0.9600 | 4.49% | 0.39 pt | 0.48 pt | 286 KB | 220 KB | `wip` |
+| 39 | PRIMARY | `region_ufaulu_masomo` | 0/3 | 0.9771 | 2.44% | 0.593 pt | 0.24 pt | 168 KB | 222 KB | `wip` |
+| 40 | PRIMARY | `region_ufaulu_masomo_jumla` | 0/1 | 0.9771 | 2.05% | 0.45 pt | 0.12 pt | 85 KB | 204 KB | `wip` |
+| 41 | PRIMARY | `region_wanafunzi_bora` | 0/6 | 0.9778 | 2.60% | 0.6 pt | 0.42 pt | 297 KB | 204 KB | `wip` |
+| 42 | PRIMARY | `region_shule_serikali` | 0/15 | 0.9223 | 8.94% | 0.57 pt | 0.3 pt | 4093 KB | 448 KB | `wip` |
+| 43 | PRIMARY | `region_shule_binafsi` | 0/4 | 0.9296 | 8.80% | 1.02 pt | 0.3 pt | 1008 KB | 248 KB | `wip` |
+| 44 | PRIMARY | `region_shule_nafasi_jumla` | 0/16 | 0.8931 | 11.19% | 0.66 pt | 0.3 pt | 5949 KB | 564 KB | `wip` |
+| 45 | PRIMARY | `region_halmashauri_masomo` | 0/6 | 0.9733 | 2.92% | 0.45 pt | 0.18 pt | 435 KB | 221 KB | `wip` |
+| 46 | PRIMARY | `region_halmashauri_jumla` | 0/4 | 0.9733 | 3.13% | 0.54 pt | 0.18 pt | 277 KB | 203 KB | `wip` |
 
 <!-- conversion-status:end -->

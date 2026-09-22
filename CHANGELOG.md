@@ -17,6 +17,19 @@ All notable changes to this project are documented here. The format follows
   measurement. `render_report_to_file()` writes to a path. `render_document()` remains available
   for reproducing a reference glyph for glyph.
 - `list_reports()` and `report_layout()` for discovering the 46 reports and what each expects.
+- **Overrides for every measured line that is per-exam data, not layout.** Each report was
+  measured from one exam, so its letterhead names that exam's region and the unit it covered. An
+  application rendering a different exam has to be able to replace those lines, or it publishes
+  the reference exam's region on its own results:
+  - a `data["header"]` value may now be a *list of strings*, setting one measured line each. A
+    letterhead is a single cell holding several lines, and a scalar would have collapsed them onto
+    one baseline; a list keeps each line at its own measured position and re-centres it for its new
+    string. Passing fewer strings than there are lines blanks the remainder.
+  - `data["loose"]` overrides the absolutely-positioned letterhead lines that several reports draw
+    beside the table rather than inside the header band. Those are outside the header's
+    `"row.column"` address space and were previously unreachable, so nothing could replace them.
+    Addressed by line index; a line centred on the page is re-centred for its new string, and an
+    empty value removes it.
 - A `mussannoni` console script: `reports`, `layout`, `render` and `doctor` subcommands.
 - A distilled `layout.json` per report as package data, reducing a 257 MB corpus of measured
   geometry fixtures to a few KB each — the parts that generalise to new data.
