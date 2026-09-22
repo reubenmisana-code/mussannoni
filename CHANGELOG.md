@@ -23,6 +23,9 @@ All notable changes to this project are documented here. The format follows
 - `tools/package_resources.py` (`make package-resources`) syncs the workshop's measured artifacts
   into the package, with a `--check` mode wired into `make check` and the test suite so the
   committed resources cannot silently go stale.
+- A single sample pair in the sdist — `corpus/secondary/school-results.pdf` and the render made
+  from it, with its `report.json` metrics — so the fidelity claim is demonstrable from the
+  distribution alone. Kept out of the wheel, which is what applications install.
 - `LICENSE` (MIT), `CREDITS.md` and `docs/05-packaging.md`.
 - 57 tests covering the public API, the registry, resource resolution, engine selection, layout
   flowing and the CLI.
@@ -37,6 +40,11 @@ All notable changes to this project are documented here. The format follows
   `workshop` extra.
 - The packaged default engine is `weasyprint`; `chromium` needs the `agent-browser` Node binary,
   which `pip` cannot install, and now raises a clear error instead of a traceback when missing.
+
+- The sdist no longer ships `templates/`. `src/mussannoni/resources/` already carries every
+  shipped byte of it, so including both duplicated ~24 MB of identical font files — and it could
+  not regenerate those resources from an sdist anyway, since that needs the excluded fixtures.
+  The sdist drops from 13.3 MB to 9.3 MB even after adding the sample pair.
 
 ### Fixed
 

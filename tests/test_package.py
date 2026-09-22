@@ -126,6 +126,12 @@ def test_packaged_resources_are_current() -> None:
     pytest.importorskip("yaml")
     from tools import package_resources
 
+    if not package_resources.SHARED_SOURCE.is_dir():
+        # templates/ is deliberately not in the sdist, so this drift check has nothing to compare
+        # against there. It is a repository-maintenance check and only means anything in a
+        # checkout.
+        pytest.skip("templates/ not present; this check only applies to a git checkout")
+
     differences = package_resources.build(check=True)
     assert not differences, (
         f"{len(differences)} packaged resources are out of date; "
