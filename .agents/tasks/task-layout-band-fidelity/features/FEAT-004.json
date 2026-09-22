@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-004",
+  "type": "feat",
+  "description": "Annotate at packaging time what each measured cell IS, and give callers a way to fill the bands FEAT-002 restored. Today layout.json ships the reference's own strings with no semantics, so the only address a caller has is \"row.column\" and the only way to know that row 0 line 2 is a region name is to pattern-match the text. That is precisely what backend-sis::headers.py does across 407 lines, including SAMPLE_LOCATIONS = (\"MWANZA CC\",\"MWANZA\") hardcoded in the backend and duplicated in resolve.py. The measurement knows the answer and should record it. This feature adds roles plus a data['bands'] contract; it does not yet blank the measured text (FEAT-005) and does not yet delete the backend code (FEAT-006), so it can land and be verified without breaking the running integration.",
+  "status": "pending",
+  "steps": [
+    "STUDY FIRST. Read backend-sis headers.py in full and list every semantic decision it makes from text alone: classify_line's AUTHORITY / REGION / EXAM / SCOPE / STATIC buckets, _is_letterhead_cell's 'wide cell at column 0' test, _figure_rows and _is_figure's numeric-density heuristic, _COMPETENCY_VALUE, _STATIC_NUMERIC_LABELS, unsafe_header_reason's 'more than one band of figures' test and header_carries_figures. Each of those is a question the fixture can answer directly. Read templates/secondary/school-results/bindings.yaml too - it already records per-column width and reference_label, with field left null.",
+    "In tools/package_resources.py, annotate every header and front cell with a role. Roles: `authority` (fixed institutional text, reproduced unchanged), `region`, `exam`, `scope` (the unit the artifact covers), `heading` (a static section or column heading), `figure` (a computed value from the measured exam). Derive them from the measurement, not from regexes over the rendered string where a structural signal exists - a cell inside a band of numeric cells is a figure, a line in the letterhead cell at the position the reference puts the region line is the region. Where only the text can distinguish, do it here once at build time rather than in every consumer.",
+    "Emit roles addressably: for the header band `header.roles` as {\"row.column\": role} and, where a cell holds several measured lines, per-line roles so the letterhead's six lines are individually named. Do the same for `front.roles`. Also emit `decorations.loose_roles` by line index, so the reports that draw the letterhead beside the table are covered by the same mechanism rather than needing the separate treatment loose_overrides gives them today.",
+    "Add `data['bands']` to the table API. A band is addressed by name, and its value is rows of values placed onto that band's measured cells in left-to-right order, with None or a missing entry rendering blank. Name the bands from the measurement - for secondary/school-results the summary band's rows are the F / M / T lines under SEX x I/II/III/IV/0. Implement in src/mussannoni/table.py alongside the existing rows placement, reusing _body_cell so band cells are laid out by the same measured rules as body cells.",
+    "Add `data['front_header']` for overriding individual front-band cells by \"row.column\", the front-band analogue of data['header']. Keep data['header'] addressing the header band so no existing caller changes meaning.",
+    "Make unfilled figures blank rather than the reference's value. Any cell whose role is `figure` and for which the caller supplied nothing must render as an empty cell. This is the safety property the whole task turns on: a report may be structurally complete and numerically empty, but it must never publish the measured exam's figures. Add it as an explicit step in build_document, not as a side effect of band filling.",
+    "Extend the public API surface so a caller can discover all of this without reading layout.json: report_layout already returns the layout, so document the new keys in src/mussannoni/api.py::report_layout's docstring, and add the band names and roles to what the CLI's `layout` subcommand prints (src/mussannoni/cli.py).",
+    "Regenerate with `make package-resources` and confirm `make check-resources` clean. Then verify against headers.py's own conclusions: for every one of the 46 reports, the roles emitted here must agree with what headers.py currently derives at runtime - same cells classified as figures, same letterhead lines classified region / exam / scope, and unsafe_header_reason's 'more than one band of figures' verdict reproducible from roles alone. Any disagreement is either a packaging bug or a latent headers.py bug; investigate and record which, and do not paper over it."
+  ],
+  "acceptance_criteria": [
+    "Every header and front cell in all 46 layout.json carries a role, with per-line roles for multi-line cells, and loose lines carry roles by index.",
+    "For secondary/school-results the six letterhead lines are annotated authority, authority, region, exam, scope, heading in that order, and the summary band's count cells are annotated figure.",
+    "data['bands'] fills the restored summary band, and a band row with fewer values than cells leaves the remainder blank.",
+    "data['front_header'] overrides a front-band cell, and data['header'] still addresses the header band unchanged.",
+    "A render that supplies no bands leaves every figure cell EMPTY - assert by extracting page-1 text and confirming none of the reference's measured figures appear, for each of the 3 compound reports.",
+    "The roles reproduce headers.py's runtime conclusions for all 46 reports, or every disagreement is documented with a verdict on which side is wrong.",
+    "report_layout's docstring and the CLI `layout` output describe bands and roles.",
+    "`make check-resources` clean, `uv run ruff check .` clean, `uv run pytest` green, corpus/ untouched."
+  ],
+  "verification": [
+    "make package-resources",
+    "make check-resources",
+    "uv run python -c \"import json; d=json.load(open('src/mussannoni/resources/secondary/school-results/layout.json')); print(d['front']['roles'])\"",
+    "uv run python -m mussannoni layout school_results --level secondary",
+    "uv run pytest",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

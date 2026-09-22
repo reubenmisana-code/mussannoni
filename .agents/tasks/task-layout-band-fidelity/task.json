@@ -1,0 +1,23 @@
+{
+  "task_id": "task-layout-band-fidelity",
+  "task_description": "The installable package renders a reduced approximation of each report instead of the report the workshop measured, and backend-sis has grown ~1700 lines of compensation code to work around that. Converge the two: extend the packaged layout so it carries what the fixture already measured, and reduce backend-sis to supplying data and receiving PDF bytes. Three measured defects drive this. (1) BANDS DROPPED: tools/package_resources.py::_transplanted_header keeps only page-1 row 0 (the letterhead) and the first _is_label_row, discarding every band between them. Exactly 3 of 46 reports are affected - secondary/school-results loses 5 rows (the DIVISION PERFORMANCE SUMMARY table), primary/school-results loses 13 (grade matrix, school average, pass/fail, competency band, council rank, region rank, a section heading), primary/region-ufaulu-masomo loses 2. The heading survives while the table beneath it does not. (2) NO MEASURED PAGE CAPACITY: layout.json carries one computed rows_per_page. For secondary/school-results it is 39 where only 35 fit and the reference itself puts 26 on page 1 and 36 on continuation pages; the generated page-1 table ends at 661.37pt on a 612pt page, 49.37pt past the page box, and rows spill. (3) REFERENCE CONTENT AS DEFAULT: layout.json ships the measured strings (MWANZA REGION, the 2026 exam title, the sample school) addressable only as \"row.col\", and bindings.yaml/calibration.json are excluded, which is why backend-sis carries headers.py (407 lines of regex line classification with SAMPLE_LOCATIONS = (\"MWANZA CC\",\"MWANZA\") hardcoded, duplicated again in resolve.py) and bindings.py (1306 lines of hand-typed per-report column orders plus a binding_matches_layout self-check). The design target is not invented: backend-sis HEAD c6fa6313 contains template/spec.py (488 lines), whose TemplateSpec/Region/RowBand model already expressed full page-1 head, continuation_head measured from page 2, first_page_rows AND rows_per_page both measured never computed, per-row row_offsets/row_paths, spanning column rules and tints, and named slots. Converge the packaged layout onto that vocabulary. corpus/ stays read-only, fidelity THRESHOLDS are never relaxed, and no service is restarted and no migration is run anywhere in this task.",
+  "status": "pending",
+  "feature_order": [
+    "FEAT-001",
+    "FEAT-002",
+    "FEAT-003",
+    "FEAT-004",
+    "FEAT-005",
+    "FEAT-006",
+    "FEAT-007",
+    "FEAT-008"
+  ],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pending",
+    "tests": "pending",
+    "test_quality": "pending",
+    "docker_build": "not applicable",
+    "summary": "To be completed by FEAT-008. Gate: make check-resources clean, uv run pytest green in the mussannoni repo, the 3 compound reports reproduce the reference's page-1 band count and column grid, no report's generated page-1 table exceeds its measured page box, no measured reference figure survives into generated output unfilled, and backend-sis imports and generates with headers.py and bindings.py deleted."
+  }
+}

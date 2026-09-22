@@ -1,0 +1,34 @@
+{
+  "id": "FEAT-007",
+  "type": "feat",
+  "description": "Fill the bands FEAT-002 restored with this exam's own figures, so the 3 affected reports are complete rather than structurally correct and numerically empty. Until this lands, secondary/school-results renders its DIVISION PERFORMANCE SUMMARY band blank and primary/school-results renders its grade matrix, school average, pass/fail, competency, council rank and region rank blank - which is the deliberately safe intermediate state chosen in FEAT-002, never the end state. The figures required are aggregates the backend already computes: ExaMetrics analysis is write-once and SchoolAnalysis / LocationAnalysis are loaded into MnContext by build_mn_context. This feature is backend-only and, like FEAT-006, stops at a commit-ready diff.",
+  "status": "pending",
+  "steps": [
+    "Establish what data exists by READING THE MODELS, not by querying. Read app/db/models/exametrics/school_analysis.py and app/db/models/exametrics/location_analysis.py and record which columns or JSONB keys hold: divisions split by sex (for the secondary band's SEX x I/II/III/IV/0 with F/M/T); grade counts A-E plus ABS with the WAV/WAS/JUMLA split, school average, %PASS (A-D), %FAIL (E), competency band, council rank and region rank (for the primary band). AGENTS.md forbids querying information_schema or pg_catalog and forbids using the database to understand how the system works - the models and the service layer are the source of truth. If a model does not document a JSONB key's shape, say so rather than guessing; backend-sis/docs/exametrics-processing-pipeline.md documents the JSONB structures and is the place to look next.",
+    "Check first whether the existing resolvers already produce these aggregates. data.py is 2372 lines of row functions over the same analysis tables and resolve.py::split_totals already peels off a trailing JUMLA / WASTANI aggregate row that the references print in the summary band. If an aggregate is already computed there, route it to the band rather than recomputing it - a second implementation of the same number that can disagree with the first is worse than none.",
+    "Add band resolvers only for what is genuinely missing, in resolve.py alongside ROW_QUERIES, declaratively and per report. Follow the module's existing discipline: it 'adds no aggregation of its own' beyond naming which data function supplies the rows. If a band needs an aggregate no resolver computes, add it to data.py where the other aggregations live, not to resolve.py and not to service.py.",
+    "Wire the bands into service.py's generate path as data['bands'], keyed by the band names the package emits (FEAT-004). A band with no resolver stays absent, which renders blank - so a partially wired report degrades to the FEAT-002 state rather than failing.",
+    "Route the split_totals aggregate to its band. With bands addressable this replaces both of the old branches: summary_overrides when the header carried figures, and appending it as a final body row when it did not.",
+    "Verify against a real exam WITHOUT restarting anything and WITHOUT HTTP. Write a throwaway script under /tmp that opens an async session, calls build_mn_context(db, exam_id) for an exam that has completed processing, resolves the bands for one school unit, renders through render_report, and writes the PDF to /tmp. Then assert with pymupdf that page 1 carries this exam's figures. Read-only: no INSERT, no UPDATE, no DDL. Delete the script afterwards.",
+    "Cross-check the rendered figures against the source rows rather than eyeballing them: the band's F / M / T counts must sum to the school's candidate count, and the division totals must match the same numbers the school's own results rows produce. A band that renders plausible but wrong figures is the failure mode this whole task exists to prevent.",
+    "Confirm the primary band's Swahili labels come from the measured reference and were not introduced here. The labels JINSI, DARAJA, WALISAJIRIWA, WAV, WAS, JUMLA, WASTANI WA SHULE, %PASS, %FAIL, KUNDI LA UMAHILRI, NAFASI KIWILAYA and NAFASI KIMKOA are the reference's own text carried through the fixture. AGENTS.md forbids introducing NEW Swahili; reproducing the reference's is correct and required. Add no new Swahili strings in code, comments or docs.",
+    "Report which of the 3 reports are fully filled, which are partially filled and which band cells remain blank, with the reason for each. Stop at a commit-ready diff: no restart, no deploy."
+  ],
+  "acceptance_criteria": [
+    "The data source for every band cell is documented from the MODELS and the pipeline doc, with any undocumented JSONB shape flagged rather than guessed.",
+    "No aggregate is computed twice: anything the existing resolvers already produce is routed, not reimplemented, and any new aggregation lives in data.py.",
+    "secondary/school-results renders its division summary band with this exam's F / M / T counts per division, and they reconcile against the school's own candidate count and division totals.",
+    "primary/school-results renders its grade matrix, school average, %PASS, %FAIL, competency band, council rank and region rank, or each blank cell is named with the reason it is blank.",
+    "The split_totals aggregate lands in its band, and neither summary_overrides nor the append-as-body-row branch exists any more.",
+    "Verification was done by direct import against a real processed exam, read-only, with the script under /tmp and deleted afterwards - no restart, no HTTP, no DDL, no write of any kind.",
+    "No new Swahili appears in code, comments or docs; the reference's own labels are reproduced from the fixture.",
+    "A per-report fill status is recorded in findings."
+  ],
+  "verification": [
+    "/root/apis/backend-sis/venv/bin/python3 /tmp/verify_bands.py",
+    "grep -rn \"JINSI\\|WASTANI\\|KIMKOA\" /root/apis/backend-sis/app/ ; echo 'expect no NEW Swahili literals introduced by this feature'",
+    "git -C /root/apis/backend-sis diff --stat -- app/services/exametrics/mussannoni/"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

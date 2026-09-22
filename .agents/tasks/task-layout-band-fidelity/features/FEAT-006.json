@@ -1,0 +1,38 @@
+{
+  "id": "FEAT-006",
+  "type": "refactor",
+  "description": "Reduce backend-sis to supplying data and receiving PDF bytes, deleting the compensation code that only existed because the package withheld structure and semantics. This lands together with FEAT-005, which is the breaking change it depends on. Scope of deletion: headers.py (407 lines) entirely, bindings.py (1306 lines) entirely, and the gating helpers in service.py that exist to detect the package's own shortcomings. What must SURVIVE is everything genuinely backend-side: data.py's resolvers (they query ExaMetrics tables), resolve.py's row-source table, context.py's metadata loader, artifacts.py's R2 upload and artifact rows, and catalog.py's ExaMetrics-to-package level vocabulary. This feature touches only backend-sis. Per AGENTS.md it stops at a commit-ready diff: no supervisorctl restart, no alembic, no DDL, no HTTP.",
+  "status": "pending",
+  "steps": [
+    "Confirm the package the backend imports reflects FEAT-002 through FEAT-005 before deleting anything. Reinstall if needed and verify with /root/apis/backend-sis/venv/bin/python3 -c \"import mussannoni, pathlib; print(pathlib.Path(mussannoni.__file__).resolve(), mussannoni.__version__)\", then confirm report_layout('school_results', level='secondary') returns front, roles, first_page_rows and columns_fields. Deleting the backend's own knowledge before the package supplies it would leave no way back.",
+    "Delete app/services/exametrics/mussannoni/headers.py in full. Its consumers in service.py are header_overrides, loose_overrides, summary_overrides, header_carries_figures, unsafe_header_reason and scope_title_for. The first five are replaced by FEAT-005's data['region'] / data['exam'] / data['scope'] and FEAT-004's data['bands']. scope_title_for is NOT package compensation - it composes an ExaMetrics unit name with the report title - so move it into service.py rather than losing it.",
+    "Delete app/services/exametrics/mussannoni/bindings.py in full, along with service.py::_positional_rows which consumes it. Column identity now comes from the package (FEAT-005 columns_fields), so rows are supplied keyed by field name and the package places them - which table.py::_normalise_rows already supports, since it accepts rows as mappings keyed by column label or index. This also removes the None padding for the dead edge slots, because a mapping does not address them.",
+    "Delete the gates that only detected package defects: service.py::binding_matches_layout (its whole purpose is catching a binding whose column count disagrees with the measured grid), is_supported, bound_report_keys and unbound_report_keys. Keep generatable_report_keys but redefine it as 'has a row source', since that is the only remaining legitimate reason a report cannot be generated.",
+    "Delete both copies of SAMPLE_LOCATIONS - headers.py's and the duplicate in resolve.py. No backend module should name the reference exam's region; after FEAT-005 the package ships no such string either.",
+    "Delete the stale comment block in service.py around line 274 (inside binding_matches_layout's docstring) asserting that school_results 'binds candidate rows while its measured grid is the division summary band'. That is false - the measured grid IS the candidate table, as the uncommitted package_resources.py change already ensured - and it is exactly the kind of unverified claim AGENTS.md's first rule forbids.",
+    "Rewrite service.py::generate_exam and generate_one to the target shape: build context once, plan units, and per unit resolve canonical rows, then call mussannoni.render_report(key, {'rows': ..., 'bands': ..., 'region': ..., 'exam': ..., 'scope': ...}, level=...) and upload. Keep the existing error isolation exactly as it is - one failing unit is recorded against itself and must not abort the exam - and keep render_report running in a thread executor, since WeasyPrint is CPU-bound and must not run inline on the event loop.",
+    "Keep split_totals in resolve.py but re-point it. It currently splits the resolvers' trailing JUMLA / WASTANI row because 'the references print that in the summary band rather than as a data row', and service.py then either routes it through summary_overrides or appends it as a body row depending on header_carries_figures. With bands addressable, the aggregate goes to the band that carries it, and the header_carries_figures branch disappears.",
+    "Verify nothing the frontend reads has changed. Read app/api/exametrics/v1/mussannoni.py, app/db/models/exametrics/mussannoni_artifact.py, frontend-sis/lib/api/mussannoni.ts and frontend-sis/components/exametrics/mussannoni-reports.tsx, and confirm the availability / artifacts / catalog response shapes are untouched. The frontend only lists and downloads pre-generated artifacts and must need no change; if it does need one, stop and say so rather than changing it silently. If any TypeScript is touched at all, verify with `npx tsc --noEmit` only - `npm run build` is forbidden.",
+    "Verify by direct import, never by restarting or by HTTP. Import service, catalog, resolve and context in the backend venv and confirm the module graph loads with headers.py and bindings.py gone; call generatable_report_keys for a secondary and a primary level; and render one report end to end through render_report_sync with synthetic rows to prove the new data contract works from the backend side. Do not call generate_exam against the live database in this feature - FEAT-007 covers real data.",
+    "Report the net line count removed and leave a commit-ready diff. Do NOT commit, restart fastapi/celery, or deploy."
+  ],
+  "acceptance_criteria": [
+    "headers.py and bindings.py no longer exist; _positional_rows, binding_matches_layout, is_supported, bound_report_keys, unbound_report_keys and both SAMPLE_LOCATIONS definitions are gone; scope_title_for survives in service.py.",
+    "`grep -rn \"MWANZA\" /root/apis/backend-sis/app/` returns nothing.",
+    "The false school_results comment at service.py ~line 274 is gone.",
+    "service.py's generate path is canonical_rows -> render_report -> upload_artifact, with the per-unit error isolation and the thread-executor render preserved.",
+    "Importing app.services.exametrics.mussannoni.service in the backend venv succeeds with no reference to the deleted modules, and every import in every touched file sits at the top of the module.",
+    "One report renders end to end from the backend with synthetic rows supplied as field-keyed mappings and no None padding.",
+    "The API response shapes and MussannoniArtifact fields the frontend reads are unchanged, confirmed by reading both the backend route and the two frontend files; any required frontend change is reported rather than made.",
+    "Net lines removed from backend-sis is reported and is at least 1700.",
+    "No commit, no restart, no alembic, no DDL, no HTTP call, and no npm run build."
+  ],
+  "verification": [
+    "/root/apis/backend-sis/venv/bin/python3 -c \"import mussannoni; l=mussannoni.report_layout('school_results', level='secondary'); print(sorted(l)); print(l['first_page_rows'], l['rows_per_page'])\"",
+    "/root/apis/backend-sis/venv/bin/python3 -c \"from app.services.exametrics.mussannoni import service, catalog, resolve, context; print(service.generatable_report_keys('CSEE')[:5])\"",
+    "grep -rn \"SAMPLE_LOCATIONS\\|binding_matches_layout\\|_positional_rows\\|MWANZA\" /root/apis/backend-sis/app/ ; echo \"exit $? (1 = clean)\"",
+    "git -C /root/apis/backend-sis diff --stat -- app/services/exametrics/mussannoni/"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

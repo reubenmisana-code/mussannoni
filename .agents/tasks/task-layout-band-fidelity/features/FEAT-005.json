@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-005",
+  "type": "feat",
+  "description": "Ship the two artifacts the packaging step withheld, and stop shipping the reference exam's own content as the default. docs/05-packaging.md excludes bindings.yaml and calibration.json as 'provenance', and the stated reason for excluding the fixtures is that they are '257 MB of measured geometry, sample data, not code'. The size is content, not structure: the fixtures are large because they hold every glyph cluster of one exam's 15 pages. The distillation cut structure (FEAT-002, FEAT-003) while keeping content, which is backwards on both axes, and the withheld column identity is why backend-sis carries 1306 hand-typed lines in bindings.py. Fix the direction: ship column identity and placement calibration, and blank the per-exam strings now that FEAT-004 has given them roles. This is the feature that makes FEAT-006's deletions possible, and it is the first BREAKING change in the task - it must land together with FEAT-006.",
+  "status": "pending",
+  "steps": [
+    "Fill in the column identity at source. templates/*/*/bindings.yaml currently carries index, width_pt and reference_label per column with `field: null` and `status: provisional`, and its header comment says the canonical names must come from the backend registry. Populate `field` for every column of every report, taking the names from backend-sis bindings.py, which already holds them - this is a move of information into the repository that measured the columns, not new invention. Preserve the existing helper structure's intent: the F/M/T and WAV/WAS/JML triplets and the division and grade blocks are regular, so generate them rather than typing 39-column lists by hand, exactly as bindings.py's _fmt / _mft / _DIVISION_SEX_BLOCK / _PRIMARY_GRADING_BLOCK helpers do.",
+    "Ship bindings.yaml's field names into the package. Do NOT ship the YAML itself - the runtime has no YAML parser by design (src/mussannoni/resources.py's docstring is explicit that the registry is distilled to JSON so an installed package needs no YAML dependency). Distil the field names into layout.json as `columns_fields` or into reports.json, keeping the no-YAML-at-runtime property. Update docs/05-packaging.md's exclusion table, which currently lists bindings.yaml as not shipped.",
+    "Ship calibration.json's corrections and apply them to generated rows. docs/05-packaging.md states the corrections 'are already baked into the fixture coordinates', which is true for reproduced fixtures but NOT for generated rows: table.py places generated text by measuring the string with pymupdf font metrics and explicitly documents that this 'is not the same thing as reproducing a measured original glyph for glyph'. Ship the per-face, per-size, per-rotation corrections and apply them in table.py::_body_cell and _rewrite_cell_text so generated text lands where measured text does. Keep the rotation keying - docs/00-approach.md records that keying by size alone made Times New Roman Bold inherit Arial's offset and stay 0.46pt low, and that a rotated run's residual lies along the other page axis.",
+    "Blank the per-exam measured text. Using FEAT-004's roles, emit empty text for every cell or line whose role is region, exam, scope or figure, while keeping authority and heading verbatim. After this, layout.json no longer carries MWANZA REGION, the 2026 exam title, the sample school name, or any measured figure, and a caller that supplies nothing gets a structurally complete report with those fields blank.",
+    "Make the omissions loud rather than silent. render_report should raise InvalidDataError when a report has region / exam / scope roles and the caller supplied none, because a report with a blank letterhead is a mistake rather than a choice - while a blank figure stays legal, since a band the application has no data for is a legitimate state. Add a `strict` argument defaulting to True so a caller can deliberately render an unlabelled proof.",
+    "Give roles first-class data keys so a caller never needs an address. Accept data['region'], data['exam'], data['scope'] and route them to whichever cells or loose lines carry those roles, in the header band, the front band or the loose lines as the report requires. Keep data['header'], data['front_header'] and data['loose'] working for anything roles cannot express.",
+    "Reconcile the excluded-artifacts table and the fonts question in docs/05-packaging.md. That document records an open licensing gate: per-report fonts/ directories hold subsets lifted from the reference PDFs, several derived from proprietary faces, and redistributing extracted font files is explicitly flagged as not covered by the MIT licence. Nothing in this feature changes that gate, but shipping more artifacts is the moment to restate it, so record that it remains open and unaffected.",
+    "Verify no reference content survives anywhere in the shipped resources: grep the whole of src/mussannoni/resources/ for MWANZA, for the 2026 exam title, for S0333, and for the specific measured figures recorded in FEAT-001's baseline (23.48, 156/169, 1039/1161, 140.87). All must be absent."
+  ],
+  "acceptance_criteria": [
+    "Every column of every report in templates/*/*/bindings.yaml has a non-null `field`, and no bindings.yaml remains status provisional for a report the package can render.",
+    "The field names are available at runtime from the packaged resources with no YAML dependency - verified by importing mussannoni in a venv without pyyaml.",
+    "calibration corrections ship and are applied to generated rows, keyed by face, size AND rotation.",
+    "grep of src/mussannoni/resources/ finds no occurrence of MWANZA, the 2026 exam title, S0333, or the baseline's measured figures.",
+    "render_report raises InvalidDataError when region / exam / scope roles exist and none were supplied, and strict=False renders anyway.",
+    "data['region'], data['exam'] and data['scope'] place text correctly for reports whose letterhead is in the header band, for those whose is in the front band, and for those that use loose lines - at least one report of each verified.",
+    "docs/05-packaging.md's excluded-artifacts table matches reality, and the open font-licensing gate is restated as unchanged.",
+    "`make check-resources` clean, `uv run ruff check .` clean, `uv run pytest` green, corpus/ untouched, THRESHOLDS unchanged."
+  ],
+  "verification": [
+    "make package-resources",
+    "make check-resources",
+    "grep -rIl -e MWANZA -e S0333 -e '23.48' -e '156/169' src/mussannoni/resources/ ; echo \"exit $? (1 = clean)\"",
+    "uv run python -c \"import mussannoni; mussannoni.render_report('school_results', {'rows': [[None,'S1','N','F',1,'I',1,'X',None]]}, level='secondary')\" ; echo 'expect InvalidDataError for missing region/exam/scope'",
+    "uv run pytest",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

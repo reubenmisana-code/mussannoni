@@ -1,0 +1,37 @@
+{
+  "id": "FEAT-008",
+  "type": "chore",
+  "description": "Close the task: bring the test suite and documentation in line with the new schema, account for all 46 reports honestly, and leave both repositories commit-ready. FEAT-002 through FEAT-005 changed the packaged layout schema, so tests that assert the old shape must be updated rather than tolerated, and the drift guard must be green. This feature also states plainly which reports still cannot be generated after all the preceding work and why, because the task's value is only real if that list is accurate - and it must not be padded with optimistic claims. Depends on FEAT-002 through FEAT-007.",
+  "status": "pending",
+  "steps": [
+    "Update the package test suite for the new schema. tests/test_package.py is the largest suite and asserts the public API, resource resolution and layout flowing; tests/test_templates.py enforces that templates carry no literal sample values. Identify every test that asserts the old single-capacity, no-front, no-roles shape and update it to the new contract. Do not delete a test to make it pass; if a test's premise is now wrong, replace it with one asserting the new premise.",
+    "Add the regression tests that would have caught all three defects. (a) For every report with a compound first page, the generated page 1 must reproduce the reference's page-1 band count and column grid - this fails if _transplanted_header-style truncation ever returns. (b) For every one of the 46 reports, table.y_pt plus the page-1 band height plus first_page_rows * row_height must not exceed page.height_pt - this fails on any future overflow. (c) For every report, no cell whose role is figure may render the measured value when the caller supplied nothing - this fails if reference data ever leaks again. (d) grep-style assertion that the packaged resources contain no reference-exam strings.",
+    "Run the full gate in the mussannoni repo: `make check` (ruff, then check-resources, then pytest). All three must be clean. Record the pass/skip counts against FEAT-001's baseline and explain any change in the skip count.",
+    "Decide and record whether the workshop corpus needs regenerating. This task changes the PACKAGE's distillation, not the workshop's measurement or placement, so output/*/report.json fidelity metrics should be untouched and `make convert` should NOT be needed. Verify that claim rather than assuming it: confirm tools/render.py, tools/scaffold.py, tools/tune.py and tools/compare.py are unmodified by this task, and confirm output/ and templates/*/fixture.json are unchanged except for the bindings.yaml field population from FEAT-005. If anything under output/ did change, investigate before accepting it.",
+    "Confirm FEAT-001's restoration held: output/secondary/school-results/rendered.pdf is still the committed 2,570,884-byte 15-page Chromium render and no stray render-meta.json is present. This is the sample pair the sdist ships to make the fidelity claim demonstrable.",
+    "Produce the final 46-report accounting table, computed not asserted: per report, whether it renders structurally faithfully now, whether it has a row source, whether any band remains unfilled, and the blocker if it cannot be generated. Group the remaining blockers by cause. The known row-source gaps from resolve.py are council_schools_rank_subjectwise (needs a school x subject matrix per page), council_best_students_subjectwise and region_best_students_subjectwise (need per-subject student ranking) and region_mobility (needs a previous-exam comparison); confirm this list against the code and add any report with layout body == null, which the table API cannot drive at all.",
+    "Update the documentation to match reality. docs/05-packaging.md: the layout.json example, the three-decisions section (now four, including bands preserved), the excluded-artifacts table, and the restated font-licensing gate. README.md: any statement about what render_report can and cannot reproduce. CHANGELOG.md: an Unreleased entry covering the schema extension, the two measured capacities, roles and bands, the newly shipped column identity and calibration, and the blanking of reference content - written as changes to the package, since the backend is a separate repository.",
+    "State the version implication. The packaged layout schema changed and render_report gained a strict default that can now raise where it previously rendered, so this is a breaking change for any existing caller. pyproject.toml's version and src/mussannoni/__init__.py's __version__ must move together - tests/test_package.py::test_version_matches_the_distribution_metadata fails if they drift - and docs/05-packaging.md's release section records the procedure. Do not upload anything.",
+    "Leave both repositories commit-ready and report the commands the user would run. mussannoni: the schema and table changes, the regenerated resources, the populated bindings.yaml, the tests and the docs. backend-sis: the FEAT-006 deletions, the FEAT-007 band wiring, and the still-uncommitted pre-package engine removal that this task finally makes coherent - roughly 80 deleted files including assets/mussannoni.css, assets/manifest.json, ~70 woff fonts, pdf.py, registry.py, render/ and template/. Per AGENTS.md, do NOT commit, do NOT restart fastapi / celery / celery-beat, do NOT deploy the frontend, and do NOT run alembic - state the exact commands and stop."
+  ],
+  "acceptance_criteria": [
+    "`make check` is clean in the mussannoni repo: ruff clean, check-resources clean, pytest green, with counts recorded against the FEAT-001 baseline and any skip-count change explained.",
+    "Four new regression suites exist and each one fails if its corresponding defect is reintroduced - verified by temporarily reverting the fix, observing the failure, and restoring.",
+    "tools/render.py, tools/scaffold.py, tools/tune.py and tools/compare.py are unmodified by this task, and output/*/report.json fidelity metrics are unchanged - verified with git diff, not assumed.",
+    "output/secondary/school-results/rendered.pdf is the committed 15-page Chromium render and no render-meta.json is present.",
+    "A computed 46-report accounting table is recorded, with remaining blockers grouped by cause and cross-checked against resolve.ROW_QUERIES and the layout body == null set.",
+    "docs/05-packaging.md, README.md and CHANGELOG.md match the implemented behaviour, including the excluded-artifacts table and the open font-licensing gate.",
+    "pyproject.toml version and __init__.py __version__ moved together, and the change is documented as breaking.",
+    "No file under corpus/ is modified and no THRESHOLD in tools/compare.py or tests/test_fidelity.py is changed.",
+    "Both working trees are commit-ready, the exact commit and deploy commands are reported, and nothing was committed, restarted, migrated or deployed."
+  ],
+  "verification": [
+    "make check",
+    "git -C /root/apis/mussannoni diff --stat -- tools/ output/ corpus/",
+    "git -C /root/apis/mussannoni status --short",
+    "git -C /root/apis/backend-sis diff --stat -- app/",
+    "uv run python -c \"import os; p='output/secondary/school-results/rendered.pdf'; import pymupdf; print(os.path.getsize(p), pymupdf.open(p).page_count)\""
+  ],
+  "blocked_reason": null,
+  "findings": null
+}
