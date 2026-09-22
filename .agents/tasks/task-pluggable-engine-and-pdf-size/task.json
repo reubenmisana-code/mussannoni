@@ -1,7 +1,11 @@
 {
   "task_id": "task-pluggable-engine-and-pdf-size",
   "task_description": "Two user requirements for the MussaNnoni PDF conversion workshop: (1) reduce rendered output PDF sizes so they are about the same size as the corpus originals or smaller, without breaking the structural comparison; and (2) make the rendering engine pluggable/selectable (WeasyPrint, Chromium/agent-browser, or others) instead of being locked to Chromium only. Root cause of bloat confirmed during routing: Chromium/agent-browser writes uncompressed PDF object dictionaries with no object streams; a content-preserving PyMuPDF re-save (object streams + deflate + garbage collection) shrinks files ~5x pixel-identically. WeasyPrint renders the same templates to valid PDFs a fraction of the original size and provides the second engine. corpus/ is read-only and fidelity THRESHOLDS are never relaxed.",
-  "status": "in_progress",
-  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "status": "completed",
+  "feature_order": [
+    "FEAT-001",
+    "FEAT-002",
+    "FEAT-003"
+  ],
   "blocked_reason": null
 }

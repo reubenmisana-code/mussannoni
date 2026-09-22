@@ -49,16 +49,24 @@ The Chromium engine emits every absolutely-positioned span as its own uncompress
 with no object streams, so a four-page render can carry more than 1.5 MB of plaintext object
 dictionaries - roughly 8× the size of the corresponding reference. After any engine writes
 `rendered.pdf`, `tools/render.py` runs a structural recompression pass (`optimize_pdf`) that
-reopens the file with PyMuPDF and re-saves it with object streams, deflate, font subsetting and
-garbage collection (`garbage=4, deflate=True, deflate_fonts=True, use_objstms=1, clean=True`).
+reopens the file with PyMuPDF and re-saves it with object streams, deflate and garbage
+collection (`garbage=4, deflate=True, deflate_fonts=True, use_objstms=1`).
+
+Two knobs are deliberately left off, and the reasons are measured rather than assumed. Font
+subsetting trims only about 2% further (5.9 KB on a four-page render) but leaves the font
+tables in a state where the following save can run for many minutes instead of a second, on a
+2.5 MB report as readily as a 33 MB one. `clean=True` rewrites every content stream, which
+measured ~1.4 KB *larger* on a four-page render and ran for over ten minutes on the 16-page
+region-shule-nafasi-jumla. All of the win comes from the object streams.
 
 This is content-preserving: it is a structural recompression only, never a rescale, re-raster
 or downsample. The pass asserts that page count and every page's rectangle and rotation are
 unchanged, and rasterised pages are pixel-identical before and after, so it cannot move a
-report across a fidelity gate. It typically shrinks Chromium output about 5× (the
-council-best-students render drops from ~1.57 MB to ~318 KB), bringing renders down to roughly
-the size of the reference PDFs. WeasyPrint output is already small natively, so the pass is a
-near no-op there. Pass `--no-optimize` to `tools/render.py` to inspect raw engine output.
+report across a fidelity gate. Across the full 46-report corpus it takes the committed renders
+from 181,693,210 bytes to roughly 35.6 MB — a 5.1× reduction, within 2.6× of the reference PDFs
+in aggregate (council-best-students drops from ~1.57 MB to ~318 KB against a 185 KB original).
+WeasyPrint output is already small natively, so the pass is a near no-op there. Pass
+`--no-optimize` to `tools/render.py` to inspect raw engine output.
 
 ## How the comparison is made fair
 
