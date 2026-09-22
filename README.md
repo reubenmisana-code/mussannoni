@@ -327,20 +327,49 @@ with the measured drift it introduces — never silently swapped.
 ## Rendering engine
 
 Render with the same engine production uses, or the comparison proves nothing.
-`mussannoni/pdf.py` supports two:
+`tools/render.py` builds the HTML once and dispatches to a selectable engine:
 
-- **`chromium`** — `chromium-browser --headless --print-to-pdf`. The reference
+- **`chromium`** — headless Chromium via the `agent-browser` CLI. The reference
   renderer for CSS fidelity and the house default.
-- **`weasyprint`** — in-process, much smaller files, but its CSS support differs.
+- **`weasyprint`** — in-process via the `weasyprint` library, much smaller files,
+  but its CSS support differs.
+
+Select the engine three ways, in this precedence order (highest first):
+
+1. `--engine {chromium,weasyprint}` on `tools.render` and `tools.convert`
+2. the `MUSSANNONI_ENGINE` environment variable
+3. the default, `chromium`
+
+```
+uv run python -m tools.render primary council_best_students --engine weasyprint
+MUSSANNONI_ENGINE=weasyprint uv run python -m tools.render primary council_best_students
+make convert-one LEVEL=primary REPORT=council_best_students ENGINE=weasyprint
+```
+
+The Makefile exposes the same choice through the `ENGINE` variable; with no
+`ENGINE` set, every target defaults to chromium. `tools/render.py` records the
+engine that produced each render in `output/<level>/<key>/render-meta.json`, and
+`tools/compare.py` reads it so `report.json`'s `engine` field always reflects
+what actually rendered the PDF.
+
+**Post-render size optimization.** Chromium emits every positioned span as an
+uncompressed PDF object with no object streams, so a four-page render can exceed
+1.5 MB — about 8× the reference. After any engine writes the PDF, `tools/render.py`
+runs a structural recompression pass (`optimize_pdf`) that re-saves it through
+PyMuPDF with object streams, deflate, font subsetting and garbage collection. This
+is content-preserving and pixel-identical (page count, geometry and rasterised
+pixels are unchanged and asserted so), and it brings Chromium renders down roughly
+5× — council-best-students drops from ~1.57 MB to ~318 KB, near the 185 KB original
+class. WeasyPrint output is natively small, so the pass is a near no-op there. The
+pass is on by default; pass `--no-optimize` to inspect raw engine output.
 
 Convert and verify against **chromium** first. If a template also needs to hold
 up under weasyprint, that is a second, separately recorded verification — a pass
 on one engine is not a pass on the other.
 
-Note the snap-confinement trap already documented in `pdf.py`:
-`/usr/bin/chromium-browser` is the snap build and gets a private `/tmp`, so
+Note the snap-confinement trap: a snap Chromium build gets a private `/tmp`, so
 writing a PDF there reports success while the host sees nothing. All Chromium
-work must happen in a working directory under the project tree.
+work happens in a working directory under the project tree.
 
 ## Integration back into backend-sis
 

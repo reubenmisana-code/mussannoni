@@ -14,7 +14,8 @@ import subprocess
 
 from tools.fonts import SYSTEM_FONTS
 
-REQUIRED_BINARIES = ("pdftoppm", "agent-browser")
+# pdftoppm is the comparison rasteriser and is required regardless of rendering engine.
+REQUIRED_BINARIES = ("pdftoppm",)
 
 
 def font_report() -> list[tuple[str, bool, str]]:
@@ -41,6 +42,33 @@ def binary_report() -> list[tuple[str, bool, str]]:
     return rows
 
 
+def engine_report() -> list[tuple[str, bool, str]]:
+    """Report each rendering engine's availability without requiring both.
+
+    A machine only needs whichever engine it renders with. ``chromium`` needs the
+    ``agent-browser`` CLI on PATH; ``weasyprint`` needs its library importable.
+    """
+    rows: list[tuple[str, bool, str]] = []
+
+    chromium = shutil.which("agent-browser")
+    rows.append(
+        (
+            "chromium",
+            chromium is not None,
+            chromium or "agent-browser missing - install to use the chromium engine",
+        )
+    )
+
+    try:
+        import weasyprint
+
+        weasy = (True, f"weasyprint {getattr(weasyprint, '__version__', '')}".strip())
+    except Exception as error:  # noqa: BLE001 - any import failure means it is unavailable
+        weasy = (False, f"import failed ({type(error).__name__}) - install to use weasyprint")
+    rows.append(("weasyprint", weasy[0], weasy[1]))
+    return rows
+
+
 def main() -> int:
     argparse.ArgumentParser(description="Check the measurement environment").parse_args()
     ok = True
@@ -49,6 +77,14 @@ def main() -> int:
     for name, present, detail in binary_report():
         print(f"  [{'ok' if present else 'XX'}] {name:<16} {detail}")
         ok = ok and present
+
+    # Engines are reported for information only: at least one must be usable, but a machine that
+    # has just one engine is still fully functional, so a single missing engine is not a failure.
+    print("rendering engines")
+    engines = engine_report()
+    for name, present, detail in engines:
+        print(f"  [{'ok' if present else '--'}] {name:<16} {detail}")
+    ok = ok and any(present for _, present, _ in engines)
 
     print("licensed faces")
     for name, present, detail in font_report():

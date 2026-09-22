@@ -16,22 +16,27 @@ from typing import Any
 from tools.common import load_catalog, output_dir
 from tools.compare import compare
 from tools.extract import extract
-from tools.render import render
+from tools.render import engine_names, render
 from tools.scaffold import scaffold
 from tools.tune import residuals
 
 
 def convert(
-    level: str, report_key: str, *, re_extract: bool = False, tune: bool = True
+    level: str,
+    report_key: str,
+    *,
+    re_extract: bool = False,
+    tune: bool = True,
+    engine: str | None = None,
 ) -> dict[str, Any]:
     if re_extract:
         extract(level, report_key)
     scaffold(level, report_key)
-    render(level, report_key)
+    render(level, report_key, engine=engine)
     if tune:
         residuals(level, report_key)
         scaffold(level, report_key)
-        render(level, report_key)
+        render(level, report_key, engine=engine)
     return compare(level, report_key)
 
 
@@ -42,6 +47,7 @@ def convert_all(
     only: str | None = None,
     first: int = 1,
     last: int = 46,
+    engine: str | None = None,
 ) -> None:
     reports = load_catalog()["reports"]
     if only:
@@ -52,7 +58,11 @@ def convert_all(
         label = f"{report['ordinal']:>2} {report['level']:<9} {report['report_key']:<38}"
         try:
             payload = convert(
-                report["level"], report["report_key"], re_extract=re_extract, tune=tune
+                report["level"],
+                report["report_key"],
+                re_extract=re_extract,
+                tune=tune,
+                engine=engine,
             )
         except Exception as error:  # noqa: BLE001 - one bad report must not stop the corpus
             failures.append((report["level"], report["report_key"], str(error)))
@@ -84,6 +94,7 @@ def main() -> None:
     )
     parser.add_argument("--re-extract", action="store_true")
     parser.add_argument("--no-tune", action="store_true")
+    parser.add_argument("--engine", choices=engine_names(), default=None, help="rendering engine")
     parser.add_argument("--from", dest="first", type=int, default=1, help="first catalog ordinal")
     parser.add_argument("--to", dest="last", type=int, default=46, help="last catalog ordinal")
     args = parser.parse_args()
@@ -94,12 +105,17 @@ def main() -> None:
             only=args.only,
             first=args.first,
             last=args.last,
+            engine=args.engine,
         )
         return
     if not args.level or not args.report_key:
         parser.error("provide LEVEL and REPORT_KEY, or --all")
     payload = convert(
-        args.level, args.report_key, re_extract=args.re_extract, tune=not args.no_tune
+        args.level,
+        args.report_key,
+        re_extract=args.re_extract,
+        tune=not args.no_tune,
+        engine=args.engine,
     )
     print(payload["status"], payload["summary"])
     print(output_dir({"level": args.level, "report_key": args.report_key}) / "report.json")

@@ -1,4 +1,4 @@
-.PHONY: setup doctor sync catalog fetch extract fonts convert convert-secondary convert-primary convert-one status lint format test check
+.PHONY: setup doctor sync catalog fetch extract fonts convert convert-secondary convert-primary convert-one render status lint format test check
 
 # Install poppler and the licensed report faces. Idempotent; re-run after any env reset.
 setup:
@@ -10,6 +10,8 @@ doctor:
 
 REPORT ?=
 LEVEL ?=
+# Rendering engine: chromium (default) or weasyprint. Passed through as --engine when set.
+ENGINE ?=
 
 sync:
 	uv sync
@@ -30,17 +32,21 @@ fonts:
 
 # Full loop for the whole corpus: scaffold, render, tune, render, compare.
 convert:
-	uv run python -m tools.convert --all
+	uv run python -m tools.convert --all $(if $(ENGINE),--engine $(ENGINE),)
 
 convert-secondary:
-	uv run python -m tools.convert --all --only secondary
+	uv run python -m tools.convert --all --only secondary $(if $(ENGINE),--engine $(ENGINE),)
 
 convert-primary:
-	uv run python -m tools.convert --all --only primary
+	uv run python -m tools.convert --all --only primary $(if $(ENGINE),--engine $(ENGINE),)
 
-# Single report, e.g. make convert-one LEVEL=secondary REPORT=school_results
+# Single report, e.g. make convert-one LEVEL=secondary REPORT=school_results ENGINE=weasyprint
 convert-one:
-	uv run python -m tools.convert $(LEVEL) $(REPORT)
+	uv run python -m tools.convert $(LEVEL) $(REPORT) $(if $(ENGINE),--engine $(ENGINE),)
+
+# Render one report to PDF, e.g. make render LEVEL=primary REPORT=council_best_students ENGINE=weasyprint
+render:
+	uv run python -m tools.render $(LEVEL) $(REPORT) $(if $(ENGINE),--engine $(ENGINE),)
 
 status:
 	uv run python -m tools.status
