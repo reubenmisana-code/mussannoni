@@ -1,0 +1,2213 @@
+{
+  "body": {
+    "cells": [
+      {
+        "align": "right",
+        "classes": [],
+        "column": 0,
+        "line_class": "t10",
+        "pad_left": 0.0,
+        "pad_right": 11.62,
+        "rotation": 0,
+        "run_class": "t10",
+        "top_pt": 5.265
+      },
+      {
+        "align": "left",
+        "classes": [],
+        "column": 1,
+        "line_class": "t11",
+        "pad_left": 1.56,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t11",
+        "top_pt": 5.187
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f10"
+        ],
+        "column": 2,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 3,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 15.51,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 4,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 10.5,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 5,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 3.41,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 6,
+        "line_class": "t11",
+        "pad_left": 0.0,
+        "pad_right": 9.97,
+        "rotation": 0,
+        "run_class": "t11",
+        "top_pt": 5.187
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 7,
+        "line_class": "t11",
+        "pad_left": 0.0,
+        "pad_right": 13.21,
+        "rotation": 0,
+        "run_class": "t11",
+        "top_pt": 5.187
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 8,
+        "line_class": "t11",
+        "pad_left": 0.0,
+        "pad_right": 13.23,
+        "rotation": 0,
+        "run_class": "t11",
+        "top_pt": 5.187
+      },
+      {
+        "align": "right",
+        "classes": [
+          "f11"
+        ],
+        "column": 9,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 7.96,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [
+          "f11"
+        ],
+        "column": 10,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 8.12,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "center",
+        "classes": [],
+        "column": 11,
+        "line_class": "t11",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t11",
+        "top_pt": 5.187
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 12,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 7.94,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [
+          "f2"
+        ],
+        "column": 13,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 8.1,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [
+          "f12"
+        ],
+        "column": 14,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 10.0,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "right",
+        "classes": [
+          "f12"
+        ],
+        "column": 15,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 10.16,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f5"
+        ],
+        "column": 16,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "left",
+        "classes": [
+          "f6"
+        ],
+        "column": 17,
+        "line_class": "t12",
+        "pad_left": 1.51,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      },
+      {
+        "align": "center",
+        "classes": [],
+        "column": 18,
+        "line_class": "t12",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t12",
+        "top_pt": 5.172
+      }
+    ],
+    "row_height_pt": 12.24
+  },
+  "decorations": {
+    "loose_lines": [],
+    "vectors": []
+  },
+  "header": {
+    "height_pt": 106.78,
+    "labels": [
+      "",
+      "",
+      "COUNCIL",
+      "REG",
+      "TOTAL",
+      "%",
+      "I",
+      "II",
+      "III",
+      "TOTAL",
+      "%",
+      "IV",
+      "TOTAL",
+      "%",
+      "TOTAL",
+      "%",
+      "GPA",
+      "COMPENTENCY LEVEL",
+      ""
+    ],
+    "row_count": 4,
+    "rows": [
+      {
+        "cells": [
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 19,
+            "column": 0,
+            "lines": [
+              {
+                "class": "t0",
+                "left_pt": 271.372,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "EG"
+                      },
+                      {
+                        "margin_pt": -0.049,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.203,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.11,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "ST"
+                      },
+                      {
+                        "margin_pt": 0.072,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.073,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "G"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "VER"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.11,
+                        "text": "EN"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "T"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "REGIONAL ADMINISTRATION AND LOCAL GOVERNMENT"
+                  }
+                ],
+                "top_pt": 1.18
+              },
+              {
+                "class": "t0",
+                "left_pt": 367.252,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.111,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.203,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "Z"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.202,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "EG"
+                      },
+                      {
+                        "margin_pt": -0.049,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "N"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "MWANZA REGION"
+                  }
+                ],
+                "top_pt": 13.42
+              },
+              {
+                "class": "t0",
+                "left_pt": 249.172,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "EG"
+                      },
+                      {
+                        "margin_pt": -0.049,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.203,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "F"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.111,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.072,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.111,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "K"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.203,
+                        "text": "SSESSM"
+                      },
+                      {
+                        "margin_pt": 0.101,
+                        "text": "EN"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.073,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "ESU"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.04,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.072,
+                        "text": "S,"
+                      },
+                      {
+                        "margin_pt": -0.048,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "J"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "Y "
+                      },
+                      {
+                        "margin_pt": -0.049,
+                        "text": "2"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "0"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "2"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "6"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "REGIONAL FORM TWO MOCK ASSESSMENT RESULTS, JULY 2026"
+                  }
+                ],
+                "top_pt": 25.66
+              },
+              {
+                "class": "t0",
+                "left_pt": 289.612,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.111,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.203,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "Z"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.202,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "S "
+                      },
+                      {
+                        "margin_pt": -0.049,
+                        "text": "PER"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "F"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.112,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.204,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": 0.029,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": 0.028,
+                        "text": "E"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "MWANZA CC WARDS PERFORMANCE"
+                  }
+                ],
+                "top_pt": 47.14
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 190.6,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 64.1,
+        "index": 0
+      },
+      {
+        "cells": [
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 0,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 3
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 1,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 3
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 2,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 3,
+            "column": 3,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 2.139,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "NU"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.11,
+                        "text": "B"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.031,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.048,
+                        "text": "F"
+                      },
+                      {
+                        "margin_pt": 0.025,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.235,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "DIDA"
+                      },
+                      {
+                        "margin_pt": -0.221,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.024,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "NUMBER OF CANDIDATES"
+                  }
+                ],
+                "top_pt": 4.716
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 10,
+            "column": 6,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 116.049,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "DIV"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "IS"
+                      },
+                      {
+                        "margin_pt": -0.053,
+                        "text": "IO"
+                      },
+                      {
+                        "margin_pt": 0.042,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.04,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "RF"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.048,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.102,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.235,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "CE"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "DIVISION PERFORMANCE"
+                  }
+                ],
+                "top_pt": 4.716
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 2,
+            "column": 16,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 34.689,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "G"
+                      },
+                      {
+                        "margin_pt": 0.048,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.236,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.054,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.04,
+                        "text": "RF"
+                      },
+                      {
+                        "margin_pt": 0.032,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.048,
+                        "text": "RM"
+                      },
+                      {
+                        "margin_pt": 0.099,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.235,
+                        "text": "NC"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "E"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "GPA PERFORMANCE"
+                  }
+                ],
+                "top_pt": 4.716
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 18,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 3
+          }
+        ],
+        "height_pt": 12.25,
+        "index": 1
+      },
+      {
+        "cells": [
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 2,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 15.529,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "NO"
+                      },
+                      {
+                        "margin_pt": 0.055,
+                        "text": ". "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.025,
+                        "text": "F"
+                      },
+                      {
+                        "margin_pt": 0.024,
+                        "text": " "
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "NO. OF "
+                  }
+                ],
+                "top_pt": -3.454
+              },
+              {
+                "class": "t1",
+                "left_pt": 9.409,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.046,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.235,
+                        "text": "RD"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.023,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "IN "
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "WARDS IN "
+                  }
+                ],
+                "top_pt": 6.386
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 6.91,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 3,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 2,
+            "column": 4,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 22.599,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.235,
+                        "text": "T"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "SAT"
+                  }
+                ],
+                "top_pt": 4.706
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 6,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 7,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 8,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f1"
+            ],
+            "colspan": 2,
+            "column": 9,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 24.295,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "I-"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.037,
+                        "text": "II"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "I-III"
+                  }
+                ],
+                "top_pt": 2.733
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 23.33,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 11,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f2"
+            ],
+            "colspan": 2,
+            "column": 12,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 24.535,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "I-"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.037,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "I-IV"
+                  }
+                ],
+                "top_pt": 2.733
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 23.56,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f3"
+            ],
+            "colspan": 2,
+            "column": 14,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 18.495,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.037,
+                        "text": "V"
+                      },
+                      {
+                        "margin_pt": -0.136,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.018,
+                        "text": "- "
+                      },
+                      {
+                        "margin_pt": 0.026,
+                        "text": "0"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "DIV - 0"
+                  }
+                ],
+                "top_pt": 2.733
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 16,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 17,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 12.27,
+        "index": 2
+      },
+      {
+        "cells": [
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 2,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 11.209,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "CO"
+                      },
+                      {
+                        "margin_pt": 0.055,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "NC"
+                      },
+                      {
+                        "margin_pt": 0.013,
+                        "text": "IL"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "COUNCIL"
+                  }
+                ],
+                "top_pt": 3.956
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 3,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 13.779,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "RE"
+                      },
+                      {
+                        "margin_pt": -0.032,
+                        "text": "G"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "REG"
+                  }
+                ],
+                "top_pt": 10.556
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 4,
+            "lines": [
+              {
+                "class": "t3",
+                "left_pt": 8.042,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "TO"
+                      },
+                      {
+                        "margin_pt": 0.019,
+                        "text": "TA"
+                      },
+                      {
+                        "margin_pt": -0.026,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t3",
+                    "text": "TOTAL"
+                  }
+                ],
+                "top_pt": 10.119
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 5,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 9.879,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t1",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 10.076
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 6,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 13.225,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t2",
+                    "text": "I"
+                  }
+                ],
+                "top_pt": -1.497
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 12.34,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 7,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 14.715,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.022,
+                        "text": "I"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "II"
+                  }
+                ],
+                "top_pt": -1.497
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 13.78,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 8,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 13.035,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.022,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.023,
+                        "text": "I"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "III"
+                  }
+                ],
+                "top_pt": -1.497
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 12.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 9,
+            "lines": [
+              {
+                "class": "t4",
+                "left_pt": 5.475,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.148,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.046,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.147,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.113,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t4",
+                    "text": "TOTAL"
+                  }
+                ],
+                "top_pt": 11.54
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 10,
+            "lines": [
+              {
+                "class": "t5",
+                "left_pt": 15.334,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t5",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 10.76
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 14.27,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 11,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 13.195,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": -0.022,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "IV"
+                  }
+                ],
+                "top_pt": -1.497
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 12.24,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 12,
+            "lines": [
+              {
+                "class": "t4",
+                "left_pt": 5.475,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.148,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.046,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.147,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.113,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t4",
+                    "text": "TOTAL"
+                  }
+                ],
+                "top_pt": 11.54
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 13,
+            "lines": [
+              {
+                "class": "t5",
+                "left_pt": 15.334,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t5",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 10.76
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 14.25,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 14,
+            "lines": [
+              {
+                "class": "t4",
+                "left_pt": 5.435,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.148,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": 0.046,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.147,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.113,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t4",
+                    "text": "TOTAL"
+                  }
+                ],
+                "top_pt": 11.54
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 15,
+            "lines": [
+              {
+                "class": "t5",
+                "left_pt": 15.344,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t5",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 10.76
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 14.24,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 16,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 16.089,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "G"
+                      },
+                      {
+                        "margin_pt": 0.048,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "A"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "GPA"
+                  }
+                ],
+                "top_pt": -0.004
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 15.06,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 17,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 6.609,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "CO"
+                      },
+                      {
+                        "margin_pt": 0.055,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.094,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.04,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "NT"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.039,
+                        "text": "NC"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "Y"
+                      },
+                      {
+                        "margin_pt": -0.024,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.002,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": 0.016,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "V"
+                      },
+                      {
+                        "margin_pt": -0.04,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "COMPENTENCY LEVEL"
+                  }
+                ],
+                "top_pt": 0.236
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 18.16,
+        "index": 3
+      }
+    ]
+  },
+  "level": "secondary",
+  "measured_pages": 1,
+  "page": {
+    "height_pt": 612.0,
+    "orientation": "landscape",
+    "width_pt": 792.0
+  },
+  "report_key": "council_wards_rank",
+  "rows_per_page": 27,
+  "rule": {
+    "fill": "color(srgb 0.000000 0.000000 0.000000)",
+    "header_d": "M216.26 142.82h60.02v0.48h-60.02ZM376.13 142.82h64.46v0.48h-64.46ZM43.08 118.34h710.64v0.48h-710.64ZM172.1 130.58h581.62v0.48h-581.62ZM475.99 142.82h128.9v0.48h-128.9ZM114.62 160.94h639.1v0.48h-639.1Z",
+    "width_pt": 0.48
+  },
+  "sample_unit": "MWANZA CC Wards Rank",
+  "schema_version": 1,
+  "scope": "council",
+  "table": {
+    "columns": [
+      31.55,
+      71.55,
+      57.55,
+      44.1,
+      34.11,
+      25.95,
+      28.99,
+      35.4,
+      35.42,
+      29.05,
+      35.47,
+      35.34,
+      29.03,
+      35.45,
+      29.01,
+      35.45,
+      48.0,
+      100.85,
+      21.5
+    ],
+    "width_pt": 763.77,
+    "x_pt": 11.29,
+    "y_pt": 54.48
+  },
+  "text_styles": {
+    "t0": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 10.08
+    },
+    "t1": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 7.8
+    },
+    "t10": {
+      "base14": "helv",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 6.72
+    },
+    "t11": {
+      "base14": "helv",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 7.32
+    },
+    "t12": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 7.32
+    },
+    "t2": {
+      "base14": "tibo",
+      "font_family": "'Times New Roman', 'Report Serif'",
+      "size_pt": 9.0
+    },
+    "t3": {
+      "font_family": "'Report ArialNarrow-Bold'",
+      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "size_pt": 6.72
+    },
+    "t4": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 5.64
+    },
+    "t5": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 6.72
+    },
+    "t6": {
+      "base14": "helv",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 7.8
+    },
+    "t7": {
+      "base14": "tibo",
+      "font_family": "'Times New Roman', 'Report Serif'",
+      "size_pt": 7.8
+    },
+    "t8": {
+      "font_family": "'Report ArialNarrow-Bold'",
+      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "size_pt": 7.8
+    },
+    "t9": {
+      "base14": "hebo",
+      "font_family": "Arial, 'Report Sans'",
+      "size_pt": 9.0
+    }
+  },
+  "title": "WARDS RANK"
+}

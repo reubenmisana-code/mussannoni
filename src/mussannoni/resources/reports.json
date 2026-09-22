@@ -1,0 +1,377 @@
+{
+  "reports": [
+    {
+      "level": "secondary",
+      "ordinal": 1,
+      "report_key": "school_results",
+      "sample_unit": "S0333-MWANZA SECONDARY SCHOOL",
+      "scope": "school",
+      "title": "SCHOOL RESULTS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 2,
+      "report_key": "council_subjects_rank",
+      "sample_unit": "MWANZA CC SUBJECTS RANK",
+      "scope": "council",
+      "title": "SUBJECTS RANK"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 3,
+      "report_key": "council_schools_rank",
+      "sample_unit": "MWANZA CC SCHOOLS RANK",
+      "scope": "council",
+      "title": "SCHOOLS RANK"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 4,
+      "report_key": "council_wards_rank",
+      "sample_unit": "MWANZA CC Wards Rank",
+      "scope": "council",
+      "title": "WARDS RANK"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 5,
+      "report_key": "council_top_schools",
+      "sample_unit": "MWANZA CC 10 BEST SCHOOLS",
+      "scope": "council",
+      "title": "10 BEST SCHOOLS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 6,
+      "report_key": "council_best_students",
+      "sample_unit": "MWANZA CC 10 BEST STUDENTS",
+      "scope": "council",
+      "title": "10 BEST STUDENTS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 7,
+      "report_key": "council_best_students_subjectwise",
+      "sample_unit": "MWANZA CC 10 BEST STUDENTS SUBJECTWISE",
+      "scope": "council",
+      "title": "10 BEST STUDENTS SUBJECTWISE"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 8,
+      "report_key": "council_schools_rank_subjectwise",
+      "sample_unit": "MWANZA CC SCHOOLS RANK SUBJECTWISE",
+      "scope": "council",
+      "title": "SCHOOLS RANK SUBJECTWISE"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 9,
+      "report_key": "subject_schools_rank",
+      "sample_unit": "Mwanza School Rank-Mathematics",
+      "scope": "subject",
+      "title": "SCHOOL RANK-MATHEMATICS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 10,
+      "report_key": "region_schools_rank_overall",
+      "sample_unit": "Mwanza schools rank Overall",
+      "scope": "region",
+      "title": "SCHOOLS RANK OVERALL"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 11,
+      "report_key": "region_schools_rank_government",
+      "sample_unit": "Mwanza Schools Rank For Governments",
+      "scope": "region",
+      "title": "SCHOOLS RANK FOR GOVERNMENTS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 12,
+      "report_key": "region_schools_rank_private",
+      "sample_unit": "Mwanza School Rank for Privates",
+      "scope": "region",
+      "title": "SCHOOL RANK FOR PRIVATES"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 13,
+      "report_key": "region_top_schools",
+      "sample_unit": "Mwanza Top 10 Schools",
+      "scope": "region",
+      "title": "TOP 10 SCHOOLS"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 14,
+      "report_key": "region_best_students_overall",
+      "sample_unit": "Mwanza Best Students-Overall",
+      "scope": "region",
+      "title": "BEST STUDENTS-OVERALL"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 15,
+      "report_key": "region_best_students_subjectwise",
+      "sample_unit": "Mwanza Best students-Subjectwise",
+      "scope": "region",
+      "title": "BEST STUDENTS-SUBJECTWISE"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 16,
+      "report_key": "region_council_performance",
+      "sample_unit": "Mwanza f2 District Performance",
+      "scope": "region",
+      "title": "F2 DISTRICT PERFORMANCE"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 17,
+      "report_key": "region_subjects_performance",
+      "sample_unit": "Mwanza Overall Subjects Performance",
+      "scope": "region",
+      "title": "OVERALL SUBJECTS PERFORMANCE"
+    },
+    {
+      "level": "secondary",
+      "ordinal": 18,
+      "report_key": "region_mobility",
+      "sample_unit": "Mwanza f2 Mock Mobility 2026",
+      "scope": "region",
+      "title": "F2 MOCK MOBILITY 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 19,
+      "report_key": "school_results",
+      "sample_unit": "PS1304014-BUTIMBA PRIMARY SCHOOL",
+      "scope": "school",
+      "title": "SCHOOL RESULTS"
+    },
+    {
+      "level": "primary",
+      "ordinal": 20,
+      "report_key": "council_kata_rank_alama",
+      "sample_unit": "MWANZA CC KATA RANK ALAMA",
+      "scope": "council",
+      "title": "KATA RANK ALAMA"
+    },
+    {
+      "level": "primary",
+      "ordinal": 21,
+      "report_key": "council_kata_rank_grading",
+      "sample_unit": "MWANZA CC KATA RANK GRADING",
+      "scope": "council",
+      "title": "KATA RANK GRADING"
+    },
+    {
+      "level": "primary",
+      "ordinal": 22,
+      "report_key": "council_school_rank_binafsi",
+      "sample_unit": "MWANZA CC SCHOOL RANK BINAFSI",
+      "scope": "council",
+      "title": "SCHOOL RANK BINAFSI"
+    },
+    {
+      "level": "primary",
+      "ordinal": 23,
+      "report_key": "council_school_rank_serikali",
+      "sample_unit": "MWANZA CC SCHOOL RANK SERIKALI",
+      "scope": "council",
+      "title": "SCHOOL RANK SERIKALI"
+    },
+    {
+      "level": "primary",
+      "ordinal": 24,
+      "report_key": "council_school_rank_in_grade",
+      "sample_unit": "MWANZA CC SCHOOL RANK IN GRADE",
+      "scope": "council",
+      "title": "SCHOOL RANK IN GRADE"
+    },
+    {
+      "level": "primary",
+      "ordinal": 25,
+      "report_key": "council_school_rank_ufaulu_alama",
+      "sample_unit": "MWANZA CC SCHOOL RANK UFAULU ALAMA",
+      "scope": "council",
+      "title": "SCHOOL RANK UFAULU ALAMA"
+    },
+    {
+      "level": "primary",
+      "ordinal": 26,
+      "report_key": "council_best_students",
+      "sample_unit": "MWANZA CC 10 BEST STUDENTS",
+      "scope": "council",
+      "title": "10 BEST STUDENTS"
+    },
+    {
+      "level": "primary",
+      "ordinal": 27,
+      "report_key": "council_top_schools_alama",
+      "sample_unit": "MWANZA CC 10 BEST SCHOOLS ALAMA",
+      "scope": "council",
+      "title": "10 BEST SCHOOLS ALAMA"
+    },
+    {
+      "level": "primary",
+      "ordinal": 28,
+      "report_key": "council_top_schools_grading",
+      "sample_unit": "MWANZA CC 10 BEST SCHOOLS GRADING",
+      "scope": "council",
+      "title": "10 BEST SCHOOLS GRADING"
+    },
+    {
+      "level": "primary",
+      "ordinal": 29,
+      "report_key": "council_top_schools_kimasomo_overall",
+      "sample_unit": "MWANZA CC 10 BEST SCHOOLS KIMASOMO OVERALL",
+      "scope": "council",
+      "title": "10 BEST SCHOOLS KIMASOMO OVERALL"
+    },
+    {
+      "level": "primary",
+      "ordinal": 30,
+      "report_key": "council_top_schools_kimasomo_serikali",
+      "sample_unit": "MWANZA CC 10 BEST SCHOOLS KIMASOMO SERIKALI",
+      "scope": "council",
+      "title": "10 BEST SCHOOLS KIMASOMO SERIKALI"
+    },
+    {
+      "level": "primary",
+      "ordinal": 31,
+      "report_key": "council_subject_summary",
+      "sample_unit": "MWANZA CC SUBJECT SUMMARY",
+      "scope": "council",
+      "title": "SUBJECT SUMMARY"
+    },
+    {
+      "level": "primary",
+      "ordinal": 32,
+      "report_key": "council_ufaulu_wa_masomo",
+      "sample_unit": "MWANZA CC UFAULU WA MASOMO",
+      "scope": "council",
+      "title": "UFAULU WA MASOMO"
+    },
+    {
+      "level": "primary",
+      "ordinal": 33,
+      "report_key": "region_kata_serikali",
+      "sample_unit": "MKOA KATA SHULE ZA SERIKALI STD4 2026",
+      "scope": "region",
+      "title": "MKOA KATA SHULE ZA SERIKALI STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 34,
+      "report_key": "region_kata_binafsi",
+      "sample_unit": "MKOA KATA SHULE BINAFSI STD4 2026",
+      "scope": "region",
+      "title": "MKOA KATA SHULE BINAFSI STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 35,
+      "report_key": "region_kata_jumla",
+      "sample_unit": "KATA STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "KATA STD4 JUMLA 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 36,
+      "report_key": "region_shule_bora_jumla",
+      "sample_unit": "MKOA SHULE BORA STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "MKOA SHULE BORA STD4 JUMLA 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 37,
+      "report_key": "region_shule_bora_masomo_serikali",
+      "sample_unit": "MKOA SHULE BORA MASOMO SERIKALI STD4 2026",
+      "scope": "region",
+      "title": "MKOA SHULE BORA MASOMO SERIKALI STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 38,
+      "report_key": "region_shule_bora_masomo_jumla",
+      "sample_unit": "MKOA SHULE BORA MASOMO STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "MKOA SHULE BORA MASOMO STD4 JUMLA 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 39,
+      "report_key": "region_ufaulu_masomo",
+      "sample_unit": "MKOA UFAULU MASOMO STD4 2026",
+      "scope": "region",
+      "title": "MKOA UFAULU MASOMO STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 40,
+      "report_key": "region_ufaulu_masomo_jumla",
+      "sample_unit": "MKOA UFAULU MASOMO STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "MKOA UFAULU MASOMO STD4 JUMLA 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 41,
+      "report_key": "region_wanafunzi_bora",
+      "sample_unit": "MKOA WANAFUNZI BORA STD4 2026",
+      "scope": "region",
+      "title": "MKOA WANAFUNZI BORA STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 42,
+      "report_key": "region_shule_serikali",
+      "sample_unit": "SHULE SERIKALI STD4 2026",
+      "scope": "region",
+      "title": "SHULE SERIKALI STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 43,
+      "report_key": "region_shule_binafsi",
+      "sample_unit": "SHULE BINAFSI STD4 2026",
+      "scope": "region",
+      "title": "SHULE BINAFSI STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 44,
+      "report_key": "region_shule_nafasi_jumla",
+      "sample_unit": "SHULE NAFASI STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "SHULE NAFASI STD4 JUMLA 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 45,
+      "report_key": "region_halmashauri_masomo",
+      "sample_unit": "HALMASHAURI MASOMO STD4 2026",
+      "scope": "region",
+      "title": "HALMASHAURI MASOMO STD4 2026"
+    },
+    {
+      "level": "primary",
+      "ordinal": 46,
+      "report_key": "region_halmashauri_jumla",
+      "sample_unit": "HALMASHAURI STD4 JUMLA 2026",
+      "scope": "region",
+      "title": "HALMASHAURI STD4 JUMLA 2026"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "primary": "https://sars.ac.tz/results/exam/matokeo-darasa-la-iv-mock-mkoa/2026/mwanza/mwanza-cc-1787231849",
+    "secondary": "https://sars.ac.tz/results/exam/form-two-mock-result/2026/mwanza/mwanza-cc-1787231849"
+  }
+}

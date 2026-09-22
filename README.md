@@ -1,6 +1,109 @@
-# MussaNnoni Report Conversion — Specification
+# MussaNnoni Report Conversion
 
-Design credit: Mussa Nnoni — SARS (sars.ac.tz).
+Reproduce every SARS examination report as a measured HTML + CSS template, and render new
+reports from application data onto the same grid.
+
+Design credit: Mussa Nnoni — SARS ([sars.ac.tz](https://sars.ac.tz)). Created by Reuben Misana
+and Kiyabo Nhende. See [CREDITS.md](CREDITS.md).
+
+This repository is two things, and they are documented separately:
+
+- **A package** — `pip install mussannoni`, pass a dict, get a PDF. Start below.
+- **A fidelity workshop** — the machinery that measures the 46 reference PDFs and proves the
+  templates reproduce them. That is the specification from [Goal](#goal) onward.
+
+## Install
+
+```sh
+pip install mussannoni
+```
+
+For glyph-exact output also install Arial and Times New Roman on the rendering host; without
+them the layout still holds, because the bundled fallbacks are metric-compatible, but the glyph
+outlines differ. `mussannoni doctor` reports what it can find.
+
+## Use
+
+Pass the data as a dict (or JSON) and get PDF bytes back:
+
+```python
+import mussannoni
+
+pdf = mussannoni.render_report(
+    "council_best_students",
+    {
+        "rows": [
+            [1, "NYAMAGANA", "MWANZA SECONDARY", "GOVERNMENT", "S0333-0001", "JUMA ALI", "M"],
+            [2, "ILEMELA", "BUGANDO SECONDARY", "PRIVATE", "S0334-0002", "ASHA HAMISI", "F"],
+        ],
+    },
+    level="primary",
+)
+
+open("report.pdf", "wb").write(pdf)
+```
+
+Rows may be lists (positional, by column) or mappings keyed by column label or index. `None`
+renders as an empty cell, not the string `"None"`. Rows are paginated automatically and the
+measured header band repeats on every page. `render_report_to_file(...)` writes straight to a
+path and creates parent directories.
+
+`level` is needed only for the handful of report keys that exist at both levels — pass just the
+key otherwise, and you get a clear error rather than the wrong report if it is ambiguous.
+
+The full data contract:
+
+```python
+{
+  "title":   str,                   # optional; defaults to the measured title
+  "columns": [str, ...],            # optional; override the measured column labels
+  "header":  {"0.3": str, ...},     # optional; override any header cell, addressed "row.column"
+  "rows":    [[value, ...], ...],   # required; or [{"LABEL": value, ...}, ...]
+}
+```
+
+### Discovering a report
+
+```python
+mussannoni.list_reports()                 # all 46, in processing order
+mussannoni.list_reports("primary")        # 28
+layout = mussannoni.report_layout("council_best_students", level="primary")
+layout["header"]["labels"]                # what the columns are called
+layout["rows_per_page"]                   # how many rows fit before it paginates
+```
+
+### From the shell
+
+```sh
+mussannoni reports                         # list what can be rendered
+mussannoni layout council_best_students --level primary
+mussannoni render council_best_students --level primary --data rows.json --out report.pdf
+mussannoni doctor                          # which engines and fonts are usable here
+```
+
+### Reproducing a reference exactly
+
+`render_report` places *your* data on the measured grid. To reproduce a reference PDF glyph for
+glyph — every cluster at its recorded advance — build a geometry document and render that
+instead:
+
+```python
+mussannoni.render_document(document, "primary", "council_best_students")
+```
+
+`mussannoni.document` documents that format in full. The difference, and why generated text
+cannot carry the measured per-glyph corrections, is explained in
+[docs/05-packaging.md](docs/05-packaging.md).
+
+### Engines
+
+The package defaults to **WeasyPrint**, which renders in-process and is the only engine `pip`
+can install. The workshop defaults to **Chromium** via the `agent-browser` CLI, because every
+committed calibration was measured against it. Select one with `engine=`, the
+`MUSSANNONI_ENGINE` environment variable, or `--engine`. They are not interchangeable at
+sub-point precision — see [Rendering engine](#rendering-engine).
+
+---
 
 ## Goal
 
@@ -356,12 +459,15 @@ what actually rendered the PDF.
 uncompressed PDF object with no object streams, so a four-page render can exceed
 1.5 MB — about 8× the reference. After any engine writes the PDF, `tools/render.py`
 runs a structural recompression pass (`optimize_pdf`) that re-saves it through
-PyMuPDF with object streams, deflate, font subsetting and garbage collection. This
-is content-preserving and pixel-identical (page count, geometry and rasterised
-pixels are unchanged and asserted so), and it brings Chromium renders down roughly
-5× — council-best-students drops from ~1.57 MB to ~318 KB, near the 185 KB original
-class. WeasyPrint output is natively small, so the pass is a near no-op there. The
-pass is on by default; pass `--no-optimize` to inspect raw engine output.
+PyMuPDF with object streams, deflate and garbage collection. Font subsetting and
+`clean=True` are deliberately omitted — both measured worse, in time or in bytes;
+see [docs/01-fidelity.md](docs/01-fidelity.md). This is content-preserving and
+pixel-identical (page count, geometry and rasterised pixels are unchanged and
+asserted so). Across the corpus it takes the committed renders from 181,693,210 bytes
+to roughly 35.6 MB — **5.1×** smaller, within 2.6× of the references in aggregate;
+council-best-students drops from ~1.57 MB to ~318 KB against a 185 KB original.
+WeasyPrint output is natively small, so the pass is a near no-op there. The pass is
+on by default; pass `--no-optimize` to inspect raw engine output.
 
 Convert and verify against **chromium** first. If a template also needs to hold
 up under weasyprint, that is a second, separately recorded verification — a pass

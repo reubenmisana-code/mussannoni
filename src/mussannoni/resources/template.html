@@ -1,0 +1,64 @@
+{% macro render_row(row) %}<tr style="height: {{ row.height_pt }}pt;">{% for cell in row.cells %}<td class="{{ cell.classes | join(' ') }}"{% if cell.colspan > 1 %} colspan="{{ cell.colspan }}"{% endif %}{% if cell.rowspan > 1 %} rowspan="{{ cell.rowspan }}"{% endif %} style="text-align: {{ cell.align }};{% if cell.pad_left %} padding-left: {{ cell.pad_left }}pt;{% endif %}{% if cell.pad_right %} padding-right: {{ cell.pad_right }}pt;{% endif %}">{% for line in cell.lines %}<div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">{% for run in line.runs %}{% if run.chunks %}{% for chunk in run.chunks %}<span class="{{ run.class }}"{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}>{{ chunk.text }}</span>{% endfor %}{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}{% endfor %}</div>{% endfor %}</td>{% endfor %}</tr>{% endmacro %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ report.title }}</title>
+    <link rel="stylesheet" href="{{ assets.shared_css }}">
+    <link rel="stylesheet" href="{{ assets.report_css }}">
+  </head>
+  <body>
+    {% for page in pages %}
+    <section class="report-page" data-page="{{ page.number }}"
+             style="width: {{ page.width_pt }}pt; height: {{ page.height_pt }}pt;">
+      {% if page.vectors %}
+      <svg class="report-vectors" viewBox="0 0 {{ page.width_pt }} {{ page.height_pt }}" aria-hidden="true">
+        {% for vector in page.vectors %}
+        <path d="{{ vector.d }}" fill="{{ vector.fill }}" stroke="{{ vector.stroke }}"
+              stroke-width="{{ vector.stroke_width }}"/>
+        {% endfor %}
+      </svg>
+      {% endif %}
+      {% if page.loose_lines %}
+      <div class="page-text">
+        {% for line in page.loose_lines %}
+        <div class="cell-line{% if line.rotation %} rot{{ line.rotation }}{% endif %} {{ line.class }}" style="left: {{ line.left_pt }}pt; top: {{ line.top_pt }}pt;{% if line.letter_spacing_pt %} letter-spacing: {{ line.letter_spacing_pt }}pt;{% endif %}">
+          {%- for run in line.runs %}{% if run.chunks %}{% for chunk in run.chunks %}<span class="{{ run.class }}"{% if chunk.margin_pt %} style="margin-left: {{ chunk.margin_pt }}pt;"{% endif %}>{{ chunk.text }}</span>{% endfor %}{% else %}<span class="{{ run.class }}">{{ run.text }}</span>{% endif %}{% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.columns %}
+      <table class="report-grid"
+             style="left: {{ page.table_x_pt }}pt; top: {{ page.table_y_pt }}pt;
+                    width: {{ page.table_width_pt }}pt; height: {{ page.table_height_pt }}pt;">
+        <colgroup>
+          {% for width in page.columns %}
+          <col style="width: {{ width }}pt;">
+          {% endfor %}
+        </colgroup>
+        {% if page.header_rows %}
+        <thead>
+          {% for row in page.rows[:page.header_rows] %}
+          {{ render_row(row) }}
+          {% endfor %}
+        </thead>
+        {% endif %}
+        <tbody>
+          {% for row in page.rows[page.header_rows:] %}
+          {{ render_row(row) }}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+      {% if page.rules %}
+      <svg class="report-rules" viewBox="0 0 {{ page.width_pt }} {{ page.height_pt }}" aria-hidden="true">
+        {% for rule in page.rules %}
+        <path d="{{ rule.d }}" fill="{{ rule.fill }}"/>
+        {% endfor %}
+      </svg>
+      {% endif %}
+    </section>
+    {% endfor %}
+  </body>
+</html>

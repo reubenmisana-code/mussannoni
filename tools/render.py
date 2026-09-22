@@ -1,16 +1,24 @@
-"""Render a report to PDF through a selectable rendering engine.
+"""Render a report to PDF from its measured fixture, through a selectable engine.
 
-The HTML is built once, identically, regardless of engine, so both engines render the same
-input and any difference in the result is the engine's own. Two engines ship today:
+This is the *workshop* renderer. It reads the measured ``fixture.json`` out of
+``templates/<level>/<report>/`` and writes ``output/<level>/<report>/rendered.pdf``, which
+``tools/compare.py`` then rasterises against the reference. It exists to reproduce a reference
+PDF as exactly as possible.
 
-- ``chromium`` — shells the ``agent-browser`` headless-Chromium CLI. The reference renderer
-  for CSS fidelity and the house default.
-- ``weasyprint`` — renders in-process via the ``weasyprint`` library. Much smaller files, but
-  its CSS support differs, so its fidelity is a separate, separately recorded verification.
+The engine implementations and the post-render recompression are **not** duplicated here: they
+live in the installable package (:mod:`mussannoni.engines`, :mod:`mussannoni.optimize`) and are
+imported. Only two things differ from the packaged renderer, and both are deliberate:
 
-Adding an engine is registering one class in ``ENGINES``. Selection precedence is:
-explicit ``--engine`` / ``engine=`` argument, then the ``MUSSANNONI_ENGINE`` environment
-variable, then the default (``chromium``).
+- **The default engine is ``chromium``, not ``weasyprint``.** Every committed calibration and
+  fidelity metric was measured against headless Chromium, so the workshop must keep rendering
+  through it or the numbers stop being comparable. The package defaults to WeasyPrint because it
+  is the only engine that works from a plain ``pip install``.
+- **Assets come from ``templates/``, not from the packaged resources.** The workshop renders the
+  working copy that ``tools/scaffold.py`` has just written, which is the whole point of the
+  tune-and-re-render loop.
+
+Adding an engine is registering one class in :data:`mussannoni.engines.ENGINES`; it becomes
+available here and in the package at once.
 """
 
 from __future__ import annotations
@@ -18,117 +26,40 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import subprocess
 from pathlib import Path
-from typing import Protocol
 
-import pymupdf
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 
+from mussannoni.engines import ENGINES, Engine, engine_names
+from mussannoni.optimize import optimize_pdf
 from tools.common import ROOT, find_report, output_dir, template_dir, write_json
 
+# The workshop's reference renderer. Distinct from mussannoni.engines.DEFAULT_ENGINE on purpose;
+# see the module docstring.
 DEFAULT_ENGINE = "chromium"
 ENGINE_ENV_VAR = "MUSSANNONI_ENGINE"
 
+# Re-exported so the workshop's own call sites and tests keep a single import site.
+ChromiumEngine = type(ENGINES["chromium"])
+WeasyPrintEngine = type(ENGINES["weasyprint"])
 
-
-class Engine(Protocol):
-    """A rendering engine turns built HTML into a PDF on disk.
-
-    Implementations receive the already-built HTML (as both a string and a file already written
-    under the project tree) plus the ``base_url`` needed to resolve relative ``url()`` asset
-    references. They must leave a valid PDF at ``pdf_path`` and raise on failure.
-    """
-
-    name: str
-
-    def render(
-        self,
-        *,
-        html: str,
-        html_path: Path,
-        pdf_path: Path,
-        base_url: str,
-        work_dir: Path,
-        session: str,
-    ) -> None: ...
-
-
-class ChromiumEngine:
-    """Headless Chromium via the ``agent-browser`` CLI. Preserves the original behaviour."""
-
-    name = "chromium"
-
-    def build_commands(self, session: str, html_path: Path, pdf_path: Path) -> list[list[str]]:
-        return [
-            ["agent-browser", "--session", session, "open", html_path.as_uri()],
-            ["agent-browser", "--session", session, "wait", "1000"],
-            ["agent-browser", "--session", session, "pdf", str(pdf_path)],
-            ["agent-browser", "--session", session, "close"],
-        ]
-
-    def render(
-        self,
-        *,
-        html: str,
-        html_path: Path,
-        pdf_path: Path,
-        base_url: str,
-        work_dir: Path,
-        session: str,
-    ) -> None:
-        commands = self.build_commands(session, html_path, pdf_path)
-        try:
-            for command in commands:
-                subprocess.run(command, cwd=ROOT, check=True, timeout=180)
-        finally:
-            subprocess.run(
-                ["agent-browser", "--session", session, "close"],
-                cwd=ROOT,
-                check=False,
-                timeout=30,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-        if not pdf_path.exists() or not pdf_path.read_bytes().startswith(b"%PDF-"):
-            raise RuntimeError(f"Chromium did not produce a valid PDF: {pdf_path}")
-
-
-class WeasyPrintEngine:
-    """In-process rendering via the ``weasyprint`` library."""
-
-    name = "weasyprint"
-
-    def render(
-        self,
-        *,
-        html: str,
-        html_path: Path,
-        pdf_path: Path,
-        base_url: str,
-        work_dir: Path,
-        session: str,
-    ) -> None:
-        from weasyprint import HTML
-
-        HTML(string=html, base_url=base_url).write_pdf(str(pdf_path))
-        if not pdf_path.exists() or not pdf_path.read_bytes().startswith(b"%PDF-"):
-            raise RuntimeError(f"WeasyPrint did not produce a valid PDF: {pdf_path}")
-
-
-ENGINES: dict[str, Engine] = {
-    engine.name: engine
-    for engine in (ChromiumEngine(), WeasyPrintEngine())
-}
-
-
-def engine_names() -> list[str]:
-    """The registered engine names, for CLI choices and diagnostics."""
-    return list(ENGINES)
+__all__ = [
+    "DEFAULT_ENGINE",
+    "ENGINES",
+    "ENGINE_ENV_VAR",
+    "ChromiumEngine",
+    "Engine",
+    "WeasyPrintEngine",
+    "build_html",
+    "engine_names",
+    "optimize_pdf",
+    "render",
+    "resolve_engine",
+]
 
 
 def resolve_engine(engine: str | None) -> str:
-    """Selection precedence: explicit argument > MUSSANNONI_ENGINE env var > default."""
+    """Selection precedence: explicit argument > ``MUSSANNONI_ENGINE`` > the workshop default."""
     name = engine or os.environ.get(ENGINE_ENV_VAR) or DEFAULT_ENGINE
     if name not in ENGINES:
         raise ValueError(f"Unknown rendering engine {name!r}; choose from {engine_names()}")
@@ -136,7 +67,7 @@ def resolve_engine(engine: str | None) -> str:
 
 
 def build_html(level: str, report_key: str) -> tuple[str, Path, Path, str]:
-    """Render the template + fixture to HTML on disk, identically for every engine.
+    """Render the working template + fixture to HTML on disk, identically for every engine.
 
     Returns the HTML string, the work directory, the destination directory, and the base URL
     (the template source directory) that engines use to resolve relative asset references.
@@ -169,72 +100,14 @@ def build_html(level: str, report_key: str) -> tuple[str, Path, Path, str]:
     return html, work_dir, destination, base_url
 
 
-def optimize_pdf(pdf_path: Path) -> None:
-    """Structurally recompress a rendered PDF in place, content-preserving.
-
-    Chromium/agent-browser emits every absolutely-positioned span as a plaintext PDF object with
-    no object streams, so a four-page render balloons past 1.5MB of uncompressed dictionaries.
-    Re-saving through PyMuPDF with object streams, deflate and garbage collection compacts that
-    ~5x while leaving every glyph, position and page geometry byte-identical. This is a purely
-    structural recompression: nothing is rescaled, re-rastered or downsampled, and both engines'
-    output runs through it. WeasyPrint output is already small, so this is a near no-op there.
-
-    The result is validated (still a ``%PDF-``, same page count, same page rectangles and
-    rotations) before it atomically replaces the original; anything else raises.
-    """
-    with pymupdf.open(pdf_path) as doc:
-        page_count = doc.page_count
-        geometry = [(round(page.rect.width, 3), round(page.rect.height, 3), page.rotation)
-                    for page in doc]
-        # Font subsetting is deliberately NOT attempted. It trims only ~2% further (5.9KB on a
-        # 4-page render), but it leaves the font tables in a state where the following save can
-        # run for many minutes instead of ~1s. That is not predictable from document size - it
-        # hit both a 33MB/16-page report and a 2.5MB one - so there is no safe guard to gate it
-        # behind. The structural recompression below is where the whole ~5x win comes from.
-        # A deterministic sibling name (not mkstemp) so an interrupted run leaves at most one
-        # stale file that the next run overwrites, instead of accumulating tmp*.pdf debris.
-        tmp_path = pdf_path.with_name(pdf_path.name + ".tmp")
-        tmp_path.unlink(missing_ok=True)
-        try:
-            # clean=True is deliberately NOT used: it rewrites every content stream, which on
-            # dense reports (region-shule-nafasi-jumla: 16 pages, 33MB) runs for over ten
-            # minutes, and it saves nothing - it measured ~1.4KB LARGER on a 4-page render.
-            doc.save(
-                str(tmp_path),
-                garbage=4,
-                deflate=True,
-                deflate_fonts=True,
-                use_objstms=1,
-            )
-        except Exception:
-            tmp_path.unlink(missing_ok=True)
-            raise
-
-    if not tmp_path.read_bytes().startswith(b"%PDF-"):
-        tmp_path.unlink(missing_ok=True)
-        raise RuntimeError(f"Optimized PDF is not a valid %PDF-: {pdf_path}")
-    with pymupdf.open(tmp_path) as optimized:
-        if optimized.page_count != page_count:
-            tmp_path.unlink(missing_ok=True)
-            raise RuntimeError(
-                f"Optimization changed page count {page_count} -> {optimized.page_count}: "
-                f"{pdf_path}"
-            )
-        new_geometry = [(round(page.rect.width, 3), round(page.rect.height, 3), page.rotation)
-                        for page in optimized]
-        if new_geometry != geometry:
-            tmp_path.unlink(missing_ok=True)
-            raise RuntimeError(f"Optimization changed page geometry: {pdf_path}")
-    os.replace(tmp_path, pdf_path)
-
-
 def render(
     level: str, report_key: str, *, engine: str | None = None, optimize: bool = True
 ) -> Path:
     """Build the HTML once and render it to PDF through the selected engine.
 
     Unless ``optimize`` is False, the engine's output is structurally recompressed in place by
-    :func:`optimize_pdf` (object streams + deflate + garbage collection), content-preserving.
+    :func:`mussannoni.optimize.optimize_pdf` (object streams + deflate + garbage collection),
+    which is content-preserving and pixel-identical.
     """
     engine_name = resolve_engine(engine)
     implementation = ENGINES[engine_name]
