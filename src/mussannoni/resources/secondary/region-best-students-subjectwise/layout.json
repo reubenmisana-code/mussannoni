@@ -1,0 +1,1516 @@
+{
+  "body": {
+    "cells": [
+      {
+        "align": "center",
+        "classes": [],
+        "column": 0,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "left",
+        "classes": [],
+        "column": 1,
+        "line_class": "t3",
+        "pad_left": 1.56,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "left",
+        "classes": [],
+        "column": 2,
+        "line_class": "t3",
+        "pad_left": 1.66,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "left",
+        "classes": [],
+        "column": 3,
+        "line_class": "t3",
+        "pad_left": 1.71,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "left",
+        "classes": [],
+        "column": 4,
+        "line_class": "t3",
+        "pad_left": 1.7,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 5,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 8.07,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "center",
+        "classes": [],
+        "column": 6,
+        "line_class": "t4",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t4",
+        "top_pt": 6.514
+      },
+      {
+        "align": "right",
+        "classes": [],
+        "column": 7,
+        "line_class": "t4",
+        "pad_left": 0.0,
+        "pad_right": 13.54,
+        "rotation": 0,
+        "run_class": "t4",
+        "top_pt": 6.514
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f2"
+        ],
+        "column": 8,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      },
+      {
+        "align": "left",
+        "classes": [
+          "f3"
+        ],
+        "column": 9,
+        "line_class": "t3",
+        "pad_left": 1.58,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 6.454
+      }
+    ],
+    "row_height_pt": 14.88
+  },
+  "decorations": {
+    "loose_lines": [],
+    "vectors": []
+  },
+  "header": {
+    "height_pt": 138.17,
+    "labels": [
+      "S/NO.",
+      "COUNCIL",
+      "SCHOOL",
+      "CATEGORY",
+      "CANDIDATE FULL NAME",
+      "SEX",
+      "MARKS",
+      "GRADE",
+      "POSITION",
+      "COMPETENCY LEVEL",
+      ""
+    ],
+    "row_count": 4,
+    "rows": [
+      {
+        "cells": [
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 11,
+            "column": 0,
+            "lines": [
+              {
+                "class": "t0",
+                "left_pt": 258.023,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "HE"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.069,
+                        "text": "RI"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ME"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": " MI"
+                      },
+                      {
+                        "margin_pt": 0.117,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "IS"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "TE"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.119,
+                        "text": "'S "
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "FF"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "E"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "THE PRIME MINISTER'S OFFICE"
+                  }
+                ],
+                "top_pt": 3.603
+              },
+              {
+                "class": "t0",
+                "left_pt": 198.623,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "EG"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.078,
+                        "text": "NA"
+                      },
+                      {
+                        "margin_pt": -0.413,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.106,
+                        "text": " A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "DM"
+                      },
+                      {
+                        "margin_pt": -0.129,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.119,
+                        "text": "IS"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "TR"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.508,
+                        "text": "TI"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ON"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": " A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "D L"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "OC"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "L G"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "OV"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "ERN"
+                      },
+                      {
+                        "margin_pt": -0.121,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.069,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.119,
+                        "text": "T"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "REGIONAL ADMINISTRATION AND LOCAL GOVERNMENT"
+                  }
+                ],
+                "top_pt": 18.483
+              },
+              {
+                "class": "t0",
+                "left_pt": 290.303,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "MW"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.411,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "ZA"
+                      },
+                      {
+                        "margin_pt": -0.413,
+                        "text": " R"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.068,
+                        "text": "GI"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "ON"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "MWANZA REGION"
+                  }
+                ],
+                "top_pt": 33.363
+              },
+              {
+                "class": "t0",
+                "left_pt": 176.903,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "EG"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.078,
+                        "text": "NA"
+                      },
+                      {
+                        "margin_pt": -0.413,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.106,
+                        "text": " FO"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "M T"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": 0.059,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.078,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.119,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.129,
+                        "text": "OC"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "K"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": " A"
+                      },
+                      {
+                        "margin_pt": -0.315,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.068,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ES"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "SM"
+                      },
+                      {
+                        "margin_pt": -0.129,
+                        "text": "EN"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.119,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "ES"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "LT"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "S,"
+                      },
+                      {
+                        "margin_pt": 0.117,
+                        "text": " JU"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "Y"
+                      },
+                      {
+                        "margin_pt": -0.166,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "2"
+                      },
+                      {
+                        "margin_pt": -0.061,
+                        "text": "0"
+                      },
+                      {
+                        "margin_pt": -0.06,
+                        "text": "26"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "REGIONAL FORM TWO MOCK ASSESSMENT RESULTS, JULY 2026"
+                  }
+                ],
+                "top_pt": 48.243
+              }
+            ],
+            "pad_left": 176.89,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 59.08,
+        "index": 0
+      },
+      {
+        "cells": [
+          {
+            "align": "right",
+            "classes": [
+              "f1"
+            ],
+            "colspan": 10,
+            "column": 0,
+            "lines": [
+              {
+                "class": "t0",
+                "left_pt": 132.383,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "MW"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.411,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "ZA"
+                      },
+                      {
+                        "margin_pt": -0.413,
+                        "text": " T"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.077,
+                        "text": "P 1"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "0 "
+                      },
+                      {
+                        "margin_pt": 0.117,
+                        "text": "B"
+                      },
+                      {
+                        "margin_pt": -0.119,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ST"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": " ST"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "DE"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": "NT"
+                      },
+                      {
+                        "margin_pt": -0.108,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.068,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "IN"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": " HI"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ST"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.078,
+                        "text": "RI"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.41,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.117,
+                        "text": "Y"
+                      },
+                      {
+                        "margin_pt": -0.166,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": " T"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.509,
+                        "text": "NZ"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.411,
+                        "text": " N"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.509,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.127,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.412,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "I "
+                      },
+                      {
+                        "margin_pt": 0.118,
+                        "text": " S"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "UB"
+                      },
+                      {
+                        "margin_pt": -0.12,
+                        "text": "JE"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "CT"
+                      }
+                    ],
+                    "class": "t0",
+                    "text": "MWANZA TOP 10 BEST STUDENTS IN HISTORIA YA TANZANIA NA MAADILI  SUBJECT"
+                  }
+                ],
+                "top_pt": 4.043
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 131.33,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 10,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 14.92,
+        "index": 1
+      },
+      {
+        "cells": [
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 11,
+            "column": 0,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 14.82,
+        "index": 2
+      },
+      {
+        "cells": [
+          {
+            "align": "center",
+            "classes": [
+              "f2"
+            ],
+            "colspan": 1,
+            "column": 0,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 5.677,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "/N"
+                      },
+                      {
+                        "margin_pt": -0.004,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": "."
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "S/NO."
+                  }
+                ],
+                "top_pt": 41.319
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [],
+            "colspan": 1,
+            "column": 1,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 16.387,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.071,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "IL"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "COUNCIL"
+                  }
+                ],
+                "top_pt": 41.319
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 15.59,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [],
+            "colspan": 1,
+            "column": 2,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 26.847,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "H"
+                      },
+                      {
+                        "margin_pt": -0.107,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "SCHOOL"
+                  }
+                ],
+                "top_pt": 41.319
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 25.94,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [],
+            "colspan": 1,
+            "column": 3,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 15.317,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.278,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.076,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "G"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.07,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "Y"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "CATEGORY"
+                  }
+                ],
+                "top_pt": 41.319
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 14.49,
+            "rowspan": 1
+          },
+          {
+            "align": "right",
+            "classes": [],
+            "colspan": 1,
+            "column": 4,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 33.287,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.106,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.278,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "ID"
+                      },
+                      {
+                        "margin_pt": -0.004,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.363,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.076,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": " F"
+                      },
+                      {
+                        "margin_pt": -0.004,
+                        "text": "U"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.094,
+                        "text": "L"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": " N"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.277,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.004,
+                        "text": "E"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "CANDIDATE FULL NAME"
+                  }
+                ],
+                "top_pt": 41.319
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 32.09,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [],
+            "colspan": 1,
+            "column": 5,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 9.226,
+                "letter_spacing_pt": 0.0,
+                "rotation": 90,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.055,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.056,
+                        "text": "X"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "SEX"
+                  }
+                ],
+                "top_pt": 47.532
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 6,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 14.206,
+                "letter_spacing_pt": 0.0,
+                "rotation": 90,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.021,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.014,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.099,
+                        "text": "K"
+                      },
+                      {
+                        "margin_pt": -0.014,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "MARKS"
+                  }
+                ],
+                "top_pt": 47.532
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 7,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 14.146,
+                "letter_spacing_pt": 0.0,
+                "rotation": 90,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "G"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "R"
+                      },
+                      {
+                        "margin_pt": -0.014,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.014,
+                        "text": "D"
+                      },
+                      {
+                        "margin_pt": -0.099,
+                        "text": "E"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "GRADE"
+                  }
+                ],
+                "top_pt": 47.532
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [],
+            "colspan": 1,
+            "column": 8,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 14.186,
+                "letter_spacing_pt": 0.0,
+                "rotation": 90,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.055,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.056,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.105,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": -0.088,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.02,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "N"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "POSITION"
+                  }
+                ],
+                "top_pt": 47.532
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 9,
+            "lines": [
+              {
+                "class": "t1",
+                "left_pt": 5.247,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "O"
+                      },
+                      {
+                        "margin_pt": -0.071,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": -0.003,
+                        "text": "P"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "T"
+                      },
+                      {
+                        "margin_pt": 0.075,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "N"
+                      },
+                      {
+                        "margin_pt": -0.106,
+                        "text": "C"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "Y"
+                      },
+                      {
+                        "margin_pt": 0.107,
+                        "text": " L"
+                      },
+                      {
+                        "margin_pt": -0.096,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "V"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "E"
+                      },
+                      {
+                        "margin_pt": -0.062,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t1",
+                    "text": "COMPETENCY LEVEL"
+                  }
+                ],
+                "top_pt": 21.519
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "left",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 10,
+            "lines": [],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 49.35,
+        "index": 3
+      }
+    ]
+  },
+  "level": "secondary",
+  "measured_pages": 23,
+  "page": {
+    "height_pt": 612.0,
+    "orientation": "landscape",
+    "width_pt": 792.0
+  },
+  "report_key": "region_best_students_subjectwise",
+  "rows_per_page": 11,
+  "rule": {
+    "fill": "color(srgb 0.000000 0.000000 0.000000)",
+    "header_d": "M84.84 144.36h0.6v48.12h-0.6ZM155.52 144.36h0.6v48.12h-0.6ZM244.56 144.36h0.6v48.12h-0.6ZM322.32 144.36h0.6v48.12h-0.6ZM488.52 144.36h0.6v48.12h-0.6ZM547.08 144.36h0.6v48.12h-0.6ZM581.28 144.36h0.6v48.12h-0.6ZM615.48 144.36h0.6v48.12h-0.6ZM51.48 143.16h664.68v1.2h-664.68Z",
+    "width_pt": 0.6
+  },
+  "sample_unit": "Mwanza Best students-Subjectwise",
+  "schema_version": 1,
+  "scope": "region",
+  "table": {
+    "columns": [
+      33.93,
+      70.66,
+      89.04,
+      77.76,
+      166.2,
+      24.3,
+      34.26,
+      34.16,
+      34.24,
+      99.84,
+      18.78
+    ],
+    "width_pt": 683.17,
+    "x_pt": 51.23,
+    "y_pt": 54.96
+  },
+  "text_styles": {
+    "t0": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 9.74
+    },
+    "t1": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.54
+    },
+    "t10": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 7.69
+    },
+    "t11": {
+      "font_family": "'Report CIDFont-F1'",
+      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "size_pt": 7.33
+    },
+    "t12": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 7.33
+    },
+    "t2": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.53
+    },
+    "t3": {
+      "font_family": "'Report CIDFont-F1'",
+      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "size_pt": 8.18
+    },
+    "t4": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.18
+    },
+    "t5": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 9.98
+    },
+    "t6": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.78
+    },
+    "t7": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.77
+    },
+    "t8": {
+      "font_family": "'Report CIDFont-F1'",
+      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "size_pt": 8.3
+    },
+    "t9": {
+      "font_family": "'Report CIDFont-F2'",
+      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "size_pt": 8.3
+    }
+  },
+  "title": "BEST STUDENTS-SUBJECTWISE"
+}

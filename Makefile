@@ -1,4 +1,6 @@
-.PHONY: setup doctor sync catalog fetch extract fonts convert convert-secondary convert-primary convert-one render status lint format test check
+.PHONY: setup doctor sync catalog fetch extract fonts convert convert-secondary convert-primary \
+        convert-one render status lint format test check package-resources check-resources \
+        build dist-check clean-dist
 
 # Install poppler and the licensed report faces. Idempotent; re-run after any env reset.
 setup:
@@ -51,13 +53,38 @@ render:
 status:
 	uv run python -m tools.status
 
+# ---------------------------------------------------------------------------------------
+# Packaging. The installable package renders from src/mussannoni/resources/, which is
+# generated from templates/. Re-run package-resources after any change under templates/.
+# ---------------------------------------------------------------------------------------
+
+# Sync templates/ -> src/mussannoni/resources/ and re-distil every layout.json.
+package-resources:
+	uv run python -m tools.package_resources
+
+# Fail if the committed package resources have drifted from templates/.
+check-resources:
+	uv run python -m tools.package_resources --check
+
+# Build the wheel and sdist into dist/.
+build: check-resources
+	rm -rf dist
+	uv build
+
+# Validate the built distributions' metadata the way PyPI will.
+dist-check: build
+	uv run --with twine twine check dist/*
+
+clean-dist:
+	rm -rf dist
+
 lint:
 	uv run ruff check .
 
 format:
-	uv run ruff format tools tests
+	uv run ruff format src tools tests
 
 test:
 	uv run pytest
 
-check: lint test
+check: lint check-resources test

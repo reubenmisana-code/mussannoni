@@ -413,38 +413,45 @@ wheels = [
 [[package]]
 name = "mussannoni"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
-    { name = "httpx" },
     { name = "jinja2" },
+    { name = "pymupdf" },
+    { name = "weasyprint" },
+]
+
+[package.optional-dependencies]
+workshop = [
+    { name = "httpx" },
     { name = "lxml" },
     { name = "pillow" },
-    { name = "pymupdf" },
     { name = "pyyaml" },
     { name = "scikit-image" },
-    { name = "weasyprint" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "mussannoni", extra = ["workshop"] },
     { name = "pytest" },
     { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "httpx", specifier = "==0.28.1" },
+    { name = "httpx", marker = "extra == 'workshop'", specifier = "==0.28.1" },
     { name = "jinja2", specifier = "==3.1.6" },
-    { name = "lxml", specifier = "==6.1.3" },
-    { name = "pillow", specifier = "==12.3.0" },
+    { name = "lxml", marker = "extra == 'workshop'", specifier = "==6.1.3" },
+    { name = "pillow", marker = "extra == 'workshop'", specifier = "==12.3.0" },
     { name = "pymupdf", specifier = "==1.28.2" },
-    { name = "pyyaml", specifier = "==6.0.3" },
-    { name = "scikit-image", specifier = "==0.26.0" },
+    { name = "pyyaml", marker = "extra == 'workshop'", specifier = "==6.0.3" },
+    { name = "scikit-image", marker = "extra == 'workshop'", specifier = "==0.26.0" },
     { name = "weasyprint", specifier = ">=70.0" },
 ]
+provides-extras = ["workshop"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "mussannoni", extras = ["workshop"] },
     { name = "pytest", specifier = "==9.1.1" },
     { name = "ruff", specifier = "==0.16.8" },
 ]

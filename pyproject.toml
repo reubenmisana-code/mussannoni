@@ -1,30 +1,111 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
 [project]
 name = "mussannoni"
 version = "0.1.0"
-description = "Measured SARS PDF-to-HTML conversion workshop"
+description = "Render Tanzanian school examination result reports to pixel-measured PDFs from plain Python dicts"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
+license = "MIT"
+license-files = ["LICENSE", "templates/_shared/fonts/LIBERATION-LICENSE.txt"]
+keywords = [
+    "pdf",
+    "reports",
+    "tanzania",
+    "education",
+    "necta",
+    "sars",
+    "weasyprint",
+    "jinja2",
+]
+authors = [
+    { name = "Reuben Misana" },
+    { name = "Kiyabo Nhende", email = "kiyaboapp@gmail.com" },
+]
+maintainers = [
+    { name = "Kiyabo Nhende", email = "kiyaboapp@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Printing",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Typing :: Typed",
+]
+
+# The runtime needs only a templating engine, a renderer and a PDF writer. Everything the
+# fidelity workshop uses (HTTP scraping, raster diffing, SSIM) lives in the `workshop` extra so
+# an application install stays small.
 dependencies = [
-    "httpx==0.28.1",
     "jinja2==3.1.6",
-    "lxml==6.1.3",
-    "pillow==12.3.0",
     "pymupdf==1.28.2",
-    "pyyaml==6.0.3",
-    "scikit-image==0.26.0",
     "weasyprint>=70.0",
 ]
 
+[project.optional-dependencies]
+# The measurement workshop: fetching reference PDFs, extracting evidence, rastering and
+# comparing. Not needed to render a report.
+workshop = [
+    "httpx==0.28.1",
+    "lxml==6.1.3",
+    "pillow==12.3.0",
+    "pyyaml==6.0.3",
+    "scikit-image==0.26.0",
+]
+
+[project.scripts]
+mussannoni = "mussannoni.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/reubenmisana-code/mussannoni"
+Repository = "https://github.com/reubenmisana-code/mussannoni"
+Issues = "https://github.com/reubenmisana-code/mussannoni/issues"
+
 [dependency-groups]
 dev = [
+    "mussannoni[workshop]",
     "pytest==9.1.1",
     "ruff==0.16.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mussannoni"]
+
+# The sdist carries the package plus the workshop sources and docs, but never the measurement
+# artifacts: corpus/ (reference PDFs we do not own), extract/ (76 MB of evidence JSON),
+# output/ (35 MB of renders) and templates/**/fixture.json (257 MB of measured geometry).
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tools",
+    "/tests",
+    "/docs",
+    "/catalog",
+    "/scripts",
+    "/templates",
+    "/Makefile",
+    "/README.md",
+    "/LICENSE",
+    "/CREDITS.md",
+    "/CHANGELOG.md",
+]
+exclude = [
+    "templates/**/fixture.json",
 ]
 
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = [".", "src"]
 
 [tool.ruff]
 line-length = 100
