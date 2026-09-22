@@ -7064,7 +7064,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 5.91,
+                  "left_pt": 7.116,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -7075,27 +7075,23 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.646,
+                          "margin_pt": 0.02,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.647,
-                          "text": "F"
+                          "margin_pt": 0.021,
+                          "text": "FA"
                         },
                         {
-                          "margin_pt": -6.451,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -7.662,
+                          "margin_pt": 0.037,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -7.001,
+                          "margin_pt": -0.043,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.909,
+                          "margin_pt": -0.025,
                           "text": " "
                         }
                       ],
@@ -7103,11 +7099,11 @@
                       "text": "NAFASI "
                     }
                   ],
-                  "top_pt": 6.9
+                  "top_pt": 6.86
                 },
                 {
                   "class": "t3",
-                  "left_pt": 12.65,
+                  "left_pt": 13.856,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -7118,31 +7114,27 @@
                           "text": "K"
                         },
                         {
-                          "margin_pt": -7.646,
+                          "margin_pt": 0.02,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.909,
+                          "margin_pt": -0.025,
                           "text": "K"
                         },
                         {
-                          "margin_pt": -7.646,
+                          "margin_pt": 0.02,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.646,
-                          "text": "T"
-                        },
-                        {
-                          "margin_pt": -6.451,
-                          "text": "A"
+                          "margin_pt": 0.02,
+                          "text": "TA"
                         }
                       ],
                       "class": "t3",
                       "text": "KIKATA"
                     }
                   ],
-                  "top_pt": 6.9
+                  "top_pt": 6.86
                 }
               ],
               "pad_left": 0.0,

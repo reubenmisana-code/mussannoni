@@ -25,10 +25,20 @@
       "dy": -0.45,
       "samples": 9
     },
+    "CIDFont+F1|5.89|90": {
+      "dx": -0.4755,
+      "dy": -0.1045,
+      "samples": 2
+    },
     "CIDFont+F1|6.01|0": {
       "dx": -0.0801,
       "dy": -0.675,
       "samples": 10
+    },
+    "CIDFont+F1|6.01|90": {
+      "dx": -0.8775,
+      "dy": -0.0125,
+      "samples": 2
     },
     "CIDFont+F1|6.49|0": {
       "dx": -0.1186,
@@ -46,14 +56,14 @@
       "samples": 147
     },
     "CIDFont+F1|7.81|0": {
-      "dx": -0.0202,
-      "dy": -1.38,
-      "samples": 21
+      "dx": -0.0192,
+      "dy": -1.395,
+      "samples": 22
     },
     "CIDFont+F1|8.06|0": {
-      "dx": -0.0274,
+      "dx": -0.0266,
       "dy": -0.99,
-      "samples": 17
+      "samples": 18
     },
     "CIDFont+F2|4.09|0": {
       "dx": -0.0623,
@@ -143,20 +153,20 @@
       "samples": 159
     },
     "7.81": {
-      "dx": -0.0218,
+      "dx": -0.0202,
       "dy": -1.2,
-      "samples": 32
+      "samples": 33
     },
     "8.06": {
-      "dx": -0.0435,
-      "dy": -0.84,
-      "samples": 24
+      "dx": -0.0375,
+      "dy": -0.87,
+      "samples": 25
     }
   },
   "global": {
     "dx": -0.062,
     "dy": -0.87,
-    "samples": 630
+    "samples": 632
   },
   "iterations": 1,
   "level": "primary",

@@ -3040,7 +3040,7 @@
               "lines": [
                 {
                   "class": "t6",
-                  "left_pt": 2.929,
+                  "left_pt": 3.858,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -3051,27 +3051,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -5.527,
+                          "margin_pt": -0.045,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.057,
+                          "margin_pt": -0.025,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.592,
+                          "margin_pt": 0.058,
                           "text": " "
                         }
                       ],
@@ -3079,11 +3079,11 @@
                       "text": "NAFASI "
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 },
                 {
                   "class": "t6",
-                  "left_pt": 8.449,
+                  "left_pt": 9.378,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -3094,15 +3094,15 @@
                           "text": "M"
                         },
                         {
-                          "margin_pt": -7.637,
+                          "margin_pt": 0.039,
                           "text": "K"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "O"
                         },
                         {
-                          "margin_pt": -7.157,
+                          "margin_pt": 0.063,
                           "text": "A"
                         }
                       ],
@@ -3110,7 +3110,7 @@
                       "text": "MKOA"
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 }
               ],
               "pad_left": 0.0,
@@ -84390,7 +84390,7 @@
               "lines": [
                 {
                   "class": "t6",
-                  "left_pt": 2.929,
+                  "left_pt": 3.858,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -84401,27 +84401,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -5.527,
+                          "margin_pt": -0.045,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.057,
+                          "margin_pt": -0.025,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.592,
+                          "margin_pt": 0.058,
                           "text": " "
                         }
                       ],
@@ -84429,11 +84429,11 @@
                       "text": "NAFASI "
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 },
                 {
                   "class": "t6",
-                  "left_pt": 8.449,
+                  "left_pt": 9.378,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -84444,15 +84444,15 @@
                           "text": "M"
                         },
                         {
-                          "margin_pt": -7.637,
+                          "margin_pt": 0.039,
                           "text": "K"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "O"
                         },
                         {
-                          "margin_pt": -7.157,
+                          "margin_pt": 0.063,
                           "text": "A"
                         }
                       ],
@@ -84460,7 +84460,7 @@
                       "text": "MKOA"
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 }
               ],
               "pad_left": 0.0,
@@ -175616,7 +175616,7 @@
               "lines": [
                 {
                   "class": "t6",
-                  "left_pt": 2.929,
+                  "left_pt": 3.858,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -175627,27 +175627,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -5.527,
+                          "margin_pt": -0.045,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.057,
+                          "margin_pt": -0.025,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.592,
+                          "margin_pt": 0.058,
                           "text": " "
                         }
                       ],
@@ -175655,11 +175655,11 @@
                       "text": "NAFASI "
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 },
                 {
                   "class": "t6",
-                  "left_pt": 8.449,
+                  "left_pt": 9.378,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -175670,15 +175670,15 @@
                           "text": "M"
                         },
                         {
-                          "margin_pt": -7.637,
+                          "margin_pt": 0.039,
                           "text": "K"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "O"
                         },
                         {
-                          "margin_pt": -7.157,
+                          "margin_pt": 0.063,
                           "text": "A"
                         }
                       ],
@@ -175686,7 +175686,7 @@
                       "text": "MKOA"
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 }
               ],
               "pad_left": 0.0,
@@ -267421,7 +267421,7 @@
               "lines": [
                 {
                   "class": "t6",
-                  "left_pt": 2.929,
+                  "left_pt": 3.858,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -267432,27 +267432,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.537,
+                          "margin_pt": -0.049,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -5.527,
+                          "margin_pt": -0.045,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "S"
                         },
                         {
-                          "margin_pt": -6.057,
+                          "margin_pt": -0.025,
                           "text": "I"
                         },
                         {
-                          "margin_pt": -2.592,
+                          "margin_pt": 0.058,
                           "text": " "
                         }
                       ],
@@ -267460,11 +267460,11 @@
                       "text": "NAFASI "
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 },
                 {
                   "class": "t6",
-                  "left_pt": 8.449,
+                  "left_pt": 9.378,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -267475,15 +267475,15 @@
                           "text": "M"
                         },
                         {
-                          "margin_pt": -7.637,
+                          "margin_pt": 0.039,
                           "text": "K"
                         },
                         {
-                          "margin_pt": -6.536,
+                          "margin_pt": -0.05,
                           "text": "O"
                         },
                         {
-                          "margin_pt": -7.157,
+                          "margin_pt": 0.063,
                           "text": "A"
                         }
                       ],
@@ -267491,7 +267491,7 @@
                       "text": "MKOA"
                     }
                   ],
-                  "top_pt": 5.58
+                  "top_pt": 5.371
                 }
               ],
               "pad_left": 0.0,

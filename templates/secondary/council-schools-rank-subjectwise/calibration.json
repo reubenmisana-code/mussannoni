@@ -10,6 +10,11 @@
       "dy": -0.56,
       "samples": 737
     },
+    "Arial-BoldMT|6.72|90": {
+      "dx": -0.8419,
+      "dy": 0.09,
+      "samples": 18
+    },
     "Arial-BoldMT|7.32|0": {
       "dx": -0.07,
       "dy": -1.04,
@@ -18,7 +23,7 @@
     "Arial-BoldMT|7.8|0": {
       "dx": -0.0578,
       "dy": -1.57,
-      "samples": 5296
+      "samples": 5306
     },
     "Arial-BoldMT|9.0|0": {
       "dx": -0.0076,
@@ -65,13 +70,13 @@
     "7.8": {
       "dx": -0.0495,
       "dy": -1.57,
-      "samples": 8452
+      "samples": 8462
     }
   },
   "global": {
     "dx": -0.05,
     "dy": -1.45,
-    "samples": 11396
+    "samples": 11406
   },
   "iterations": 1,
   "level": "secondary",

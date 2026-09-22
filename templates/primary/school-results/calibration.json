@@ -20,15 +20,30 @@
       "dy": -0.65,
       "samples": 18
     },
+    "Arial-BoldMT|5.76|90": {
+      "dx": -0.2766,
+      "dy": 0.13,
+      "samples": 2
+    },
     "Arial-BoldMT|6.24|0": {
-      "dx": -0.0611,
+      "dx": -0.0578,
       "dy": -0.05,
-      "samples": 533
+      "samples": 553
+    },
+    "Arial-BoldMT|6.24|90": {
+      "dx": -0.3117,
+      "dy": -0.11,
+      "samples": 8
     },
     "Arial-BoldMT|7.32|0": {
-      "dx": -0.0298,
+      "dx": -0.028,
       "dy": -0.93,
-      "samples": 72
+      "samples": 74
+    },
+    "Arial-BoldMT|7.32|90": {
+      "dx": -1.252,
+      "dy": -0.17,
+      "samples": 5
     },
     "Arial-BoldMT|8.28|0": {
       "dx": -0.012,
@@ -37,8 +52,8 @@
     },
     "ArialMT|6.24|0": {
       "dx": -0.0434,
-      "dy": -0.07,
-      "samples": 1368
+      "dy": -0.05,
+      "samples": 1518
     },
     "ArialNarrow-Bold|4.68|0": {
       "dx": -0.0597,
@@ -55,10 +70,20 @@
       "dy": -0.62,
       "samples": 181
     },
+    "ArialNarrow-Bold|5.76|90": {
+      "dx": -0.6074,
+      "dy": -0.14,
+      "samples": 4
+    },
     "ArialNarrow-Bold|6.24|0": {
       "dx": -0.0441,
       "dy": 0.08,
       "samples": 36
+    },
+    "ArialNarrow-Bold|6.24|90": {
+      "dx": 0.0528,
+      "dy": 0.22,
+      "samples": 24
     },
     "Calibri|5.76|0": {
       "dx": -0.0045,
@@ -85,18 +110,18 @@
     "6.24": {
       "dx": -0.0489,
       "dy": -0.05,
-      "samples": 1937
+      "samples": 2107
     },
     "7.32": {
-      "dx": -0.0298,
+      "dx": -0.028,
       "dy": -0.93,
-      "samples": 72
+      "samples": 74
     }
   },
   "global": {
     "dx": -0.051,
     "dy": -0.07,
-    "samples": 2235
+    "samples": 2407
   },
   "iterations": 1,
   "level": "primary",

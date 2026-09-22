@@ -1586,7 +1586,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -1597,23 +1597,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -1621,7 +1621,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -1638,7 +1638,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 5.964,
+                  "left_pt": 6.249,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -1649,23 +1649,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -1673,7 +1673,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -45858,7 +45858,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -45869,23 +45869,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -45893,7 +45893,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -45910,7 +45910,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 6.004,
+                  "left_pt": 6.289,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -45921,23 +45921,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -45945,7 +45945,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -93989,7 +93989,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -94000,23 +94000,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -94024,7 +94024,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -94041,7 +94041,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 6.004,
+                  "left_pt": 6.289,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -94052,23 +94052,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -94076,7 +94076,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -141174,7 +141174,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -141185,23 +141185,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -141209,7 +141209,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -141226,7 +141226,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 6.004,
+                  "left_pt": 6.289,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -141237,23 +141237,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -141261,7 +141261,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -187892,7 +187892,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -187903,23 +187903,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -187927,7 +187927,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -187944,7 +187944,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 6.004,
+                  "left_pt": 6.289,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -187955,23 +187955,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -187979,7 +187979,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -234190,7 +234190,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 3.484,
+                  "left_pt": 3.769,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -234201,23 +234201,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -234225,7 +234225,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,
@@ -234242,7 +234242,7 @@
               "lines": [
                 {
                   "class": "t3",
-                  "left_pt": 5.974,
+                  "left_pt": 6.259,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -234253,23 +234253,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.859,
+                          "margin_pt": 0.073,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -7.159,
+                          "margin_pt": -0.073,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -7.22,
+                          "margin_pt": -0.012,
                           "text": "K"
                         }
                       ],
@@ -234277,7 +234277,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 12.57
+                  "top_pt": 12.839
                 }
               ],
               "pad_left": 0.0,

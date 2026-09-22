@@ -1,0 +1,81 @@
+{
+  "id": "FEAT-001",
+  "type": "chore",
+  "description": "Establish a trustworthy measurement environment and capture the before-baseline for the rotation-heavy reports. Without poppler + the licensed Arial/Times faces, tools/compare.py cannot produce metrics comparable to the committed results, so this must run first. Network is OPEN in this sandbox and `make setup` completes fully (verified). This feature does not change reproduction code; it makes the environment green and records numbers to prove improvement later.",
+  "status": "completed",
+  "steps": [
+    "Run `uv sync` (or let `uv run` sync) so the venv exists with pymupdf, pillow, scikit-image, scipy, numpy, lxml, jinja2, pyyaml.",
+    "Run `bash scripts/setup-environment.sh` (== `make setup`) to install poppler-utils, liberation-sans/serif fonts, cabextract, and download+extract Arial/Times corefonts into /usr/share/fonts/msttcore, then fc-cache. This uses dnf + curl to sourceforge and succeeds under the open network.",
+    "Run `uv run python -m tools.doctor` (== `make doctor`) and confirm it prints 'environment ready: measurements are comparable to the committed results' with [ok] for pdftoppm, agent-browser, and all 7 licensed faces.",
+    "Run `uv run pytest` (== `make test`) and confirm the existing suite is green against the committed outputs, establishing the baseline test state.",
+    "Record a before-baseline: for each of secondary council_schools_rank, region_schools_rank_overall, region_schools_rank_government, and primary council_school_rank_ufaulu_alama, region_shule_nafasi_jumla, read output/<level>/<key-with-dashes>/report.json and note the summary fields (worst_ssim, worst_pixel_delta_percent, worst_text_drift_pt, worst_column_drift_pt, pages_passing/pages_total). Write these numbers into the feature's `findings` field so FEAT-002 can show the delta.",
+    "Do NOT modify any file under corpus/. Do NOT relax thresholds anywhere."
+  ],
+  "acceptance_criteria": [
+    "`uv run python -m tools.doctor` exits 0 and prints 'environment ready'.",
+    "`uv run pytest` runs to completion (green) against the committed outputs.",
+    "The feature's findings field contains the recorded before-baseline summary numbers for the five named reports."
+  ],
+  "verification": [
+    "make doctor",
+    "make test"
+  ],
+  "blocked_reason": null,
+  "findings": {
+    "environment": {
+      "uv_sync": "ok (31 packages resolved, venv present)",
+      "setup_script": "bash scripts/setup-environment.sh -> 'environment ready'. poppler 24.08.0 already installed, liberation-sans/serif + cabextract present, Arial/Times already in /usr/share/fonts/msttcore (fc-match resolves arial.ttf/arialbd.ttf/times.ttf).",
+      "doctor": "uv run python -m tools.doctor -> exit 0, 'environment ready: measurements are comparable to the committed results'. All binaries ([ok] pdftoppm 24.08.0, [ok] agent-browser at /root/.nvm/versions/node/v22.23.2/bin/agent-browser) and all 7 licensed faces [ok].",
+      "pytest": "uv run pytest -> 654 passed, 46 skipped in ~12s (green against committed outputs). The 46 skips are the per-report done-gate tests that skip while status=wip.",
+      "network_mode": "OPEN (setup completed; no external fetch needed since fonts/poppler already present)."
+    },
+    "note": "This chore made NO code changes. It only verified env readiness and recorded the before-baseline from the committed output/<level>/<key>/report.json summary blocks below. All five reports are status=wip with 0 pages passing; text_content_equal=true throughout.",
+    "before_baseline": {
+      "secondary/council_schools_rank": {
+        "dir": "output/secondary/council-schools-rank",
+        "worst_ssim": 0.89869,
+        "worst_pixel_delta_percent": 12.7982,
+        "worst_text_drift_pt": 0.68,
+        "worst_column_drift_pt": 0.12,
+        "pages_passing": 0,
+        "pages_total": 1
+      },
+      "secondary/region_schools_rank_overall": {
+        "dir": "output/secondary/region-schools-rank-overall",
+        "worst_ssim": 0.881996,
+        "worst_pixel_delta_percent": 13.8447,
+        "worst_text_drift_pt": 0.66,
+        "worst_column_drift_pt": 0.18,
+        "pages_passing": 0,
+        "pages_total": 6
+      },
+      "secondary/region_schools_rank_government": {
+        "dir": "output/secondary/region-schools-rank-government",
+        "worst_ssim": 0.875789,
+        "worst_pixel_delta_percent": 14.4278,
+        "worst_text_drift_pt": 0.66,
+        "worst_column_drift_pt": 0.18,
+        "pages_passing": 0,
+        "pages_total": 4
+      },
+      "primary/council_school_rank_ufaulu_alama": {
+        "dir": "output/primary/council-school-rank-ufaulu-alama",
+        "worst_ssim": 0.883696,
+        "worst_pixel_delta_percent": 12.8221,
+        "worst_text_drift_pt": 0.666,
+        "worst_column_drift_pt": 0.36,
+        "pages_passing": 0,
+        "pages_total": 4
+      },
+      "primary/region_shule_nafasi_jumla": {
+        "dir": "output/primary/region-shule-nafasi-jumla",
+        "worst_ssim": 0.893121,
+        "worst_pixel_delta_percent": 11.1873,
+        "worst_text_drift_pt": 0.66,
+        "worst_column_drift_pt": 0.3,
+        "pages_passing": 0,
+        "pages_total": 16
+      }
+    }
+  }
+}

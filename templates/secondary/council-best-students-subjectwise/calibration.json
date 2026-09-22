@@ -10,15 +10,30 @@
       "dy": -1.4,
       "samples": 4
     },
+    "Arial-BoldMT|7.56|90": {
+      "dx": -1.2121,
+      "dy": 0.28,
+      "samples": 3
+    },
     "Arial-BoldMT|8.28|0": {
       "dx": -0.0569,
       "dy": -1.19,
       "samples": 45
     },
+    "Arial-BoldMT|8.28|90": {
+      "dx": -1.1523,
+      "dy": -0.35,
+      "samples": 9
+    },
     "Arial-BoldMT|9.0|0": {
       "dx": -0.0513,
       "dy": -0.05,
-      "samples": 281
+      "samples": 291
+    },
+    "Arial-BoldMT|9.0|90": {
+      "dx": -0.1775,
+      "dy": -0.23,
+      "samples": 68
     },
     "Arial-BoldMT|9.6|0": {
       "dx": -0.013,
@@ -31,14 +46,14 @@
       "samples": 30
     },
     "ArialMT|8.28|0": {
-      "dx": -0.0391,
-      "dy": -1.31,
-      "samples": 201
+      "dx": -0.043,
+      "dy": -1.295,
+      "samples": 240
     },
     "ArialMT|9.0|0": {
       "dx": -0.0406,
       "dy": -0.16,
-      "samples": 1136
+      "samples": 1380
     }
   },
   "by_size": {
@@ -55,12 +70,12 @@
     "8.28": {
       "dx": -0.0433,
       "dy": -1.28,
-      "samples": 246
+      "samples": 285
     },
     "9.0": {
       "dx": -0.0438,
       "dy": -0.11,
-      "samples": 1417
+      "samples": 1671
     },
     "9.6": {
       "dx": -0.013,
@@ -69,16 +84,16 @@
     }
   },
   "global": {
-    "dx": -0.043,
+    "dx": -0.044,
     "dy": -0.26,
-    "samples": 1722
+    "samples": 2015
   },
   "iterations": 1,
   "level": "secondary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_best_students_subjectwise",
   "residual": {
-    "dx": -0.0433,
+    "dx": -0.0438,
     "dy": -0.26,
     "worst_dx": 0.0695,
     "worst_dy": 1.61

@@ -10,15 +10,20 @@
       "dy": -0.876,
       "samples": 118
     },
+    "Arial-BoldMT|5.28|90": {
+      "dx": -0.5115,
+      "dy": -0.075,
+      "samples": 6
+    },
     "Arial-BoldMT|6.0|0": {
-      "dx": -0.0439,
-      "dy": -0.7,
-      "samples": 295
+      "dx": -0.0481,
+      "dy": -0.685,
+      "samples": 306
     },
     "Arial-BoldMT|6.12|0": {
-      "dx": -0.0416,
+      "dx": -0.0411,
       "dy": -0.8,
-      "samples": 191
+      "samples": 192
     },
     "Arial-BoldMT|7.08|0": {
       "dx": -0.0173,
@@ -60,10 +65,20 @@
       "dy": -1.01,
       "samples": 14
     },
+    "ArialNarrow-Bold|5.28|90": {
+      "dx": -0.9076,
+      "dy": -0.195,
+      "samples": 4
+    },
     "ArialNarrow-Bold|6.12|0": {
       "dx": -0.0925,
       "dy": -0.11,
       "samples": 13
+    },
+    "ArialNarrow-Bold|6.12|90": {
+      "dx": 0.0228,
+      "dy": -0.075,
+      "samples": 2
     }
   },
   "by_size": {
@@ -79,13 +94,13 @@
     },
     "6.0": {
       "dx": -0.0744,
-      "dy": -0.7,
-      "samples": 403
+      "dy": -0.685,
+      "samples": 414
     },
     "6.12": {
       "dx": -0.0364,
       "dy": -0.77,
-      "samples": 216
+      "samples": 217
     },
     "7.08": {
       "dx": -0.0173,
@@ -94,16 +109,16 @@
     }
   },
   "global": {
-    "dx": -0.059,
+    "dx": -0.061,
     "dy": -0.77,
-    "samples": 810
+    "samples": 822
   },
   "iterations": 1,
   "level": "primary",
   "note": "cumulative correction in points; the scaffold subtracts it from placed text",
   "report_key": "council_kata_rank_alama",
   "residual": {
-    "dx": -0.0585,
+    "dx": -0.061,
     "dy": -0.77,
     "worst_dx": 0.1661,
     "worst_dy": 1.52

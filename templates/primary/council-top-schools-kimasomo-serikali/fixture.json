@@ -56,7 +56,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 336.388,
+                  "left_pt": 336.376,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -131,7 +131,7 @@
                 },
                 {
                   "class": "t0",
-                  "left_pt": 301.588,
+                  "left_pt": 301.576,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -238,7 +238,7 @@
                 },
                 {
                   "class": "t0",
-                  "left_pt": 342.388,
+                  "left_pt": 342.376,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -297,7 +297,7 @@
                 },
                 {
                   "class": "t0",
-                  "left_pt": 218.518,
+                  "left_pt": 218.506,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -524,7 +524,7 @@
                 },
                 {
                   "class": "t0",
-                  "left_pt": 286.948,
+                  "left_pt": 286.936,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1056,7 +1056,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1083,7 +1083,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1110,7 +1110,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1137,7 +1137,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1164,7 +1164,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.558,
+                  "left_pt": 33.546,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -1191,7 +1191,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -2683,7 +2683,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -2691,26 +2691,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -2718,7 +2706,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.64
+                  "top_pt": 4.81
                 }
               ],
               "pad_left": 0.0,
@@ -14473,7 +14461,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 285.028,
+                  "left_pt": 285.016,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15005,7 +14993,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15032,7 +15020,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15059,7 +15047,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15086,7 +15074,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15113,7 +15101,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.558,
+                  "left_pt": 33.546,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -15140,7 +15128,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -16632,7 +16620,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -16640,26 +16628,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -16667,7 +16643,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -28433,7 +28409,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -28460,7 +28436,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -28487,7 +28463,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -28514,7 +28490,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -28541,7 +28517,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.568,
+                  "left_pt": 33.556,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -28568,7 +28544,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30060,7 +30036,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -30068,26 +30044,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -30095,7 +30059,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -30154,7 +30118,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 135.668,
+                  "left_pt": 135.656,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30690,7 +30654,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30717,7 +30681,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30744,7 +30708,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30771,7 +30735,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30798,7 +30762,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.568,
+                  "left_pt": 33.556,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -30825,7 +30789,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -32317,7 +32281,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -32325,26 +32289,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -32352,7 +32304,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -44100,7 +44052,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 266.068,
+                  "left_pt": 266.056,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44668,7 +44620,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44695,7 +44647,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44722,7 +44674,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44749,7 +44701,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44776,7 +44728,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.568,
+                  "left_pt": 33.556,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -44803,7 +44755,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -46295,7 +46247,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -46303,26 +46255,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -46330,7 +46270,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -58347,7 +58287,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -58374,7 +58314,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -58401,7 +58341,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -58428,7 +58368,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -58455,7 +58395,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.558,
+                  "left_pt": 33.546,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -58482,7 +58422,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -59974,7 +59914,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -59982,26 +59922,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -60009,7 +59937,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -60068,7 +59996,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 66.038,
+                  "left_pt": 66.026,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60668,7 +60596,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60695,7 +60623,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60722,7 +60650,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60749,7 +60677,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60776,7 +60704,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.558,
+                  "left_pt": 33.546,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -60803,7 +60731,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -62295,7 +62223,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -62303,26 +62231,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -62330,7 +62246,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.63
+                  "top_pt": 4.8
                 }
               ],
               "pad_left": 0.0,
@@ -73679,7 +73595,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 239.548,
+                  "left_pt": 239.536,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74291,7 +74207,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.648,
+                  "left_pt": 24.636,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74318,7 +74234,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.598,
+                  "left_pt": 24.586,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74345,7 +74261,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74372,7 +74288,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 24.578,
+                  "left_pt": 24.566,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74399,7 +74315,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 33.558,
+                  "left_pt": 33.546,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -74426,7 +74342,7 @@
               "lines": [
                 {
                   "class": "t0",
-                  "left_pt": 29.688,
+                  "left_pt": 29.676,
                   "letter_spacing_pt": 0.0,
                   "rotation": 0,
                   "runs": [
@@ -75918,7 +75834,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.264,
+                  "left_pt": 5.865,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -75926,26 +75842,14 @@
                       "chunks": [
                         {
                           "margin_pt": 0.0,
-                          "text": "N"
+                          "text": "NAF"
                         },
                         {
-                          "margin_pt": -9.36,
-                          "text": "A"
+                          "margin_pt": 0.003,
+                          "text": "AS"
                         },
                         {
-                          "margin_pt": -9.359,
-                          "text": "F"
-                        },
-                        {
-                          "margin_pt": -7.92,
-                          "text": "A"
-                        },
-                        {
-                          "margin_pt": -9.359,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.645,
+                          "margin_pt": 0.002,
                           "text": "I"
                         }
                       ],
@@ -75953,7 +75857,7 @@
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.64
+                  "top_pt": 4.81
                 }
               ],
               "pad_left": 0.0,

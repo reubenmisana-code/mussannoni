@@ -136,7 +136,7 @@
                       "text": "OFISI YA WAZIRI MKUU"
                     }
                   ],
-                  "top_pt": 1.876
+                  "top_pt": 1.861
                 },
                 {
                   "class": "t0",
@@ -275,7 +275,7 @@
                       "text": "TAWALA ZA MIKOA NA SERIKALI ZA MITAA"
                     }
                   ],
-                  "top_pt": 11.236
+                  "top_pt": 11.221
                 },
                 {
                   "class": "t0",
@@ -330,7 +330,7 @@
                       "text": "MKOA WA MWANZA"
                     }
                   ],
-                  "top_pt": 20.596
+                  "top_pt": 20.581
                 },
                 {
                   "class": "t0",
@@ -597,7 +597,7 @@
                       "text": "MATOKEO YA MTIHANI WA UTAMILIFU(MOCK) MKOA  DARASA LA IV MWEZI AGOSTI, 2026"
                     }
                   ],
-                  "top_pt": 29.956
+                  "top_pt": 29.941
                 },
                 {
                   "class": "t0",
@@ -724,7 +724,7 @@
                       "text": " SHULE 10 BORA  SOMO LA HISABATI"
                     }
                   ],
-                  "top_pt": 42.676
+                  "top_pt": 42.661
                 }
               ],
               "pad_left": 0.0,
@@ -1235,7 +1235,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -1262,7 +1262,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -1289,7 +1289,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -1316,7 +1316,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -1343,7 +1343,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -1383,7 +1383,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -2948,7 +2948,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -2959,31 +2959,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.27
+                  "top_pt": 4.425
                 }
               ],
               "pad_left": 0.0,
@@ -14055,7 +14051,7 @@
                       "text": " SHULE 10 BORA  SOMO LA KISWAHILI"
                     }
                   ],
-                  "top_pt": 25.296
+                  "top_pt": 25.281
                 }
               ],
               "pad_left": 0.0,
@@ -14566,7 +14562,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -14593,7 +14589,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -14620,7 +14616,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -14647,7 +14643,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -14674,7 +14670,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -14714,7 +14710,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -16279,7 +16275,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -16290,31 +16286,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.27
+                  "top_pt": 4.425
                 }
               ],
               "pad_left": 0.0,
@@ -28112,7 +28104,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -28139,7 +28131,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -28166,7 +28158,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -28193,7 +28185,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -28220,7 +28212,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -28260,7 +28252,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -29825,7 +29817,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -29836,31 +29828,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.28
+                  "top_pt": 4.435
                 }
               ],
               "pad_left": 0.0,
@@ -30170,7 +30158,7 @@
                       "text": " SHULE 10 BORA  SOMO LA SAYANSI"
                     }
                   ],
-                  "top_pt": 5.216
+                  "top_pt": 5.201
                 }
               ],
               "pad_left": 0.0,
@@ -30681,7 +30669,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -30708,7 +30696,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -30735,7 +30723,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -30762,7 +30750,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -30789,7 +30777,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -30829,7 +30817,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -32394,7 +32382,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -32405,31 +32393,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.28
+                  "top_pt": 4.435
                 }
               ],
               "pad_left": 0.0,
@@ -43686,7 +43670,7 @@
                       "text": " SHULE 10 BORA  SOMO LA ENGLISH LANGUAGE"
                     }
                   ],
-                  "top_pt": 18.576
+                  "top_pt": 18.561
                 }
               ],
               "pad_left": 0.0,
@@ -44197,7 +44181,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -44224,7 +44208,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -44251,7 +44235,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -44278,7 +44262,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -44305,7 +44289,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -44345,7 +44329,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -45917,7 +45901,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -45928,31 +45912,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.28
+                  "top_pt": 4.435
                 }
               ],
               "pad_left": 0.0,
@@ -57518,7 +57498,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -57545,7 +57525,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -57572,7 +57552,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -57599,7 +57579,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -57626,7 +57606,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -57666,7 +57646,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.086
+                  "top_pt": 7.071
                 }
               ],
               "pad_left": 0.0,
@@ -59231,7 +59211,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -59242,31 +59222,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.28
+                  "top_pt": 4.435
                 }
               ],
               "pad_left": 0.0,
@@ -59560,7 +59536,7 @@
                       "text": " SHULE 10 BORA  SOMO LA JIOGRAFIA NA MAZINGIRA, SANAA NA MICHEZO"
                     }
                   ],
-                  "top_pt": 19.456
+                  "top_pt": 19.441
                 }
               ],
               "pad_left": 74.97,
@@ -60071,7 +60047,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -60098,7 +60074,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -60125,7 +60101,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -60152,7 +60128,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -60179,7 +60155,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -60219,7 +60195,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -61784,7 +61760,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -61795,31 +61771,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.28
+                  "top_pt": 4.435
                 }
               ],
               "pad_left": 0.0,
@@ -73227,7 +73199,7 @@
                       "text": " SHULE 10 BORA  SOMO LA HISTORIA YA TANZANIA NA MAADILI"
                     }
                   ],
-                  "top_pt": 32.016
+                  "top_pt": 32.001
                 }
               ],
               "pad_left": 0.0,
@@ -73738,7 +73710,7 @@
                       "text": "A"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -73765,7 +73737,7 @@
                       "text": "B"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -73792,7 +73764,7 @@
                       "text": "C"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -73819,7 +73791,7 @@
                       "text": "D"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -73846,7 +73818,7 @@
                       "text": "E"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -73886,7 +73858,7 @@
                       "text": "A-D"
                     }
                   ],
-                  "top_pt": 7.096
+                  "top_pt": 7.081
                 }
               ],
               "pad_left": 0.0,
@@ -75451,7 +75423,7 @@
               "lines": [
                 {
                   "class": "t1",
-                  "left_pt": 5.108,
+                  "left_pt": 5.92,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -75462,31 +75434,27 @@
                           "text": "N"
                         },
                         {
-                          "margin_pt": -8.851,
+                          "margin_pt": 0.011,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
+                          "margin_pt": 0.012,
                           "text": "F"
                         },
                         {
-                          "margin_pt": -7.46,
+                          "margin_pt": -0.018,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -8.85,
-                          "text": "S"
-                        },
-                        {
-                          "margin_pt": -8.164,
-                          "text": "I"
+                          "margin_pt": 0.012,
+                          "text": "SI"
                         }
                       ],
                       "class": "t1",
                       "text": "NAFASI"
                     }
                   ],
-                  "top_pt": 4.27
+                  "top_pt": 4.425
                 }
               ],
               "pad_left": 0.0,

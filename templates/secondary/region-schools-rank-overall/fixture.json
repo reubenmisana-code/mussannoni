@@ -6181,7 +6181,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -6192,23 +6192,23 @@
                           "text": "C"
                         },
                         {
-                          "margin_pt": -6.928,
+                          "margin_pt": -0.004,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.681,
+                          "margin_pt": 0.013,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -6216,7 +6216,7 @@
                       "text": "C/RANK"
                     }
                   ],
-                  "top_pt": 5.96
+                  "top_pt": 6.19
                 }
               ],
               "pad_left": 0.0,
@@ -6233,7 +6233,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.986,
+                  "left_pt": 5.476,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -6244,23 +6244,23 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "/"
                         },
                         {
-                          "margin_pt": -2.238,
+                          "margin_pt": -0.03,
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -6268,7 +6268,7 @@
                       "text": "R/RANK"
                     }
                   ],
-                  "top_pt": 6.08
+                  "top_pt": 6.403
                 }
               ],
               "pad_left": 0.0,
@@ -90027,7 +90027,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -90038,15 +90038,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -90054,7 +90054,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 0.89
+                  "top_pt": 1.12
                 },
                 {
                   "class": "t9",
@@ -90085,7 +90085,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.966,
+                  "left_pt": 5.456,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -90096,15 +90096,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -90112,7 +90112,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 1.73
+                  "top_pt": 2.053
                 },
                 {
                   "class": "t11",
@@ -198026,7 +198026,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -198037,15 +198037,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -198053,7 +198053,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 0.89
+                  "top_pt": 1.12
                 },
                 {
                   "class": "t9",
@@ -198084,7 +198084,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.966,
+                  "left_pt": 5.456,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -198095,15 +198095,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -198111,7 +198111,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 1.73
+                  "top_pt": 2.053
                 },
                 {
                   "class": "t11",
@@ -310744,7 +310744,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -310755,15 +310755,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -310771,7 +310771,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 0.89
+                  "top_pt": 1.12
                 },
                 {
                   "class": "t9",
@@ -310802,7 +310802,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.966,
+                  "left_pt": 5.456,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -310813,15 +310813,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -310829,7 +310829,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 1.73
+                  "top_pt": 2.053
                 },
                 {
                   "class": "t11",
@@ -423122,7 +423122,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -423133,15 +423133,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -423149,7 +423149,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 0.89
+                  "top_pt": 1.12
                 },
                 {
                   "class": "t9",
@@ -423180,7 +423180,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.966,
+                  "left_pt": 5.456,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -423191,15 +423191,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -423207,7 +423207,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 1.73
+                  "top_pt": 2.053
                 },
                 {
                   "class": "t11",
@@ -533994,7 +533994,7 @@
               "lines": [
                 {
                   "class": "t7",
-                  "left_pt": 3.546,
+                  "left_pt": 4.499,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -534005,15 +534005,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -6.977,
+                          "margin_pt": 0.043,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -6.929,
+                          "margin_pt": -0.003,
                           "text": "K"
                         }
                       ],
@@ -534021,7 +534021,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 0.89
+                  "top_pt": 1.12
                 },
                 {
                   "class": "t9",
@@ -534052,7 +534052,7 @@
               "lines": [
                 {
                   "class": "t8",
-                  "left_pt": 3.966,
+                  "left_pt": 5.456,
                   "letter_spacing_pt": 0.0,
                   "rotation": 90,
                   "runs": [
@@ -534063,15 +534063,15 @@
                           "text": "R"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "A"
                         },
                         {
-                          "margin_pt": -5.972,
+                          "margin_pt": 0.078,
                           "text": "N"
                         },
                         {
-                          "margin_pt": -5.93,
+                          "margin_pt": 0.038,
                           "text": "K"
                         }
                       ],
@@ -534079,7 +534079,7 @@
                       "text": "RANK"
                     }
                   ],
-                  "top_pt": 1.73
+                  "top_pt": 2.053
                 },
                 {
                   "class": "t11",

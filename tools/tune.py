@@ -21,6 +21,17 @@ from tools.common import find_report, output_dir, reference_path, template_dir, 
 from tools.extract import rotation_of
 
 MAX_RESIDUAL_PT = 6.0
+# A rotated by_face correction is only written once at least this many samples agree. A lone
+# sample (n=1) is dominated by how PyMuPDF split that one vertical string and swung the old
+# calibration by ~1.8 pt of noise, so it is dropped. But a rotated run's residual is otherwise
+# a *systematic* layout offset - Chromium seats a rotated baseline differently from a
+# horizontal one at the same size - and it is highly consistent across the few samples that do
+# exist (the three 3.6 pt headers on one page measure -1.79/-1.67/-1.73). A floor of two keeps
+# that real, corroborated correction while rejecting the single-sample noise. It is deliberately
+# smaller than the by_size floor: rotated headers are inherently sparse (there are only a
+# handful per page), so demanding five would throw away every genuine rotated correction and
+# leave the vertical headers ~1.8 pt out of place.
+MIN_ROTATED_FACE_SAMPLES = 2
 
 
 def spans_of(page: pymupdf.Page) -> list[dict[str, Any]]:
@@ -105,12 +116,32 @@ def residuals(level: str, report_key: str) -> dict[str, Any]:
             "samples": len(pairs),
         }
 
-    # Every face that appears at least once gets its own correction; a single sample is still a
-    # real measurement of that face and is better than borrowing another face's offset.
+    # Every horizontal face that appears at least once gets its own correction; a single sample
+    # is still a real measurement of that face and is better than borrowing another's offset.
+    # Rotated faces are different: a rotated header often appears only once or twice on a page,
+    # and a single rotated residual is dominated by how PyMuPDF splits the vertical string, so
+    # it swings by well over a point (Arial-BoldMT|3.6|90 measured dx=-1.795 from one sample).
+    # Requiring at least MIN_ROTATED_FACE_SAMPLES agreeing samples keeps that noise from being
+    # written while preserving the genuine, consistent rotated offset that two or more samples
+    # corroborate. correction_for() applies the same floor when reading, so a stale single-sample
+    # rotated entry from an older calibration is disarmed too.
     previous_faces = previous.get("by_face", {})
     per_face = {}
     for key, pairs in sorted(by_face.items()):
-        old = previous_faces.get(key, {})
+        rotation = int(key.rsplit("|", 1)[-1])
+        old = previous_faces.get(key)
+        if rotation and len(pairs) < MIN_ROTATED_FACE_SAMPLES:
+            # Sub-floor fresh sample: too few corroborating rotated residuals to trust this
+            # render's median, so it is not added. But if a previous calibration had already
+            # accumulated a corroborated correction for this key, carry it forward unchanged
+            # rather than dropping it - the cumulative model must not lose a hard-won rotated
+            # offset just because a later render happened to measure the face only once. A
+            # brand-new sub-floor rotated key (no previous entry) is still skipped entirely,
+            # since a single-sample rotated correction is the noise Defect 1 removed.
+            if old is not None:
+                per_face[key] = dict(old)
+            continue
+        old = old or {}
         per_face[key] = {
             "dx": round(float(old.get("dx", 0.0)) + statistics.median(dx for dx, _ in pairs), 4),
             "dy": round(float(old.get("dy", 0.0)) + statistics.median(dy for _, dy in pairs), 4),
@@ -171,12 +202,35 @@ def correction_for(
     8.16 pt inherited Arial's correction and stayed 0.46 pt low. Rotation matters for the same
     reason - a rotated run's residual lies along the other page axis, so mixing it with
     horizontal text of the same face would corrupt both corrections.
+
+    A rotated run is corrected only by a rotation-keyed by_face entry that rests on enough
+    samples. Chromium seats a rotated baseline differently from a horizontal one at the same
+    size - a 90-degree Arial-BoldMT header at 3.6 pt lands ~1.8 pt off along page x even though
+    the same face's horizontal baseline is within 0.2 pt - so the residual has to be measured
+    with the rotation in the key and cannot be inferred from horizontal text. That measurement
+    is inherently sparse (a few vertical headers per page), but it is a systematic offset, not
+    random noise, and is highly consistent across the samples that exist, so a small
+    corroboration floor (:data:`MIN_ROTATED_FACE_SAMPLES`) is enough to trust it while rejecting
+    a single-sample outlier. When no trusted rotated entry exists the run is left uncorrected
+    rather than borrowing a horizontal offset that acts along the wrong page axis.
     """
     if not calibration:
         return 0.0, 0.0
     entry = calibration.get("by_face", {}).get(face_key(font, size_pt, rotation))
-    if entry is None and not rotation:
-        entry = calibration.get("by_size", {}).get(f"{size_pt}") or calibration.get("global")
+    # A rotated by_face entry is only trusted when enough samples agree. This mirrors the floor
+    # tune.residuals() applies when writing the table, and also disarms a stale single-sample
+    # rotated correction left in an older calibration.json - the noise Defect 1 removed.
+    if entry is not None and rotation and int(entry.get("samples", 0)) < MIN_ROTATED_FACE_SAMPLES:
+        entry = None
+    if entry is not None:
+        return float(entry.get("dx", 0.0)), float(entry.get("dy", 0.0))
+    # A rotated run never borrows a horizontal correction: its residual lies along the other
+    # page axis (Chromium seats a rotated baseline differently), so a by_size or global offset
+    # measured from horizontal text would corrupt it. Without a trusted rotation-keyed entry it
+    # is left uncorrected. Only horizontal text falls through to the by_size / global fallback.
+    if rotation:
+        return 0.0, 0.0
+    entry = calibration.get("by_size", {}).get(f"{size_pt}") or calibration.get("global")
     if not entry:
         return 0.0, 0.0
     return float(entry.get("dx", 0.0)), float(entry.get("dy", 0.0))
