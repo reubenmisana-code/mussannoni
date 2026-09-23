@@ -78,15 +78,19 @@ def round_trip(level: str, key: str) -> dict:
         if len(ref_page["rows"]) != len(new_page["rows"]):
             row_counts_equal = False
             continue
-        # Cells the build marked `figure` are deliberately emptied when the caller supplies no
-        # value, so they are excluded from the fidelity comparison and asserted separately: a
-        # figure that still holds text is the reference exam's own number, published.
+        # Cells the build marked `figure` or `sample` are deliberately emptied when the caller
+        # supplies no value, so they are excluded from the fidelity comparison and asserted
+        # separately: one that still holds text is the reference exam's own number or name,
+        # published.
         # Addressed per LINE, because a cell may hold a column heading and a figure — the
         # `WASTANI WA SHULE` cells carry a two-line heading plus a measured average, and only the
         # average is blanked. Checking whole-cell text would report those as survivors.
         figures: dict[tuple[int, int], set[int] | None] = {}
         for address, role in (document["pages"][page_index].get("roles") or {}).items():
-            if role != "figure":
+            # `sample` is reference identity outside the letterhead — a council or school name the
+            # reference printed where no field addresses it. Blanked like a figure, so excluded from
+            # the fidelity comparison for the same reason.
+            if role not in ("figure", "sample"):
                 continue
             parts = address.split(".")
             key = (int(parts[0]), int(parts[1]))

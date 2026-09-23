@@ -317,7 +317,11 @@ letterhead supplied through roles, then search the whole output — rows and loo
 reference's own identity (`MWANZA`, `MWANZA CC`, `S0333`, `PS1304014`, `BUTIMBA`). It catches what the
 per-column leak test cannot, because it looks at cells no field addresses.
 
-First run: **8 reports** still carried it. The cause was the same one the four `kimasomo` reports had —
+Final state: **1 report** — `secondary/council_schools_rank_subjectwise`, whose further sections hold a
+school name and a letterhead the measurement merged into one concatenated line, so no per-line address
+reaches it. Everything else is clean.
+
+Getting there took three steps. First run: **8 reports** still carried it. The cause was the same one the four `kimasomo` reports had —
 a page carrying several blocks, with only the last marked as data and the earlier ones carried verbatim.
 `council_top_schools_grading` leaked its council column on all three pages, thirty rows of `MWANZA CC`.
 Declaring those eight `multi_block` and excluding identified label rows from the data plan took it to
@@ -331,8 +335,17 @@ Declaring those eight `multi_block` and excluding identified label rows from the
 | `secondary/council_schools_rank_subjectwise` | — | further section |
 | `secondary/council_top_schools` | 1 | page 3 row 8, a single cell outside the plan |
 
-So the section cases are Class D and wait on per-section identity; the other two are data-plan gaps in
-reports with an awkward leading band. Re-run the audit after any change to the plan.
+Those were closed by a `sample` role: reference identity in a static cell that is neither a letterhead
+line nor a figure gets named at build time and blanked like a figure, because no address exists for a
+caller to fill it. Identifying it needs the sample's region, and `sample_unit` does not always give it —
+`region_shule_bora_jumla`'s is `MKOA SHULE BORA STD4 JUMLA 2026`, which never names Mwanza, so its
+sections published `MWANZA CC`. The identity tokens are therefore taken from `sample_unit` **and** from
+every measured **region line**, stripped of the references' own `MKOA WA` / ` REGION` wording. Region
+lines only: reading scope lines too was measured and rejected, because a scope line mixes the unit with
+the report title (`MWANZA CC TOP TEN BEST SCHOOLS`) and taking its words blanked real headings on six
+reports.
+
+Re-run the audit after any change to the plan or the roles.
 
 ### Corpus-wide sweep result, 2026-09-23
 

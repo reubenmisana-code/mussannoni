@@ -501,7 +501,7 @@ def _blank_unsupplied_loose_figures(page: dict[str, Any], supplied: set[str]) ->
     lines = page.get("loose_lines") or []
     blanked = 0
     for address, role in roles.items():
-        if role != "figure" or address in supplied:
+        if role not in ("figure", "sample") or address in supplied:
             continue
         index = int(address)
         if 0 <= index < len(lines):
@@ -515,7 +515,7 @@ def _blank_unsupplied_loose_figures(page: dict[str, Any], supplied: set[str]) ->
 
 
 def _blank_unsupplied_figures(page: dict[str, Any], supplied: set[str]) -> int:
-    """Empty every ``figure`` cell the caller did not supply a value for.
+    """Empty every ``figure`` or ``sample`` cell the caller did not supply a value for.
 
     This is the safety property the measured path turns on. A report may be structurally complete and
     numerically empty, but it must never publish the measured exam's figures. The roles shipped with
@@ -530,7 +530,7 @@ def _blank_unsupplied_figures(page: dict[str, Any], supplied: set[str]) -> int:
     roles = page.get("roles") or {}
     targets: dict[tuple[int, int], set[int] | None] = {}
     for address, role in roles.items():
-        if role != "figure" or address in supplied:
+        if role not in ("figure", "sample") or address in supplied:
             continue
         parts = address.split(".")
         if len(parts) < 2:

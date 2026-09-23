@@ -906,6 +906,7 @@ ROLE_EXAM = "exam"
 ROLE_SCOPE = "scope"
 ROLE_HEADING = "heading"
 ROLE_FIGURE = "figure"
+ROLE_SAMPLE = "sample"
 
 # Fixed institutional text, reproduced unchanged. These open the letterhead at both levels — English
 # on the secondary references, Swahili on the primary ones.
@@ -970,6 +971,42 @@ def _sample_tokens(fixture: dict[str, Any]) -> frozenset[str]:
         }
 
     return frozenset(words(report.get("sample_unit")) - words(report.get("title")))
+
+
+def _identity_tokens(fixture: dict[str, Any]) -> frozenset[str]:
+    """Every word that names the exam the report was measured from.
+
+    ``sample_unit`` alone is not enough, and this was measured: ``region_shule_bora_jumla``'s is
+    ``MKOA SHULE BORA STD4 JUMLA 2026``, which never names Mwanza, so the reference's
+    ``MWANZA CC`` cells in its further sections could not be recognised and were published.
+
+    The measurement itself knows better. A first pass classifies the letterhead with whatever
+    ``sample_unit`` gives; every region line it finds is then stripped of the references' own wording
+    and its remaining words unioned in. So ``MKOA WA MWANZA`` contributes ``MWANZA`` whether or not
+    the sample unit mentions it.
+    """
+    tokens = set(_sample_tokens(fixture))
+    for page in fixture["pages"]:
+        lines: list[str] = []
+        for row in page["rows"]:
+            for cell in row["cells"]:
+                lines.extend(_cell_line_texts(cell))
+        for line in page.get("loose_lines") or []:
+            lines.append("".join(run.get("text", "") for run in (line.get("runs") or [])))
+        for text in lines:
+            # Region lines only. A scope line mixes the unit with the report title
+            # (`MWANZA CC TOP TEN BEST SCHOOLS`), and taking its words blanked real headings on six
+            # reports — TOP, BEST and SCHOOLS appear in headings everywhere. A region line is just a
+            # place name, so it is safe to read.
+            if _line_role(text, frozenset(tokens)) != ROLE_REGION:
+                continue
+            value = text.upper().removeprefix(_REGION_PREFIX).removesuffix(_REGION_SUFFIX)
+            tokens.update(
+                token
+                for token in re.split(r"[^A-Z0-9]+", value)
+                if len(token) > 2 and token not in _TITLE_NOISE and not token.isdigit()
+            )
+    return frozenset(tokens)
 
 
 def _line_role(text: str, sample: frozenset[str]) -> str:
@@ -1059,6 +1096,14 @@ def _row_roles(row: dict[str, Any], sample: frozenset[str],
                 role = ROLE_FIGURE
             elif letterhead:
                 role = _line_role(text, sample)
+            elif any(token in text.upper() for token in sample):
+                # Reference identity outside the letterhead: a council or school name the reference
+                # printed in a cell that is neither a letterhead line nor a figure. Found by the
+                # identity audit in docs/06 — council_top_schools page 3 and the further sections of
+                # region_shule_bora_jumla and region_council_performance each keep one. There is no
+                # address a caller could fill it from, so it is named and blanked rather than
+                # published.
+                role = ROLE_SAMPLE
             else:
                 role = ROLE_HEADING
             key = str(column) if len(texts) == 1 else f"{column}.{index}"
@@ -1110,7 +1155,7 @@ def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict
     use, so a caller reads a role and writes to that address.
     """
     out: list[dict[str, Any]] = []
-    sample = _sample_tokens(fixture)
+    sample = _identity_tokens(fixture)
     for page, data_rows in zip(fixture["pages"], plan):
         data = set(data_rows)
         column_count = len(page["columns"])
@@ -1125,7 +1170,7 @@ def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict
 
 
 def _document_loose_roles(fixture: dict[str, Any]) -> list[dict[str, str]]:
-    sample = _sample_tokens(fixture)
+    sample = _identity_tokens(fixture)
     return [_loose_roles(page, sample) for page in fixture["pages"]]
 
 
