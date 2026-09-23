@@ -6,6 +6,25 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-09-23
+
+### Fixed
+
+- **A substituted text class now names its licensed face first.** 0.1.1 replaced the extracted
+  proprietary subsets with metric-compatible open faces, but left those classes declaring only their
+  own `@font-face` family — `font-family: 'Report CIDFont-F1'` — so they resolved to the bundled
+  Liberation face and could never reach a real Arial, even on a host that had it installed. The
+  classes that never embedded a font already did the right thing (`font-family: Arial, 'Report Sans'`),
+  so the two halves of the corpus disagreed. All 426 substituted declarations now name the licensed
+  face ahead of the fallback: Arial, `Arial Narrow`, Calibri or Tahoma as appropriate. A host with the
+  licensed fonts renders with the reference's own outlines again; one without falls back to the open
+  metric twin, as before.
+- The licensed name is chosen per report from the file each `@font-face` was cut from, not from the
+  family name: `Report CIDFont-F4` is Arial in eleven declarations and `Arial Narrow` in two, so a
+  table keyed on the family alone would have mislabelled it.
+
+
+
 ## [0.1.1] - 2026-09-23
 
 Everything in this release exists to stop a generated report carrying the exam it was measured from.

@@ -3,13 +3,13 @@
 @page { size: 792.0pt 612.0pt; margin: 0; }
 
 @font-face {
-  font-family: 'Report CIDFont-F1';
+  font-family: Arial, 'Report CIDFont-F1';
   src: url('../../_shared/fonts/liberation-sans-regular.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Report CIDFont-F2';
+  font-family: Arial, 'Report CIDFont-F2';
   src: url('../../_shared/fonts/liberation-sans-bold.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -17,15 +17,15 @@
 
 /* text styles */
 
-.t0 { font-family: 'Report CIDFont-F1'; font-size: 6.85pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t1 { font-family: 'Report CIDFont-F1'; font-size: 5.41pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t2 { font-family: 'Report CIDFont-F1'; font-size: 6.13pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t3 { font-family: 'Report CIDFont-F1'; font-size: 4.81pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t4 { font-family: 'Report CIDFont-F2'; font-size: 4.81pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t5 { font-family: 'Report CIDFont-F1'; font-size: 4.8pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t6 { font-family: 'Report CIDFont-F2'; font-size: 4.09pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t7 { font-family: 'Report CIDFont-F2'; font-size: 4.45pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t8 { font-family: 'Report CIDFont-F1'; font-size: 4.09pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t0 { font-family: Arial, 'Report CIDFont-F1'; font-size: 6.85pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t1 { font-family: Arial, 'Report CIDFont-F1'; font-size: 5.41pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t2 { font-family: Arial, 'Report CIDFont-F1'; font-size: 6.13pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t3 { font-family: Arial, 'Report CIDFont-F1'; font-size: 4.81pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t4 { font-family: Arial, 'Report CIDFont-F2'; font-size: 4.81pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t5 { font-family: Arial, 'Report CIDFont-F1'; font-size: 4.8pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t6 { font-family: Arial, 'Report CIDFont-F2'; font-size: 4.09pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t7 { font-family: Arial, 'Report CIDFont-F2'; font-size: 4.45pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t8 { font-family: Arial, 'Report CIDFont-F1'; font-size: 4.09pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 
 /* cell fills */
 

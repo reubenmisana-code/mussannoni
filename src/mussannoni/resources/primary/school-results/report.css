@@ -3,13 +3,13 @@
 @page { size: 792.0pt 612.0pt; margin: 0; }
 
 @font-face {
-  font-family: 'Report ArialNarrow-Bold';
+  font-family: 'Arial Narrow', 'Report ArialNarrow-Bold';
   src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Report Calibri';
+  font-family: Calibri, 'Report Calibri';
   src: url('../../_shared/fonts/carlito-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -23,13 +23,13 @@
 .t3 { font-family: Arial, 'Report Sans'; font-size: 4.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t4 { font-family: Arial, 'Report Sans'; font-size: 6.24pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t5 { font-family: Arial, 'Report Sans'; font-size: 6.24pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t6 { font-family: 'Report ArialNarrow-Bold'; font-size: 6.24pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t6 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 6.24pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t7 { font-family: Arial, 'Report Sans'; font-size: 5.76pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t8 { font-family: 'Report ArialNarrow-Bold'; font-size: 5.76pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t8 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 5.76pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t9 { font-family: Arial, 'Report Sans'; font-size: 5.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t10 { font-family: 'Report ArialNarrow-Bold'; font-size: 5.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t11 { font-family: 'Report ArialNarrow-Bold'; font-size: 4.68pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t12 { font-family: 'Report Calibri'; font-size: 5.76pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t10 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 5.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t11 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 4.68pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t12 { font-family: Calibri, 'Report Calibri'; font-size: 5.76pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t13 { font-family: Arial, 'Report Sans'; font-size: 8.28pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 
 /* cell fills */

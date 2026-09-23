@@ -636,6 +636,44 @@ _FONT_SUBSTITUTES: dict[str, str] = {
 }
 
 
+# The licensed face each embedded subset was cut from, so a host that HAS it uses it. Without this a
+# substituted class names only its own `Report <X>` family, which resolves to the bundled open face
+# and never to the real one — the reports that embedded a font would permanently render in a metric
+# twin even on a machine with Arial installed, while the reports that never embedded one already say
+# `font-family: Arial, 'Report Sans'` and do the right thing. Same intent, applied consistently.
+_LICENSED_FACES: dict[str, str] = {
+    "CIDFont-F1-11.ttf": "Arial",
+    "CIDFont-F2-19.ttf": "Arial",
+    "CIDFont-F3-27.ttf": "Arial",
+    "CIDFont-F4-35.ttf": "Arial",
+    "CIDFont-F4-36.ttf": "'Arial Narrow'",
+    "BCDEEE-ArialNarrow-Bold-7.ttf": "'Arial Narrow'",
+    "BCDEEE-ArialNarrow-Bold-10.ttf": "'Arial Narrow'",
+    "BCDEEE-ArialNarrow-Bold-12.ttf": "'Arial Narrow'",
+    "BCDEEE-ArialNarrow-Bold-14.ttf": "'Arial Narrow'",
+    "BCDFEE-ArialNarrow-Bold-42.ttf": "'Arial Narrow'",
+    "BCDFEE-Calibri-14.ttf": "Calibri",
+    "CIDFont-F5-43.ttf": "Calibri",
+    "BCDEEE-Tahoma-Bold-14.ttf": "Tahoma",
+}
+
+
+def _prefer_licensed_faces(css: str, family_source: dict[str, str]) -> str:
+    """Name the licensed face ahead of each report's own ``Report <X>`` family.
+
+    ``family_source`` maps a declared ``@font-face`` family to the file it was cut from, which is how
+    the licensed name is chosen per report: ``Report CIDFont-F4`` is Arial in one report and Arial
+    Narrow in another, so a fixed table keyed on the family name alone would be wrong.
+    """
+    for family, source in family_source.items():
+        licensed = _LICENSED_FACES.get(source)
+        if not licensed:
+            continue
+        needle = f"font-family: '{family}'"
+        css = css.replace(needle, f"font-family: {licensed}, '{family}'")
+    return css
+
+
 def _substitute_css_fonts(css: str) -> tuple[str, list[str]]:
     """Repoint every ``@font-face`` src at a redistributable face.
 
@@ -660,7 +698,17 @@ def _substitute_css_fonts(css: str) -> tuple[str, list[str]]:
             return match.group(0)
         return f"url({quote}../../_shared/fonts/{replacement}{quote})"
 
+    # Which declared family came from which file, read before the urls are rewritten.
+    family_source: dict[str, str] = {}
+    for block in re.finditer(r"@font-face\s*\{([^}]*)\}", css):
+        body = block.group(1)
+        fam = re.search(r"""font-family:\s*['"]([^'"]+)['"]""", body)
+        src = re.search(r"""url\((['"])(?:fonts/)?([^'")]+)\1\)""", body)
+        if fam and src:
+            family_source[fam.group(1)] = src.group(2).rsplit("/", 1)[-1]
+
     out = re.sub(r"""url\((["'])fonts/([^"')]+)\1\)""", replace, css)
+    out = _prefer_licensed_faces(out, family_source)
     return out, unmapped
 
 

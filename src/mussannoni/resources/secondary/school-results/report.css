@@ -3,13 +3,13 @@
 @page { size: 792.0pt 612.0pt; margin: 0; }
 
 @font-face {
-  font-family: 'Report ArialNarrow-Bold';
+  font-family: 'Arial Narrow', 'Report ArialNarrow-Bold';
   src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Report Tahoma-Bold';
+  font-family: Tahoma, 'Report Tahoma-Bold';
   src: url('../../_shared/fonts/liberation-sans-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -17,7 +17,7 @@
 
 /* text styles */
 
-.t0 { font-family: 'Report Tahoma-Bold'; font-size: 8.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.447100 0.251000 0.564700); }
+.t0 { font-family: Tahoma, 'Report Tahoma-Bold'; font-size: 8.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.447100 0.251000 0.564700); }
 .t1 { font-family: Arial, 'Report Sans'; font-size: 8.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.439200 0.188200 0.627500); }
 .t2 { font-family: Arial, 'Report Sans'; font-size: 7.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
 .t3 { font-family: 'Times New Roman', 'Report Serif'; font-size: 7.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
@@ -26,7 +26,7 @@
 .t6 { font-family: 'Times New Roman', 'Report Serif'; font-size: 9.24pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
 .t7 { font-family: Arial, 'Report Sans'; font-size: 6.6pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
 .t8 { font-family: Arial, 'Report Sans'; font-size: 8.16pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
-.t9 { font-family: 'Report ArialNarrow-Bold'; font-size: 7.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
+.t9 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 7.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
 .t10 { font-family: Arial, 'Report Sans'; font-size: 9.24pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.125500 0.376500); }
 .t11 { font-family: Arial, 'Report Sans'; font-size: 7.2pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.200000 0.400000); }
 .t12 { font-family: Arial, 'Report Sans'; font-size: 7.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.200000 0.400000); }

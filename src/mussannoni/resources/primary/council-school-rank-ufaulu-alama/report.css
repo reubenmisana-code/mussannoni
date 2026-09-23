@@ -3,7 +3,7 @@
 @page { size: 792.0pt 612.0pt; margin: 0; }
 
 @font-face {
-  font-family: 'Report ArialNarrow-Bold';
+  font-family: 'Arial Narrow', 'Report ArialNarrow-Bold';
   src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -14,14 +14,14 @@
 .t0 { font-family: Arial, 'Report Sans'; font-size: 5.64pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t1 { font-family: Arial, 'Report Sans'; font-size: 6.36pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t2 { font-family: Arial, 'Report Sans'; font-size: 4.92pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t3 { font-family: 'Report ArialNarrow-Bold'; font-size: 5.64pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t3 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 5.64pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t4 { font-family: Arial, 'Report Sans'; font-size: 4.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t5 { font-family: 'Report ArialNarrow-Bold'; font-size: 3.84pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t6 { font-family: 'Report ArialNarrow-Bold'; font-size: 4.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t7 { font-family: 'Report ArialNarrow-Bold'; font-size: 4.92pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t5 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 3.84pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t6 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 4.2pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t7 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 4.92pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t8 { font-family: Arial, 'Report Sans'; font-size: 4.92pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t9 { font-family: Arial, 'Report Sans'; font-size: 5.64pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
-.t10 { font-family: 'Report ArialNarrow-Bold'; font-size: 3.48pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
+.t10 { font-family: 'Arial Narrow', 'Report ArialNarrow-Bold'; font-size: 3.48pt; font-weight: 700; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 .t11 { font-family: Arial, 'Report Sans'; font-size: 4.2pt; font-weight: 400; font-style: normal; color: color(srgb 0.000000 0.000000 0.000000); }
 
 /* cell fills */
