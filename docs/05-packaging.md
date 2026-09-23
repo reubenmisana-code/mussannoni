@@ -202,5 +202,9 @@ Then bump `version` in `pyproject.toml` and `__version__` in `src/mussannoni/__i
 together — `test_version_matches_the_distribution_metadata` fails if they drift — record the change
 in `CHANGELOG.md`, and upload with `twine upload dist/*`.
 
-Note that the PyPI name `mussannoni` has not been claimed yet; check availability before the first
-upload.
+Published: **https://pypi.org/project/mussannoni/0.1.1/** (first release 2026-09-23).
+
+Credentials are a project-scoped PyPI token read from the environment as `TWINE_USERNAME` /
+`TWINE_PASSWORD`; they live in `backend-sis/.env`, which is gitignored, and nothing in the
+application reads them. `.env` is gitignored in this repository too, so a token placed here cannot be
+committed by accident — it was not, before 2026-09-23.
