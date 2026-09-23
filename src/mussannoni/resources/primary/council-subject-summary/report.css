@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Report ArialNarrow-Bold';
-  src: url('fonts/BCDEEE-ArialNarrow-Bold-7.ttf') format('truetype');
+  src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }

@@ -2210,17 +2210,17 @@
     },
     "t3": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 6.48
     },
     "t4": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 7.56
     },
     "t5": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 6.0
     },
     "t6": {
@@ -2230,7 +2230,7 @@
     },
     "t7": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-7.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 5.4
     }
   },

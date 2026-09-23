@@ -3204,77 +3204,77 @@
   "text_styles": {
     "t0": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 7.57
     },
     "t1": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 6.73
     },
     "t10": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 8.78
     },
     "t11": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 6.61
     },
     "t12": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 6.01
     },
     "t13": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 5.53
     },
     "t14": {
       "font_family": "'Report CIDFont-F2'",
-      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-bold.ttf",
       "size_pt": 6.61
     },
     "t2": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 5.05
     },
     "t3": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 5.89
     },
     "t4": {
       "font_family": "'Report CIDFont-F2'",
-      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-bold.ttf",
       "size_pt": 5.05
     },
     "t5": {
       "font_family": "'Report CIDFont-F2'",
-      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-bold.ttf",
       "size_pt": 5.41
     },
     "t6": {
       "font_family": "'Report CIDFont-F2'",
-      "fontfile": "fonts/CIDFont-F2-19.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-bold.ttf",
       "size_pt": 5.89
     },
     "t7": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 5.41
     },
     "t8": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 8.42
     },
     "t9": {
       "font_family": "'Report CIDFont-F1'",
-      "fontfile": "fonts/CIDFont-F1-11.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-regular.ttf",
       "size_pt": 5.04
     }
   },

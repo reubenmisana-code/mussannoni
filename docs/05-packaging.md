@@ -127,7 +127,42 @@ That is accurate to the font's own metrics, which is what the reference was type
 the same as reproducing a measured original glyph for glyph. For that, pass a full geometry
 document to `render_document()`.
 
-## Fonts and the redistribution question
+## Fonts and the redistribution question — CLOSED 2026-09-23
+
+**The package ships no font derived from a proprietary one, and this is no longer an open gate.**
+Every bundled face is redistributable and metric-compatible with the face it replaces:
+
+| Replaces | Bundled face | Licence | Measured advance delta |
+|---|---|---|--:|
+| Arial | Liberation Sans | SIL OFL 1.1 | 0.0000 pt |
+| Arial Narrow | Liberation Sans Narrow Bold | GPL v2 + font exception | 0.0000 pt |
+| Calibri | Carlito | SIL OFL 1.1 | 0.0000 pt |
+| Times New Roman | Liberation Serif | SIL OFL 1.1 | — |
+| Courier New | Liberation Mono | SIL OFL 1.1 | — |
+| Tahoma | Liberation Sans Bold | SIL OFL 1.1 | ≤ 0.7852 pt, one class in one report |
+
+Measured per character over each replaced subset's own cmap. Twelve of the thirteen embedded faces
+substitute **exactly**. The Arial subsets differ on `U+0640` and `U+2070`–`U+2079` only, and the
+corpus uses 73 distinct characters with a highest codepoint of `U+2019`, so none of them appears in
+any of the 46 reports. Tahoma has no metric-compatible open clone; it backs one text class.
+
+Substituting blindly does *not* work and was measured: pairing everything with Liberation Sans Bold
+gives errors up to **34.33 pt**, because the narrow faces are narrow and a subset returns notdef
+advances for characters it lacks. Correct pairing is what makes it exact.
+
+`tools/package_resources.py::_FONT_SUBSTITUTES` holds the mapping and rewrites both
+`layout.json`'s `text_styles[*].fontfile` and each `report.css`'s `@font-face` src. The build
+**fails** rather than shipping a face it has no substitute for, because `table._style_font` falls
+back to base-14 silently and base-14 is not metric-compatible with Arial Narrow — the unnoticed cost
+there is about 14 pt.
+
+Also gone are the URW-derived base-14 faces previously exported from MuPDF as `report-*.otf`. They
+carry MuPDF's own copyleft terms, which do not sit inside an MIT distribution, so `Report Sans` /
+`Report Serif` / `Report Mono` are backed by Liberation.
+
+Effect on size: the wheel drops from **8.5 MB to 4.3 MB**, font files from 92 to 10.
+
+## Historic note: the redistribution question as it stood
 
 Text classes name a licensed system face first and a bundled fallback second — `font-family: Arial,
 'Report Sans'`. Arial and Times New Roman are **never bundled**; `make setup` installs them on the

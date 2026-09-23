@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Report ArialNarrow-Bold';
-  src: url('fonts/BCDEEE-ArialNarrow-Bold-12.ttf') format('truetype');
+  src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Report Calibri';
-  src: url('fonts/BCDFEE-Calibri-14.ttf') format('truetype');
+  src: url('../../_shared/fonts/carlito-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

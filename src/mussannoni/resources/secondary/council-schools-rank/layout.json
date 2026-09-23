@@ -3077,7 +3077,7 @@
     },
     "t5": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDEEE-ArialNarrow-Bold-14.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 3.6
     },
     "t6": {

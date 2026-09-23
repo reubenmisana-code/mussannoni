@@ -597,6 +597,94 @@ def _repeating_size(report: dict[str, Any], pages: list[dict[str, Any]]) -> int:
     return Counter(len(page["columns"]) for page in pages).most_common(1)[0][0]
 
 
+
+# ── Redistributable font substitution ─────────────────────────────────────────
+#
+# The reference PDFs embed subsets of proprietary faces, and `tools/extract.py` lifts those subsets
+# out for local fidelity work. Embedding a subset in a PDF is ordinarily permitted by those licences;
+# redistributing the extracted files inside a software package is a different act and is not covered
+# by this project's MIT licence (docs/05-packaging.md). So the package ships none of them, and every
+# text class that named one is repointed at an OFL face with the same metrics.
+#
+# MEASURED 2026-09-23, per character, over each subset's own cmap: twelve of the thirteen faces
+# substitute EXACTLY — 0.0000 pt on every character. The Arial subsets differ on eight characters
+# each (U+0640 tatweel and the U+2070–2079 superscript digits), and the corpus uses 73 distinct
+# characters with a highest codepoint of U+2019, so none of them occurs anywhere in the 46 reports.
+#
+# Tahoma is the exception: it has no metric-compatible OFL clone, and 36 of its 39 characters differ
+# by up to 0.7852 pt against Liberation Sans Bold. It backs ONE text class in ONE report, and a host
+# with Tahoma installed still uses the real face because the CSS names it first.
+_LIBERATION = "liberation"
+_FONT_SUBSTITUTES: dict[str, str] = {
+    # Arial → Liberation Sans (exact over every character the corpus uses)
+    "CIDFont-F1-11.ttf": "liberation-sans-regular.ttf",
+    "CIDFont-F3-27.ttf": "liberation-sans-regular.ttf",
+    "CIDFont-F2-19.ttf": "liberation-sans-bold.ttf",
+    "CIDFont-F4-35.ttf": "liberation-sans-bold.ttf",
+    # Arial Narrow → Liberation Sans Narrow Bold (0.0000 pt)
+    "BCDEEE-ArialNarrow-Bold-7.ttf": "liberation-sans-narrow-bold.ttf",
+    "BCDEEE-ArialNarrow-Bold-10.ttf": "liberation-sans-narrow-bold.ttf",
+    "BCDEEE-ArialNarrow-Bold-12.ttf": "liberation-sans-narrow-bold.ttf",
+    "BCDEEE-ArialNarrow-Bold-14.ttf": "liberation-sans-narrow-bold.ttf",
+    "BCDFEE-ArialNarrow-Bold-42.ttf": "liberation-sans-narrow-bold.ttf",
+    "CIDFont-F4-36.ttf": "liberation-sans-narrow-bold.ttf",
+    # Calibri → Carlito (0.0000 pt)
+    "BCDFEE-Calibri-14.ttf": "carlito-regular.ttf",
+    "CIDFont-F5-43.ttf": "carlito-bold.ttf",
+    # Tahoma → Liberation Sans Bold. Not metric-identical; see above.
+    "BCDEEE-Tahoma-Bold-14.ttf": "liberation-sans-bold.ttf",
+}
+
+
+def _substitute_css_fonts(css: str) -> tuple[str, list[str]]:
+    """Repoint every ``@font-face`` src at a redistributable face.
+
+    The per-report CSS declares one ``@font-face`` per embedded subset,
+    ``src: url('fonts/<name>.ttf')``. Those files are not shipped, so leaving the rule alone makes
+    WeasyPrint fall back silently — the text still renders, at the wrong widths, with nothing said.
+    Rewriting the URL keeps the declared family name, which the HTML references, and swaps the file.
+
+    Quote-agnostic on purpose: the generated CSS uses single quotes and an earlier version of this
+    function only matched double ones, so it replaced nothing and reported nothing. That is precisely
+    the silent fallback it exists to prevent.
+    """
+    unmapped: list[str] = []
+
+    def replace(match: re.Match[str]) -> str:
+        quote, name = match.group(1), match.group(2)
+        if name.startswith("report-"):
+            return match.group(0)
+        replacement = _FONT_SUBSTITUTES.get(name)
+        if replacement is None:
+            unmapped.append(name)
+            return match.group(0)
+        return f"url({quote}../../_shared/fonts/{replacement}{quote})"
+
+    out = re.sub(r"""url\((["'])fonts/([^"')]+)\1\)""", replace, css)
+    return out, unmapped
+
+
+def _substitute_fonts(layout: dict[str, Any]) -> list[str]:
+    """Repoint every text class at a redistributable face, in place.
+
+    Returns the faces that had no substitute, which is a build error rather than something to ship
+    quietly: a missing file makes ``table._style_font`` fall back to base-14 without a word, and
+    base-14 is not metric-compatible with Arial Narrow — the silent cost there is ~14 pt.
+    """
+    unmapped: list[str] = []
+    for style in (layout.get("text_styles") or {}).values():
+        relative = style.get("fontfile")
+        if not relative:
+            continue
+        name = relative.rsplit("/", 1)[-1]
+        replacement = _FONT_SUBSTITUTES.get(name)
+        if replacement is None:
+            unmapped.append(name)
+            continue
+        style["fontfile"] = f"../../_shared/fonts/{replacement}"
+    return unmapped
+
+
 def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> dict[str, Any]:
     """Reduce a measured fixture to the layout a caller's data can be placed onto."""
     pages = fixture["pages"]
@@ -1279,13 +1367,24 @@ def write_document(destination: Path, document: dict[str, Any]) -> None:
 
 
 def _sync_tree(source: Path, destination: Path) -> None:
+    """Mirror one directory of files, pruning anything the source no longer has.
+
+    Pruning matters: without it a file deleted from the workshop stayed in the committed resources
+    for ever, and `make check-resources` could not see it because it only compares the files the
+    source still names. Two extracted proprietary faces survived exactly that way.
+    """
     destination.mkdir(parents=True, exist_ok=True)
+    wanted: set[str] = set()
     for child in sorted(source.iterdir()):
         if child.is_dir():
             continue
+        wanted.add(child.name)
         target = destination / child.name
         if not target.exists() or not filecmp.cmp(child, target, shallow=False):
             shutil.copy2(child, target)
+    for existing in sorted(destination.iterdir()):
+        if existing.is_file() and existing.name not in wanted:
+            existing.unlink()
 
 
 def build(check: bool = False) -> list[str]:
@@ -1341,15 +1440,33 @@ def build(check: bool = False) -> list[str]:
         destination.mkdir(parents=True, exist_ok=True)
 
         css_path = source / "report.css"
-        shutil.copy2(css_path, destination / "report.css")
-        if (source / "fonts").is_dir():
-            _sync_tree(source / "fonts", destination / "fonts")
+        css_text, css_unmapped = _substitute_css_fonts(
+            css_path.read_text(encoding="utf-8"))
+        if css_unmapped:
+            raise SystemExit(
+                f"{report['level']}/{report['report_key']}: report.css still names "
+                f"{sorted(set(css_unmapped))}, which is not shipped. Add it to _FONT_SUBSTITUTES."
+            )
+        (destination / "report.css").write_text(css_text, encoding="utf-8")
+        # Per-report `fonts/` are NOT shipped: they hold subsets extracted from the reference PDFs,
+        # several derived from proprietary faces. `_substitute_fonts` repoints every text class at a
+        # redistributable OFL face in `_shared/fonts` instead.
+        stale = destination / "fonts"
+        if stale.is_dir():
+            shutil.rmtree(stale)
 
         fixture_path = source / "fixture.json"
         if not fixture_path.exists():
             continue
         fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
         layout = distil_layout(report, fixture, css_path.read_text(encoding="utf-8"))
+        unmapped = _substitute_fonts(layout)
+        if unmapped:
+            raise SystemExit(
+                f"{report['level']}/{report['report_key']}: no redistributable substitute for "
+                f"{sorted(set(unmapped))}. Add one to _FONT_SUBSTITUTES with its measured advance "
+                "delta, or the class silently falls back to base-14."
+            )
         write_json(destination / "layout.json", layout)
         write_document(destination / "document.json.gz", prepare_document(fixture, layout))
 

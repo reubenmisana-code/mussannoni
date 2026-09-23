@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Report ArialNarrow-Bold';
-  src: url('fonts/BCDFEE-ArialNarrow-Bold-42.ttf') format('truetype');
+  src: url('../../_shared/fonts/liberation-sans-narrow-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Report Tahoma-Bold';
-  src: url('fonts/BCDEEE-Tahoma-Bold-14.ttf') format('truetype');
+  src: url('../../_shared/fonts/liberation-sans-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }

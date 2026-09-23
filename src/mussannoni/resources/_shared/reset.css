@@ -1,36 +1,43 @@
-/* Shared page box and table primitives. Measured values live in each report's CSS. */
+/* Shared page box and table primitives. Measured values live in each report's CSS.
+ *
+ * The `Report Sans` / `Report Serif` / `Report Mono` families are backed by Liberation, which is
+ * under the SIL Open Font License 1.1 and metric-compatible with Arial, Times New Roman and Courier
+ * New. They previously pointed at URW-derived base-14 faces exported from MuPDF; those carry MuPDF's
+ * own copyleft terms, which do not sit inside this project's MIT licence, so nothing derived from
+ * them is redistributed any more. A host with the licensed faces installed still uses them, because
+ * every text class names the real face first and one of these second. */
 
 @font-face {
   font-family: "Report Sans";
-  src: url("fonts/report-sans-regular.otf") format("opentype");
+  src: url("fonts/liberation-sans-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Report Sans";
-  src: url("fonts/report-sans-bold.otf") format("opentype");
+  src: url("fonts/liberation-sans-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Report Serif";
-  src: url("fonts/report-serif-regular.otf") format("opentype");
+  src: url("fonts/liberation-serif-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Report Serif";
-  src: url("fonts/report-serif-bold.otf") format("opentype");
+  src: url("fonts/liberation-serif-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Report Mono";
-  src: url("fonts/report-mono-regular.otf") format("opentype");
+  src: url("fonts/liberation-mono-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }

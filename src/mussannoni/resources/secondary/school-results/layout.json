@@ -3519,7 +3519,7 @@
   "text_styles": {
     "t0": {
       "font_family": "'Report Tahoma-Bold'",
-      "fontfile": "fonts/BCDEEE-Tahoma-Bold-14.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-bold.ttf",
       "size_pt": 8.16
     },
     "t1": {
@@ -3584,7 +3584,7 @@
     },
     "t9": {
       "font_family": "'Report ArialNarrow-Bold'",
-      "fontfile": "fonts/BCDFEE-ArialNarrow-Bold-42.ttf",
+      "fontfile": "../../_shared/fonts/liberation-sans-narrow-bold.ttf",
       "size_pt": 7.2
     }
   },
