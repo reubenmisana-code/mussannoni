@@ -1004,7 +1004,7 @@ def _is_figure(text: str, figures_in_row: int) -> bool:
     return not value.isdigit()
 
 
-def _is_letterhead(cell: dict[str, Any], column_count: int) -> bool:
+def _is_letterhead(cell: dict[str, Any], column_count: int, lone: bool = False) -> bool:
     """Whether a cell is the letterhead rather than a heading or a value.
 
     The letterhead is the wide cell at column 0; a heading such as ``GRADE PERFORMANCE`` sits at an
@@ -1051,7 +1051,9 @@ def _row_roles(row: dict[str, Any], sample: frozenset[str],
         texts = _cell_line_texts(cell)
         if not texts:
             continue
-        letterhead = _is_letterhead(cell, column_count) and len(texts) > 1
+        letterhead = _is_letterhead(cell, column_count) and (
+            len(texts) > 1 or len(filled) == 1
+        )
         for index, text in enumerate(texts):
             if column in value_columns or _is_figure(text, figures_in_row):
                 role = ROLE_FIGURE
@@ -1181,6 +1183,7 @@ def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list
                 for index, row in enumerate(page["rows"])
                 if index >= start
                 and index not in tiers
+                and index not in labels
                 and not _static_row(row, data_columns, label_texts, columns)
             ]
         )

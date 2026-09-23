@@ -310,6 +310,30 @@ Then the leak test, which is the one that matters for production: supply a disti
 field of every row and assert that no filled data row retains anything else. Across every report with
 identity this currently passes with 0 leaks.
 
+### Reference-identity audit, 2026-09-23
+
+A stronger test than the leak marker: render every report with a marker in every data row **and** the
+letterhead supplied through roles, then search the whole output — rows and loose lines — for the
+reference's own identity (`MWANZA`, `MWANZA CC`, `S0333`, `PS1304014`, `BUTIMBA`). It catches what the
+per-column leak test cannot, because it looks at cells no field addresses.
+
+First run: **8 reports** still carried it. The cause was the same one the four `kimasomo` reports had —
+a page carrying several blocks, with only the last marked as data and the earlier ones carried verbatim.
+`council_top_schools_grading` leaked its council column on all three pages, thirty rows of `MWANZA CC`.
+Declaring those eight `multi_block` and excluding identified label rows from the data plan took it to
+**5**, and those five have two distinct remaining causes:
+
+| report | offending cells | cause |
+|---|--:|---|
+| `primary/council_best_students` | 20 | page 1 rows 4–13 still outside the data plan; `_data_start`'s walk falls back because no clean leading band is found |
+| `primary/region_shule_bora_jumla` | 4 | pages 4–5 are **further sections** — Class D |
+| `secondary/region_council_performance` | 2 | pages 4–5 are further sections — Class D |
+| `secondary/council_schools_rank_subjectwise` | — | further section |
+| `secondary/council_top_schools` | 1 | page 3 row 8, a single cell outside the plan |
+
+So the section cases are Class D and wait on per-section identity; the other two are data-plan gaps in
+reports with an awkward leading band. Re-run the audit after any change to the plan.
+
 ### Corpus-wide sweep result, 2026-09-23
 
 Both tests were run over all 46 reports. Outcome (latest run): **41 pass** with `text diffs 0` and

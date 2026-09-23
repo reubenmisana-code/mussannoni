@@ -1282,6 +1282,19 @@ multi_block:
 - primary/council_top_schools_kimasomo_serikali
 - primary/region_shule_bora_masomo_serikali
 - primary/region_shule_bora_masomo_jumla
+# Found 2026-09-23 by rendering every report with markers in all data rows and searching the output
+# for the reference's identity: these eight carried MWANZA / MWANZA CC / S0333 / BUTIMBA in the rows
+# of their FIRST block, because a single-label-row rule marked only the last block as data and the
+# rest was carried verbatim. council_top_schools_grading leaked its council column on all three
+# pages, thirty rows.
+- primary/council_best_students
+- primary/council_top_schools_alama
+- primary/council_top_schools_grading
+- primary/region_shule_bora_jumla
+- secondary/council_best_students
+- secondary/council_top_schools
+- secondary/council_schools_rank_subjectwise
+- secondary/region_council_performance
 # The column count of a report's own table, where the majority-of-pages rule picks the wrong grid.
 # region_ufaulu_masomo is one page of 28-column subject rows followed by two pages of 20-column
 # compound summaries, so the majority grid is the sections' and the distilled layout described a table

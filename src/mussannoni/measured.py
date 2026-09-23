@@ -234,12 +234,13 @@ def _apply_band_overrides(page: dict[str, Any], overrides: Mapping[str, Any],
     """
     columns = [float(width) for width in page["columns"]]
     for address, value in overrides.items():
+        parts = str(address).split(".")
         try:
-            row_text, column_text = str(address).split(".", 1)
-            row_index, column_index = int(row_text), int(column_text)
-        except ValueError as error:
+            row_index, column_index = int(parts[0]), int(parts[1])
+            line_index = int(parts[2]) if len(parts) > 2 else None
+        except (ValueError, IndexError) as error:
             raise InvalidDataError(
-                f"Override key {address!r} must be 'row.column', e.g. '0.3'"
+                f"Override key {address!r} must be 'row.column' or 'row.column.line'"
             ) from error
         if not 0 <= row_index < len(page["rows"]):
             raise InvalidDataError(
@@ -251,7 +252,24 @@ def _apply_band_overrides(page: dict[str, Any], overrides: Mapping[str, Any],
                 continue
             start = int(cell["column"])
             stop = min(start + int(cell.get("colspan", 1) or 1), len(columns))
-            _rewrite(cell, value, sum(columns[start:stop]), styles, level, report_key)
+            width = sum(columns[start:stop])
+            if line_index is None:
+                _rewrite(cell, value, width, styles, level, report_key)
+            else:
+                # One line of a multi-line cell. The others keep their measured offsets, letter
+                # spacing and per-cluster corrections untouched — nothing is restated to reach one.
+                measured_lines = cell.get("lines") or []
+                if not 0 <= line_index < len(measured_lines):
+                    raise InvalidDataError(
+                        f"Override {address!r} names line {line_index}, but that cell has "
+                        f"{len(measured_lines)} lines"
+                    )
+                texts = [
+                    "".join(run.get("text", "") for run in (line.get("runs") or []))
+                    for line in measured_lines
+                ]
+                texts[line_index] = _as_text(value)
+                _rewrite(cell, texts, width, styles, level, report_key)
             break
         else:
             raise InvalidDataError(
@@ -398,13 +416,21 @@ def _bands_by_page(bands: Mapping[str, Any], page_count: int) -> list[dict[str, 
             raise InvalidDataError(
                 f"Band address {address!r} must be 'row.column' or 'page.row.column'"
             )
+        # Exactly three spellings, deliberately with no page-1 shorthand for a line: "row.column"
+        # is page 1, "page.row.column" names a page, and "page.row.column.line" names one line of a
+        # multi-line cell. A "row.column.line" shorthand would be indistinguishable from
+        # "page.row.column", so it is not accepted.
+        #
+        # A line address updates that one line and leaves the cell's others exactly as measured, so
+        # a caller never restates what has not changed.
         if len(parts) == 2:
             page_index, rest = 0, parts
-        elif len(parts) == 3:
+        elif len(parts) in (3, 4):
             page_index, rest = int(parts[0]) - 1, parts[1:]
         else:
             raise InvalidDataError(
-                f"Band address {address!r} must be 'row.column' or 'page.row.column'"
+                f"Band address {address!r} must be 'row.column', 'page.row.column' or "
+                "'page.row.column.line'"
             )
         if not 0 <= page_index < page_count:
             raise InvalidDataError(
