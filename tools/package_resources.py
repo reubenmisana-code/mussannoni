@@ -890,6 +890,171 @@ def _header_tier(row: dict[str, Any]) -> bool:
     return len(spans) > 1 and all(span > 1 for span in spans)
 
 
+# ── Cell roles ────────────────────────────────────────────────────────────────
+#
+# What each static cell IS, decided once here against the reference rather than by every consumer at
+# runtime. backend-sis carries 407 lines doing this with regexes over the rendered string on every
+# render, including SAMPLE_LOCATIONS = ("MWANZA CC", "MWANZA") hardcoded in the application — the
+# sample's own identity, in the consumer. The measurement knows the answer, so it records it.
+#
+# Where a structural signal exists it is used. Where only the text can distinguish — which line of a
+# letterhead is the region — the text is read once, here, and the verdict shipped.
+
+ROLE_AUTHORITY = "authority"
+ROLE_REGION = "region"
+ROLE_EXAM = "exam"
+ROLE_SCOPE = "scope"
+ROLE_HEADING = "heading"
+ROLE_FIGURE = "figure"
+
+# Fixed institutional text, reproduced unchanged. These open the letterhead at both levels — English
+# on the secondary references, Swahili on the primary ones.
+_AUTHORITY_PREFIXES: tuple[str, ...] = (
+    "THE PRIME MINISTER",
+    "OFISI YA WAZIRI MKUU",
+    "REGIONAL ADMINISTRATION",
+    "TAWALA ZA MIKOA",
+)
+
+# How the references word a region line. This is the documents' own grammar, not the sample's
+# identity, so it is a legitimate rule rather than reference data.
+_REGION_SUFFIX = " REGION"
+_REGION_PREFIX = "MKOA WA "
+
+# How the references name a results document.
+_EXAM_MARKERS: tuple[str, ...] = ("RESULTS", "MATOKEO", "ASSESSMENT", "MTIHANI")
+
+# A number, optionally decimal or a percentage.
+_NUMERIC_VALUE = re.compile(r"^-?\d+(?:[.,]\d+)?%?$")
+
+# A competency band as the references spell it — "DARAJA B (VIZURI SANA)", "Grade C (Good)". Computed
+# from the figures beside it, so it is data. The parenthesised band name is required: without it this
+# also matches the column labels "DARAJA A-D" and "DARAJA E", and blanking those would delete
+# headings the reference draws.
+_COMPETENCY_VALUE = re.compile(r"^(?:grade|daraja)\s+[A-E]\s*\(", re.IGNORECASE)
+
+# Figures a row must carry before it reads as a band of data. A lone integer is far more likely to be
+# a column label — the division "0" heading — than a total.
+_MIN_FIGURES_PER_ROW = 4
+
+# Words that name the report rather than the unit it covers, so they cannot identify a scope line.
+_TITLE_NOISE = frozenset({
+    "MOCK", "RESULTS", "MATOKEO", "MTIHANI", "ASSESSMENT", "EXAMINATION", "FORM", "STANDARD",
+    "REGIONAL", "REGION", "MKOA", "WA", "YA", "NA", "LA", "DARASA", "AND", "THE", "OF",
+})
+
+
+def _sample_tokens(fixture: dict[str, Any]) -> frozenset[str]:
+    """The words that name the unit this report was measured from.
+
+    Read from the fixture's own ``sample_unit`` — ``PS1304014-BUTIMBA PRIMARY SCHOOL`` — so the
+    sample's identity comes from the measurement instead of being hardcoded in a consumer.
+
+    The report's own ``title`` is subtracted, because ``sample_unit`` mixes the unit with the report
+    name: ``Mwanza Top 10 Schools`` is a region plus a title. Without the subtraction, the heading
+    ``TOP 10 BEST SCHOOLS OVERALL`` matched on ``TOP``/``SCHOOLS`` and was classified as the scope,
+    which would have blanked a heading the reference draws. Measured on four reports.
+    """
+    report = fixture.get("report") or {}
+
+    def words(value: Any) -> set[str]:
+        return {
+            token
+            for token in re.split(r"[^A-Z0-9]+", str(value or "").upper())
+            if len(token) > 2 and token not in _TITLE_NOISE and not token.isdigit()
+        }
+
+    return frozenset(words(report.get("sample_unit")) - words(report.get("title")))
+
+
+def _line_role(text: str, sample: frozenset[str]) -> str:
+    """What one line of a static band is."""
+    value = (text or "").strip().upper()
+    if not value:
+        return ROLE_HEADING
+    if any(value.startswith(prefix) for prefix in _AUTHORITY_PREFIXES):
+        return ROLE_AUTHORITY
+    if value.startswith(_REGION_PREFIX) or value.endswith(_REGION_SUFFIX):
+        return ROLE_REGION
+    if any(marker in value for marker in _EXAM_MARKERS):
+        return ROLE_EXAM
+    if any(token in value for token in sample):
+        return ROLE_SCOPE
+    return ROLE_HEADING
+
+
+def _is_figure(text: str, figures_in_row: int) -> bool:
+    """Whether a static cell holds a computed value rather than a label."""
+    value = text.strip()
+    if not value:
+        return False
+    if _COMPETENCY_VALUE.match(value):
+        return True
+    if not _NUMERIC_VALUE.match(value):
+        return False
+    if figures_in_row >= _MIN_FIGURES_PER_ROW:
+        return True
+    return not value.isdigit()
+
+
+def _row_roles(row: dict[str, Any], sample: frozenset[str]) -> dict[str, str]:
+    """Roles for one static row, keyed ``"column"`` or ``"column.line"``.
+
+    A cell with one line is named by its column. A cell holding several lines — a letterhead is one
+    cell of six — gets a role per line, so each is individually addressable.
+    """
+    figures_in_row = sum(
+        1
+        for cell in row["cells"]
+        for text in _cell_line_texts(cell)
+        if _NUMERIC_VALUE.match(text.strip())
+    )
+    out: dict[str, str] = {}
+    for cell in row["cells"]:
+        column = int(cell["column"])
+        texts = _cell_line_texts(cell)
+        if not texts:
+            continue
+        for index, text in enumerate(texts):
+            role = (
+                ROLE_FIGURE
+                if _is_figure(text, figures_in_row)
+                else _line_role(text, sample)
+            )
+            key = str(column) if len(texts) == 1 else f"{column}.{index}"
+            out[key] = role
+    return out
+
+
+def _cell_line_texts(cell: dict[str, Any]) -> list[str]:
+    """The measured text of each line in one cell, in order."""
+    return [
+        "".join(run.get("text", "") for run in (line.get("runs") or []))
+        for line in (cell.get("lines") or [])
+    ]
+
+
+def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict[str, Any]]:
+    """Roles for every static row of every page, in page order.
+
+    Only rows the plan does not mark as data: a data row's content is the caller's and needs no role.
+    Keyed ``"row.column"`` or ``"row.column.line"``, the same address space the ``bands`` overrides
+    use, so a caller reads a role and writes to that address.
+    """
+    out: list[dict[str, Any]] = []
+    sample = _sample_tokens(fixture)
+    for page, data_rows in zip(fixture["pages"], plan):
+        data = set(data_rows)
+        roles: dict[str, str] = {}
+        for row_index, row in enumerate(page["rows"]):
+            if row_index in data:
+                continue
+            for key, role in _row_roles(row, sample).items():
+                roles[f"{row_index}.{key}"] = role
+        out.append(roles)
+    return out
+
+
 def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list[int]]:
     """Which rows of each measured page carry data, decided once at build time.
 
@@ -965,8 +1130,10 @@ def prepare_document(fixture: dict[str, Any], layout: dict[str, Any]) -> dict[st
     document = deepcopy(fixture)
     data_columns = _data_columns(layout)
     plan = _document_plan(fixture, layout)
-    for page, rows in zip(document["pages"], plan):
+    roles = _document_roles(fixture, plan)
+    for page, rows, page_roles in zip(document["pages"], plan, roles):
         page["data_rows"] = rows
+        page["roles"] = page_roles
         for index in rows:
             row = page["rows"][index]
             row["cells"] = [

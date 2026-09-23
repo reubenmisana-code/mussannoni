@@ -380,6 +380,18 @@ level; render only to inspect a final artifact.
 not the working tree, so production renders the old behaviour until the package is reinstalled and
 `celery` restarted. Both are deployment actions and belong to the user.
 
+**`headers.py` never replaces `primary/school_results`'s scope line — a live leak.** Its
+`classify_line` recognises a scope line by matching the hardcoded `SAMPLE_LOCATIONS = ("MWANZA CC",
+"MWANZA")`. That letterhead's scope line names a *school*, not a location —
+`PS1304014 - BUTIMBA  PRIMARY SCHOOL` — so it falls through to `static` and is kept verbatim.
+Demonstrated 2026-09-23: calling
+`header_overrides("school_results", "PRIMARY", region_name="SONGWE", exam_name="PSLE MOCK 2026",
+scope_title="PS9999 - TEST PRIMARY SCHOOL")` returns the region and exam correctly replaced and line 5
+still reading `PS1304014 - BUTIMBA  PRIMARY SCHOOL`, with the supplied `scope_title` silently dropped.
+Every generated primary school report therefore publishes the reference school's name and centre
+number. The packaged `roles` classify that line `scope` correctly, so the defect disappears with
+`headers.py` itself; until then it is live.
+
 **Two names per school, and they are not interchangeable.** `data.py::_sname()` strips the trailing
 ` SS`/` PS` for the table's narrow school-name column. The letterhead needs the full name: take
 `ExamSchool.school_name` un-stripped and pass it through the existing
