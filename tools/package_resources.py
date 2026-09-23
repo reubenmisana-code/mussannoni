@@ -570,6 +570,33 @@ def _multi_block_reports() -> set[str]:
     return set(payload.get("multi_block") or [])
 
 
+def _table_grid_overrides() -> dict[str, int]:
+    """The column count of the report's own table, where page count cannot establish it.
+
+    ``distil_layout`` picks the grid most pages are measured on. That is right whenever the table
+    occupies most of the report, and wrong when a report's further sections outnumber its table:
+    ``region_ufaulu_masomo`` is one page of 28-column subject rows followed by two pages of
+    20-column compound summaries, so the majority grid is the sections' and the distilled layout
+    describes a table the rows do not belong to — its ``header.labels`` came out as 20 empty strings.
+
+    Counting rows instead of pages does not fix it and was measured: the two summary pages carry 13
+    rows spanning their full 20-column grid against page 1's 7, so row counts choose the sections
+    too. No count separates them, which is why this is declared.
+    """
+    if not BINDINGS_CATALOG.exists():
+        return {}
+    payload = yaml.safe_load(BINDINGS_CATALOG.read_text(encoding="utf-8")) or {}
+    return {key: int(value) for key, value in (payload.get("table_grid") or {}).items()}
+
+
+def _repeating_size(report: dict[str, Any], pages: list[dict[str, Any]]) -> int:
+    """The column count of the grid this report's table repeats on."""
+    override = _table_grid_overrides().get(f"{report['level']}/{report['report_key']}")
+    if override is not None:
+        return override
+    return Counter(len(page["columns"]) for page in pages).most_common(1)[0][0]
+
+
 def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> dict[str, Any]:
     """Reduce a measured fixture to the layout a caller's data can be placed onto."""
     pages = fixture["pages"]
@@ -580,7 +607,13 @@ def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> 
     # own. Where page 1 already uses the repeating grid — which is every single-grid report — this
     # is exactly the previous behaviour.
     grid_sizes: Counter[int] = Counter(len(page["columns"]) for page in pages)
-    repeating_size = grid_sizes.most_common(1)[0][0]
+    repeating_size = _repeating_size(report, pages)
+    if repeating_size not in grid_sizes:
+        raise SystemExit(
+            f"{report['level']}/{report['report_key']}: catalog/bindings.yaml declares a "
+            f"{repeating_size}-column table grid, but no measured page has one "
+            f"(measured: {dict(grid_sizes)})"
+        )
     body_pages = [page for page in pages if len(page["columns"]) == repeating_size]
     compound_first_page = len(pages[0]["columns"]) != repeating_size
 
@@ -882,7 +915,13 @@ def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list
     # section the report prints whole — school-results ends with a 24-column division summary and a
     # 22-column subject analysis — and those are carried verbatim.
     sizes: Counter[int] = Counter(len(page["columns"]) for page in fixture["pages"])
-    table_sizes = {sizes.most_common(1)[0][0], len(fixture["pages"][0]["columns"])}
+    declared = _table_grid_overrides().get(f"{layout['level']}/{layout['report_key']}")
+    repeating = declared if declared is not None else sizes.most_common(1)[0][0]
+    table_sizes = {repeating, len(fixture["pages"][0]["columns"])}
+    if declared is not None:
+        # A declared grid also declares what is NOT the table: page 1 is only included when it is
+        # measured on that grid, otherwise the sections would be taken for data.
+        table_sizes = {repeating}
     for page in fixture["pages"]:
         columns = len(page["columns"])
         if columns not in table_sizes:

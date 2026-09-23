@@ -3,16 +3,14 @@
     "cells": [
       {
         "align": "center",
-        "classes": [
-          "f0"
-        ],
+        "classes": [],
         "column": 0,
-        "line_class": "t18",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t18",
-        "top_pt": 7.869
+        "run_class": "t5",
+        "top_pt": 7.857
       },
       {
         "align": "left",
@@ -20,25 +18,25 @@
           "f0"
         ],
         "column": 1,
-        "line_class": "t18",
-        "pad_left": 1.44,
+        "line_class": "t5",
+        "pad_left": 1.08,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t18",
-        "top_pt": 7.869
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
         "classes": [
-          "f14"
+          "f0"
         ],
         "column": 2,
-        "line_class": "t7",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t7",
-        "top_pt": 4.82
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
@@ -46,25 +44,25 @@
           "f0"
         ],
         "column": 3,
-        "line_class": "t14",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
         "classes": [
-          "f0"
+          "f9"
         ],
         "column": 4,
-        "line_class": "t14",
+        "line_class": "t3",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t3",
+        "top_pt": 7.617
       },
       {
         "align": "center",
@@ -72,12 +70,12 @@
           "f0"
         ],
         "column": 5,
-        "line_class": "t14",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
@@ -85,25 +83,25 @@
           "f0"
         ],
         "column": 6,
-        "line_class": "t14",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
         "classes": [
-          "f0"
+          "f9"
         ],
         "column": 7,
-        "line_class": "t14",
+        "line_class": "t3",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t3",
+        "top_pt": 7.617
       },
       {
         "align": "center",
@@ -111,746 +109,338 @@
           "f0"
         ],
         "column": 8,
-        "line_class": "t14",
+        "line_class": "t5",
         "pad_left": 0.0,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t5",
+        "top_pt": 7.617
       },
       {
         "align": "center",
-        "classes": [
-          "f3"
-        ],
-        "column": 9,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f12"
-        ],
-        "column": 10,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f3"
-        ],
-        "column": 11,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f12"
-        ],
-        "column": 12,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f5"
-        ],
-        "column": 13,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f15"
-        ],
-        "column": 14,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f15"
-        ],
-        "column": 15,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f16"
-        ],
-        "column": 16,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "center",
-        "classes": [
-          "f16"
-        ],
-        "column": 17,
-        "line_class": "t14",
-        "pad_left": 0.0,
-        "pad_right": 0.0,
-        "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
-      },
-      {
-        "align": "right",
         "classes": [
           "f0"
         ],
-        "column": 18,
-        "line_class": "t14",
+        "column": 9,
+        "line_class": "t5",
         "pad_left": 0.0,
-        "pad_right": 13.91,
+        "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t14",
-        "top_pt": 7.659
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f9"
+        ],
+        "column": 10,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 11,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 12,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f9"
+        ],
+        "column": 13,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 14,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 15,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 16,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f2"
+        ],
+        "column": 17,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f3"
+        ],
+        "column": 18,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f3"
+        ],
+        "column": 19,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f3"
+        ],
+        "column": 20,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f10"
+        ],
+        "column": 21,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 22,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 23,
+        "line_class": "t5",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t5",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 24,
+        "line_class": "t3",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t3",
+        "top_pt": 7.617
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f2"
+        ],
+        "column": 25,
+        "line_class": "t2",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t2",
+        "top_pt": 7.139
+      },
+      {
+        "align": "center",
+        "classes": [
+          "f0"
+        ],
+        "column": 26,
+        "line_class": "t2",
+        "pad_left": 0.0,
+        "pad_right": 0.0,
+        "rotation": 0,
+        "run_class": "t2",
+        "top_pt": 7.139
       },
       {
         "align": "left",
         "classes": [
           "f0"
         ],
-        "column": 19,
-        "line_class": "t19",
-        "pad_left": 1.41,
+        "column": 27,
+        "line_class": "t3",
+        "pad_left": 1.04,
         "pad_right": 0.0,
         "rotation": 0,
-        "run_class": "t19",
-        "top_pt": 7.72
+        "run_class": "t3",
+        "top_pt": 7.857
       }
     ],
-    "row_height_pt": 14.28
+    "row_height_pt": 11.16
   },
   "decorations": {
-    "loose_lines": [
-      {
-        "class": "t6",
-        "left_pt": 337.219,
-        "letter_spacing_pt": 0.0,
-        "rotation": 0,
-        "runs": [
-          {
-            "chunks": [
-              {
-                "margin_pt": 0.0,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "F"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "I"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "S"
-              },
-              {
-                "margin_pt": -0.052,
-                "text": "I"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": " Y"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " W"
-              },
-              {
-                "margin_pt": 0.006,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.326,
-                "text": "Z"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "IR"
-              },
-              {
-                "margin_pt": 0.005,
-                "text": "I "
-              },
-              {
-                "margin_pt": -0.059,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.138,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "U"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "U"
-              }
-            ],
-            "class": "t6",
-            "text": "OFISI YA WAZIRI MKUU"
-          }
-        ],
-        "top_pt": 56.942
-      },
-      {
-        "class": "t6",
-        "left_pt": 299.419,
-        "letter_spacing_pt": 0.0,
-        "rotation": 0,
-        "runs": [
-          {
-            "chunks": [
-              {
-                "margin_pt": 0.0,
-                "text": "T"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.17,
-                "text": "W"
-              },
-              {
-                "margin_pt": -0.103,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": "L"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "Z"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.059,
-                "text": "IK"
-              },
-              {
-                "margin_pt": 0.005,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.098,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.247,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "N"
-              },
-              {
-                "margin_pt": 0.064,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.059,
-                "text": "S"
-              },
-              {
-                "margin_pt": -0.053,
-                "text": "E"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": "R"
-              },
-              {
-                "margin_pt": 0.065,
-                "text": "I"
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.247,
-                "text": "L"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "I"
-              },
-              {
-                "margin_pt": -0.06,
-                "text": " Z"
-              },
-              {
-                "margin_pt": 0.076,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " M"
-              },
-              {
-                "margin_pt": 0.06,
-                "text": "IT"
-              },
-              {
-                "margin_pt": 0.075,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": "A"
-              }
-            ],
-            "class": "t6",
-            "text": "TAWALA ZA MIKOA NA SERIKALI ZA MITAA"
-          }
-        ],
-        "top_pt": 66.542
-      },
-      {
-        "class": "t6",
-        "left_pt": 343.459,
-        "letter_spacing_pt": 0.0,
-        "rotation": 0,
-        "runs": [
-          {
-            "chunks": [
-              {
-                "margin_pt": 0.0,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.058,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.065,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " W"
-              },
-              {
-                "margin_pt": 0.006,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " M"
-              },
-              {
-                "margin_pt": 0.06,
-                "text": "W"
-              },
-              {
-                "margin_pt": 0.005,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.249,
-                "text": "N"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "Z"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "A"
-              }
-            ],
-            "class": "t6",
-            "text": "MKOA WA MWANZA"
-          }
-        ],
-        "top_pt": 76.142
-      },
-      {
-        "class": "t6",
-        "left_pt": 230.659,
-        "letter_spacing_pt": 0.0,
-        "rotation": 0,
-        "runs": [
-          {
-            "chunks": [
-              {
-                "margin_pt": 0.0,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.058,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.169,
-                "text": "T"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.005,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.064,
-                "text": "E"
-              },
-              {
-                "margin_pt": -0.052,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": " Y"
-              },
-              {
-                "margin_pt": -0.05,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.17,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.137,
-                "text": "T"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "I"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "H"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": "N"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "I "
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "W"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.138,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "C"
-              },
-              {
-                "margin_pt": 0.065,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.059,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.136,
-                "text": "K"
-              },
-              {
-                "margin_pt": 0.004,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.169,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "D"
-              },
-              {
-                "margin_pt": 0.065,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": "R"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": "S"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "L"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "A"
-              },
-              {
-                "margin_pt": -0.248,
-                "text": " "
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "N"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "N"
-              },
-              {
-                "margin_pt": 0.065,
-                "text": "E"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": " "
-              },
-              {
-                "margin_pt": -0.06,
-                "text": "M"
-              },
-              {
-                "margin_pt": 0.136,
-                "text": "W"
-              },
-              {
-                "margin_pt": -0.103,
-                "text": "E"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": "Z"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "I"
-              },
-              {
-                "margin_pt": -0.06,
-                "text": " A"
-              },
-              {
-                "margin_pt": -0.247,
-                "text": "G"
-              },
-              {
-                "margin_pt": 0.099,
-                "text": "O"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "S"
-              },
-              {
-                "margin_pt": -0.051,
-                "text": "T"
-              },
-              {
-                "margin_pt": 0.074,
-                "text": "I"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": ","
-              },
-              {
-                "margin_pt": -0.06,
-                "text": " 2"
-              },
-              {
-                "margin_pt": 0.003,
-                "text": "0"
-              },
-              {
-                "margin_pt": -0.045,
-                "text": "2"
-              },
-              {
-                "margin_pt": 0.002,
-                "text": "6"
-              }
-            ],
-            "class": "t6",
-            "text": "MATOKEO YA MTIHANI WA MOCK MKOA DARASA LA NNE MWEZI AGOSTI, 2026"
-          }
-        ],
-        "top_pt": 85.742
-      }
-    ],
-    "vectors": []
-  },
-  "first_page_rows": 17,
-  "front": {
-    "body": null,
-    "body_to_front_column": null,
-    "columns": [
-      14.65,
-      65.68,
-      24.08,
-      24.17,
-      24.12,
-      24.07,
-      24.17,
-      24.12,
-      24.07,
-      24.17,
-      24.12,
-      24.07,
-      24.17,
-      24.12,
-      24.07,
-      24.12,
-      24.17,
-      24.13,
-      24.08,
-      24.12,
-      24.15,
-      24.12,
-      24.07,
-      24.12,
-      24.17,
-      24.12,
-      23.87,
-      50.58
-    ],
-    "data_rows": 9,
-    "header_row_map": [
-      0,
-      3
-    ],
-    "height_pt": 62.56,
     "loose_lines": [],
-    "row_count": 4,
+    "vectors": [
+      {
+        "d": "M110.28 50.76C110.28 48.96 136.68 47.52 169.44 47.52M169.44 47.52C202.08 47.52 228.6 48.96 228.6 50.76M228.6 50.76C228.6 52.44 202.08 53.88 169.44 53.88M169.44 53.88C136.68 53.88 110.28 52.44 110.28 50.76",
+        "fill": "none",
+        "stroke": "color(srgb 0.180400 0.458800 0.713700)",
+        "stroke_width": 0.24
+      }
+    ]
+  },
+  "first_page_rows": 8,
+  "header": {
+    "fields": [
+      "sno",
+      "subject_name",
+      "grade_a_m",
+      "grade_a_f",
+      "grade_a_t",
+      "grade_b_m",
+      "grade_b_f",
+      "grade_b_t",
+      "grade_c_m",
+      "grade_c_f",
+      "grade_c_t",
+      "grade_d_m",
+      "grade_d_f",
+      "grade_d_t",
+      "pass_ad_m",
+      "pass_ad_f",
+      "pass_ad_t",
+      "pct_ad",
+      "grade_e_m",
+      "grade_e_f",
+      "grade_e_t",
+      "pct_e",
+      "registered_m",
+      "registered_f",
+      "registered_t",
+      "average",
+      "rank",
+      "competency"
+    ],
+    "height_pt": 73.72,
+    "labels": [
+      "NA",
+      "SOMO",
+      "WAV",
+      "WAS",
+      "JML",
+      "WAV",
+      "WAS",
+      "JML",
+      "WAV",
+      "WAS",
+      "JML",
+      "WAV",
+      "WAS",
+      "JML",
+      "WAV",
+      "WAS",
+      "JML",
+      "%",
+      "WAV",
+      "WAS",
+      "JML",
+      "%",
+      "WAV",
+      "WAS",
+      "JML",
+      "WA SOMO",
+      "SOMO",
+      "KUNDI LA UMAHIRI"
+    ],
+    "row_count": 5,
     "rows": [
       {
         "cells": [
@@ -2066,55 +1656,1113 @@
         ],
         "height_pt": 11.17,
         "index": 3
-      }
-    ],
-    "rule": {
-      "fill": "color(srgb 0.000000 0.000000 0.000000)",
-      "header_d": "M19.56 106.08h733.92v0.6h-733.92ZM99.96 117.36h554.76v0.24h-554.76Z",
-      "width_pt": 0.24
-    },
-    "table": {
-      "width_pt": 733.67,
-      "x_pt": 19.55,
-      "y_pt": 54.96
-    },
-    "value_columns": null,
-    "vectors": [
+      },
       {
-        "d": "M110.28 50.76C110.28 48.96 136.68 47.52 169.44 47.52M169.44 47.52C202.08 47.52 228.6 48.96 228.6 50.76M228.6 50.76C228.6 52.44 202.08 53.88 169.44 53.88M169.44 53.88C136.68 53.88 110.28 52.44 110.28 50.76",
-        "fill": "none",
-        "stroke": "color(srgb 0.180400 0.458800 0.713700)",
-        "stroke_width": 0.24
+        "cells": [
+          {
+            "align": "right",
+            "classes": [],
+            "colspan": 1,
+            "column": 0,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 4.43,
+                "letter_spacing_pt": -0.0039,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t2",
+                    "text": "NA"
+                  }
+                ],
+                "top_pt": 7.029
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 3.55,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 1,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 25.89,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "SO"
+                      },
+                      {
+                        "margin_pt": -0.038,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.032,
+                        "text": "O"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "SOMO"
+                  }
+                ],
+                "top_pt": 7.029
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 2,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.9,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 3,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.92,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 4,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.51,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "JM"
+                      },
+                      {
+                        "margin_pt": 0.078,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 5,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.91,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 6,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.94,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 7,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.48,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "J"
+                      },
+                      {
+                        "margin_pt": 0.065,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 8,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.9,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 9,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.93,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 10,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.52,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "JM"
+                      },
+                      {
+                        "margin_pt": 0.078,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 11,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.92,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 12,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.95,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f4"
+            ],
+            "colspan": 1,
+            "column": 13,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.49,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "J"
+                      },
+                      {
+                        "margin_pt": 0.065,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f5"
+            ],
+            "colspan": 1,
+            "column": 14,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.91,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.105,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f5"
+            ],
+            "colspan": 1,
+            "column": 15,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.94,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f5"
+            ],
+            "colspan": 1,
+            "column": 16,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.53,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "J"
+                      },
+                      {
+                        "margin_pt": 0.065,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f6"
+            ],
+            "colspan": 1,
+            "column": 17,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 10.27,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t2",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f7"
+            ],
+            "colspan": 1,
+            "column": 18,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.91,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f7"
+            ],
+            "colspan": 1,
+            "column": 19,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.93,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.105,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f7"
+            ],
+            "colspan": 1,
+            "column": 20,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.52,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "JM"
+                      },
+                      {
+                        "margin_pt": 0.078,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f7"
+            ],
+            "colspan": 1,
+            "column": 21,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 10.27,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [],
+                    "class": "t2",
+                    "text": "%"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f8"
+            ],
+            "colspan": 1,
+            "column": 22,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.92,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.254,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "V"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAV"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f8"
+            ],
+            "colspan": 1,
+            "column": 23,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 6.95,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.207,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "S"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "WAS"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f8"
+            ],
+            "colspan": 1,
+            "column": 24,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 7.54,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "J"
+                      },
+                      {
+                        "margin_pt": 0.065,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "L"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "JML"
+                  }
+                ],
+                "top_pt": 6.669
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 25,
+            "lines": [
+              {
+                "class": "t3",
+                "left_pt": 2.213,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "W"
+                      },
+                      {
+                        "margin_pt": -0.14,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.175,
+                        "text": " "
+                      },
+                      {
+                        "margin_pt": -0.073,
+                        "text": "SO"
+                      },
+                      {
+                        "margin_pt": -0.036,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.068,
+                        "text": "O"
+                      }
+                    ],
+                    "class": "t3",
+                    "text": "WA SOMO"
+                  }
+                ],
+                "top_pt": 1.507
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f0"
+            ],
+            "colspan": 1,
+            "column": 26,
+            "lines": [
+              {
+                "class": "t4",
+                "left_pt": 6.225,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "S"
+                      },
+                      {
+                        "margin_pt": -0.033,
+                        "text": "OM"
+                      },
+                      {
+                        "margin_pt": 0.031,
+                        "text": "O"
+                      }
+                    ],
+                    "class": "t4",
+                    "text": "SOMO"
+                  }
+                ],
+                "top_pt": 1.468
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          },
+          {
+            "align": "center",
+            "classes": [
+              "f3"
+            ],
+            "colspan": 1,
+            "column": 27,
+            "lines": [
+              {
+                "class": "t2",
+                "left_pt": 3.66,
+                "letter_spacing_pt": 0.0,
+                "rotation": 0,
+                "runs": [
+                  {
+                    "chunks": [
+                      {
+                        "margin_pt": 0.0,
+                        "text": "KU"
+                      },
+                      {
+                        "margin_pt": -0.059,
+                        "text": "ND"
+                      },
+                      {
+                        "margin_pt": -0.058,
+                        "text": "I"
+                      },
+                      {
+                        "margin_pt": 0.056,
+                        "text": " LA"
+                      },
+                      {
+                        "margin_pt": -0.105,
+                        "text": " U"
+                      },
+                      {
+                        "margin_pt": -0.002,
+                        "text": "M"
+                      },
+                      {
+                        "margin_pt": 0.032,
+                        "text": "A"
+                      },
+                      {
+                        "margin_pt": -0.152,
+                        "text": "HIRI"
+                      }
+                    ],
+                    "class": "t2",
+                    "text": "KUNDI LA UMAHIRI"
+                  }
+                ],
+                "top_pt": -1.371
+              }
+            ],
+            "pad_left": 0.0,
+            "pad_right": 0.0,
+            "rowspan": 1
+          }
+        ],
+        "height_pt": 11.16,
+        "index": 4
       }
     ]
-  },
-  "header": {
-    "fields": null,
-    "height_pt": 0,
-    "labels": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "row_count": 0,
-    "rows": []
   },
   "level": "primary",
   "measured_pages": 3,
@@ -2124,41 +2772,49 @@
     "width_pt": 792.0
   },
   "report_key": "region_ufaulu_masomo",
-  "rows_per_page": 17,
+  "rows_per_page": 7,
   "rule": {
     "fill": "color(srgb 0.000000 0.000000 0.000000)",
-    "header_d": "",
-    "width_pt": 0.48
+    "header_d": "M18.96 106.08h0.6v22.92h-0.6ZM34.08 106.68h0.24v21.72h-0.24ZM99.72 106.68h0.24v21.72h-0.24ZM123.84 117.6h0.24v10.8h-0.24ZM147.96 117.6h0.24v10.8h-0.24ZM172.08 106.68h0.24v21.72h-0.24ZM196.2 117.6h0.24v10.8h-0.24ZM220.32 117.6h0.24v10.8h-0.24ZM244.44 106.68h0.24v21.72h-0.24ZM268.56 117.6h0.24v10.8h-0.24ZM292.68 117.6h0.24v10.8h-0.24ZM316.8 106.68h0.24v21.72h-0.24ZM340.92 117.6h0.24v10.8h-0.24ZM365.04 117.6h0.24v10.8h-0.24ZM389.16 106.68h0.24v21.72h-0.24ZM413.28 117.6h0.24v10.8h-0.24ZM437.4 117.6h0.24v10.8h-0.24ZM461.52 117.6h0.24v10.8h-0.24ZM485.64 106.68h0.24v21.72h-0.24ZM509.76 117.6h0.24v10.8h-0.24ZM533.88 117.6h0.24v10.8h-0.24ZM558.0 117.6h0.24v10.8h-0.24ZM582.12 106.68h0.24v21.72h-0.24ZM606.24 117.6h0.24v10.8h-0.24ZM630.36 117.6h0.24v10.8h-0.24ZM654.48 106.68h0.24v21.72h-0.24ZM678.6 106.68h0.24v21.72h-0.24ZM702.48 106.68h0.24v21.72h-0.24ZM752.88 106.68h0.6v22.32h-0.6ZM19.56 106.08h733.92v0.6h-733.92ZM99.96 117.36h554.76v0.24h-554.76ZM19.56 128.4h733.92v0.6h-733.92Z",
+    "width_pt": 0.24
   },
   "sample_unit": "MKOA UFAULU MASOMO STD4 2026",
   "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [
-      24.88,
-      170.21,
-      29.28,
-      22.89,
-      18.58,
-      27.24,
-      25.34,
-      31.54,
-      22.96,
-      27.23,
-      22.89,
-      27.28,
-      22.93,
-      36.36,
-      31.53,
-      22.94,
-      27.24,
-      25.33,
-      29.23,
-      88.19
+      14.65,
+      65.68,
+      24.08,
+      24.17,
+      24.12,
+      24.07,
+      24.17,
+      24.12,
+      24.07,
+      24.17,
+      24.12,
+      24.07,
+      24.17,
+      24.12,
+      24.07,
+      24.12,
+      24.17,
+      24.13,
+      24.08,
+      24.12,
+      24.15,
+      24.12,
+      24.07,
+      24.12,
+      24.17,
+      24.12,
+      23.87,
+      50.58
     ],
-    "width_pt": 734.07,
-    "x_pt": 26.84,
-    "y_pt": 92.88
+    "width_pt": 733.67,
+    "x_pt": 19.55,
+    "y_pt": 54.96
   },
   "text_styles": {
     "t0": {

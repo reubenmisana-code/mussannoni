@@ -136,7 +136,7 @@ row source exists
 | 36 | primary | region_shule_bora_jumla | 33 | 30 | 10 | 3 | 2 | ✅ | ✅ | A + D |
 | 37 | primary | region_shule_bora_masomo_serikali | 32 | 60 | 20 | 3 | 0 | ✅ | ❌ | **C** |
 | 38 | primary | region_shule_bora_masomo_jumla | 33 | 60 | 20 | 3 | 0 | ✅ | ❌ | C |
-| 39 | primary | region_ufaulu_masomo | 20 | 0 | 0 | 0 | 3 | ❌ | ✅ | B |
+| 39 | primary | region_ufaulu_masomo | 28 | 7 | 7 | 1 | 2 | ✅ | ✅ | A + **D** |
 | 40 | primary | region_ufaulu_masomo_jumla | 28 | 7 | 7 | 1 | 0 | ✅ | ✅ | A |
 | 41 | primary | region_wanafunzi_bora | 23 | 60 | 10 | 6 | 0 | ✅ | ✅ | A |
 | 42 | primary | region_shule_serikali | 35 | 927 | 50 | 15 | 0 | ✅ | ✅ | A |
@@ -145,8 +145,8 @@ row source exists
 | 45 | primary | region_halmashauri_masomo | 34 | 60 | 10 | 6 | 0 | ✅ | ✅ | A |
 | 46 | primary | region_halmashauri_jumla | 34 | 40 | 10 | 4 | 0 | ✅ | ✅ | A |
 
-**Totals:** 42 ship column identity · 36 have a backend row source · **34 have both** · 11 carry real
-further-section pages · 4 still have no column identity.
+**Totals:** 43 ship column identity · 36 have a backend row source · **35 have both** · 11 carry real
+further-section pages · 3 still have no column identity.
 
 † **Re-measured 2026-09-23: these two carry no section pages at all.** Their trailing pages are
 **blank in the reference PDF itself** — `council_best_students_subjectwise` pages 21–30 and
@@ -166,7 +166,7 @@ verification, per [§5](#verification), and fixing whatever it reports. Do not w
 
 Expected per report: 0 text differences and 0.0000 pt drift against the fixture, sections verbatim.
 
-### Class B — 4 reports: column identity missing
+### Class B — 3 reports: column identity missing
 
 Without `header.fields` there is no safe way to place a value, so `cap` is 0 and the measured path
 refuses the report. **Re-measured 2026-09-23 against every page of the 8** that were in this class, the
@@ -176,7 +176,7 @@ group is now **resolved**:
 | group | reports | cause | state |
 |---|---|---|---|
 | **1 — repeated blocks per page** | `council_top_schools_kimasomo_overall` (36 cols) · `council_top_schools_kimasomo_serikali` (35) · `region_shule_bora_masomo_serikali` (32) · `region_shule_bora_masomo_jumla` (33) | They **do** have a repeating table. Each page carries **several 10-row blocks**, each repeating its own full-width label row, and the single-label-row rule marked only the last block — 30 of 60 rows. Label rows at `[3,17]` / `[2,8,22]` / `[2,6,20]` or `[5,21]`; 60 = 6 subjects × 10 schools, blocks spanning page boundaries. | **Done.** Bindings added, and `_data_start` walks the leading band instead of taking the last label row, gated on a `multi_block` declaration in `catalog/bindings.yaml`. All four report 60/60 data rows and pass both tests. Zero change to the other 38. |
-| **2 — layout took the wrong grid** | `region_ufaulu_masomo` | `header.labels` holds 20 entries and **all are empty**, because the layout latched onto pages 2–3's 20-column compound grid. The real table is page 1's 28-column subject list, label row `NA │ SOMO │ WAV │ WAS │ JML │ …`, with 12 numbered subject rows beneath. The binding is right; the layout is wrong. | Open. |
+| **2 — layout took the wrong grid** | `region_ufaulu_masomo` | `header.labels` held 20 entries and **all were empty**, because the layout latched onto pages 2–3's 20-column compound grid. The real table is page 1's 28-column subject list, label row `NA │ SOMO │ WAV │ WAS │ JML │ …`. | **Done.** A `table_grid` declaration names the table's column count; `distil_layout` and `_document_plan` both honour it, and a declared grid also declares what is *not* the table, so pages 2–3 are carried as sections. Now 28 correct labels, the sibling's 28-name binding, and 7 data rows — 6 subjects plus `JUMLA`. |
 | **3 — genuinely no repeating table** | `council_subject_summary` (1 page, 19 cols) · `council_ufaulu_wa_masomo` (1 page, 28 cols, 6 numbered rows) · `council_kata_rank_alama` (2 pages) | Fixed-shape compound summary sheets whose content is aggregates split by sex (`WAV`/`WAS`/`JML`) nested in several mini-tables per page — not a variable-length row list. `council_kata_rank_alama`'s page 2 does carry a real 29-column label row, but the sample has only the `JUMLA` totals row beneath it, so `cap` 0 is **correct** for it. | Open — belongs to the roles/bands contract. |
 
 **Why the multi-block walk is declared, not detected.** Applying it to all 46 was measured and rejected:
@@ -307,14 +307,16 @@ Passing means `text diffs 0`, `max drift 0.0000 pt`, and page counts equal. For
 0.0000 pt`.
 
 Then the leak test, which is the one that matters for production: supply a distinct marker in every
-field of every row and assert that no filled data row retains anything else. Across the 38 reports with
-identity this currently passes 38/38.
+field of every row and assert that no filled data row retains anything else. Across every report with
+identity this currently passes with 0 leaks.
 
 ### Corpus-wide sweep result, 2026-09-23
 
-Both tests were run over all 46 reports. Outcome: **36 pass** with `text diffs 0` and `max drift
-0.0000 pt`, **2 "fail" on page count alone** (reports 7 and 8, entirely from the reference's own blank
-trailing pages — see the † note in §3), and **8 skip** for no column identity (the Class B set). No
+Both tests were run over all 46 reports. Outcome (latest run): **41 pass** with `text diffs 0` and
+`max drift 0.0000 pt`, **2 "fail" on page count alone** (reports 7 and 8, entirely from the reference's
+own blank trailing pages — see the † note in §3), and **3 skip** for no column identity (the Class B
+set). The first run reported 36 / 2 / 8; the five gained are the four multi-block reports and
+`region_ufaulu_masomo`. No
 report showed a single text difference, any drift, or any leak in a named column. Largest verified:
 `primary/region_shule_nafasi_jumla` at 1162 rows over 16 pages and 45,178 cells.
 
@@ -399,8 +401,8 @@ step of the thread, not the first.
 
 1. **Class A verification sweep** — done, `tools/verify_alignment.py`. 36 pass with 0 diffs and 0.0000 pt
    drift, 2 blank-page artifacts, 8 skipped. Re-run it after every change below.
-2. **Class B group 1 + 2** — one distiller change for the four repeated-block reports, one grid choice
-   for `region_ufaulu_masomo`. This is what unblocks deleting the approximation.
+2. **Class B group 1 + 2** — done. Four repeating-block reports bound behind a `multi_block`
+   declaration, and `region_ufaulu_masomo`'s grid named by a `table_grid` declaration.
 3. **Roles and the bands contract** — covers Class B group 3 and the `header`/`loose` override callers.
 4. **Class D, `secondary/school_results` first** — 2 section pages, both aggregates already in
    `SchoolAnalysis`. Solving it establishes the per-section identity shape for the other two. Note the

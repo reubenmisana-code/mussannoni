@@ -740,6 +740,35 @@ reports:
   - average
   - competency
   - rank
+  primary/region_ufaulu_masomo:
+  - sno
+  - subject_name
+  - grade_a_m
+  - grade_a_f
+  - grade_a_t
+  - grade_b_m
+  - grade_b_f
+  - grade_b_t
+  - grade_c_m
+  - grade_c_f
+  - grade_c_t
+  - grade_d_m
+  - grade_d_f
+  - grade_d_t
+  - pass_ad_m
+  - pass_ad_f
+  - pass_ad_t
+  - pct_ad
+  - grade_e_m
+  - grade_e_f
+  - grade_e_t
+  - pct_e
+  - registered_m
+  - registered_f
+  - registered_t
+  - average
+  - rank
+  - competency
   primary/region_ufaulu_masomo_jumla:
   - sno
   - subject_name
@@ -1253,6 +1282,14 @@ multi_block:
 - primary/council_top_schools_kimasomo_serikali
 - primary/region_shule_bora_masomo_serikali
 - primary/region_shule_bora_masomo_jumla
+# The column count of a report's own table, where the majority-of-pages rule picks the wrong grid.
+# region_ufaulu_masomo is one page of 28-column subject rows followed by two pages of 20-column
+# compound summaries, so the majority grid is the sections' and the distilled layout described a table
+# the rows do not belong to (header.labels came out as 20 empty strings). Counting rows instead of
+# pages does not separate them either — measured 2026-09-23, the two summary pages carry 13 rows
+# spanning their full 20-column grid against page 1's 7. No count works, so it is declared.
+table_grid:
+  primary/region_ufaulu_masomo: 28
 unresolved:
   primary/council_kata_rank_alama: no repeating table on this sample. Page 1 is entirely nested mini-tables;
     page 2 carries a real 29-column label row (S/N | KATA | IDADI YA SHULE | WAV | WAS | JML) but only the
@@ -1263,8 +1300,3 @@ unresolved:
     is aggregates split by sex (WAV/WAS/JML) inside several mini-tables. Belongs to the roles/bands contract.
   primary/council_ufaulu_wa_masomo: no repeating table. A one-page 28-column compound summary of the same
     shape as council_subject_summary. Belongs to the roles/bands contract.
-  primary/region_ufaulu_masomo: the LAYOUT took the wrong grid, not the binding. layout.header.labels holds
-    20 entries and every one is empty, because the layout latched onto pages 2-3's 20-column compound grid.
-    The real repeating table is page 1's 28-column subject list, label row NA | SOMO | WAV | WAS | JML,
-    numbered subject rows beneath it. The existing 28-name binding fits that grid; fix the distiller's grid
-    choice rather than the binding.
