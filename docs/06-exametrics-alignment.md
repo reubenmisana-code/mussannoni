@@ -25,6 +25,15 @@ A report is aligned when all four hold:
 
 Item 3 is the one that fails silently, so it is the one to test first.
 
+Item 4 has one deliberate exception, for trailing sections. A **section must not be forced onto a new
+page** — it follows immediately after the table before it. The reference puts `school_results`'s summary
+on page 14 only because 491 candidates filled 13 pages first; a school with 44 candidates ends its
+candidate table partway down page 2, and the section belongs there. Section placement is flow-relative
+to where the data ended; the section's own grid, band and typography stay exactly as measured.
+Relatedly, the blue background belongs to the whole report **wherever there is data** — a generated
+report with fewer rows than the reference carries it across its own data extent, and not over empty
+rows.
+
 ---
 
 ## 2. The mechanism that works
@@ -95,8 +104,8 @@ row source exists
 | 4 | secondary | council_wards_rank | 19 | 19 | 19 | 1 | 0 | ✅ | ✅ | A |
 | 5 | secondary | council_top_schools | 36 | 30 | 10 | 3 | 0 | ✅ | ✅ | A |
 | 6 | secondary | council_best_students | 8 | 50 | 10 | 5 | 0 | ✅ | ✅ | A |
-| 7 | secondary | council_best_students_subjectwise | 10 | 200 | 10 | 20 | 10 | ✅ | ❌ | **C** |
-| 8 | secondary | council_schools_rank_subjectwise | 15 | 664 | 54 | 23 | 1 | ✅ | ❌ | C |
+| 7 | secondary | council_best_students_subjectwise | 10 | 200 | 10 | 20 | 0† | ✅ | ❌ | **C** |
+| 8 | secondary | council_schools_rank_subjectwise | 15 | 664 | 54 | 23 | 0† | ✅ | ❌ | C |
 | 9 | secondary | subject_schools_rank | 17 | 388 | 62 | 6 | 0 | ✅ | ✅ | A |
 | 10 | secondary | region_schools_rank_overall | 39 | 393 | 59 | 6 | 0 | ✅ | ✅ | A |
 | 11 | secondary | region_schools_rank_government | 39 | 304 | 65 | 4 | 0 | ✅ | ✅ | A |
@@ -136,8 +145,15 @@ row source exists
 | 45 | primary | region_halmashauri_masomo | 34 | 60 | 10 | 6 | 0 | ✅ | ✅ | A |
 | 46 | primary | region_halmashauri_jumla | 34 | 40 | 10 | 4 | 0 | ✅ | ✅ | A |
 
-**Totals:** 38 ship column identity · 36 have a backend row source · **34 have both** · 13 carry further
-section pages · 8 have neither identity nor a usable plan.
+**Totals:** 38 ship column identity · 36 have a backend row source · **34 have both** · 11 carry real
+further-section pages · 8 have neither identity nor a usable plan.
+
+† **Re-measured 2026-09-23: these two carry no section pages at all.** Their trailing pages are
+**blank in the reference PDF itself** — `council_best_students_subjectwise` pages 21–30 and
+`council_schools_rank_subjectwise` page 24 extract 0 characters, and the fixture correctly records 0
+rows for each. The build drops them, which is why the round trip reports 20/30 and 23/24 pages. This
+is correct behaviour on a correct measurement, not a defect. An earlier revision of this table counted
+them as section pages and named report 7 the worst Class D case; that was wrong on both counts.
 
 ---
 
@@ -153,27 +169,21 @@ Expected per report: 0 text differences and 0.0000 pt drift against the fixture,
 ### Class B — 8 reports: column identity missing
 
 Without `header.fields` there is no safe way to place a value, so `cap` is 0 and the measured path
-refuses the report. Two distinct causes:
+refuses the report. **Re-measured 2026-09-23 against every page of all 8**, the cause is neither one
+shared gap nor registry data entry. It is three distinct causes:
 
-| report | cause |
-|---|---|
-| `council_kata_rank_alama` | registry has 29 columns, measured grid has 30, and 2 unlabelled columns cannot disambiguate which is unmapped |
-| `region_ufaulu_masomo` | registry has 28 columns, measured grid has 20 — the binding matches page 1's grid, not the repeating one |
-| `council_top_schools_kimasomo_overall` | no registry entry |
-| `council_top_schools_kimasomo_serikali` | no registry entry |
-| `council_subject_summary` | no registry entry |
-| `council_ufaulu_wa_masomo` | no registry entry |
-| `region_shule_bora_masomo_serikali` | no registry entry |
-| `region_shule_bora_masomo_jumla` | no registry entry |
+| group | reports | cause |
+|---|---|---|
+| **1 — repeated blocks per page** | `council_top_schools_kimasomo_overall` (36 cols) · `council_top_schools_kimasomo_serikali` (35) · `region_shule_bora_masomo_serikali` (32) · `region_shule_bora_masomo_jumla` (33) | They **do** have a repeating table. Each page carries **several 10-row blocks**, each repeating its own full-width label row, and the distiller's single-label-row model cannot express that — so it marked nothing as data. Measured label-row positions `[3,17]` / `[2,8,22]` / `[2,6,20]` with 20 data rows per page, totalling **60 = 6 subjects × 10 schools**, blocks spanning page boundaries. |
+| **2 — layout took the wrong grid** | `region_ufaulu_masomo` | `header.labels` holds 20 entries and **all are empty**, because the layout latched onto pages 2–3's 20-column compound grid. The real table is page 1's 28-column subject list, label row `NA │ SOMO │ WAV │ WAS │ JML │ …`, numbered subject rows beneath. The binding is right; the layout is wrong. |
+| **3 — genuinely no repeating table** | `council_subject_summary` (1 page, 19 cols) · `council_ufaulu_wa_masomo` (1 page, 28) · `council_kata_rank_alama` (2 pages) | Fixed-shape compound summary sheets whose content is aggregates split by sex (`WAV`/`WAS`/`JML`) nested in several mini-tables per page — not a variable-length row list. `council_kata_rank_alama`'s page 2 does carry a real 29-column label row, but the sample has only the `JUMLA` totals row beneath it, so `cap` 0 is **correct** for it. Its `header.labels` is a **data row** (`'01','HISABATI','0','0.0',…,'DARAJA C (VIZURI)'`) — the actual cause of the 29-vs-30 mismatch. |
 
-Procedure: add the entry to `catalog/bindings.yaml`, one field name per measured column, `""` for a
-column the reference draws blank. `len(fields)` **must** equal `len(header.labels)`; the build fails
-otherwise, deliberately — do not pad to make it pass. Regenerate, then verify.
+So the work is one distiller change for group 1 (four reports, no hand-typed bindings), one grid choice
+for group 2, and group 3 handed to the roles/bands contract rather than given an invented table.
 
-For the two count mismatches, resolve against the measurement, not the registry: read
-`layout.header.labels` and `layout.body.cells` and decide which measured column each registry name
-belongs to. `region_ufaulu_masomo` additionally needs its grid question settled — its binding describing
-page 1's grid while the layout describes the repeating one is a symptom, not the disease.
+Where a binding *is* added the rule stands: one field name per measured column, `""` for a column the
+reference draws blank. `len(fields)` **must** equal `len(header.labels)`; the build fails otherwise,
+deliberately — do not pad to make it pass. Regenerate, then verify.
 
 ### Class C — 6 reports: no backend row source
 
@@ -191,16 +201,32 @@ These are ExaMetrics data-coverage gaps, not package defects. What each needs:
 Add the resolver in `resolve.py` alongside `ROW_QUERIES`, and any new aggregation in `data.py` where the
 other aggregations live. Never in `service.py`.
 
-### Class D — 13 reports: further sections carry reference data
+### Class D — 3 reports: further sections carry reference data
 
-These print additional sections after their main table, on their own grids, and those pages are carried
-verbatim — which means they still hold the reference exam's figures. Affected: reports 1, 7, 8, 16, 20,
-29, 30, 31, 32, 36, 37, 38, 39. Worst is `council_best_students_subjectwise` with 10 section pages
-against 20 table pages.
+Re-measured 2026-09-23 by classifying every page of all 46 measured documents as *table* (has
+`data_rows`), *section* (no `data_rows` but has rows) or *blank* (no rows at all). The result is
+smaller and sharper than the earlier estimate of 13:
 
-This is the **largest remaining correctness gap** and it is a live leak, not a cosmetic one. Until it is
-closed, a generated report must either supply those sections or omit them; it must not print them as
-measured. `s1869_results.pdf` omits them for that reason.
+| shape | count | reports |
+|---|--:|---|
+| table pages **and** trailing section pages | **3** | `secondary/school_results` (14,15) · `secondary/region_council_performance` (4,5) · `primary/region_shule_bora_jumla` (4,5) |
+| every page is a section, no table page at all | 8 | exactly the Class B set — see below |
+| trailing **blank** pages only | 2 | reports 7 and 8; nothing to do |
+
+**The 8 "all sections" reports are the same 8 that lack column identity.** That is not a coincidence
+and it reframes Class B: those reports have `cap` 0 because no page of their measured document is a
+table page, so there is nothing for a field list to address yet. Fixing them is a question of deciding
+what their repeating grid *is*, not of typing names into a registry. `council_kata_rank_alama` (2
+pages), `council_top_schools_kimasomo_overall` (3), `council_top_schools_kimasomo_serikali` (3),
+`council_subject_summary` (1), `council_ufaulu_wa_masomo` (1), `region_shule_bora_masomo_serikali` (3),
+`region_shule_bora_masomo_jumla` (3), `region_ufaulu_masomo` (3).
+
+For the 3 mixed-shape reports the leak is confirmed, not inferred. Filling every data row of
+`secondary/school_results` with a marker leaves page 14 carrying 320 non-empty cells and **zero**
+markers, among them `MWANZA`, `MWANZA CC`, `TOTAL PASSED CANDIDATES 434`, `EXAMINATION CENTRE GPA
+4.1593` and `RANKING COUNCILWISE 58 / 64`. `region_council_performance` pages 4–5 carry the full
+`MWANZA REGION` letterhead plus two district tables; `region_shule_bora_jumla` pages 4–5 the same in
+Swahili.
 
 Two things are needed, in order:
 
@@ -272,6 +298,18 @@ Then the leak test, which is the one that matters for production: supply a disti
 field of every row and assert that no filled data row retains anything else. Across the 38 reports with
 identity this currently passes 38/38.
 
+### Corpus-wide sweep result, 2026-09-23
+
+Both tests were run over all 46 reports. Outcome: **36 pass** with `text diffs 0` and `max drift
+0.0000 pt`, **2 "fail" on page count alone** (reports 7 and 8, entirely from the reference's own blank
+trailing pages — see the † note in §3), and **8 skip** for no column identity (the Class B set). No
+report showed a single text difference, any drift, or any leak in a named column. Largest verified:
+`primary/region_shule_nafasi_jumla` at 1162 rows over 16 pages and 45,178 cells.
+
+So the measured path generalises across the whole corpus, and the remaining work is entirely the three
+named gaps — section data (Class D, 3 reports), column identity (Class B, 8), row sources (Class C, 6)
+— not per-report placement bugs.
+
 Finally, the package gates:
 
 ```bash
@@ -340,16 +378,25 @@ still has this bug, so it affects every school artifact.
 
 ## 8. Order of work
 
-1. **Class A verification sweep** — 34 reports, document level. Fixes whatever it finds. No new code
-   expected; anything it does find is a generalisation bug worth having.
-2. **Class D, `secondary/school_results` first** — it has only 2 section pages and both aggregates are
-   already in `SchoolAnalysis`. Solving it establishes the per-section identity shape for the other 12.
-3. **Class B, the 6 reports with no registry entry** — pure data entry into `catalog/bindings.yaml`,
-   verified by the build's own length check.
-4. **Class B, the 2 count mismatches** — resolve against the measurement; `region_ufaulu_masomo` needs
-   its grid question answered.
+**Dependency discovered 2026-09-23 — the backend reduction cannot come last by itself.**
+`api.py::render_report` falls back to the distilled `build_document` in two cases: a report with no
+column identity, and **any caller passing data keys outside `{rows, title, bands}`** — which is every
+caller using the documented `header` and `loose` overrides. So deleting the distilled path requires
+*both* column identity for all 46 *and* a bands contract that covers those overrides. It is the last
+step of the thread, not the first.
+
+1. **Class A verification sweep** — done, `tools/verify_alignment.py`. 36 pass with 0 diffs and 0.0000 pt
+   drift, 2 blank-page artifacts, 8 skipped. Re-run it after every change below.
+2. **Class B group 1 + 2** — one distiller change for the four repeated-block reports, one grid choice
+   for `region_ufaulu_masomo`. This is what unblocks deleting the approximation.
+3. **Roles and the bands contract** — covers Class B group 3 and the `header`/`loose` override callers.
+4. **Class D, `secondary/school_results` first** — 2 section pages, both aggregates already in
+   `SchoolAnalysis`. Solving it establishes the per-section identity shape for the other two. Note the
+   section must **flow** after the data rather than start a new page, per §1.
 5. **Class C** — 4 resolvers in `resolve.py`, aggregations in `data.py`.
-6. **Backend reduction** — with identity shipped, delete `bindings.py` (1306 lines), `headers.py` (407),
-   `_positional_rows`, `binding_matches_layout`, and both `SAMPLE_LOCATIONS`. Fix `scope_title_for`.
+6. **Delete the approximation, then the backend reduction** — `_transplanted_header`, `_remap_row`,
+   `_rows_per_page`, `_synthesise_rules` and the `front`/`first_page_rows`/`rows_per_page` keys; then
+   `bindings.py` (1306 lines), `headers.py` (407), `_positional_rows`, `binding_matches_layout` and both
+   `SAMPLE_LOCATIONS`. Fix `scope_title_for`.
 
 Nothing in steps 1–5 requires a migration, a service restart or a frontend deploy.

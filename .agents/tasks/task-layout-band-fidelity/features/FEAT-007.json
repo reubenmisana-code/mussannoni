@@ -29,6 +29,12 @@
     "grep -rn \"JINSI\\|WASTANI\\|KIMKOA\" /root/apis/backend-sis/app/ ; echo 'expect no NEW Swahili literals introduced by this feature'",
     "git -C /root/apis/backend-sis diff --stat -- app/services/exametrics/mussannoni/"
   ],
+  "school_results_layout_constraints": {
+    "source": "Stated by the user 2026-09-23. These override a literal reading of 'pagination is the reference's' for this report, and they apply to the generated artifact, not to reproducing the reference.",
+    "blue_background_spans_all_data": "The blue background belongs to the WHOLE report wherever there is data - not only to the reference's own filled rows. A generated report with fewer candidates than the reference's 491 must carry the background across its own data extent. Do not inherit the fill row-by-row from the measurement in a way that leaves a generated report's shorter table visually truncated, and do not paint it over rows that hold no data.",
+    "trailing_sections_must_not_be_forced_onto_a_new_page": "The final table (the DIVISION PERFORMANCE SUMMARY / subject analysis sections, measured on pages 14-15) must NOT necessarily start a new page. It should follow immediately after the table that precedes it. The reference puts it on page 14 only because 491 candidates filled 13 pages first; a school with 44 candidates ends its candidate table partway down page 2 and the section belongs right there, not on a page of its own. So section placement is FLOW-relative to the end of the data, while the section's own grid, band and typography stay as measured.",
+    "consequence_for_verification": "The round-trip test in docs/06 section 5 asserts page counts equal, which holds only when the caller supplies exactly the reference's row count. Once sections flow, a generated report legitimately has fewer pages than the reference. Keep the strict round trip as the fixture-equality test (same rows in, same document out) and verify flowed section placement separately, by asserting the section starts on the page and at the offset where the data ended."
+  },
   "blocked_reason": null,
   "findings": null
 }

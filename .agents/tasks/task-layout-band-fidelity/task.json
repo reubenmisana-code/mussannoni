@@ -11,6 +11,8 @@
     "FEAT-005",
     "FEAT-006",
     "FEAT-007",
+    "FEAT-011",
+    "FEAT-012",
     "FEAT-008"
   ],
   "blocked_reason": null,
@@ -22,5 +24,15 @@
     "summary": "To be completed by FEAT-008. Gate: make check-resources clean, uv run pytest green in the mussannoni repo, the 3 compound reports reproduce the reference's page-1 band count and column grid, no report's generated page-1 table exceeds its measured page box, no measured reference figure survives into generated output unfilled, and backend-sis imports and generates with headers.py and bindings.py deleted."
   },
   "superseded": "FEAT-009 is withdrawn and FEAT-002/FEAT-003 are superseded in DIRECTION by FEAT-010, which renders from the measured document instead of reconstructing a flat approximation. The work already landed in FEAT-002/003 stays useful: header.fields (column identity) is what makes safe substitution possible, and both features' findings record the measurements that justify FEAT-010.",
+  "measured_baseline_2026_09_23": {
+    "note": "Measured directly from the working tree, because the per-feature statuses understate what has landed. FEAT-010's step 1 is DONE even though the feature reads pending; its step 5 is not.",
+    "shipped": "46/46 document.json.gz at 2.14 MB total, against 46/46 layout.json at 3.85 MB - FEAT-010's size argument confirmed, the measured geometry is cheaper than the approximation it replaces.",
+    "column_identity": "header.fields present in 38/46 layouts; roles in 0/46 (FEAT-004 genuinely pending); the string MWANZA still present in 46/46 (FEAT-005 genuinely pending).",
+    "approximation_still_live": "first_page_rows in 46/46, rows_per_page in 46/46, front in 3/3; _transplanted_header and its helpers still referenced 19 times in tools/package_resources.py and twice in src/mussannoni/table.py. FEAT-010 step 5 has not happened.",
+    "backend_still_compensating": "bindings.py (1306 lines) and headers.py (407 lines) both still present - FEAT-006 pending as recorded.",
+    "corpus_sweep": "Round trip plus leak test over all 46: 36 PASS with 0 text diffs and 0.0000 pt drift, 2 fail on page count alone (reports 7 and 8, from the reference's own blank trailing pages - not a defect), 8 skip for no column identity. No text difference, no drift and no leak anywhere in a named column. Largest verified: primary/region_shule_nafasi_jumla, 1162 rows over 16 pages, 45178 cells.",
+    "page_shape_classification": "Every page of all 46 classified as table / section / blank. Reports with REAL section pages: 3 (secondary/school_results 14-15, secondary/region_council_performance 4-5, primary/region_shule_bora_jumla 4-5), not the 13 previously estimated. Reports whose every page is a section: 8 - exactly the set lacking column identity, which is WHY they lack it. Reports with only blank trailing pages: 2. Class D is therefore 3 reports, and Class B is a grid-identification problem rather than registry data entry.",
+    "section_leak_confirmed": "Filling every data row of secondary/school_results with a marker leaves page 14 with 320 non-empty cells and ZERO markers, including MWANZA, MWANZA CC, TOTAL PASSED CANDIDATES 434, EXAMINATION CENTRE GPA 4.1593 and RANKING COUNCILWISE 58 / 64. The Class D leak is measured, not theorised."
+  },
   "start_here": "docs/06-exametrics-alignment.md"
 }

@@ -1,0 +1,48 @@
+{
+  "id": "FEAT-011",
+  "type": "feat",
+  "status": "pending",
+  "description": "Give the 8 reports that have no column identity a repeating grid to bind to, so they stop being refused by the measured path. MEASURED 2026-09-23 by classifying every page of all 46 measured documents as table (has data_rows), section (no data_rows but has rows) or blank (no rows): these 8 reports have ZERO table pages - every page of their measured document is a section. That is why cap is 0 in docs/06 section 3 and why the build refuses them, and it reframes the work: this is not data entry into a registry, it is deciding what each report's repeating grid IS. The 8, with their page counts: council_kata_rank_alama (2), council_top_schools_kimasomo_overall (3), council_top_schools_kimasomo_serikali (3), council_subject_summary (1), council_ufaulu_wa_masomo (1), region_shule_bora_masomo_serikali (3), region_shule_bora_masomo_jumla (3), region_ufaulu_masomo (3). Six have no entry in catalog/bindings.yaml at all; two have an entry whose length disagrees with the measurement - council_kata_rank_alama has 29 registry names against a 30-column measured grid with 2 unlabelled columns, and region_ufaulu_masomo has 28 against 20 because its binding describes page 1's grid rather than the repeating one. This feature exists because nothing in FEAT-001 through FEAT-010 owned these 8 reports, so FEAT-008 would otherwise have closed the task declaring it done with them unbuildable.",
+  "steps": [
+    "For each of the 8, read layout.header.labels and layout.body.cells from the measured document and decide which pages constitute the repeating table and which are genuine further sections. Record the decision per report before writing any binding. Do not infer it from row content - docs/06 section 6 records three content-based classifications that were each implemented and measured as wrong.",
+    "Where a report genuinely has no repeating table (a one-page compound summary such as council_subject_summary or council_ufaulu_wa_masomo), say so explicitly and hand it to FEAT-012's per-section identity work rather than inventing a table for it.",
+    "For the six with no entry, add one to catalog/bindings.yaml: one field name per measured column, \"\" for a column the reference draws blank. len(fields) MUST equal len(header.labels); the build fails otherwise, deliberately - do not pad to make it pass.",
+    "For council_kata_rank_alama resolve the 29-vs-30 mismatch against the measurement, deciding from the grid which measured column each registry name belongs to and which column is unmapped.",
+    "For region_ufaulu_masomo settle the grid question first - a binding describing page 1's grid while the layout describes the repeating one is a symptom, not the disease - then bind against whichever grid the measurement says is the repeating one.",
+    "Regenerate resources and re-run the corpus sweep from docs/06 section 5. Each newly bound report must report 0 text differences and 0.0000 pt drift on the round trip and 0 leaks."
+  ],
+  "acceptance_criteria": [
+    "All 8 reports either ship header.fields and pass the round trip and leak tests, or are documented as having no repeating table with the reason measured from their pages.",
+    "No binding was padded to satisfy the length check.",
+    "The corpus sweep's skip count for 'no column identity' drops from 8 to 0.",
+    "docs/06 section 3 status table updated with the measured cap, p1, tbl and sec for each.",
+    "make check-resources clean, ruff clean, pytest green apart from the documented chromium host limitation, corpus/ untouched, THRESHOLDS unchanged."
+  ],
+  "verification": [
+    "make package-resources",
+    "make check-resources",
+    "uv run pytest -q",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": {
+    "measured": "2026-09-23. Step 1 is DONE: every page of all 8 was classified against its measured grid. The 8 are NOT 8 registry gaps with one shared cause. They are three distinct causes, and 4 of the 8 need one distiller change rather than any hand-typed binding.",
+    "group_1_repeated_blocks_per_page": {
+      "reports": ["council_top_schools_kimasomo_overall", "council_top_schools_kimasomo_serikali", "region_shule_bora_masomo_serikali", "region_shule_bora_masomo_jumla"],
+      "diagnosis": "These DO have a repeating table, with a clean full-width label row (S/N | HALMASHAURI | JINA LA SHULE | UMILIKI | WAV | WAS | JML | ...) followed by numbered data rows on the identical grid. The distiller missed it because each page carries SEVERAL 10-row blocks, each repeating its own label row, and the single-label-row model cannot express that. Measured label-row positions and data-row counts: kimasomo_overall page 1 labels at rows [3,17] / 20 data, page 2 [2,8,22] / 20, page 3 [2,6,20] / 20; kimasomo_serikali [3,17] / [2,6,20] / [2,6,20], 20 each; both region_shule_bora_masomo_* [5,21] on all three pages, 20 each. Every one totals 60 data rows = 6 subjects x 10 schools, with blocks spanning page boundaries.",
+      "fix": "Teach the distiller that a page may carry repeated blocks on one grid, each introduced by its own label row and headed by its section (the subject). One change, four reports. Do NOT hand-type four bindings - the grid is already unambiguous in the measurement.",
+      "column_counts": "36, 35, 32, 33 respectively - all full-width label and data rows agree, so column identity is a naming exercise once blocks are recognised."
+    },
+    "group_2_layout_took_the_wrong_grid": {
+      "reports": ["region_ufaulu_masomo"],
+      "diagnosis": "layout.header.labels holds 20 entries and every one is EMPTY, because the layout latched onto pages 2-3's 20-column compound summary grid. The real repeating table is on page 1: a 28-column subject list whose label row is NA | SOMO | WAV | WAS | JML | ... at row 4, with numbered subject rows from row 5 (1 KISWAHILI, 2 HISTORIA YA TZ, 3 JIOGRAFIA NA MAZINGIRA, ...). docs/06 recorded this as 'the binding matches page 1's grid, not the repeating one'. That is backwards: the BINDING is right and the LAYOUT is wrong. Pages 2-3 are genuine further sections.",
+      "fix": "Make the distiller choose page 1's 28-column grid as the repeating table and treat pages 2-3 as sections. The existing 28-name registry entry then fits without change."
+    },
+    "group_3_genuinely_no_repeating_table": {
+      "reports": ["council_subject_summary", "council_ufaulu_wa_masomo", "council_kata_rank_alama"],
+      "diagnosis": "Fixed-shape compound summary sheets, not row lists. council_subject_summary (1 page, 19 cols) and council_ufaulu_wa_masomo (1 page, 28 cols) carry a label row followed by two or three aggregate rows split by sex (WAV / WAS / JML), nested inside several mini-tables per page. council_kata_rank_alama (2 pages) is the same shape: its page 1 is entirely nested mini-tables, and its page 2 has a real 29-column label row (S/N | KATA | IDADI YA SHULE | WAV | WAS | JML) but the sample carries only the JUMLA totals row beneath it - no ward rows at all, so cap 0 is CORRECT for this report on this sample. Its layout.header.labels is worse than empty: it is a DATA row ('01','HISABATI','0','0.0','8','44.4',...,'DARAJA C (VIZURI)'), which is the real cause of the 29-vs-30 mismatch docs/06 recorded.",
+      "fix": "These three belong to FEAT-004's roles and bands contract, not to column identity. Their content is aggregates addressed by role, not a variable-length row list. Do not invent a table for them - docs/06 section 4's instruction to say so explicitly applies here. council_kata_rank_alama additionally needs its bogus label row corrected so it stops presenting sample data as labels."
+    },
+    "consequence_for_feat_010": "FEAT-010 step 5 (delete the approximation) CANNOT run before this feature. api.py::render_report falls back to build_document for any report without column identity, so deleting the distilled path today would leave these 8 with no render path at all. It also falls back whenever a caller passes data keys outside {rows, title, bands} - which is every caller using the documented header and loose overrides - so FEAT-004's bands contract is the other prerequisite. Revised order within the task: FEAT-011 and FEAT-004 before FEAT-010 step 5."
+  }
+}

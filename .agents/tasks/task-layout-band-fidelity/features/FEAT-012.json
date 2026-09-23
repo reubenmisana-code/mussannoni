@@ -1,0 +1,40 @@
+{
+  "id": "FEAT-012",
+  "type": "feat",
+  "status": "pending",
+  "description": "Supply a backend row source for the 6 reports that have none, so they stop being skipped regardless of geometry. resolve.ROW_QUERIES has no entry for them, so canonical_rows returns [] and the report is skipped - correct behaviour, but it means 6 of 46 can never be generated. Four already ship column identity and need only the resolver: region_mobility, council_best_students_subjectwise, region_best_students_subjectwise, council_schools_rank_subjectwise. The other two are also FEAT-011's. These are ExaMetrics data-coverage gaps, not package defects. Aggregations go in data.py where MussaNnoni's own aggregations live, and the row-source declaration in resolve.py's ROW_QUERIES - never in service.py. Do not import app/services/exametrics/report_template/resolver_compare.py: resolve.py's docstring states it deliberately has no dependency on the DOCX report-template resolvers so changes there can never affect the DOCX report family and vice versa. Lift the logic that is needed instead of crossing that boundary. This feature exists because nothing in FEAT-001 through FEAT-010 owned these 6 reports.",
+  "region_mobility_specification": {
+    "what_mobility_is": "MEASURED AND VERIFIED 2026-09-23. Mobility compares this ExaMetrics exam against the school's NECTA PUBLISHED RESULTS - not against another ExaMetrics exam. Evidence: app/services/necta/exporters/_council_mobility.py, the module actually named mobility, operates solely on NectaSchoolRank and NectaSubjectRank; and report_template/parser.py's grammar reads LHS.{source} : Exametrics | NECTA.{ExamType}.{Year} | auto, with Year.{yyyy} and ExamType.{type} as NECTA filters. An earlier reading of this task took resolver_compare._find_prev_exam_id (the exametrics_prev option, previous exam of the same board and level) to be the mobility rule. It is not, and the live data proves it: over the 47 exams in the database that rule resolves 32 to NO previous exam at all and several of the remaining 15 to a test exam - MWANZA CC FORM TWO PRE-MOCK ASSESSMENT MAY 2026 resolves to TEST FTNA. It also leaves MWANZA REGION FORM TWO MOCK EXAMINATION, JULY 2026 - the closest live analogue to the reference report - with nothing to compare against.",
+    "pairing_rule": "Same exam_type as the ExaMetrics exam's level, exam_year = the exam's year minus 1, joined per school on centre_number. MEASURED for MWANZA REGION FORM TWO MOCK EXAMINATION, JULY 2026 (FTNA, 387 schools): NECTA FTNA 2025 matches 352/387 = 91.0%, against FTNA 2024 at 86.3% and CSEE 2025 at 81.7%. Same type one year back is unambiguously the right pairing.",
+    "necta_coverage": "Usable NectaResultAnalysis years, by distinct centre_number: FTNA 2023=5537 2024=5911 2025=6230; CSEE 2022=5197 2023=5358 2024=5574 2025=5864; ACSEE 2023=879 2024=931 2025=982 2026=1061; PSLE 2023=18316 2024=18940 2025=19438; SFNA 2022=18616 2023=19269 2024=20035 2025=20508. Everything earlier (CSEE 2013-2021, FTNA 2015-2022, ACSEE 2017-2022) holds exactly 1 school and is stub data, not usable.",
+    "column_identity": "Already shipped, 13 fields: sno, council, school_name, ownership, prev_i_iii, prev_pct, prev_gpa, curr_i_iii, curr_pct, curr_gpa, delta_pct, delta_gpa, trend. Measured labels: S/NO. | COUNCIL | SCHOOL NAME | OWNERSHIP | TOTAL | % | GPA | TOTAL | % | GPA | %(I-III) | GPA | WA GPA.",
+    "sign_convention": "The reference prints delta = prev - curr, NOT curr - prev. Verified on two reference rows: KILIMANJARO SPRINGS prev_gpa 1.4593 curr_gpa 1.2632 prints 0.1961; SALVATION GIRLS 1.2462 then 1.4041 prints -0.1579. resolver_compare computes lhs - rhs with LHS as the current exam, which is the opposite. Bind LHS=NECTA(previous), RHS=this exam rather than negating downstream.",
+    "trend_vocabulary": "The reference's own words are IMEPANDA (improved) and UMESHUKA (declined), uppercase and with inconsistent prefixes. Neither existing helper produces that pair - resolver_compare gives Inapanda/Inashuka, resolver_noni gives Umepanda/Umeshuka. Take the words from the measurement, not from either helper.",
+    "open_questions": [
+      "Does the reference omit schools with no NECTA prior, or print them with a blank previous block? The reference has 361 data rows while the comparable exam has 387 schools and 352 NECTA matches, so omission is the likely answer - test it against the measured rows rather than assuming.",
+      "Does prev_i_iii / curr_i_iii count total candidates or candidates in divisions I-III? The shipped field name says I-III but the measured label says TOTAL. They disagree and one is wrong; settle it against SchoolAnalysis before writing the query.",
+      "ACSEE needs the year rule checked against start_date rather than assumed, because ACSEE 2026 is already published and A-Level runs July-June."
+    ]
+  },
+  "steps": [
+    "Add region_mobility first, per the specification above: a data.py aggregation joining this exam's SchoolAnalysis to NectaResultAnalysis on centre_number with exam_type = the exam's level and exam_year = exam year - 1, plus a ROW_QUERIES entry. Settle the three open questions from the measurement and the DB before writing the query, not after.",
+    "Add the per-subject student ranking that council_best_students_subjectwise and region_best_students_subjectwise need. One aggregation serves both; they differ only in scope filter.",
+    "Add the school x subject matrix per page that council_schools_rank_subjectwise needs.",
+    "Leave the two reports that are also FEAT-011's until their grid question is settled there; a row source is useless without somewhere to place the rows.",
+    "Re-run the corpus sweep. Each newly sourced report must report 0 leaks, and its row count must match what the reference's own pages hold."
+  ],
+  "acceptance_criteria": [
+    "region_mobility generates against NECTA data with the measured sign convention and the reference's own trend words, and its three open questions are answered with evidence rather than assumption.",
+    "All 4 identity-bearing Class C reports have a ROW_QUERIES entry and pass the leak test.",
+    "No aggregation was added to service.py, and resolver_compare was not imported across the DOCX-family boundary.",
+    "docs/06 section 4 Class C list updated to reflect what remains.",
+    "Backend stops at a commit-ready diff: no supervisorctl restart, no alembic, no DDL, no HTTP."
+  ],
+  "verification": [
+    "python -c import and call the new data.py aggregation directly against a real exam_id",
+    "the docs/06 section 5 corpus sweep",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": null
+}
