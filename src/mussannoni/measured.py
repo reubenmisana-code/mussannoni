@@ -295,10 +295,11 @@ def build_measured_document(
     """
     if not isinstance(data, Mapping):
         raise InvalidDataError(f"data must be a mapping, got {type(data).__name__}")
-    unknown = set(data) - {"rows", "title", "bands"}
+    unknown = set(data) - {"rows", "title", "bands", "loose"}
     if unknown:
         raise InvalidDataError(
-            f"Unknown key(s) in data: {sorted(unknown)}. Expected any of: rows, title, bands."
+            f"Unknown key(s) in data: {sorted(unknown)}. Expected any of: rows, title, bands, "
+            "loose."
         )
 
     fields = list(layout["header"].get("fields") or [])
@@ -318,12 +319,19 @@ def build_measured_document(
 
     bands = data.get("bands") or {}
     per_page = _bands_by_page(bands, len(built["pages"]))
+    loose = data.get("loose") or {}
+    loose_per_page = _loose_by_page(loose, len(built["pages"]))
     styles = layout.get("text_styles") or {}
-    for page, overrides in zip(built["pages"], per_page):
+    for page, overrides, loose_overrides in zip(built["pages"], per_page, loose_per_page):
         if overrides:
             _apply_band_overrides(
                 page, overrides, styles, layout["level"], layout["report_key"]
             )
+        if loose_overrides:
+            _apply_loose(
+                page, loose_overrides, styles, layout["level"], layout["report_key"]
+            )
+        _blank_unsupplied_loose_figures(page, set(loose_overrides))
         # Every figure the caller did not supply is emptied. Without this a generated report carries
         # the measured exam's own totals, averages, ranks and competency bands wherever the reference
         # printed them — inside the header band and in any further section.
@@ -405,6 +413,79 @@ def _bands_by_page(bands: Mapping[str, Any], page_count: int) -> list[dict[str, 
             )
         out[page_index][".".join(rest)] = value
     return out
+
+
+def _loose_by_page(loose: Mapping[str, Any], page_count: int) -> list[dict[str, Any]]:
+    """Split loose overrides per page. ``"index"`` means page 1; ``"page.index"`` names a page."""
+    out: list[dict[str, Any]] = [{} for _ in range(page_count)]
+    for address, value in loose.items():
+        parts = str(address).split(".")
+        if not all(part.strip().isdigit() for part in parts) or len(parts) > 2:
+            raise InvalidDataError(
+                f"Loose address {address!r} must be 'index' or 'page.index'"
+            )
+        page_index = 0 if len(parts) == 1 else int(parts[0]) - 1
+        if not 0 <= page_index < page_count:
+            raise InvalidDataError(
+                f"Loose address {address!r} names page {page_index + 1}, but the document has "
+                f"{page_count} pages"
+            )
+        out[page_index][parts[-1]] = value
+    return out
+
+
+def _apply_loose(page: dict[str, Any], overrides: Mapping[str, Any],
+                 styles: Mapping[str, Any], level: str, report_key: str) -> None:
+    """Replace absolutely-positioned lines, addressed by index.
+
+    Six reports draw their whole letterhead beside the table rather than inside a header band, so
+    without this they have no way to replace the reference exam's region and title. A line centred on
+    the page is re-centred for its new string; an empty value removes it. A line whose text is
+    unchanged is left untouched, the same rule the band overrides follow.
+    """
+    lines = page.get("loose_lines") or []
+    for address, value in overrides.items():
+        index = int(str(address))
+        if not 0 <= index < len(lines):
+            raise InvalidDataError(
+                f"Loose override {address!r} names line {index}, but this page has {len(lines)}"
+            )
+        line = lines[index]
+        text = _as_text(value)
+        old_text = "".join(run.get("text", "") for run in (line.get("runs") or []))
+        if text == old_text:
+            continue
+        if not text:
+            line["runs"] = []
+            continue
+        style = styles.get(line.get("class", "t0"), {"size_pt": 8.0, "base14": "helv"})
+        width = _measure(text, style, level, report_key)
+        was = _measure(old_text, style, level, report_key) if old_text else width
+        # Keep the line's measured anchor: a centred line stays centred on its own midpoint.
+        line["left_pt"] = float(line.get("left_pt", 0.0)) + (was - width) / 2.0
+        line["runs"] = [{"text": text, "class": line.get("class", "t0")}]
+    page["loose_lines"] = [
+        line for line in lines if any(run.get("text") for run in (line.get("runs") or []))
+    ]
+
+
+def _blank_unsupplied_loose_figures(page: dict[str, Any], supplied: set[str]) -> int:
+    """Empty every loose line the build marked ``figure`` and the caller did not supply."""
+    roles = page.get("loose_roles") or {}
+    lines = page.get("loose_lines") or []
+    blanked = 0
+    for address, role in roles.items():
+        if role != "figure" or address in supplied:
+            continue
+        index = int(address)
+        if 0 <= index < len(lines):
+            lines[index]["runs"] = []
+            blanked += 1
+    if blanked:
+        page["loose_lines"] = [
+            line for line in lines if any(run.get("text") for run in (line.get("runs") or []))
+        ]
+    return blanked
 
 
 def _blank_unsupplied_figures(page: dict[str, Any], supplied: set[str]) -> int:

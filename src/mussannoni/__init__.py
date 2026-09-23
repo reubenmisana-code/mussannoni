@@ -32,6 +32,7 @@ from .api import (
     render_report,
     render_report_to_file,
     report_layout,
+    report_roles,
     write_pdf,
 )
 from .document import build_html, render_document, render_html_to_pdf, validate_document
@@ -84,6 +85,7 @@ __all__ = [
     "render_report",
     "render_report_to_file",
     "report_layout",
+    "report_roles",
     "resolve_engine",
     "validate_document",
     "write_pdf",

@@ -12,6 +12,40 @@ from .registry import Report, find, list_reports
 from .table import build_document
 
 
+def report_roles(report_key: str, *, level: str | None = None) -> list[dict[str, Any]]:
+    """What each static cell of each page IS, so a caller knows what to supply.
+
+    Returns one entry per measured page::
+
+        [{"rows":  {"0.0.2": "region", "0.0.3": "exam", "2.4": "figure", ...},
+          "loose": {"2": "region", "3": "exam"}},
+         ...]
+
+    ``rows`` addresses are ``"row.column"`` or ``"row.column.line"``; ``loose`` addresses are line
+    indices. Roles are ``authority`` (fixed institutional text, reproduced unchanged), ``region``,
+    ``exam``, ``scope`` (the unit the artifact covers), ``heading`` (a static heading) and ``figure``
+    (a computed value from the measured exam).
+
+    Two things follow from this, and they are the whole point of it:
+
+    * A caller replaces per-exam text by looking up the role rather than pattern-matching the
+      reference's own string. Write to the same address through ``data["bands"]``
+      (``"row.column"`` or ``"page.row.column"``) or ``data["loose"]`` (``"index"`` or
+      ``"page.index"``).
+    * Any ``figure`` the caller does not supply is rendered **empty**. A report may be structurally
+      complete and numerically empty, but it never publishes the measured exam's figures.
+
+    Roles are decided when the package is built, against the reference, so nothing is inferred at
+    render time.
+    """
+    report = find(report_key, level)
+    document = measured.measured_document(report.level, report.report_key)
+    return [
+        {"rows": page.get("roles") or {}, "loose": page.get("loose_roles") or {}}
+        for page in document["pages"]
+    ]
+
+
 def report_layout(report_key: str, *, level: str | None = None) -> dict[str, Any]:
     """The measured layout of a report: its page box, column grid, header band and row shape.
 
@@ -151,5 +185,6 @@ __all__ = [
     "render_report",
     "render_report_to_file",
     "report_layout",
+    "report_roles",
     "write_pdf",
 ]

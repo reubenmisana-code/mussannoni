@@ -1072,6 +1072,34 @@ def _cell_line_texts(cell: dict[str, Any]) -> list[str]:
     ]
 
 
+def _loose_roles(page: dict[str, Any], sample: frozenset[str]) -> dict[str, str]:
+    """Roles for the absolutely-positioned lines some reports draw beside the table.
+
+    Six of the 46 put their whole letterhead here rather than in a header band —
+    ``council_subjects_rank``, ``council_schools_rank_subjectwise``, ``subject_schools_rank``,
+    ``region_subjects_performance``, ``region_halmashauri_masomo`` and ``region_halmashauri_jumla`` —
+    so without roles here those reports have no way to replace `MWANZA REGION` or the reference exam
+    title. Keyed by line index, which is how the measured document stores them.
+    """
+    out: dict[str, str] = {}
+    lines = page.get("loose_lines") or []
+    figures = sum(
+        1
+        for line in lines
+        if _NUMERIC_VALUE.match(
+            "".join(run.get("text", "") for run in (line.get("runs") or [])).strip()
+        )
+    )
+    for index, line in enumerate(lines):
+        text = "".join(run.get("text", "") for run in (line.get("runs") or []))
+        if not text.strip():
+            continue
+        out[str(index)] = (
+            ROLE_FIGURE if _is_figure(text, figures) else _line_role(text, sample)
+        )
+    return out
+
+
 def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict[str, Any]]:
     """Roles for every static row of every page, in page order.
 
@@ -1092,6 +1120,11 @@ def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict
                 roles[f"{row_index}.{key}"] = role
         out.append(roles)
     return out
+
+
+def _document_loose_roles(fixture: dict[str, Any]) -> list[dict[str, str]]:
+    sample = _sample_tokens(fixture)
+    return [_loose_roles(page, sample) for page in fixture["pages"]]
 
 
 def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list[int]]:
@@ -1170,9 +1203,12 @@ def prepare_document(fixture: dict[str, Any], layout: dict[str, Any]) -> dict[st
     data_columns = _data_columns(layout)
     plan = _document_plan(fixture, layout)
     roles = _document_roles(fixture, plan)
-    for page, rows, page_roles in zip(document["pages"], plan, roles):
+    loose = _document_loose_roles(fixture)
+    for page, rows, page_roles, page_loose in zip(document["pages"], plan, roles, loose):
         page["data_rows"] = rows
         page["roles"] = page_roles
+        if page_loose:
+            page["loose_roles"] = page_loose
         for index in rows:
             row = page["rows"][index]
             row["cells"] = [
