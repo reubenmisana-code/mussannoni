@@ -316,14 +316,18 @@ def build_measured_document(
 
     built = deepcopy(dict(document))
 
-    if data.get("bands"):
-        _apply_band_overrides(
-            built["pages"][0],
-            data["bands"],
-            layout.get("text_styles") or {},
-            layout["level"],
-            layout["report_key"],
-        )
+    bands = data.get("bands") or {}
+    per_page = _bands_by_page(bands, len(built["pages"]))
+    styles = layout.get("text_styles") or {}
+    for page, overrides in zip(built["pages"], per_page):
+        if overrides:
+            _apply_band_overrides(
+                page, overrides, styles, layout["level"], layout["report_key"]
+            )
+        # Every figure the caller did not supply is emptied. Without this a generated report carries
+        # the measured exam's own totals, averages, ranks and competency bands wherever the reference
+        # printed them — inside the header band and in any further section.
+        _blank_unsupplied_figures(page, set(overrides))
 
     pages: list[dict[str, Any]] = []
     cursor = 0
@@ -369,6 +373,86 @@ def build_measured_document(
         report["title"] = _as_text(data["title"])
     built["report"] = report
     return built
+
+
+def _bands_by_page(bands: Mapping[str, Any], page_count: int) -> list[dict[str, Any]]:
+    """Split ``bands`` into one override map per page.
+
+    An address may be ``"row.column"``, which means page 1 — the original spelling, unchanged — or
+    ``"page.row.column"`` with a 1-based page number, which is how a further section is reached.
+    ``school_results`` measures its division summary on page 14, so without page addressing those
+    cells could be blanked but never filled.
+    """
+    out: list[dict[str, Any]] = [{} for _ in range(page_count)]
+    for address, value in bands.items():
+        parts = str(address).split(".")
+        if not all(part.strip().lstrip("-").isdigit() for part in parts):
+            raise InvalidDataError(
+                f"Band address {address!r} must be 'row.column' or 'page.row.column'"
+            )
+        if len(parts) == 2:
+            page_index, rest = 0, parts
+        elif len(parts) == 3:
+            page_index, rest = int(parts[0]) - 1, parts[1:]
+        else:
+            raise InvalidDataError(
+                f"Band address {address!r} must be 'row.column' or 'page.row.column'"
+            )
+        if not 0 <= page_index < page_count:
+            raise InvalidDataError(
+                f"Band address {address!r} names page {page_index + 1}, but the document has "
+                f"{page_count} pages"
+            )
+        out[page_index][".".join(rest)] = value
+    return out
+
+
+def _blank_unsupplied_figures(page: dict[str, Any], supplied: set[str]) -> int:
+    """Empty every ``figure`` cell the caller did not supply a value for.
+
+    This is the safety property the measured path turns on. A report may be structurally complete and
+    numerically empty, but it must never publish the measured exam's figures. The roles shipped with
+    the document say which cells are computed values rather than labels, so this needs no test on the
+    text — a cell is a figure because the build said so, against the reference.
+
+    Removal, never replacement: the line is dropped rather than re-laid-out, so nothing is placed from
+    font metrics and no unchanged text loses its measured offset.
+
+    Returns the number of lines blanked, so a caller can assert the leak is closed.
+    """
+    roles = page.get("roles") or {}
+    targets: dict[tuple[int, int], set[int] | None] = {}
+    for address, role in roles.items():
+        if role != "figure" or address in supplied:
+            continue
+        parts = address.split(".")
+        if len(parts) < 2:
+            continue
+        row_index, column = int(parts[0]), int(parts[1])
+        key = (row_index, column)
+        if len(parts) == 2:
+            targets[key] = None
+        elif targets.get(key, set()) is not None:
+            targets.setdefault(key, set()).add(int(parts[2]))  # type: ignore[union-attr]
+
+    blanked = 0
+    for (row_index, column), lines in targets.items():
+        if not 0 <= row_index < len(page["rows"]):
+            continue
+        for cell in page["rows"][row_index]["cells"]:
+            if int(cell["column"]) != column:
+                continue
+            measured = cell.get("lines") or []
+            if lines is None:
+                blanked += len(measured)
+                cell["lines"] = []
+            else:
+                cell["lines"] = [
+                    line for index, line in enumerate(measured) if index not in lines
+                ]
+                blanked += len(measured) - len(cell["lines"])
+            break
+    return blanked
 
 
 def _fill(

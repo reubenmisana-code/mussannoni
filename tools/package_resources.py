@@ -927,6 +927,11 @@ _EXAM_MARKERS: tuple[str, ...] = ("RESULTS", "MATOKEO", "ASSESSMENT", "MTIHANI")
 # A number, optionally decimal or a percentage.
 _NUMERIC_VALUE = re.compile(r"^-?\d+(?:[.,]\d+)?%?$")
 
+# A rank as the references write it — "48/64", "359 / 387", and "/521" where the numerator was not
+# printed. A computed position, so it is data. Without this the ranking columns of
+# school_results' subject analysis stayed headings and printed the reference school's positions.
+_RANK_VALUE = re.compile(r"^\d*\s*/\s*\d+$")
+
 # A competency band as the references spell it — "DARAJA B (VIZURI SANA)", "Grade C (Good)". Computed
 # from the figures beside it, so it is data. The parenthesised band name is required: without it this
 # also matches the column labels "DARAJA A-D" and "DARAJA E", and blanking those would delete
@@ -990,6 +995,8 @@ def _is_figure(text: str, figures_in_row: int) -> bool:
         return False
     if _COMPETENCY_VALUE.match(value):
         return True
+    if _RANK_VALUE.match(value):
+        return True
     if not _NUMERIC_VALUE.match(value):
         return False
     if figures_in_row >= _MIN_FIGURES_PER_ROW:
@@ -997,7 +1004,23 @@ def _is_figure(text: str, figures_in_row: int) -> bool:
     return not value.isdigit()
 
 
-def _row_roles(row: dict[str, Any], sample: frozenset[str]) -> dict[str, str]:
+def _is_letterhead(cell: dict[str, Any], column_count: int) -> bool:
+    """Whether a cell is the letterhead rather than a heading or a value.
+
+    The letterhead is the wide cell at column 0; a heading such as ``GRADE PERFORMANCE`` sits at an
+    inner column and spans only its own group. ``region``, ``exam`` and ``scope`` exist *only* here,
+    which matters: ``school_results`` page 14 has a label cell reading
+    ``EXAMINATION CENTRE REGION``, and without this restriction the " REGION" suffix rule named that
+    label the region — inviting a caller to overwrite a heading the reference draws. The value beside
+    it is the region; the label is not.
+    """
+    return int(cell["column"]) == 0 and int(cell.get("colspan", 1) or 1) >= max(
+        2, column_count // 2
+    )
+
+
+def _row_roles(row: dict[str, Any], sample: frozenset[str],
+               column_count: int) -> dict[str, str]:
     """Roles for one static row, keyed ``"column"`` or ``"column.line"``.
 
     A cell with one line is named by its column. A cell holding several lines — a letterhead is one
@@ -1009,18 +1032,33 @@ def _row_roles(row: dict[str, Any], sample: frozenset[str]) -> dict[str, str]:
         for text in _cell_line_texts(cell)
         if _NUMERIC_VALUE.match(text.strip())
     )
+    filled = [cell for cell in row["cells"] if any(t.strip() for t in _cell_line_texts(cell))]
+    # A label paired with its value, which is how the compound summary sheets are measured:
+    # `TOTAL PASSED CANDIDATES | 434`, `EXAMINATION CENTRE AVERAGE | 24.79  F`,
+    # `EXAMINATION CENTRE RANKING COUNCILWISE | 58 / 64`. The numeric-density rule cannot see these —
+    # one or two figures in a row is not a band — and `434`, `58 / 64` and `24.79  F` were left as
+    # headings and therefore printed. Structural: in a short row led by a text cell, everything after
+    # the first filled cell is that label's value, whatever its formatting.
+    value_columns: set[int] = set()
+    if 2 <= len(filled) <= 3:
+        lead = " ".join(_cell_line_texts(filled[0])).strip()
+        if lead and not _NUMERIC_VALUE.match(lead):
+            value_columns = {int(cell["column"]) for cell in filled[1:]}
+
     out: dict[str, str] = {}
     for cell in row["cells"]:
         column = int(cell["column"])
         texts = _cell_line_texts(cell)
         if not texts:
             continue
+        letterhead = _is_letterhead(cell, column_count) and len(texts) > 1
         for index, text in enumerate(texts):
-            role = (
-                ROLE_FIGURE
-                if _is_figure(text, figures_in_row)
-                else _line_role(text, sample)
-            )
+            if column in value_columns or _is_figure(text, figures_in_row):
+                role = ROLE_FIGURE
+            elif letterhead:
+                role = _line_role(text, sample)
+            else:
+                role = ROLE_HEADING
             key = str(column) if len(texts) == 1 else f"{column}.{index}"
             out[key] = role
     return out
@@ -1045,11 +1083,12 @@ def _document_roles(fixture: dict[str, Any], plan: list[list[int]]) -> list[dict
     sample = _sample_tokens(fixture)
     for page, data_rows in zip(fixture["pages"], plan):
         data = set(data_rows)
+        column_count = len(page["columns"])
         roles: dict[str, str] = {}
         for row_index, row in enumerate(page["rows"]):
             if row_index in data:
                 continue
-            for key, role in _row_roles(row, sample).items():
+            for key, role in _row_roles(row, sample, column_count).items():
                 roles[f"{row_index}.{key}"] = role
         out.append(roles)
     return out

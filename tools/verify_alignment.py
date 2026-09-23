@@ -73,12 +73,51 @@ def round_trip(level: str, key: str) -> dict:
     drift = 0.0
     pages_equal = len(built["pages"]) == len(fixture["pages"])
     row_counts_equal = True
-    for ref_page, new_page in zip(fixture["pages"], built["pages"]):
+    blanked = survived = 0
+    for page_index, (ref_page, new_page) in enumerate(zip(fixture["pages"], built["pages"])):
         if len(ref_page["rows"]) != len(new_page["rows"]):
             row_counts_equal = False
             continue
-        for ref_row, new_row in zip(ref_page["rows"], new_page["rows"]):
+        # Cells the build marked `figure` are deliberately emptied when the caller supplies no
+        # value, so they are excluded from the fidelity comparison and asserted separately: a
+        # figure that still holds text is the reference exam's own number, published.
+        # Addressed per LINE, because a cell may hold a column heading and a figure — the
+        # `WASTANI WA SHULE` cells carry a two-line heading plus a measured average, and only the
+        # average is blanked. Checking whole-cell text would report those as survivors.
+        figures: dict[tuple[int, int], set[int] | None] = {}
+        for address, role in (document["pages"][page_index].get("roles") or {}).items():
+            if role != "figure":
+                continue
+            parts = address.split(".")
+            key = (int(parts[0]), int(parts[1]))
+            if len(parts) == 2:
+                figures[key] = None
+            elif figures.get(key, set()) is not None:
+                figures.setdefault(key, set()).add(int(parts[2]))
+        for row_index, (ref_row, new_row) in enumerate(zip(ref_page["rows"], new_page["rows"])):
             for ref_cell, new_cell in zip(ref_row["cells"], new_row["cells"]):
+                key = (row_index, int(new_cell["column"]))
+                if key in figures:
+                    wanted = figures[key]
+                    built_lines = {
+                        "".join(run.get("text", "") for run in (line.get("runs") or [])).strip()
+                        for line in (new_cell.get("lines") or [])
+                    }
+                    ref_lines = [
+                        "".join(run.get("text", "") for run in (line.get("runs") or [])).strip()
+                        for line in (ref_cell.get("lines") or [])
+                    ]
+                    targets = (
+                        ref_lines
+                        if wanted is None
+                        else [ref_lines[i] for i in sorted(wanted) if i < len(ref_lines)]
+                    )
+                    for value in targets:
+                        if value and value in built_lines:
+                            survived += 1
+                        else:
+                            blanked += 1
+                    continue
                 cells += 1
                 if text_of(ref_cell) != text_of(new_cell):
                     diffs += 1
@@ -94,7 +133,10 @@ def round_trip(level: str, key: str) -> dict:
         "drift": drift,
         "pages_equal": pages_equal,
         "row_counts_equal": row_counts_equal,
-        "ok": pages_equal and row_counts_equal and diffs == 0 and drift < 1e-9,
+        "blanked": blanked,
+        "survived": survived,
+        "ok": (pages_equal and row_counts_equal and diffs == 0 and drift < 1e-9
+               and survived == 0),
     }
 
 
@@ -144,7 +186,7 @@ def main() -> int:
     print(f"{len(reports)} reports in the registry\n")
 
     header = (f"{'level':<9} {'report':<38} {'rows':>5} {'pages':>8} {'cells':>6} "
-              f"{'diffs':>5} {'drift':>8}  {'leak':>5}  result")
+              f"{'diffs':>5} {'drift':>8}  {'leak':>5} {'blank':>6} {'kept':>5}  result")
     print(header)
     print("-" * len(header))
 
@@ -164,7 +206,8 @@ def main() -> int:
             ok = trip["ok"] and (leak.get("ok", True))
             print(f"{level:<9} {key:<38} {trip['rows']:>5} {trip['pages']:>8} "
                   f"{trip['cells']:>6} {trip['diffs']:>5} {trip['drift']:>8.4f}"
-                  f"  {leak_cell:>5}  {'PASS' if ok else 'FAIL'}")
+                  f"  {leak_cell:>5} {trip['blanked']:>6} {trip['survived']:>5}"
+                  f"  {'PASS' if ok else 'FAIL'}")
             if ok:
                 passed += 1
             else:
@@ -187,7 +230,8 @@ def main() -> int:
                 continue
             print(f"  pages_equal={trip['pages_equal']} "
                   f"row_counts_equal={trip['row_counts_equal']} "
-                  f"diffs={trip['diffs']} drift={trip['drift']:.4f}")
+                  f"diffs={trip['diffs']} drift={trip['drift']:.4f} "
+                  f"figures_blanked={trip.get('blanked')} figures_survived={trip.get('survived')}")
             if leak.get("leaks"):
                 for page, row, value in leak["sample"]:
                     print(f"  LEAK page {page} row {row}: {value[:70]!r}")
