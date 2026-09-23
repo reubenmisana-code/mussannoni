@@ -57,7 +57,7 @@ from .optimize import optimize_pdf
 from .registry import LEVELS, Report, find, list_reports
 from .table import build_document
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "DEFAULT_ENGINE",

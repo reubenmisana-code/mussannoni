@@ -6,6 +6,66 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-23
+
+Everything in this release exists to stop a generated report carrying the exam it was measured from.
+
+### Added
+
+- **Each report renders from its own measured document.** `document.json.gz` ships per report — the
+  fixture with per-cluster corrections emptied on data rows and kept everywhere else — so every band,
+  every per-page column grid, every measured rule and vector and every page of a multi-section report
+  is carried as measured rather than rebuilt from a flat approximation. Each measured page holds the
+  rows the reference put on it, so page capacity is never computed. 46 documents come to **2.14 MB**
+  gzipped against 3.85 MB for the distilled layouts they supplement — the measured geometry is
+  *cheaper* than the approximation, which the original "too big to ship" reasoning never tested.
+- **Values are placed by column identity, never by row shape.** `layout.header.fields` names each
+  measured column, and rows may be mappings keyed by field name. Keying on a row's cell signature
+  instead was implemented and measured as unsafe: whether a cell exists depends on whether the
+  reference happened to print something there, so two rows of one table differ, and two of
+  `secondary/school-results` page 2's thirty-seven candidate rows were emitted verbatim — putting a
+  real candidate from the reference exam into another school's report.
+- **`report_roles(key, level=…)`** returns, per measured page, what each static cell *is*:
+  `authority`, `region`, `exam`, `scope`, `heading`, `figure` or `sample`. Decided when the package is
+  built, against the reference, so no consumer has to pattern-match the reference's own strings. A
+  caller looks up the role and writes to that address.
+- **`data["bands"]`** addresses any static cell — `"row.column"` (page 1), `"page.row.column"`, or
+  `"page.row.column.line"` for one line of a multi-line cell, which leaves the cell's other lines
+  exactly as measured. **`data["loose"]`** does the same for the absolutely-positioned lines six
+  reports draw beside the table instead of inside a header band; those letterheads were previously
+  unreachable.
+- Column identity for five more reports (43 of 46 now ship it): the four that print several ten-row
+  blocks per page, and `region_ufaulu_masomo`.
+
+### Fixed
+
+- **Every `figure` and `sample` cell the caller does not supply now renders empty.** This is the
+  release's point. Previously a generated report kept the measured exam's totals, averages, ranks and
+  competency bands wherever they sat outside a data column. Measured on
+  `secondary/school-results` page 14 with every data row filled: **320 non-empty cells before, 66
+  after**, and the only remaining cell containing a digit is the column heading `DIV 0`. Across the
+  corpus **6,996** figures blank and none survive. Blanking is removal, not replacement, so nothing
+  is re-placed from font metrics.
+- **Twelve reports were publishing the reference's schools.** A page carrying several blocks of rows
+  had only its last block treated as data; the earlier ones were carried verbatim.
+  `council_top_schools_grading` printed `MWANZA CC` in its council column on all three pages, thirty
+  rows. Fixed for all twelve, declared in `catalog/bindings.yaml` rather than detected — every
+  content-based detection attempt misclassified some page.
+- `region_ufaulu_masomo` distilled the wrong grid. It is one page of 28-column subject rows followed
+  by two pages of 20-column summaries, so the majority-of-pages rule chose the summaries' grid and
+  `header.labels` came out as twenty empty strings. Counting rows instead does not separate them
+  either — the summary pages carry thirteen full-width rows against page 1's seven.
+- Reports whose trailing pages are **blank in the reference** are no longer mistaken for section
+  pages: `council-best-students-subjectwise` pages 21–30 and `council-schools-rank-subjectwise` page
+  24 extract zero characters.
+
+### Changed
+
+- `render_report` takes the measured path whenever the data keys are a subset of
+  `{rows, title, bands, loose}`. The older `header` key still selects the distilled path.
+
+
+
 ### Added
 
 - **The project is now an installable package.** `pyproject.toml` previously had no
