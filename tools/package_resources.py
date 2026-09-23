@@ -550,6 +550,26 @@ def _bindings_catalogue() -> dict[str, list[str]]:
     return dict(payload.get("reports") or {})
 
 
+def _multi_block_reports() -> set[str]:
+    """Reports whose pages carry several blocks of rows, each repeating the label band.
+
+    Declared in ``catalog/bindings.yaml`` rather than detected, because detection is exactly what
+    this project has repeatedly got wrong: every content-based attempt to tell a band from a body
+    misclassified some page (see ``docs/06-exametrics-alignment.md`` §6). The reports that need it
+    were established by measuring their label-row positions and data-row counts, and the declaration
+    records that measurement so the build has no judgement to make.
+
+    Applying the multi-block walk to every report was measured and rejected: it pulled label rows and
+    second header tiers into the data plan on ``council_top_schools_alama``, ``council_top_schools_grading``,
+    ``region_shule_serikali`` and five others, because those reports stack two header tiers whose
+    upper row mixes column labels with subject names and so matches neither test.
+    """
+    if not BINDINGS_CATALOG.exists():
+        return set()
+    payload = yaml.safe_load(BINDINGS_CATALOG.read_text(encoding="utf-8")) or {}
+    return set(payload.get("multi_block") or [])
+
+
 def distil_layout(report: dict[str, Any], fixture: dict[str, Any], css: str) -> dict[str, Any]:
     """Reduce a measured fixture to the layout a caller's data can be placed onto."""
     pages = fixture["pages"]
@@ -750,16 +770,21 @@ def _cell_texts_joined(row: dict[str, Any]) -> list[str]:
     return out
 
 
-def _label_row(page: dict[str, Any], data_columns: set[int], label_texts: set[str]) -> int | None:
-    """The row that names the table's columns, which is where its data begins.
+def _label_rows(page: dict[str, Any], data_columns: set[int],
+                label_texts: set[str]) -> list[int]:
+    """Every row of the page that names the table's columns, in order.
 
     A summary band sits in the SAME columns as the table below it — ``school-results`` measures its
     division summary across the candidate table's own grid — so no test on a single row can tell the
     two apart. The reference separates them structurally: everything above the label row is front
-    matter, everything below it is data. Taking the last match handles a stacked header whose lower
-    row carries the labels.
+    matter, everything below it is data.
+
+    All matches are returned, not just one, because a page may carry several blocks of rows each
+    repeating the label band. Measured: the four ``kimasomo`` / ``shule bora masomo`` reports print
+    two or three ten-row blocks per page, one per subject, and a single-match rule marked only the
+    last block's rows as data — 30 of their 60 rows.
     """
-    found: int | None = None
+    found: list[int] = []
     for index, row in enumerate(page["rows"]):
         texts = [
             _cell_text(cell)
@@ -770,8 +795,66 @@ def _label_row(page: dict[str, Any], data_columns: set[int], label_texts: set[st
             continue
         hits = sum(1 for text in texts if _normalised(text) in label_texts)
         if hits >= 2 and hits * 2 >= len(texts):
-            found = index
+            found.append(index)
     return found
+
+
+def _data_start(page: dict[str, Any], data_columns: set[int], label_texts: set[str],
+                column_count: int, multi_block: bool) -> int:
+    """The row where this page's data begins: past the leading header band, not past every band.
+
+    The leading band is the run of label rows at the top of the page with nothing but structure
+    between them, which is what a stacked header looks like. Scanning stops at the first label row
+    that has data above it, because that row introduces a later block rather than the page's header.
+    Those later label rows are excluded by :func:`_static_row` on the label-text test, so they are
+    not mistaken for values.
+
+    If the very first label row already has non-structure above it, no clean leading band exists and
+    this falls back to the previous rule — the **last** label row on the page. That happens when the
+    distilled ``header.labels`` is not a label row at all: ``council_school_rank_ufaulu_alama`` and
+    ``council_kata_rank_alama`` both distilled a DATA row as their labels, so every data row matches
+    and the walk cannot tell a band from a body. Falling back keeps those two exactly as they were
+    rather than letting a known-bad measurement pull three header rows into the data plan.
+    """
+    rows = _label_rows(page, data_columns, label_texts)
+    if not rows:
+        return 0
+    if not multi_block:
+        return rows[-1] + 1
+    start = 0
+    advanced = False
+    for index in rows:
+        if index < start:
+            continue
+        if all(
+            _static_row(page["rows"][between], data_columns, label_texts, column_count)
+            or _header_tier(page["rows"][between])
+            for between in range(start, index)
+        ):
+            start = index + 1
+            advanced = True
+        else:
+            break
+    if not advanced:
+        return rows[-1] + 1
+    return start
+
+
+def _header_tier(row: dict[str, Any]) -> bool:
+    """Whether a row is a tier of group headings rather than a row of values.
+
+    Every filled cell spans more than one column, which is how the tier above the labels is measured
+    (``WALIOSAJILIWA │ A │ B │ C │ D │ E │ A-D`` over the ``WAV/WAS/JML`` labels beneath). A data row
+    fills individual columns, so at least one of its filled cells has colspan 1.
+
+    This alone is not sufficient, and must only ever be applied to a row that sits directly above a
+    label row — see :func:`_document_plan`. A trailing aggregate is measured with the same spans:
+    ``region_halmashauri_masomo``'s ``ASILIMIA YA UFAULU`` row spans 6,3,3,3,3,3,3,4 and carries this
+    exam's percentages. Excluding it on spans alone dropped it from the data plan, which would print
+    the reference's own percentages verbatim.
+    """
+    spans = [int(cell.get("colspan", 1) or 1) for cell in row["cells"] if _cell_text(cell)]
+    return len(spans) > 1 and all(span > 1 for span in spans)
 
 
 def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list[int]]:
@@ -782,6 +865,7 @@ def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list
     summary band sharing the table's columns — for a row of values.
     """
     data_columns = _data_columns(layout)
+    multi_block = f"{layout['level']}/{layout['report_key']}" in _multi_block_reports()
     label_texts = {
         _normalised(label) for label in (layout["header"].get("labels") or []) if label.strip()
     }
@@ -804,15 +888,23 @@ def _document_plan(fixture: dict[str, Any], layout: dict[str, Any]) -> list[list
         if columns not in table_sizes:
             plan.append([])
             continue
-        start = 0
-        label_index = _label_row(page, data_columns, label_texts)
-        if label_index is not None:
-            start = label_index + 1
+        start = _data_start(page, data_columns, label_texts, columns, multi_block)
+        # A multi-block page repeats its header above every block, so those tiers appear after the
+        # page's leading band and must be excluded here rather than by a test on the row alone.
+        # Restricting the rule to a row directly above a label row is what keeps a trailing
+        # aggregate — measured with the same spans — in the data plan.
+        labels = set(_label_rows(page, data_columns, label_texts))
+        tiers = {
+            index
+            for index in range(len(page["rows"]))
+            if index + 1 in labels and _header_tier(page["rows"][index])
+        }
         plan.append(
             [
                 index
                 for index, row in enumerate(page["rows"])
                 if index >= start
+                and index not in tiers
                 and not _static_row(row, data_columns, label_texts, columns)
             ]
         )

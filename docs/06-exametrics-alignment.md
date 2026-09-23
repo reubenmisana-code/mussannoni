@@ -126,16 +126,16 @@ row source exists
 | 26 | primary | council_best_students | 24 | 40 | 10 | 4 | 0 | ✅ | ✅ | A |
 | 27 | primary | council_top_schools_alama | 21 | 20 | 10 | 2 | 0 | ✅ | ✅ | A |
 | 28 | primary | council_top_schools_grading | 36 | 30 | 10 | 3 | 0 | ✅ | ✅ | A |
-| 29 | primary | council_top_schools_kimasomo_overall | 36 | 0 | 0 | 0 | 3 | ❌ | ❌ | **B + C** |
-| 30 | primary | council_top_schools_kimasomo_serikali | 35 | 0 | 0 | 0 | 3 | ❌ | ❌ | B + C |
+| 29 | primary | council_top_schools_kimasomo_overall | 36 | 60 | 20 | 3 | 0 | ✅ | ❌ | **C** |
+| 30 | primary | council_top_schools_kimasomo_serikali | 35 | 60 | 20 | 3 | 0 | ✅ | ❌ | C |
 | 31 | primary | council_subject_summary | 19 | 0 | 0 | 0 | 1 | ❌ | ❌ | B + C |
 | 32 | primary | council_ufaulu_wa_masomo | 28 | 0 | 0 | 0 | 1 | ❌ | ❌ | B + C |
 | 33 | primary | region_kata_serikali | 36 | 192 | 58 | 4 | 0 | ✅ | ✅ | A |
 | 34 | primary | region_kata_binafsi | 36 | 63 | 58 | 2 | 0 | ✅ | ✅ | A |
 | 35 | primary | region_kata_jumla | 36 | 192 | 50 | 4 | 0 | ✅ | ✅ | A |
 | 36 | primary | region_shule_bora_jumla | 33 | 30 | 10 | 3 | 2 | ✅ | ✅ | A + D |
-| 37 | primary | region_shule_bora_masomo_serikali | 32 | 0 | 0 | 0 | 3 | ❌ | ❌ | B + C |
-| 38 | primary | region_shule_bora_masomo_jumla | 33 | 0 | 0 | 0 | 3 | ❌ | ❌ | B + C |
+| 37 | primary | region_shule_bora_masomo_serikali | 32 | 60 | 20 | 3 | 0 | ✅ | ❌ | **C** |
+| 38 | primary | region_shule_bora_masomo_jumla | 33 | 60 | 20 | 3 | 0 | ✅ | ❌ | C |
 | 39 | primary | region_ufaulu_masomo | 20 | 0 | 0 | 0 | 3 | ❌ | ✅ | B |
 | 40 | primary | region_ufaulu_masomo_jumla | 28 | 7 | 7 | 1 | 0 | ✅ | ✅ | A |
 | 41 | primary | region_wanafunzi_bora | 23 | 60 | 10 | 6 | 0 | ✅ | ✅ | A |
@@ -145,8 +145,8 @@ row source exists
 | 45 | primary | region_halmashauri_masomo | 34 | 60 | 10 | 6 | 0 | ✅ | ✅ | A |
 | 46 | primary | region_halmashauri_jumla | 34 | 40 | 10 | 4 | 0 | ✅ | ✅ | A |
 
-**Totals:** 38 ship column identity · 36 have a backend row source · **34 have both** · 11 carry real
-further-section pages · 8 have neither identity nor a usable plan.
+**Totals:** 42 ship column identity · 36 have a backend row source · **34 have both** · 11 carry real
+further-section pages · 4 still have no column identity.
 
 † **Re-measured 2026-09-23: these two carry no section pages at all.** Their trailing pages are
 **blank in the reference PDF itself** — `council_best_students_subjectwise` pages 21–30 and
@@ -166,20 +166,32 @@ verification, per [§5](#verification), and fixing whatever it reports. Do not w
 
 Expected per report: 0 text differences and 0.0000 pt drift against the fixture, sections verbatim.
 
-### Class B — 8 reports: column identity missing
+### Class B — 4 reports: column identity missing
 
 Without `header.fields` there is no safe way to place a value, so `cap` is 0 and the measured path
-refuses the report. **Re-measured 2026-09-23 against every page of all 8**, the cause is neither one
-shared gap nor registry data entry. It is three distinct causes:
+refuses the report. **Re-measured 2026-09-23 against every page of the 8** that were in this class, the
+cause was neither one shared gap nor registry data entry. It was three distinct causes, and the first
+group is now **resolved**:
 
-| group | reports | cause |
-|---|---|---|
-| **1 — repeated blocks per page** | `council_top_schools_kimasomo_overall` (36 cols) · `council_top_schools_kimasomo_serikali` (35) · `region_shule_bora_masomo_serikali` (32) · `region_shule_bora_masomo_jumla` (33) | They **do** have a repeating table. Each page carries **several 10-row blocks**, each repeating its own full-width label row, and the distiller's single-label-row model cannot express that — so it marked nothing as data. Measured label-row positions `[3,17]` / `[2,8,22]` / `[2,6,20]` with 20 data rows per page, totalling **60 = 6 subjects × 10 schools**, blocks spanning page boundaries. |
-| **2 — layout took the wrong grid** | `region_ufaulu_masomo` | `header.labels` holds 20 entries and **all are empty**, because the layout latched onto pages 2–3's 20-column compound grid. The real table is page 1's 28-column subject list, label row `NA │ SOMO │ WAV │ WAS │ JML │ …`, numbered subject rows beneath. The binding is right; the layout is wrong. |
-| **3 — genuinely no repeating table** | `council_subject_summary` (1 page, 19 cols) · `council_ufaulu_wa_masomo` (1 page, 28) · `council_kata_rank_alama` (2 pages) | Fixed-shape compound summary sheets whose content is aggregates split by sex (`WAV`/`WAS`/`JML`) nested in several mini-tables per page — not a variable-length row list. `council_kata_rank_alama`'s page 2 does carry a real 29-column label row, but the sample has only the `JUMLA` totals row beneath it, so `cap` 0 is **correct** for it. Its `header.labels` is a **data row** (`'01','HISABATI','0','0.0',…,'DARAJA C (VIZURI)'`) — the actual cause of the 29-vs-30 mismatch. |
+| group | reports | cause | state |
+|---|---|---|---|
+| **1 — repeated blocks per page** | `council_top_schools_kimasomo_overall` (36 cols) · `council_top_schools_kimasomo_serikali` (35) · `region_shule_bora_masomo_serikali` (32) · `region_shule_bora_masomo_jumla` (33) | They **do** have a repeating table. Each page carries **several 10-row blocks**, each repeating its own full-width label row, and the single-label-row rule marked only the last block — 30 of 60 rows. Label rows at `[3,17]` / `[2,8,22]` / `[2,6,20]` or `[5,21]`; 60 = 6 subjects × 10 schools, blocks spanning page boundaries. | **Done.** Bindings added, and `_data_start` walks the leading band instead of taking the last label row, gated on a `multi_block` declaration in `catalog/bindings.yaml`. All four report 60/60 data rows and pass both tests. Zero change to the other 38. |
+| **2 — layout took the wrong grid** | `region_ufaulu_masomo` | `header.labels` holds 20 entries and **all are empty**, because the layout latched onto pages 2–3's 20-column compound grid. The real table is page 1's 28-column subject list, label row `NA │ SOMO │ WAV │ WAS │ JML │ …`, with 12 numbered subject rows beneath. The binding is right; the layout is wrong. | Open. |
+| **3 — genuinely no repeating table** | `council_subject_summary` (1 page, 19 cols) · `council_ufaulu_wa_masomo` (1 page, 28 cols, 6 numbered rows) · `council_kata_rank_alama` (2 pages) | Fixed-shape compound summary sheets whose content is aggregates split by sex (`WAV`/`WAS`/`JML`) nested in several mini-tables per page — not a variable-length row list. `council_kata_rank_alama`'s page 2 does carry a real 29-column label row, but the sample has only the `JUMLA` totals row beneath it, so `cap` 0 is **correct** for it. | Open — belongs to the roles/bands contract. |
 
-So the work is one distiller change for group 1 (four reports, no hand-typed bindings), one grid choice
-for group 2, and group 3 handed to the roles/bands contract rather than given an invented table.
+**Why the multi-block walk is declared, not detected.** Applying it to all 46 was measured and rejected:
+it pulled label rows and second header tiers into the data plan on eight reports, worst
+`council_top_schools_alama` (20 → 44) and `council_top_schools_grading` (30 → 63), because those stack
+two header tiers whose upper row mixes column labels with subject names and so matches neither the
+label-text test nor the all-spanning test. The declaration records a measurement; detection guessed.
+
+**Two reports distil a data row as their labels.** `council_school_rank_ufaulu_alama`'s `header.labels`
+is `['', '01', 'HISABATI', '26', '15.4', …]` and `council_kata_rank_alama`'s is
+`['', '01', 'HISABATI', …, 'DARAJA C (VIZURI)']` — both are body rows. The consequence is live:
+`council_school_rank_ufaulu_alama` page 1 row 12 (`01 │ HISABATI │ 26 │ 15.4 │ …`) is excluded from its
+data plan because it "repeats the labels", so that row prints the reference's own figures. This is a
+separate defect in `_column_labels`, not addressed here, and it is why `_data_start` falls back to the
+previous rule when no clean leading band exists.
 
 Where a binding *is* added the rule stands: one field name per measured column, `""` for a column the
 reference draws blank. `len(fields)` **must** equal `len(header.labels)`; the build fails otherwise,

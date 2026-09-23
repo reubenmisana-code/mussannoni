@@ -274,6 +274,79 @@ reports:
   - average
   - competency
   - rank
+  primary/council_top_schools_kimasomo_overall:
+  - sno
+  - council
+  - school_name
+  - ownership
+  - registered_m
+  - registered_f
+  - registered_t
+  - sat_m
+  - sat_f
+  - sat_t
+  - absent_m
+  - absent_f
+  - absent_t
+  - grade_a_m
+  - grade_a_f
+  - grade_a_t
+  - grade_b_m
+  - grade_b_f
+  - grade_b_t
+  - grade_c_m
+  - grade_c_f
+  - grade_c_t
+  - grade_d_m
+  - grade_d_f
+  - grade_d_t
+  - grade_e_m
+  - grade_e_f
+  - grade_e_t
+  - pct_e
+  - pass_ad_m
+  - pass_ad_f
+  - pass_ad_t
+  - pct_ad
+  - average
+  - average_grade
+  - rank
+  primary/council_top_schools_kimasomo_serikali:
+  - sno
+  - council
+  - school_name
+  - registered_m
+  - registered_f
+  - registered_t
+  - sat_m
+  - sat_f
+  - sat_t
+  - absent_m
+  - absent_f
+  - absent_t
+  - grade_a_m
+  - grade_a_f
+  - grade_a_t
+  - grade_b_m
+  - grade_b_f
+  - grade_b_t
+  - grade_c_m
+  - grade_c_f
+  - grade_c_t
+  - grade_d_m
+  - grade_d_f
+  - grade_d_t
+  - grade_e_m
+  - grade_e_f
+  - grade_e_t
+  - pct_e
+  - pass_ad_m
+  - pass_ad_f
+  - pass_ad_t
+  - pct_ad
+  - average
+  - average_grade
+  - rank
   primary/region_halmashauri_jumla:
   - sno
   - council
@@ -524,6 +597,73 @@ reports:
   - pct_e
   - average
   - competency
+  - rank
+  primary/region_shule_bora_masomo_jumla:
+  - sno
+  - council
+  - school_name
+  - ownership
+  - registered_m
+  - registered_f
+  - registered_t
+  - sat_m
+  - sat_f
+  - sat_t
+  - grade_a_m
+  - grade_a_f
+  - grade_a_t
+  - grade_b_m
+  - grade_b_f
+  - grade_b_t
+  - grade_c_m
+  - grade_c_f
+  - grade_c_t
+  - grade_d_m
+  - grade_d_f
+  - grade_d_t
+  - grade_e_m
+  - grade_e_f
+  - grade_e_t
+  - pct_e
+  - pass_ad_m
+  - pass_ad_f
+  - pass_ad_t
+  - pct_ad
+  - average
+  - average_grade
+  - rank
+  primary/region_shule_bora_masomo_serikali:
+  - sno
+  - council
+  - school_name
+  - registered_m
+  - registered_f
+  - registered_t
+  - sat_m
+  - sat_f
+  - sat_t
+  - grade_a_m
+  - grade_a_f
+  - grade_a_t
+  - grade_b_m
+  - grade_b_f
+  - grade_b_t
+  - grade_c_m
+  - grade_c_f
+  - grade_c_t
+  - grade_d_m
+  - grade_d_f
+  - grade_d_t
+  - grade_e_m
+  - grade_e_f
+  - grade_e_t
+  - pct_e
+  - pass_ad_m
+  - pass_ad_f
+  - pass_ad_t
+  - pct_ad
+  - average
+  - average_grade
   - rank
   primary/region_shule_nafasi_jumla:
   - sno
@@ -1103,14 +1243,28 @@ reports:
   - competency
   - council_rank
   - rank
+# Reports whose pages carry several blocks of rows, each repeating the label band, rather than one
+# continuous table. Declared, not detected: every content-based attempt to tell a band from a body has
+# misclassified some page (docs/06-exametrics-alignment.md section 6). Measured 2026-09-23 — each of
+# these prints 6 blocks of 10 rows (one per subject) across 3 pages, 60 data rows total, with blocks
+# spanning page boundaries and label rows at [3,17] / [2,8,22] / [2,6,20] or [5,21] per page.
+multi_block:
+- primary/council_top_schools_kimasomo_overall
+- primary/council_top_schools_kimasomo_serikali
+- primary/region_shule_bora_masomo_serikali
+- primary/region_shule_bora_masomo_jumla
 unresolved:
-  primary/council_kata_rank_alama: binding has 29 columns, the measured grid has 30 labels, and the difference
-    is not explained by unlabelled columns without a body prototype (2 of those)
-  primary/council_subject_summary: no binding exists in the backend registry for this report
-  primary/council_top_schools_kimasomo_overall: no binding exists in the backend registry for this report
-  primary/council_top_schools_kimasomo_serikali: no binding exists in the backend registry for this report
-  primary/council_ufaulu_wa_masomo: no binding exists in the backend registry for this report
-  primary/region_shule_bora_masomo_jumla: no binding exists in the backend registry for this report
-  primary/region_shule_bora_masomo_serikali: no binding exists in the backend registry for this report
-  primary/region_ufaulu_masomo: binding has 28 columns, the measured grid has 20 labels, and the difference
-    is not explained by unlabelled columns without a body prototype (0 of those)
+  primary/council_kata_rank_alama: no repeating table on this sample. Page 1 is entirely nested mini-tables;
+    page 2 carries a real 29-column label row (S/N | KATA | IDADI YA SHULE | WAV | WAS | JML) but only the
+    JUMLA totals row beneath it, so there are no ward data rows to bind. layout.header.labels is itself a
+    DATA row ('01','HISABATI','0','0.0',...,'DARAJA C (VIZURI)'), which is the real cause of the recorded
+    29-vs-30 mismatch. Belongs to the roles/bands contract, not to column identity.
+  primary/council_subject_summary: no repeating table. A one-page 19-column compound summary whose content
+    is aggregates split by sex (WAV/WAS/JML) inside several mini-tables. Belongs to the roles/bands contract.
+  primary/council_ufaulu_wa_masomo: no repeating table. A one-page 28-column compound summary of the same
+    shape as council_subject_summary. Belongs to the roles/bands contract.
+  primary/region_ufaulu_masomo: the LAYOUT took the wrong grid, not the binding. layout.header.labels holds
+    20 entries and every one is empty, because the layout latched onto pages 2-3's 20-column compound grid.
+    The real repeating table is page 1's 28-column subject list, label row NA | SOMO | WAV | WAS | JML,
+    numbered subject rows beneath it. The existing 28-name binding fits that grid; fix the distiller's grid
+    choice rather than the binding.
