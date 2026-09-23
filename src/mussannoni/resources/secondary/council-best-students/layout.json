@@ -112,7 +112,18 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 22,
   "header": {
+    "fields": [
+      "student_id",
+      "school_name",
+      "student_name",
+      "sex",
+      "total_points",
+      "division",
+      "rank",
+      "detailed_subjects"
+    ],
     "height_pt": 115.61,
     "labels": [
       "C/NO",
@@ -1272,7 +1283,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "MWANZA CC 10 BEST STUDENTS",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "council",
   "table": {
     "columns": [

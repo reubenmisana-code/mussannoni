@@ -229,7 +229,9 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 28,
   "header": {
+    "fields": null,
     "height_pt": 98.86,
     "labels": [
       "",
@@ -2162,7 +2164,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "MWANZA CC SUBJECT SUMMARY",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "council",
   "table": {
     "columns": [

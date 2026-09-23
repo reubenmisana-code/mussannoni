@@ -122,7 +122,21 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 11,
   "header": {
+    "fields": [
+      "sno",
+      "student_id",
+      "school_name",
+      "ownership",
+      "student_name",
+      "sex",
+      "marks",
+      "grade",
+      "rank",
+      "competency",
+      ""
+    ],
     "height_pt": 138.17,
     "labels": [
       "S/NO.",
@@ -1425,7 +1439,7 @@
     "width_pt": 0.6
   },
   "sample_unit": "Mwanza Best students-Subjectwise",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [

@@ -169,7 +169,23 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 53,
   "header": {
+    "fields": [
+      "sno",
+      "council",
+      "school_name",
+      "ownership",
+      "prev_i_iii",
+      "prev_pct",
+      "prev_gpa",
+      "curr_i_iii",
+      "curr_pct",
+      "curr_gpa",
+      "delta_pct",
+      "delta_gpa",
+      "trend"
+    ],
     "height_pt": 129.19,
     "labels": [
       "S/NO.",
@@ -1819,7 +1835,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "Mwanza f2 Mock Mobility 2026",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [

@@ -1,0 +1,31 @@
+{
+  "id": "FEAT-010",
+  "type": "feat",
+  "status": "pending",
+  "description": "Render each report from its MEASURED DOCUMENT instead of a distilled approximation, and delete the approximation. This supersedes the direction of FEAT-002, FEAT-003 and FEAT-009. The workshop produces good output for all 46 reports because render_document is given the reference's full measured geometry; the package instead rebuilds a flat table from layout.json and loses whatever does not fit that shape. The reason recorded for not shipping the geometry was size - 'templates/**/fixture.json (257 MB of measured geometry, which is sample data, not code)'. MEASURED 2026-09-23 and the reason does not hold: the 46 fixtures with per-cluster corrections emptied and gzipped come to 1.84 MB, and 2.05 MB with corrections KEPT on every static band. The 46 layout.json shipping today are 3.85 MB. Shipping the full measured geometry is therefore roughly HALF the size of shipping the approximation, and it carries every band, every per-page column grid, every measured rule and vector, and every page of the multi-section reports - all the things FEAT-002/003/009 were reconstructing piecemeal.",
+  "proven_end_to_end": "A working prototype substituted 44 candidates for a different school into templates/secondary/school-results/fixture.json and rendered through mussannoni.render_document: 2 pages, 26 + 18 rows - the reference's own measured per-page capacities, with nothing computed - the DIVISION PERFORMANCE SUMMARY band intact, and no reference candidate id or name anywhere in the output. Verified by regex over the extracted text of every page.",
+  "the_safety_rule_that_makes_it_work": "Substitute by COLUMN IDENTITY, never by row shape. A first attempt keyed replacement on each row's (column, colspan) signature and LEAKED reference data: two of page 2's 37 rows have a different signature, because whether a cell exists at all depends on whether the reference happened to print something in it, so those rows were carried verbatim and 'S0333-0027 ESTER PASCHAL BISEKO' reached the output. Keying on the shipped header.fields instead - every cell in a column that carries a field name is overwritten with the caller's value or blanked, and any measured row the caller has no data for is removed rather than left - closed it. Row shape is content-dependent and unsafe; column identity is stable. This is the same conclusion backend-sis bindings.py reached in its own docstring: bind the data runs and emit empty when a slot has no value.",
+  "steps": [
+    "Ship one prepared measured document per report as resources/<level>/<report>/document.json.gz: the fixture with per-cluster corrections emptied ONLY on rows that carry data, kept everywhere else. Measured cost: 2.05 MB total for 46, against 3.85 MB of layout.json today. Keep gzip - the runtime already has zlib and the uncompressed form is 36 MB.",
+    "Add the substitution renderer: load the prepared document, classify each page's data rows by column identity, distribute the caller's rows across the measured pages in their measured order, clone the last full data page when the caller has more rows than the reference measured, drop pages with no rows left, renumber, and call render_document. Capacity is never computed.",
+    "Supply the non-table bands as data too: the letterhead roles (region, exam title, scope) and the summary/matrix bands. Until these are supplied the prototype still shows MWANZA REGION and the reference's F/M/T figures, because they are not in field columns - this is the same leak FEAT-002 introduced and it is closed here rather than separately.",
+    "Verify per report against the workshop's committed output/<level>/<report>/rendered.pdf: page count, that every static band survives, and that no reference value appears in any field column. Compare same-engine only - the committed artifacts are Chromium renders and WeasyPrint carries a systematic sub-point offset, which is what made an earlier comparison read 1.574pt of false drift.",
+    "Then DELETE the approximation: distil_layout's _transplanted_header, _remap_row, _spanning_prototype, _value_columns, _body_to_front_columns, _front_matter, _body_prototype, _rows_per_page, _synthesise_rules and the front/first_page_rows/rows_per_page keys, plus table.py's page building. Keep header.fields (column identity) and header.labels. FEAT-009 disappears entirely: a multi-section report needs no section model when its pages are carried as measured.",
+    "Keep render_report's signature. The change is internal; backend-sis still supplies rows and receives bytes."
+  ],
+  "acceptance_criteria": [
+    "Every one of the 46 reports renders from its measured document, with page count and static band content matching the workshop's committed render under the same engine.",
+    "No reference value survives in any field column for any report, asserted by scanning extracted text for the sample school's identifiers.",
+    "Total shipped resources do not exceed today's 3.85 MB.",
+    "The distilled table model and its helpers are deleted, not left alongside.",
+    "make check-resources clean, ruff clean, pytest green apart from the documented chromium host limitation, corpus/ untouched, THRESHOLDS unchanged."
+  ],
+  "verification": [
+    "make package-resources",
+    "make check-resources",
+    "uv run pytest -q",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

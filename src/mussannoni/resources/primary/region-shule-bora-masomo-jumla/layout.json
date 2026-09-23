@@ -450,7 +450,9 @@
       }
     ]
   },
+  "first_page_rows": 26,
   "header": {
+    "fields": null,
     "height_pt": 103.26,
     "labels": [
       "S/N",
@@ -3244,7 +3246,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "MKOA SHULE BORA MASOMO STD4 JUMLA 2026",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [

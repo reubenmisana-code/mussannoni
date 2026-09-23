@@ -377,7 +377,38 @@
       }
     ]
   },
+  "first_page_rows": 8,
   "header": {
+    "fields": [
+      "sno",
+      "subject_name",
+      "grade_a_m",
+      "grade_a_f",
+      "grade_a_t",
+      "grade_b_m",
+      "grade_b_f",
+      "grade_b_t",
+      "grade_c_m",
+      "grade_c_f",
+      "grade_c_t",
+      "grade_d_m",
+      "grade_d_f",
+      "grade_d_t",
+      "pass_ad_m",
+      "pass_ad_f",
+      "pass_ad_t",
+      "pct_ad",
+      "grade_e_m",
+      "grade_e_f",
+      "grade_e_t",
+      "pct_e",
+      "registered_m",
+      "registered_f",
+      "registered_t",
+      "average",
+      "rank",
+      "competency"
+    ],
     "height_pt": 73.72,
     "labels": [
       "NA",
@@ -2748,7 +2779,7 @@
     "width_pt": 0.24
   },
   "sample_unit": "MKOA UFAULU MASOMO STD4 JUMLA 2026",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [

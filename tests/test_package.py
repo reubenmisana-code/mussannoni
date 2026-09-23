@@ -250,15 +250,73 @@ def test_rows_are_placed_on_the_measured_grid(sample_layout: dict) -> None:
 
 
 def test_rows_are_paginated_and_the_header_repeats(sample_layout: dict) -> None:
-    per_page = sample_layout["rows_per_page"]
-    built = mussannoni.build_document(sample_layout, {"rows": _rows(sample_layout, per_page + 2)})
+    # Page 1 carries its own measured capacity, which is not the continuation pages': the
+    # reference's first page also carries the letterhead, so it fits fewer rows.
+    first_page = sample_layout["first_page_rows"]
+    built = mussannoni.build_document(sample_layout, {"rows": _rows(sample_layout, first_page + 2)})
     assert len(built["pages"]) == 2
     assert [page["number"] for page in built["pages"]] == [1, 2]
     header_count = sample_layout["header"]["row_count"]
     for page in built["pages"]:
         assert page["header_rows"] == header_count
-    assert len(built["pages"][0]["rows"]) == header_count + per_page
+    assert len(built["pages"][0]["rows"]) == header_count + first_page
     assert len(built["pages"][1]["rows"]) == header_count + 2
+
+
+def test_page_one_never_overruns_the_measured_page_box() -> None:
+    """The capacity a layout declares for page 1 has to fit the page the reference measured.
+
+    This is the assertion that was missing when a single computed ``rows_per_page`` was applied to
+    every page: seven reports declared a first page that ran past the bottom of the paper.
+    """
+    for report in mussannoni.list_reports():
+        layout = mussannoni.report_layout(report.report_key, level=report.level)
+        body = layout.get("body")
+        if not body:
+            continue
+        front = layout.get("front")
+        band_height = (
+            front["height_pt"] if front and front.get("body") else layout["header"]["height_pt"]
+        )
+        bottom = (
+            layout["table"]["y_pt"]
+            + band_height
+            + layout["first_page_rows"] * body["row_height_pt"]
+        )
+        assert bottom <= layout["page"]["height_pt"] + 0.5, (
+            f"{report.level}/{report.report_key} places {layout['first_page_rows']} rows on page 1, "
+            f"ending at {bottom:.2f}pt on a {layout['page']['height_pt']}pt page"
+        )
+
+
+def test_a_compound_first_page_keeps_its_measured_bands() -> None:
+    """A first page carrying more than a letterhead and a label row keeps every band it measured.
+
+    ``school-results`` measures a division summary table between the two, on its own finer grid.
+    Distilling the page to "letterhead plus label row" dropped it, leaving the heading printed
+    above the candidate list with nothing under it.
+    """
+    layout = mussannoni.report_layout("school_results", level="secondary")
+    front = layout["front"]
+    assert front["row_count"] == 7
+    assert len(front["columns"]) == 11
+    assert [c["column"] for c in front["body"]["cells"]] == [1, 2, 4, 5, 6, 7, 8]
+
+    rows = [[None, f"S0333-{i:04d}", "NAME", "F", 23, "III", i, "HTM - 85", None] for i in range(4)]
+    built = mussannoni.build_document(layout, {"rows": rows})
+    page = built["pages"][0]
+    assert page["columns"] == front["columns"]
+    assert page["header_rows"] == front["row_count"]
+    text = " ".join(
+        run["text"]
+        for row in page["rows"][: front["row_count"]]
+        for cell in row["cells"]
+        for line in cell.get("lines") or []
+        for run in line.get("runs") or []
+    )
+    for label in ("DIVISION PERFORMANCE SUMMARY", "SEX", "III", "IV"):
+        assert label in text
+    mussannoni.validate_document(built)  # per-page grids must validate
 
 
 def test_rows_may_be_mappings_keyed_by_column_label(sample_layout: dict) -> None:

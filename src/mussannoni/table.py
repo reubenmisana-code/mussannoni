@@ -95,8 +95,17 @@ def _as_text(value: Any) -> str:
     return str(value)
 
 
-def _normalise_rows(data: Mapping[str, Any], labels: Sequence[str], count: int) -> list[list[str]]:
-    """Accept rows as sequences (positional) or mappings (keyed by column label or index)."""
+def _normalise_rows(
+    data: Mapping[str, Any],
+    labels: Sequence[str],
+    count: int,
+    fields: Sequence[str] | None = None,
+) -> list[list[str]]:
+    """Accept rows as sequences (positional) or mappings (keyed by field name, label, or index).
+
+    The field names are the ones the packaged layout ships, so an application addresses columns by
+    identity and never has to retype a 38-column order or pad the grid's unlabelled edge slots.
+    """
     raw = data.get("rows")
     if raw is None:
         raise InvalidDataError("data['rows'] is required")
@@ -104,9 +113,14 @@ def _normalise_rows(data: Mapping[str, Any], labels: Sequence[str], count: int) 
         raise InvalidDataError("data['rows'] must be a list of rows")
 
     lookup: dict[str, int] = {}
+    # Field names take precedence over measured labels: they are unique by construction, whereas
+    # a reference grid repeats labels like F / M / T across every division block.
     for index, label in enumerate(labels):
         if label and label not in lookup:
             lookup[label] = index
+    for index, name in enumerate(fields or []):
+        if name:
+            lookup[name] = index
 
     rows: list[list[str]] = []
     for position, row in enumerate(raw):
@@ -158,7 +172,7 @@ def _body_cell(
     style = styles.get(line_class, {"size_pt": 8.0, "base14": "helv"})
     cell: dict[str, Any] = {
         "column": int(prototype["column"]),
-        "colspan": 1,
+        "colspan": int(prototype.get("colspan", 1) or 1),
         "rowspan": 1,
         "classes": list(prototype.get("classes") or []),
         "align": prototype.get("align", "left"),
@@ -186,7 +200,13 @@ def _body_cell(
 
 
 def _synthesise_rules(
-    layout: Mapping[str, Any], body_row_heights: Sequence[float]
+    layout: Mapping[str, Any],
+    body_row_heights: Sequence[float],
+    *,
+    columns: Sequence[float] | None = None,
+    table: Mapping[str, Any] | None = None,
+    header_height: float | None = None,
+    rule: Mapping[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     """Draw the gridlines for the number of body rows this page actually has.
 
@@ -198,17 +218,26 @@ def _synthesise_rules(
     The header band is a different matter. Its cells are merged into subject groups, so drawing
     every column boundary across it would strike lines through the merged headings. The measured
     header segments are therefore emitted verbatim and only the body band is generated.
+
+    A compound first page has its own grid, origin, band height and measured rule segments, so
+    those are passed in rather than read from the repeating layout.
     """
-    rule = layout.get("rule")
+    rule = rule if rule is not None else layout.get("rule")
     if not rule:
         return []
 
+    table = table if table is not None else layout["table"]
+    if columns is None:
+        columns = [float(width) for width in layout["table"]["columns"]]
+    else:
+        columns = [float(width) for width in columns]
+    if header_height is None:
+        header_height = float(layout["header"].get("height_pt", 0.0))
+
     hairline = float(rule.get("width_pt", 0.48))
-    table = layout["table"]
     x0 = float(table["x_pt"])
-    columns = [float(width) for width in table["columns"]]
     total_width = round(sum(columns), 2)
-    body_top = float(table["y_pt"]) + float(layout["header"].get("height_pt", 0.0))
+    body_top = float(table["y_pt"]) + float(header_height)
     body_height = sum(body_row_heights)
 
     segments: list[str] = [rule.get("header_d", "")]
@@ -241,9 +270,21 @@ def _apply_header_overrides(
     styles: Mapping[str, Any],
     level: str,
     report_key: str,
+    *,
+    columns: Sequence[float] | None = None,
+    row_map: Sequence[int] | None = None,
+    column_map: Sequence[int] | None = None,
 ) -> None:
-    """Replace the text of individual header cells, addressed as ``"row.column"``."""
-    columns = [float(width) for width in layout["table"]["columns"]]
+    """Replace the text of individual header cells, addressed as ``"row.column"``.
+
+    ``row_map`` and ``column_map`` translate an address written against the repeating band onto a
+    compound first page's own band and grid, so a caller writes one set of overrides and both
+    pages honour it.
+    """
+    if columns is None:
+        columns = [float(width) for width in layout["table"]["columns"]]
+    else:
+        columns = [float(width) for width in columns]
     for address, value in overrides.items():
         try:
             row_text, column_text = str(address).split(".", 1)
@@ -252,6 +293,20 @@ def _apply_header_overrides(
             raise InvalidDataError(
                 f"data['header'] key {address!r} must be 'row.column', e.g. '0.3'"
             ) from error
+        if row_map is not None:
+            if not 0 <= row_index < len(row_map):
+                raise InvalidDataError(
+                    f"data['header'] key {address!r} names row {row_index}, but this report's "
+                    f"header has {len(row_map)} rows"
+                )
+            row_index = int(row_map[row_index])
+        if column_map is not None:
+            if not 0 <= column_index < len(column_map):
+                raise InvalidDataError(
+                    f"data['header'] key {address!r} names column {column_index}, outside this "
+                    f"report's {len(column_map)} columns"
+                )
+            column_index = int(column_map[column_index])
         if not 0 <= row_index < len(header_rows):
             raise InvalidDataError(
                 f"data['header'] key {address!r} names row {row_index}, but this report's header "
@@ -328,8 +383,27 @@ def _rewrite_cell_text(
             continue
         line_class = line.get("class", "t0")
         style = styles.get(line_class, {"size_pt": 8.0, "base14": "helv"})
+        old_text = "".join(run.get("text", "") for run in (line.get("runs") or []))
+        if value == old_text:
+            # Unchanged text keeps its measurement untouched — its offset, its letter spacing and
+            # its per-cluster corrections. Re-placing it from font metrics would move it: the
+            # authority lines of a letterhead are supplied identically by every caller, and
+            # recomputing them put them 193pt from where the reference draws them. Nothing that
+            # has not changed is ever recomputed.
+            rewritten.append(line)
+            continue
         width = _text_width(value, style, level, report_key)
-        line["left_pt"] = round(_offset(value, span, cell, width), 3)
+        # A letterhead is one cell holding several lines, each centred across the cell by its own
+        # measured offset while the cell itself is left-aligned. Re-placing such a line by the
+        # cell's alignment would move it to the left margin, so centring is detected from the
+        # line's own measurement and preserved.
+        old_width = _text_width(old_text, style, level, report_key)
+        old_left = float(line.get("left_pt", 0.0) or 0.0)
+        centred = old_width > 0 and abs((old_left + old_width / 2.0) - span / 2.0) <= 6.0
+        if centred:
+            line["left_pt"] = round(max(0.0, (span - width) / 2.0), 3)
+        else:
+            line["left_pt"] = round(_offset(value, span, cell, width), 3)
         # The measured letter spacing and per-cluster margins belong to the old string.
         line["letter_spacing_pt"] = 0.0
         line["runs"] = [{"class": line_class, "text": value, "chunks": []}]
@@ -436,14 +510,14 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
     labels = list(layout["header"].get("labels") or [])
     labels += [""] * (len(columns) - len(labels))
 
-    unknown = set(data) - {"title", "columns", "header", "rows", "loose"}
+    unknown = set(data) - {"title", "columns", "header", "front_header", "rows", "loose"}
     if unknown:
         raise InvalidDataError(
             f"Unknown key(s) in data: {sorted(unknown)}. "
-            "Expected any of: title, columns, header, rows, loose."
+            "Expected any of: title, columns, header, front_header, rows, loose."
         )
 
-    rows = _normalise_rows(data, labels, len(columns))
+    rows = _normalise_rows(data, labels, len(columns), layout["header"].get("fields"))
 
     header_rows = deepcopy(layout["header"]["rows"])
     if data.get("columns") is not None:
@@ -474,7 +548,23 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
     prototypes = {int(cell["column"]): cell for cell in body["cells"]}
     fallback = _fallback_prototype(body["cells"])
     per_page = int(layout.get("rows_per_page") or 0) or len(rows) or 1
-    chunks = [rows[start : start + per_page] for start in range(0, len(rows), per_page)] or [[]]
+
+    # A compound first page carries measured bands above its data rows — a division summary, a
+    # grade matrix — on its own finer grid. It is kept as measured rather than flattened onto the
+    # repeating grid, which is why it also has its own capacity.
+    front = layout.get("front")
+    front_usable = bool(front and front.get("body") and front.get("value_columns"))
+    first_page_rows = int(layout.get("first_page_rows") or 0) or per_page
+
+    chunks: list[list[list[str]]] = []
+    start = 0
+    capacity = first_page_rows
+    while start < len(rows):
+        chunks.append(rows[start : start + capacity])
+        start += capacity
+        capacity = per_page
+    if not chunks:
+        chunks = [[]]
 
     row_height = float(body["row_height_pt"])
     header_height = float(layout["header"].get("height_pt", 0.0))
@@ -487,46 +577,134 @@ def build_document(layout: Mapping[str, Any], data: Mapping[str, Any]) -> dict[s
             loose_lines, data["loose"], layout, styles, level, report_key
         )
 
+    front_rows: list[dict[str, Any]] = []
+    front_loose: list[dict[str, Any]] = []
+    if front_usable:
+        front_columns = [float(width) for width in front["columns"]]
+        front_rows = deepcopy(front["rows"])
+        column_map = front.get("body_to_front_column")
+        if data.get("columns") is not None:
+            label_row = int(front["row_count"]) - 1
+            for index, label in enumerate(list(data["columns"])):
+                target = int(column_map[index]) if column_map else index
+                for cell in front_rows[label_row]["cells"]:
+                    if int(cell["column"]) == target:
+                        _rewrite_cell_text(
+                            cell, _as_text(label), front_columns, styles, level, report_key
+                        )
+                        break
+        if data.get("header"):
+            _apply_header_overrides(
+                front_rows,
+                data["header"],
+                layout,
+                styles,
+                level,
+                report_key,
+                columns=front_columns,
+                row_map=front.get("header_row_map"),
+                column_map=column_map,
+            )
+        if data.get("front_header"):
+            # Addresses the front band's OWN rows and columns, which is how a caller fills a band
+            # the repeating grid cannot describe — the division summary on `school-results`, the
+            # grade matrix on its primary counterpart. Without this those bands would keep the
+            # reference exam's figures.
+            _apply_header_overrides(
+                front_rows,
+                data["front_header"],
+                layout,
+                styles,
+                level,
+                report_key,
+                columns=front_columns,
+            )
+        front_loose = deepcopy(front.get("loose_lines") or [])
+        if data.get("loose"):
+            front_loose = _apply_loose_overrides(
+                front_loose, data["loose"], layout, styles, level, report_key
+            )
+
     pages: list[dict[str, Any]] = []
     for number, chunk in enumerate(chunks, start=1):
-        page_rows = deepcopy(header_rows)
+        on_front = front_usable and number == 1
+        if on_front:
+            page_columns = [float(width) for width in front["columns"]]
+            band_rows = deepcopy(front_rows)
+            band_height = float(front["height_pt"])
+            page_table = front["table"]
+            page_row_height = float(front["body"]["row_height_pt"])
+            value_columns = [int(index) for index in front["value_columns"]]
+            front_cells = front["body"]["cells"]
+        else:
+            page_columns = columns
+            band_rows = deepcopy(header_rows)
+            band_height = header_height
+            page_table = layout["table"]
+            page_row_height = row_height
+
+        page_rows = band_rows
         for offset, values in enumerate(chunk):
             cells = []
-            for column, width in enumerate(columns):
-                # A handful of columns are merged away in every measured body row, so the
-                # measurement never saw a plain cell there and has no prototype for them. Borrow
-                # the report's most common cell shape rather than emitting an empty cell: the
-                # caller passed a value for that column and silently dropping it would be the
-                # worst of the available behaviours.
-                prototype = prototypes.get(column, fallback) | {"column": column}
-                cells.append(
-                    _body_cell(values[column], prototype, width, styles, level, report_key)
-                )
+            if on_front:
+                for prototype, source in zip(front_cells, value_columns):
+                    column = int(prototype["column"])
+                    colspan = int(prototype.get("colspan", 1) or 1)
+                    width = sum(
+                        page_columns[index]
+                        for index in range(column, min(column + colspan, len(page_columns)))
+                    )
+                    cells.append(
+                        _body_cell(values[source], prototype, width, styles, level, report_key)
+                    )
+            else:
+                for column, width in enumerate(page_columns):
+                    # A handful of columns are merged away in every measured body row, so the
+                    # measurement never saw a plain cell there and has no prototype for them.
+                    # Borrow the report's most common cell shape rather than emitting an empty
+                    # cell: the caller passed a value for that column and silently dropping it
+                    # would be the worst of the available behaviours.
+                    prototype = prototypes.get(column, fallback) | {"column": column}
+                    cells.append(
+                        _body_cell(values[column], prototype, width, styles, level, report_key)
+                    )
             page_rows.append(
                 {
-                    "index": len(header_rows) + offset,
-                    "height_pt": row_height,
+                    "index": len(band_rows) + offset,
+                    "height_pt": page_row_height,
                     "cells": cells,
                 }
             )
 
-        body_heights = [row_height] * len(chunk)
+        body_heights = [page_row_height] * len(chunk)
         pages.append(
             {
                 "number": number,
                 "width_pt": float(page_template["width_pt"]),
                 "height_pt": float(page_template["height_pt"]),
                 "orientation": page_template["orientation"],
-                "table_x_pt": float(layout["table"]["x_pt"]),
-                "table_y_pt": float(layout["table"]["y_pt"]),
-                "table_width_pt": float(layout["table"]["width_pt"]),
-                "table_height_pt": round(header_height + row_height * len(chunk), 3),
-                "columns": columns,
-                "header_rows": int(layout["header"]["row_count"]),
+                "table_x_pt": float(page_table["x_pt"]),
+                "table_y_pt": float(page_table["y_pt"]),
+                "table_width_pt": float(page_table["width_pt"]),
+                "table_height_pt": round(band_height + page_row_height * len(chunk), 3),
+                "columns": page_columns,
+                "header_rows": int(
+                    front["row_count"] if on_front else layout["header"]["row_count"]
+                ),
                 "rows": page_rows,
-                "vectors": deepcopy(decorations.get("vectors") or []),
-                "rules": _synthesise_rules(layout, body_heights),
-                "loose_lines": deepcopy(loose_lines),
+                "vectors": deepcopy(
+                    (front.get("vectors") or []) if on_front
+                    else (decorations.get("vectors") or [])
+                ),
+                "rules": _synthesise_rules(
+                    layout,
+                    body_heights,
+                    columns=page_columns,
+                    table=page_table,
+                    header_height=band_height,
+                    rule=front.get("rule") if on_front else layout.get("rule"),
+                ),
+                "loose_lines": deepcopy(front_loose if on_front else loose_lines),
             }
         )
 

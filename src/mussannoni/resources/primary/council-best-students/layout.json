@@ -274,7 +274,34 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 24,
   "header": {
+    "fields": [
+      "sno",
+      "council",
+      "school_name",
+      "ownership",
+      "student_id",
+      "student_name",
+      "sex_code",
+      "subject_1_marks",
+      "subject_1_grade",
+      "subject_2_marks",
+      "subject_2_grade",
+      "subject_3_marks",
+      "subject_3_grade",
+      "subject_4_marks",
+      "subject_4_grade",
+      "subject_5_marks",
+      "subject_5_grade",
+      "subject_6_marks",
+      "subject_6_grade",
+      "total_marks",
+      "average",
+      "grade",
+      "rank",
+      "competency"
+    ],
     "height_pt": 94.8,
     "labels": [
       "S/N",
@@ -2854,7 +2881,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "MWANZA CC 10 BEST STUDENTS",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "council",
   "table": {
     "columns": [

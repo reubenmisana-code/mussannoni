@@ -1,0 +1,30 @@
+{
+  "id": "FEAT-009",
+  "type": "fix",
+  "status": "withdrawn",
+  "description": "Measure each report's CONTINUATION band and capacity, the half FEAT-003 could not deliver soundly. Two defects, both verified there. (a) A compound report's transplanted band, letterhead included, is stamped on every page, but the reference's continuation pages carry no letterhead - secondary/school-results page 2 begins with candidate S0333-0027. (b) rows_per_page is still tallest-band // modal-row-height, which overstates wherever a taller-than-modal row inflates the quotient. Neither can be fixed by the three signals already tried and rejected with evidence: per-page header_rows marks a data row on continuation pages; _is_label_row matches all-text DATA rows (primary/region-kata-binafsi 58->9, secondary/council-subjects-rank 20->6); text identity against page 1's band both misses near-matching repeats (secondary/region-schools-rank-overall) and cannot tell a continuation from a NEW SECTION (primary/council-best-students page 2 is 'WASICHANA' where page 1 is 'JUMLA'; secondary/council-top-schools page 2 is 'TOP TEN BEST PRIVATE SCHOOLS DISTRICTWISE'). The real finding underneath is that several of the 46 are multi-section documents, not one long table, and the package has no concept of a section at all. That is what must be measured first.",
+  "steps": [
+    "Establish which of the 46 are multi-section. For each report compare every page's leading band against page 1's, and classify each page as a continuation of the current table or the start of a new section. Do it from the measurement - a new section has its own heading row and often its own column grid - and record the classification per page for all 46 before changing any code. Do not guess from page counts.",
+    "Read `git -C /root/apis/backend-sis show HEAD:app/services/exametrics/mussannoni/template/spec.py` again for `continuation_head`, which measured the band from the reference's second page rather than assuming the first page's repeats, and `render/paginate.py` for the measured-capacity rule. Converge on that vocabulary; do not invent a section model if TemplateSpec already implies one.",
+    "Emit a `continuation` band per report: the band a continuation page actually carries, verbatim, with its own height - empty for a compound report such as secondary/school-results. Pages 2+ must render that band instead of page 1's.",
+    "Only then re-measure rows_per_page as a row COUNT off the fullest page that is a continuation of the same table, excluding new-section pages and excluding the last page unless it is the only continuation page. Floor it at first_page_rows, since a continuation page's band is never taller than page 1's. Never divide a height.",
+    "Extend the FEAT-003 page-box guard to continuation pages and confirm all 46 pass. Where a measured row count does not fit because the reference's own rows were shorter than modal, clamp and report which reports the clamp binds on - secondary/subject-schools-rank was the one case observed at 68 rows.",
+    "Decide explicitly what a multi-section report means for render_report, whose contract is one flat list of rows. If a report's later sections need their own data, say so plainly and do not fake it by flowing one row list through a second section's grid."
+  ],
+  "acceptance_criteria": [
+    "A per-page section/continuation classification is recorded for all 46 reports, computed not asserted.",
+    "layout.json carries a `continuation` band, empty where the reference repeats nothing, and generated continuation pages match it - secondary/school-results page 2 carries no letterhead.",
+    "rows_per_page is a measured row count from a true continuation page, never a height quotient, floored at first_page_rows.",
+    "The page-box guard covers continuation pages and all 46 pass; any clamp applied is named with its report and numbers.",
+    "Multi-section reports are either handled explicitly or documented as unsupported by the table API, with no silent flowing of rows into the wrong section.",
+    "make check-resources clean, ruff clean, pytest green apart from the documented chromium host limitation, corpus/ untouched, THRESHOLDS unchanged."
+  ],
+  "verification": [
+    "make package-resources",
+    "make check-resources",
+    "uv run pytest tests/test_package.py -q",
+    "uv run ruff check ."
+  ],
+  "blocked_reason": "Withdrawn. FEAT-010 makes it unnecessary: a multi-section report needs no section model once its pages are carried as measured rather than regenerated from one flat table.",
+  "findings": null
+}

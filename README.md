@@ -12,6 +12,11 @@ This repository is two things, and they are documented separately:
 - **A fidelity workshop** — the machinery that measures the 46 reference PDFs and proves the
   templates reproduce them. That is the specification from [Goal](#goal) onward.
 
+> **Working on aligning the reports with live application data?** Start at
+> [docs/06-exametrics-alignment.md](docs/06-exametrics-alignment.md). It carries the per-report
+> status of all 46, what each still needs, the verification procedure, and the approaches already
+> measured as wrong.
+
 ## Install
 
 ```sh

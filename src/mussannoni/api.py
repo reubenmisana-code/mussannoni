@@ -6,7 +6,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from . import resources
+from . import measured, resources
 from .document import render_document
 from .registry import Report, find, list_reports
 from .table import build_document
@@ -76,6 +76,29 @@ def render_report(
     """
     report = find(report_key, level)
     layout = resources.layout_payload(report.level, report.report_key)
+
+    # Prefer the report's measured document. It carries every band, every per-page column grid and
+    # every page of a multi-section report exactly as measured, so nothing has to be reconstructed
+    # — and each page holds the number of rows the reference put on it, so no capacity is computed.
+    # The distilled table path remains for reports that have no column identity yet, since safe
+    # substitution depends on knowing which columns are data.
+    if measured.has_measured_document(report.level, report.report_key) and any(
+        layout["header"].get("fields") or []
+    ):
+        allowed = {"rows", "title", "bands"}
+        if set(data) <= allowed:
+            document = measured.build_measured_document(
+                measured.measured_document(report.level, report.report_key), layout, data
+            )
+            return render_document(
+                document,
+                report.level,
+                report.report_key,
+                engine=engine,
+                optimize=optimize,
+                validate=False,
+            )
+
     document = build_document(layout, data)
     return render_document(
         document,

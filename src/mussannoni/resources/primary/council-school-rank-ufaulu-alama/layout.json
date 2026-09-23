@@ -398,7 +398,40 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 42,
   "header": {
+    "fields": [
+      "sno",
+      "ward",
+      "school_name",
+      "ownership",
+      "registered_m",
+      "registered_f",
+      "registered_t",
+      "sat_m",
+      "sat_f",
+      "sat_t",
+      "absent_m",
+      "absent_f",
+      "absent_t",
+      "subject_1_marks",
+      "subject_1_grade",
+      "subject_2_marks",
+      "subject_2_grade",
+      "subject_3_marks",
+      "subject_3_grade",
+      "subject_4_marks",
+      "subject_4_grade",
+      "subject_5_marks",
+      "subject_5_grade",
+      "subject_6_marks",
+      "subject_6_grade",
+      "total_marks",
+      "average",
+      "grade",
+      "competency",
+      "rank"
+    ],
     "height_pt": 154.19,
     "labels": [
       "",
@@ -5573,7 +5606,7 @@
     "width_pt": 0.36
   },
   "sample_unit": "MWANZA CC SCHOOL RANK UFAULU ALAMA",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "council",
   "table": {
     "columns": [

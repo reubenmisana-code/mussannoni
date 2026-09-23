@@ -737,7 +737,27 @@
       }
     ]
   },
+  "first_page_rows": 62,
   "header": {
+    "fields": [
+      "sno",
+      "council",
+      "school_name",
+      "grade_a",
+      "grade_b",
+      "grade_c",
+      "grade_d",
+      "grade_f",
+      "sat",
+      "pass_ac",
+      "pct_ac",
+      "pass_ad",
+      "pct_ad",
+      "gpa",
+      "competency",
+      "council_rank",
+      "rank"
+    ],
     "height_pt": 42.8,
     "labels": [
       "S/N",
@@ -1910,7 +1930,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "Mwanza School Rank-Mathematics",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "subject",
   "table": {
     "columns": [

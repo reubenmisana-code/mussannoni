@@ -372,7 +372,9 @@
     "loose_lines": [],
     "vectors": []
   },
+  "first_page_rows": 29,
   "header": {
+    "fields": null,
     "height_pt": 190.97,
     "labels": [
       "",
@@ -5413,7 +5415,7 @@
     "width_pt": 0.48
   },
   "sample_unit": "MWANZA CC KATA RANK ALAMA",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "council",
   "table": {
     "columns": [

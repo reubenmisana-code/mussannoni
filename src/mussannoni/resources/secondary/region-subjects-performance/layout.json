@@ -598,7 +598,25 @@
     ],
     "vectors": []
   },
+  "first_page_rows": 24,
   "header": {
+    "fields": [
+      "sno",
+      "subject_name",
+      "grade_a",
+      "grade_b",
+      "grade_c",
+      "grade_d",
+      "grade_f",
+      "total",
+      "pass_ac",
+      "pct_ac",
+      "pass_ad",
+      "pct_ad",
+      "gpa",
+      "competency",
+      "rank"
+    ],
     "height_pt": 58.5,
     "labels": [
       "S/NO.",
@@ -1549,7 +1567,7 @@
     "width_pt": 0.72
   },
   "sample_unit": "Mwanza Overall Subjects Performance",
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "region",
   "table": {
     "columns": [
